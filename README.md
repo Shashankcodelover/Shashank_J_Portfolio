@@ -99,3 +99,15 @@ To add a new project, certificate, or achievement:
    * **For Projects**: Add a card element with the project card structure.
    * **For Certifications/Achievements**: Add a `.sticky-card` element.
 3. Update the corresponding wrapper scroll height media queries in [style.css](file:///style.css) to add `80vh` scroll headroom for the new slide.
+
+### 3. Deploying to GitHub Pages (Free Hosting)
+Since this is a static site (plain HTML/CSS/JS), you can deploy and host it for free in just a few clicks:
+1. Go to your repository on GitHub: https://github.com/Shashankcodelover/My-Portfolio
+2. Click on the **Settings** tab (the gear icon at the top).
+3. In the left-hand sidebar menu, click on **Pages** (under the "Code and automation" section).
+4. Under **Build and deployment**:
+   * Set **Source** to **Deploy from a branch**.
+   * Under **Branch**, select **`main`** from the dropdown.
+   * Select **`/ (root)`** as the folder, then click **Save**.
+5. Wait 1–2 minutes. Refresh the settings page, and GitHub will display your live URL at the top:
+   👉 `https://shashankcodelover.github.io/My-Portfolio/`
