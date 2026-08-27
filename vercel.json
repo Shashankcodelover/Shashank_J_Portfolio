@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/campussearch",
+      "destination": "/campussearch/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/campussearch/:match*",
+      "destination": "https://campus-search-theta.vercel.app/:match*"
+    }
+  ]
+}
