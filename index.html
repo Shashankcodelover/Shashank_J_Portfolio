@@ -3,168 +3,1389 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shashank J — Full-Stack Developer | AI & ML Enthusiast</title>
-  <meta name="description" content="Portfolio of Shashank J — Full-Stack Developer, AI & ML Enthusiast.">
+  <title>Shashank J — Full-Stack Developer | AI & ML Systems</title>
+  <meta name="description" content="Portfolio of Shashank J — Computer Science & Engineering student at JSS Science and Technology University (SJCE), Mysuru. Full-Stack Developer, AI & ML Enthusiast.">
+  <meta name="keywords" content="Shashank J, Full-Stack Developer, MERN Stack, AI, ML, JSS STU, SJCE, Portfolio, Mysuru">
+  <meta name="author" content="Shashank J">
+
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+
+  <!-- Scroll Progress Indicator -->
   <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION BAR
+       ═══════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#landing" class="nav-logo">SJ</a>
-      <div class="nav-links">
+    <div class="container nav-container">
+      <a href="#landing" class="nav-logo">SJ<span class="logo-dot">.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#landing" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#journey" class="nav-link">Journey & Certs</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#involvement" class="nav-link">Leadership</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-dark">Get in Touch</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO / LANDING SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="landing" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Introduction -->
+          <div class="hero-text">
+            <div class="hero-status-pill reveal-up">
+              <span class="status-indicator"></span> Available for Engineering &amp; AI Opportunities
+            </div>
+            <h1 class="hero-name reveal-up">
+              Hi, I'm <span class="text-highlight">Shashank J</span>
+            </h1>
+            <p class="hero-tagline reveal-up">
+              Full-Stack Developer &nbsp;•&nbsp; AI &amp; ML Enthusiast &nbsp;•&nbsp; Complex Systems Builder
+            </p>
+            <p class="hero-intro reveal-up">
+              Computer Science &amp; Engineering student at <strong>JSS Science and Technology University (SJCE), Mysuru</strong>. I design and engineer scalable full-stack applications, offline-first architectures, real-time dispatch systems, and autonomous multi-agent AI pipelines.
+            </p>
+            <div class="hero-cta reveal-up">
+              <a href="#projects" class="btn btn-dark">
+                <i class="fas fa-folder-open"></i> Explore 9 Priority Projects
+              </a>
+              <a href="#journey" class="btn btn-outline">
+                <i class="fas fa-certificate"></i> View Certifications &amp; Journey
+              </a>
+            </div>
+            <div class="hero-socials reveal-up">
+              <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:shashank.j8426@gmail.com" aria-label="Email Me" class="social-icon">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Profile & Floating Badges -->
+          <div class="hero-visual reveal-scale">
+            <div class="hero-photo-wrapper">
+              <div class="photo-frame">
+                <img src="photo/profile photo.jpeg" alt="Shashank J — Profile Photo" class="profile-img">
+              </div>
+
+              <!-- High-Contrast Floating Badges with Bold Dark Text -->
+              <div class="floating-badge badge-top">
+                <div class="badge-icon-box"><i class="fas fa-laptop-code"></i></div>
+                <div class="badge-content">
+                  <span class="badge-title">Hackathon Competitor</span>
+                  <span class="badge-subtitle">6 National Events</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-left">
+                <div class="badge-icon-box"><i class="fas fa-bullhorn"></i></div>
+                <div class="badge-content">
+                  <span class="badge-title">PR Team Member</span>
+                  <span class="badge-subtitle">Persona Plus Club</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-bottom">
+                <div class="badge-icon-box"><i class="fas fa-hands-helping"></i></div>
+                <div class="badge-content">
+                  <span class="badge-title">HACK-OLYMPIC 2026</span>
+                  <span class="badge-subtitle">Organizing Team Volunteer</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Real-Data Stats Row -->
+            <div class="hero-stats-card">
+              <div class="stat-item">
+                <span class="stat-number hero-stat-num" data-target="9">0</span>
+                <span class="stat-label">Priority Projects</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number hero-stat-num" data-target="15" data-suffix="+">0</span>
+                <span class="stat-label">Certs &amp; Milestones</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number hero-stat-num" data-target="6">0</span>
+                <span class="stat-label">Hackathons</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">8.4</span>
+                <span class="stat-label">CGPA (JSS STU)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT ME & EDUCATION
+         ═══════════════════════════════════════════ -->
+    <section id="about" class="section-bg-alt">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Background &amp; Education</span>
+          <h2 class="section-title">About <span>Me</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card-main reveal-left">
+            <h3>Engineering Mindset &amp; Architecture</h3>
+            <p>
+              I am a Computer Science &amp; Engineering undergraduate at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (Batch 2024–2028 | Current CGPA: 8.4/10). My work centers on architecting resilient, production-grade applications that solve real operational bottlenecks.
+            </p>
+            <p>
+              My primary tech stack spans the full MERN ecosystem (MongoDB, Express.js, React.js, Node.js) paired with relational SQL databases (PostgreSQL, SQLite/WASM). I specialize in designing systems built for real-world constraints: offline synchronization queues, real-time Server-Sent Events (SSE), WebSocket streams, and autonomous multi-agent pipelines.
+            </p>
+            <p>
+              Beyond development, I have completed corporate job simulations with <strong>BCG X (Generative AI)</strong> and <strong>Deloitte Australia (Forensic Technology &amp; Data Analytics)</strong>. On campus, I serve as a PR Team Member for the Persona Plus Club and volunteer with the Linux Campus Club and hackathon organizing committees.
+            </p>
+
+            <div class="mission-vision-container">
+              <div class="mv-box">
+                <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                <div>
+                  <h4>Mission</h4>
+                  <p>To engineer resilient, production-grade systems that solve real operational challenges and contribute open-source value.</p>
+                </div>
+              </div>
+              <div class="mv-box">
+                <div class="mv-icon"><i class="fas fa-microchip"></i></div>
+                <div>
+                  <h4>Vision</h4>
+                  <p>To pioneer intelligent autonomous systems combining full-stack scalable infrastructure with applied multi-agent AI.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-sidebar reveal-right">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+              <span class="edu-type">Bachelor of Engineering (B.E.)</span>
+              <h4>Computer Science &amp; Engineering</h4>
+              <p class="edu-institution">JSS Science and Technology University (SJCE), Mysuru</p>
+              <div class="edu-meta-grid">
+                <div class="meta-cell">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-val">2024 – 2028</span>
+                </div>
+                <div class="meta-cell">
+                  <span class="meta-label">Current CGPA</span>
+                  <span class="meta-val highlight-val">8.4 / 10.0</span>
+                </div>
+              </div>
+              <div class="edu-coursework">
+                <h5>Core Competencies</h5>
+                <div class="tags-group">
+                  <span class="tag">Data Structures &amp; Algorithms</span>
+                  <span class="tag">DBMS &amp; SQL</span>
+                  <span class="tag">Operating Systems</span>
+                  <span class="tag">Computer Networks</span>
+                  <span class="tag">Full-Stack Architecture</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-links-card">
+              <h4>Quick Navigation</h4>
+              <div class="quick-links-list">
+                <a href="#projects" class="quick-link-item"><i class="fas fa-arrow-right"></i> Top 9 Priority Projects</a>
+                <a href="#journey" class="quick-link-item"><i class="fas fa-arrow-right"></i> Credentials &amp; Certifications</a>
+                <a href="#involvement" class="quick-link-item"><i class="fas fa-arrow-right"></i> Hackathons &amp; Leadership</a>
+                <a href="https://github.com/Shashankcodelover" target="_blank" class="quick-link-item"><i class="fab fa-github"></i> GitHub (30+ Repos)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRIORITIZED PROJECTS (ALL 9 TOP PROJECTS)
+         ═══════════════════════════════════════════ -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Production &amp; Engineering Work</span>
+          <h2 class="section-title">Top 9 <span>Priority Projects</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Ranked in exact order of architectural depth, deployment readiness, and operational impact.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- 1. NetPlus-CRM- -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">01</span>
+              <div class="project-title-group">
+                <span class="project-category">Enterprise Operations · CRM</span>
+                <h3>NetPlus-CRM</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">JWT</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2. blood-match-api (LifeStream V3.1) -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">02</span>
+              <div class="project-title-group">
+                <span class="project-category">Emergency Dispatch · IoT Telemetry</span>
+                <h3>LifeStream V3.1 (Blood Match API)</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Autonomous emergency blood network and drone dispatch engine. Uses an AI proximity matching algorithm and real-time cold-chain IoT temperature simulation (2°C–6°C) for safe biological transit.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Haversine distance engine + 56-day cooldown medical filter</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight paths</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Sub-1.5s live IoT telemetry polling for temperature safety</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Leaflet.js</span>
+                <span class="tech-tag">Haversine AI</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3. Smart_Attendance_System -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">03</span>
+              <div class="project-title-group">
+                <span class="project-category">Progressive Web App · Offline-First</span>
+                <h3>Smart Attendance System</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic barcodes and background queue sync to prevent proxy attendance.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Handles 800+ concurrent student check-ins without dropouts</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic barcode rotation stops screenshots</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Automatic offline queue reconciliation when connection restores</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">PWA</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4. Placement-Clash-Resolver -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">04</span>
+              <div class="project-title-group">
+                <span class="project-category">Scheduling Engine · Conflict Arbitration</span>
+                <h3>Placement Clash Resolver</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Automated scheduling and conflict resolution engine designed for university placement cells to eliminate simultaneous interview overlaps, exam clashes, and company slot collisions.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Interval graph algorithm for optimal time-slot assignments</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Multi-company priority arbitration and student eligibility checks</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Instant alert dispatcher notifying candidates of rescheduled slots</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Algorithms</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5. Campus-Search -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">05</span>
+              <div class="project-title-group">
+                <span class="project-category">Full-Stack Marketplace · WASM SQLite</span>
+                <h3>CampusSearch v1.1</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Peer-to-peer campus hardware component exchange marketplace. Enables students to trade sensors, Arduino boards, and lab gear with student domain gating, item escrow locking, and SSE notifications.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite data layer with zero server lock-in</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time push updates via Server-Sent Events (SSE) stream</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Automated wishlist matching and scam keyword moderation</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">sql.js (WASM)</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">SSE</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6. Phoenix-Interview-Prep_and_Hackathon_Guide -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">06</span>
+              <div class="project-title-group">
+                <span class="project-category">Developer Education · Gamified Loop</span>
+                <h3>Phoenix Interview Prep &amp; Hackathon Guide</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Developer career acceleration suite bridging DSA interview preparation with hackathon track execution into a unified, gamified milestone progression system.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dynamic study roadmap generator personalized to target role timeline</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> AI story miner extracting STAR-format behavioral interview points</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Skill graph tying algorithm milestones directly to hackathon challenges</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">Express</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 7. Devflow-Pro -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">07</span>
+              <div class="project-title-group">
+                <span class="project-category">Enterprise SaaS · TypeScript</span>
+                <h3>DevFlow Pro</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Enterprise sprint workflow and real-time task management engine. Full-stack TypeScript architecture integrating PostgreSQL relational integrity with Socket.io real-time kanban synchronization.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Live board updates via Socket.io with conflict resolution</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Type-safe PostgreSQL integration with relational integrity checks</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Sprint velocity analytics, role hierarchies, and task assignment</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 8. Decentralized-Disaster-Response -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">08</span>
+              <div class="project-title-group">
+                <span class="project-category">Geospatial · Decentralized Protocol</span>
+                <h3>Decentralized Disaster Response Geofencing</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Resilient crisis response coordination network combining geospatial geofencing boundaries with peer-to-peer resource allocation for emergency relief during telecommunication blackouts.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Polygon geofencing assigning nearest emergency aid depots</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Distributed ledger protocol ensuring transparent supply chain tracking</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Low-bandwidth optimized payload delivery for disaster zones</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Geofencing</span>
+                <span class="tech-tag">P2P Protocols</span>
+                <span class="tech-tag">Leaflet</span>
+                <span class="tech-tag">Express</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 9. ArchitectAI-Studio -->
+          <article class="project-card reveal-up">
+            <div class="project-card-header">
+              <span class="project-num">09</span>
+              <div class="project-title-group">
+                <span class="project-category">Multi-Agent AI · Visual Studio</span>
+                <h3>ArchitectAI Studio</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Visual multi-agent systems architecting studio. Features an interactive node canvas tracking live agent execution states, LangGraph multi-agent execution, and an in-browser WASM SQL validator.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> LangGraph multi-agent state graph compiler with Gemini API</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Auto-generated live mock REST endpoints for instant testing</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM SQL simulator for visual database schema validation</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">SQL.js (WASM)</span>
+                <span class="tech-tag">Node.js</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MODULAR JOURNEY & CREDENTIALS EXPLORER
+         ═══════════════════════════════════════════ -->
+    <section id="journey" class="section-bg-alt section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Interactive Hub</span>
+          <h2 class="section-title">Explore My <span>Journey &amp; Credentials</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Click any category tab to inspect verified certifications, corporate job simulations, hackathons, and technical workshops.</p>
+        </div>
+
+        <!-- Interactive Category Hub Filters -->
+        <div class="journey-filter-nav reveal-up">
+          <button class="journey-tab-btn active" data-filter="all">
+            <i class="fas fa-layer-group"></i> All Credentials &amp; Events
+          </button>
+          <button class="journey-tab-btn" data-filter="fullstack">
+            <i class="fas fa-code"></i> Full-Stack (Mimo)
+          </button>
+          <button class="journey-tab-btn" data-filter="ai">
+            <i class="fas fa-brain"></i> AI &amp; GenAI
+          </button>
+          <button class="journey-tab-btn" data-filter="jobs">
+            <i class="fas fa-briefcase"></i> Job Simulations
+          </button>
+          <button class="journey-tab-btn" data-filter="hackathons">
+            <i class="fas fa-trophy"></i> Hackathons (6 Events)
+          </button>
+          <button class="journey-tab-btn" data-filter="workshops">
+            <i class="fas fa-tools"></i> Workshops &amp; Open Source
+          </button>
+        </div>
+
+        <!-- Modular Credentials & Journey Grid -->
+        <div class="credentials-grid" id="credentialsGrid">
+
+          <!-- 1. Full-Stack Development (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="Full-Stack Development Professional Certification"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Full-Stack Engineering"
+               data-desc="Comprehensive validation of MERN stack capabilities covering frontend component rendering, backend Express API routing, database schema design, and full deployment lifecycle."
+               data-img="certificates/Full stack development.png">
+            <div class="cred-thumb">
+              <img src="certificates/Full stack development.png" alt="Full-Stack Development Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>Full-Stack Development</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 2. Frontend Development (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="Frontend Development Professional Certification"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Frontend Web Development"
+               data-desc="Validated mastery of client-side DOM rendering, responsive CSS architectures, modern web layouts, JavaScript state handling, and interactive component lifecycles."
+               data-img="certificates/mimo-frontend.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/mimo-frontend.jpg" alt="Frontend Development Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>Frontend Development</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 3. Backend Development (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="Backend Development Professional Certification"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Backend & Server Architecture"
+               data-desc="Validated server architecture configurations, REST API endpoint security, middleware pipelines, authentication tokens (JWT), and database query optimizations."
+               data-img="certificates/mimo-backend.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/mimo-backend.jpg" alt="Backend Development Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>Backend Development</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 4. React Development (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="React.js Component Architecture Certification"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Modern UI Framework"
+               data-desc="Advanced React Hooks, SPA client-side routing, virtual DOM optimization, modular UI component composition, and unidirectional state patterns."
+               data-img="certificates/React.png">
+            <div class="cred-thumb">
+              <img src="certificates/React.png" alt="React Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>React Development</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 5. SQL Database Querying (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="SQL Relational Database Querying Certification"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Database Systems"
+               data-desc="Relational schema modeling, multi-table complex JOIN queries, ACID transactions, data mutation constraints, and database indexing strategies."
+               data-img="certificates/sql.png">
+            <div class="cred-thumb">
+              <img src="certificates/sql.png" alt="SQL Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>SQL Database Querying</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 6. Python Development (Mimo) -->
+          <div class="cred-card reveal-up" data-category="fullstack"
+               data-title="Python Programming & Software Fundamentals"
+               data-issuer="Mimo"
+               data-date="June 12, 2026"
+               data-type="Software Development"
+               data-desc="Object-oriented programming in Python, algorithm design, script automation, data structure manipulation, and backend integration patterns."
+               data-img="certificates/Python development.png">
+            <div class="cred-thumb">
+              <img src="certificates/Python development.png" alt="Python Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge">Mimo Certified</span>
+              <h4>Python Development</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 7. What is Generative AI? (LinkedIn Learning) -->
+          <div class="cred-card reveal-up" data-category="ai"
+               data-title="What Is Generative AI? (NASBA Registered CPE Credit: 2.00)"
+               data-issuer="LinkedIn Learning"
+               data-date="July 25, 2026"
+               data-type="Artificial Intelligence & GenAI"
+               data-desc="Professional certification covering core Generative AI architectures, Large Language Model (LLM) tooling, prompt engineering workflows, and ethical enterprise AI deployment."
+               data-img="certificates/linkedin-learning-genai.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/linkedin-learning-genai.jpg" alt="LinkedIn GenAI Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-ai">AI Credential</span>
+              <h4>Generative AI (NASBA CPE)</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> July 2026</p>
+            </div>
+          </div>
+
+          <!-- 8. BCG X GenAI Job Simulation -->
+          <div class="cred-card reveal-up" data-category="jobs"
+               data-title="BCG X — Generative AI Job Simulation"
+               data-issuer="BCG X (via Forage)"
+               data-date="July 25, 2026"
+               data-type="Corporate Job Simulation"
+               data-desc="Developed an AI-powered financial reasoning chatbot. Conducted automated financial document data extraction, prompt orchestration, and accuracy evaluation for BCG X consulting scenarios."
+               data-img="certificates/linkedin-learning-genai.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/linkedin-learning-genai.jpg" alt="BCG X Simulation">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-corp">BCG X Simulation</span>
+              <h4>GenAI Financial Chatbot</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> July 2026</p>
+            </div>
+          </div>
+
+          <!-- 9. Deloitte Australia Data Analytics Job Simulation -->
+          <div class="cred-card reveal-up" data-category="jobs"
+               data-title="Deloitte Australia — Data Analytics & Forensic Technology Job Simulation"
+               data-issuer="Deloitte Australia (via Forage)"
+               data-date="June 30, 2026"
+               data-type="Corporate Job Simulation"
+               data-desc="Completed practical corporate forensic analytics tasks: investigative transaction log inspection, forensic data preparation pipelines, and dashboard synthesis for Deloitte forensic technology leaders."
+               data-img="achievements/Deloitte Data Analytics job simulation.png">
+            <div class="cred-thumb">
+              <img src="achievements/Deloitte Data Analytics job simulation.png" alt="Deloitte Job Simulation">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-corp">Deloitte Australia</span>
+              <h4>Data Analytics Simulation</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> June 2026</p>
+            </div>
+          </div>
+
+          <!-- 10. Commit31 Open Source Program -->
+          <div class="cred-card reveal-up" data-category="workshops"
+               data-title="Commit31 — Month-Long Open-Source Contribution Initiative"
+               data-issuer="Linux Campus Club (LCC), JSS STU"
+               data-date="March 1–31, 2026"
+               data-type="Structured Open Source Program"
+               data-desc="Month-long intensive open-source contribution program under Dr. B T Prasanna & Vaibhav M N. Backed with GitHub Pull Shark badge and active repository contributions."
+               data-img="certificates/commit31-cert.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/commit31-cert.jpg" alt="Commit31 Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-oss">Open Source</span>
+              <h4>Commit31 Program</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> March 2026</p>
+            </div>
+          </div>
+
+          <!-- 11. Technotsav 2026 (Cybersecurity Hackathon) -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="Technotsav 2026 National Hackathon — Cybersecurity Track"
+               data-issuer="Dept. of CSE (AI&ML) + IEEE CIS, VVCE Mysuru"
+               data-date="April 15–16, 2026"
+               data-type="24-Hour National Hackathon"
+               data-desc="Competed in the Cybersecurity domain track over 24 hours of continuous development, architecting real-time vulnerability detection and threat telemetry prototypes."
+               data-img="achievements/Technotsav hackathon.png">
+            <div class="cred-thumb">
+              <img src="achievements/Technotsav hackathon.png" alt="Technotsav 2026 Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-hack">Hackathon Competitor</span>
+              <h4>Technotsav 2026 (Cybersecurity)</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> April 2026</p>
+            </div>
+          </div>
+
+          <!-- 12. HACK-OLYMPIC 2026 (Organizing Team Volunteer) -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="HACK-OLYMPIC 2026 — Organizing Team Volunteer & Operations"
+               data-issuer="JSS STU + Artsy Technologies"
+               data-date="April 4–5, 2026"
+               data-type="National Hackathon Leadership"
+               data-desc="Volunteered in on-ground event management and logistics coordination for a 24-hour national hackathon supporting 200+ engineering participants and jury panels."
+               data-img="achievements/hack-olympic 2026 hackathon voolenteering .png">
+            <div class="cred-thumb">
+              <img src="achievements/hack-olympic 2026 hackathon voolenteering .png" alt="Hack-Olympic Volunteer Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-org">Hackathon Organizer</span>
+              <h4>HACK-OLYMPIC 2026</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> April 2026</p>
+            </div>
+          </div>
+
+          <!-- 13. Vibe with India 2.0 Hackathon -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="Vibe with India 2.0 National Hackathon"
+               data-issuer="HackWithIndia (Aviral Bhardwaj) via DevNovate"
+               data-date="March 20, 2026"
+               data-type="National Virtual Hackathon"
+               data-desc="Competed in developing social-impact engineering solutions tackling regional infrastructure and service delivery optimization."
+               data-img="achievements/Vibe with India 2.0 hackathon.png">
+            <div class="cred-thumb">
+              <img src="achievements/Vibe with India 2.0 hackathon.png" alt="Vibe with India Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-hack">National Hackathon</span>
+              <h4>Vibe with India 2.0</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> March 2026</p>
+            </div>
+          </div>
+
+          <!-- 14. HackOS-ONE 2026 Hackathon -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="HackOS-ONE 2026 Hackathon (ID: Cer-20260525143636561884)"
+               data-issuer="SCANSKIP / HackOS"
+               data-date="May 2026"
+               data-type="National Hackathon Challenge"
+               data-desc="Competed in the 'Edition of Building Opportunity' hackathon, engineering high-speed full-stack prototypes within strict sprint windows."
+               data-img="achievements/hackos-one 2026 hackathon.png">
+            <div class="cred-thumb">
+              <img src="achievements/hackos-one 2026 hackathon.png" alt="HackOS-ONE Certificate">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-hack">Hackathon Competitor</span>
+              <h4>HackOS-ONE 2026</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> May 2026</p>
+            </div>
+          </div>
+
+          <!-- 15. ViCoDathon 2026 (AI Vibe Coding Hackathon) -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="ViCoDathon 2026 — India's AI Vibe Coding Hackathon (ID: ABT-HK-GZGXR)"
+               data-issuer="AB Talks (Founder: Anil Bajpai)"
+               data-date="August 14, 2026"
+               data-type="Agentic AI Hackathon"
+               data-desc="Participated in fast-paced AI-assisted development challenges building production applications using modern LLMs, coding agents, and automated pipelines."
+               data-img="certificates/linkedin-learning-genai.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/linkedin-learning-genai.jpg" alt="ViCoDathon">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-ai">AI Hackathon</span>
+              <h4>ViCoDathon 2026</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> August 2026</p>
+            </div>
+          </div>
+
+          <!-- 16. Google Cloud Agentic AI Day -->
+          <div class="cred-card reveal-up" data-category="hackathons"
+               data-title="Google Cloud Agentic AI Day (ID: 2025H2S06AID-114351)"
+               data-issuer="Google Cloud, powered by Hack2skill"
+               data-date="July 2026"
+               data-type="Agentic AI Challenge"
+               data-desc="Submitted autonomous multi-agent system architecture addressing real-world enterprise workflow coordination using Google Cloud & Vertex AI principles."
+               data-img="certificates/linkedin-learning-genai.jpg">
+            <div class="cred-thumb">
+              <img src="certificates/linkedin-learning-genai.jpg" alt="Google Cloud Agentic AI">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-ai">Google Cloud AI</span>
+              <h4>Agentic AI Challenge</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> July 2026</p>
+            </div>
+          </div>
+
+          <!-- 17. Machine Learning Workshop (DSC JSS STU) -->
+          <div class="cred-card reveal-up" data-category="workshops"
+               data-title="Machine Learning Workshop — Developer Student Club"
+               data-issuer="Developer Student Club (DSC), JSS STU"
+               data-date="July 2, 2025"
+               data-type="Technical Workshop"
+               data-desc="Hands-on workshop covering data preprocessing with NumPy/Pandas, supervised model training with scikit-learn, and basic neural network architectures."
+               data-img="certificates/Python development.png">
+            <div class="cred-thumb">
+              <img src="certificates/Python development.png" alt="ML Workshop">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-workshop">Technical Workshop</span>
+              <h4>Machine Learning Workshop</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> July 2025</p>
+            </div>
+          </div>
+
+          <!-- 18. 'Hello Python' Bootcamp -->
+          <div class="cred-card reveal-up" data-category="workshops"
+               data-title="'Hello Python' Technical Bootcamp"
+               data-issuer="Developer Student Club (DSC), JSS STU"
+               data-date="November 17, 2024"
+               data-type="Coding Bootcamp"
+               data-desc="Intensive practical bootcamp focused on core Python syntax, functional programming paradigms, and problem solving."
+               data-img="certificates/Python development.png">
+            <div class="cred-thumb">
+              <img src="certificates/Python development.png" alt="Hello Python Bootcamp">
+              <div class="cred-hover-overlay"><i class="fas fa-expand"></i> Inspect Details</div>
+            </div>
+            <div class="cred-info">
+              <span class="cred-badge badge-workshop">Bootcamp</span>
+              <h4>'Hello Python' Bootcamp</h4>
+              <p class="cred-meta"><i class="fas fa-calendar-alt"></i> Nov 2024</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         INTERACTIVE CREDENTIAL INSPECTION MODAL
+         ═══════════════════════════════════════════ -->
+    <div class="journey-modal" id="journeyModal" aria-hidden="true">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-dialog">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body-split">
+          <div class="modal-image-col">
+            <div class="modal-img-container">
+              <img src="" alt="Credential Proof" id="modalImage">
+            </div>
+          </div>
+          <div class="modal-details-col">
+            <span class="modal-type-badge" id="modalType">Certification</span>
+            <h3 class="modal-title" id="modalTitle">Credential Title</h3>
+            
+            <div class="modal-meta-row">
+              <div class="meta-item">
+                <i class="fas fa-building"></i>
+                <div>
+                  <span class="meta-label">Issuer</span>
+                  <span class="meta-value" id="modalIssuer">Organization</span>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                  <span class="meta-label">Issued / Completed</span>
+                  <span class="meta-value" id="modalDate">Date</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-desc-box">
+              <span class="desc-heading">Overview &amp; Verified Competencies</span>
+              <p class="modal-description" id="modalDesc">Detailed description of skills validated and project deliverables.</p>
+            </div>
+
+            <div class="modal-actions">
+              <button class="btn btn-sm btn-dark" onclick="document.getElementById('journeyModal').classList.remove('active'); document.body.style.overflow = '';">
+                <i class="fas fa-check"></i> Done Inspecting
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TECHNICAL ARSENAL & SKILLS
+         ═══════════════════════════════════════════ -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Capabilities</span>
+          <h2 class="section-title">Technical <span>Arsenal</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Proficiency metrics across programming languages, backend frameworks, AI toolkits, and databases.</p>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Languages -->
+          <div class="skill-category-card reveal-up">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+              <h4>Core Languages</h4>
+            </div>
+            <div class="skills-rings-row">
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="90"/>
+                </svg>
+                <span class="ring-percentage">90%</span>
+                <span class="ring-title">JavaScript</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="82"/>
+                </svg>
+                <span class="ring-percentage">82%</span>
+                <span class="ring-title">TypeScript</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="85"/>
+                </svg>
+                <span class="ring-percentage">85%</span>
+                <span class="ring-title">Python</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="75"/>
+                </svg>
+                <span class="ring-percentage">75%</span>
+                <span class="ring-title">Java / C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web & Backend -->
+          <div class="skill-category-card reveal-up">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-server"></i></div>
+              <h4>Web &amp; Backend Engineering</h4>
+            </div>
+            <div class="skills-rings-row">
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="90"/>
+                </svg>
+                <span class="ring-percentage">90%</span>
+                <span class="ring-title">Node.js</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="88"/>
+                </svg>
+                <span class="ring-percentage">88%</span>
+                <span class="ring-title">Express.js</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="88"/>
+                </svg>
+                <span class="ring-percentage">88%</span>
+                <span class="ring-title">React 18</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="85"/>
+                </svg>
+                <span class="ring-percentage">85%</span>
+                <span class="ring-title">REST &amp; SSE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI & Machine Learning -->
+          <div class="skill-category-card reveal-up">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
+              <h4>AI &amp; Machine Learning</h4>
+            </div>
+            <div class="skills-rings-row">
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="80"/>
+                </svg>
+                <span class="ring-percentage">80%</span>
+                <span class="ring-title">GenAI / LLMs</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="78"/>
+                </svg>
+                <span class="ring-percentage">78%</span>
+                <span class="ring-title">Pandas/NumPy</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="74"/>
+                </svg>
+                <span class="ring-percentage">74%</span>
+                <span class="ring-title">scikit-learn</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="72"/>
+                </svg>
+                <span class="ring-percentage">72%</span>
+                <span class="ring-title">LangGraph</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases & DevOps -->
+          <div class="skill-category-card reveal-up">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+              <h4>Databases &amp; Tooling</h4>
+            </div>
+            <div class="skills-rings-row">
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="86"/>
+                </svg>
+                <span class="ring-percentage">86%</span>
+                <span class="ring-title">MongoDB</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="82"/>
+                </svg>
+                <span class="ring-percentage">82%</span>
+                <span class="ring-title">PostgreSQL/SQL</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="90"/>
+                </svg>
+                <span class="ring-percentage">90%</span>
+                <span class="ring-title">Git / GitHub</span>
+              </div>
+              <div class="ring-metric">
+                <svg class="progress-ring" viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="72"/>
+                </svg>
+                <span class="ring-percentage">72%</span>
+                <span class="ring-title">Docker</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         INVOLVEMENT & LEADERSHIP
+         ═══════════════════════════════════════════ -->
+    <section id="involvement" class="section-bg-alt section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Community &amp; Organization</span>
+          <h2 class="section-title">Involvement &amp; <span>Leadership</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Active campus organizing, technical club volunteering, and event coordination roles.</p>
+        </div>
+
+        <div class="involvement-cards-stack">
+
+          <!-- 1. PR Team Member - Persona Plus -->
+          <div class="involvement-row-card reveal-left">
+            <div class="inv-badge-col">
+              <div class="inv-icon"><i class="fas fa-bullhorn"></i></div>
+              <span class="inv-role-tag">Student Club</span>
+            </div>
+            <div class="inv-content-col">
+              <div class="inv-header">
+                <h3>PR Team Member — Persona Plus Club</h3>
+                <span class="inv-loc"><i class="fas fa-map-marker-alt"></i> JSS Science and Technology University, Mysuru</span>
+              </div>
+              <ul class="inv-bullets">
+                <li>Leading public relations campaigns and outreach strategies for campus-wide professional events.</li>
+                <li>Managing official communications and student engagement initiatives to maximize club event turnout.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. HACK-OLYMPIC 2026 Organizing Volunteer -->
+          <div class="involvement-row-card reveal-right">
+            <div class="inv-badge-col">
+              <div class="inv-icon"><i class="fas fa-laptop-code"></i></div>
+              <span class="inv-role-tag">Organizing Team</span>
+            </div>
+            <div class="inv-content-col">
+              <div class="inv-header">
+                <h3>Volunteer in Organizing Team — HACK-OLYMPIC 2026</h3>
+                <span class="inv-loc"><i class="fas fa-map-marker-alt"></i> JSS STU + Artsy Technologies | April 4–5, 2026</span>
+              </div>
+              <ul class="inv-bullets">
+                <li>Volunteered as core operations support for a 24-hour national hackathon with 200+ engineering participants.</li>
+                <li>Coordinated participant check-ins, mentor allocations, technical infrastructure rounds, and jury logistics.</li>
+                <li><strong>Recognition:</strong> Awarded Certificate of Appreciation by JSS Mahavidyapeetha.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Linux Campus Club (LCC) Volunteer -->
+          <div class="involvement-row-card reveal-left">
+            <div class="inv-badge-col">
+              <div class="inv-icon"><i class="fab fa-linux"></i></div>
+              <span class="inv-role-tag">Technical Club</span>
+            </div>
+            <div class="inv-content-col">
+              <div class="inv-header">
+                <h3>Volunteer &amp; Member — Linux Campus Club (Dept. of CSE)</h3>
+                <span class="inv-loc"><i class="fas fa-map-marker-alt"></i> JSS Science and Technology University, Mysuru</span>
+              </div>
+              <ul class="inv-bullets">
+                <li>Represented the department's technical club in public exhibitions and tech awareness drives.</li>
+                <li>Participated in open-source workshops and coordinated the Commit31 one-month developer program.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════ -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Get in Touch</span>
+          <h2 class="section-title">Let's <span>Connect</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Interested in collaborating, discussing technical architectures, or exploring engineering opportunities? Reach out anytime.</p>
+        </div>
+
+        <div class="contact-layout">
+          
+          <!-- Contact Form -->
+          <div class="contact-form-card reveal-left">
+            <h3>Send a Message</h3>
+            <p>Fill out the form below to initiate an email directly to my inbox.</p>
+            <form id="contactForm" class="styled-form">
+              <div class="form-field">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="e.g. Alex Johnson" required>
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Your Email Address</label>
+                <input type="email" id="contactEmail" placeholder="e.g. alex@example.com" required>
+              </div>
+              <div class="form-field">
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" placeholder="e.g. Full-Stack / AI Project Discussion" required>
+              </div>
+              <div class="form-field">
+                <label for="contactMessage">Your Message</label>
+                <textarea id="contactMessage" rows="5" placeholder="Write your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark btn-block">
+                <i class="fas fa-paper-plane"></i> Launch Email Draft
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Details & Social Hub -->
+          <div class="contact-info-card reveal-right">
+            <h3>Direct Contact Channels</h3>
+            <p>Always open to connecting with engineers, mentors, and hiring managers.</p>
+
+            <div class="contact-methods-list">
+              <div class="contact-item">
+                <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                <div class="ci-text">
+                  <span class="ci-label">Email Address</span>
+                  <a href="mailto:shashank.j8426@gmail.com" class="ci-val">shashank.j8426@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="ci-text">
+                  <span class="ci-label">Phone / WhatsApp</span>
+                  <a href="tel:+919449478126" class="ci-val">+91 9449478126</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="ci-text">
+                  <span class="ci-label">Location</span>
+                  <span class="ci-val">Mysuru, Karnataka, India</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="ci-icon"><i class="fas fa-university"></i></div>
+                <div class="ci-text">
+                  <span class="ci-label">University</span>
+                  <span class="ci-val">JSS Science and Technology University (SJCE)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-connect-box">
+              <h4>Professional Profiles</h4>
+              <div class="social-buttons-row">
+                <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
+                  <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#landing" class="footer-logo">Shashank J<span>.</span></a>
+        <p class="footer-bio">Computer Science &amp; Engineering student at JSS STU (SJCE), Mysuru. Building scalable, fault-tolerant full-stack applications and AI systems.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
         <a href="#landing">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#achievements">Achievements</a>
+        <a href="#journey">Journey &amp; Certs</a>
         <a href="#contact">Contact</a>
       </div>
-      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-  <main>
-    <section id="landing">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-text">
-            <p class="hero-greeting reveal-up">Hello, I'm</p>
-            <h1 class="hero-name reveal-up">Shashank <span class="accent">J</span></h1>
-            <p class="hero-designations reveal-up">Full-Stack Developer &nbsp;·&nbsp; AI & ML Enthusiast &nbsp;·&nbsp; Complex Problem Solver</p>
-            <p class="hero-intro reveal-up">Computer Science & Engineering student at JSS Science and Technology University, Mysuru. I engineer scalable full-stack applications and AI integrations — designing robust systems that solve complex real-world challenges.</p>
-            <div class="hero-cta reveal-up">
-              <a href="#projects" class="btn btn-primary btn-shimmer"><i class="fas fa-folder-open"></i> View My Work</a>
-              <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-            </div>
-            <div class="hero-socials reveal-up">
-              <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-              <a href="mailto:shashank.j8426@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="hero-photo-frame"><img src="photo/profile photo.jpeg" alt="Shashank J"></div>
-            <div class="hero-badge badge-top"><i class="fas fa-laptop-code"></i><span>Hackathon Competitor</span></div>
-            <div class="hero-badge badge-left"><i class="fas fa-bullhorn"></i><span>PR Team Member</span></div>
-            <div class="hero-badge badge-bottom"><i class="fas fa-hands-helping"></i><span>Hack-Olympic Volunteer</span></div>
-            <div class="hero-stats">
-              <div class="hero-stat"><div class="hero-stat-num" data-target="9" data-suffix="+">0</div><div class="hero-stat-label">Projects</div></div>
-              <div class="hero-stat"><div class="hero-stat-num" data-target="15" data-suffix="+">0</div><div class="hero-stat-label">Certs</div></div>
-              <div class="hero-stat"><div class="hero-stat-num" data-target="6">0</div><div class="hero-stat-label">Hackathons</div></div>
-              <div class="hero-stat"><div class="hero-stat-num" data-target="30" data-suffix="+">0</div><div class="hero-stat-label">Repos</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">About <span>Me</span></h2><div class="section-divider"></div></div>
-        <div class="about-grid">
-          <div class="about-photo-wrapper reveal-left"><img src="photo/profile photo.jpeg" alt="Shashank J" class="about-photo"></div>
-          <div class="about-text reveal-right">
-            <p>I'm a Computer Science & Engineering student at JSS Science and Technology University (SJCE), Mysuru, with a deep focus on solving complex engineering problems through clean, scalable software. My tech stack revolves around the MERN ecosystem paired with relational databases like PostgreSQL. I build applications optimized for network constraints, real-time dispatch operations, offline synchronization, and security. I completed a Forensic Technology & Data Analytics Job Simulation with Deloitte Australia and a GenAI Job Simulation with BCG X. Beyond programming, I coordinate public relations for the Persona Plus Club and actively volunteer in the organizing team for hackathons, including HACK-OLYMPIC 2026.</p>
-            <div class="mission-vision-grid">
-              <div class="mv-card reveal-scale"><h3><i class="fas fa-bullseye"></i> Mission</h3><p>To build reliable, scalable software that solves practical operations problems and contributes to the developer community.</p></div>
-              <div class="mv-card reveal-scale"><h3><i class="fas fa-eye"></i> Vision</h3><p>To engineer intelligent, agentic systems that bridge full-stack architectures with deep learning capabilities.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">Key <span>Projects</span></h2><div class="section-divider"></div><p class="section-subtitle">Real web platforms and backend services shipped to production.</p></div>
-        <div class="projects-grid">
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">01</span><h3>NyayaNode — ONDC Dispute Arbitration</h3></div><div class="project-card-body"><span class="project-type">Full-Stack AI Platform · Hackathon</span><p class="project-desc">A neutral AI arbitrator for India's ONDC network. Deploys multi-agent AI pipelines that collect evidence, negotiate, and decide outcomes.</p><div class="project-tech"><span class="tech-pill">FastAPI</span><span class="tech-pill">Python</span><span class="tech-pill">Supabase</span><span class="tech-pill">Next.js</span><span class="tech-pill">Docker</span></div><a href="https://github.com/Shashankcodelover/NyayaNode" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">02</span><h3>Offline-First Attendance System</h3></div><div class="project-card-body"><span class="project-type">Progressive Web App · QR-OTP Gateway</span><p class="project-desc">High-reliability attendance tracking for 800+ students with offline queue sync and cryptographic rotating barcodes.</p><div class="project-tech"><span class="tech-pill">TypeScript</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">MongoDB</span><span class="tech-pill">JWT</span></div><a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">03</span><h3>CampusSearch — Component Marketplace</h3></div><div class="project-card-body"><span class="project-type">Full-Stack Marketplace · WASM SQLite</span><p class="project-desc">Peer-to-peer campus exchange layer with identity-verified trading, automated wishlist matching, and real-time push notifications.</p><div class="project-tech"><span class="tech-pill">React 18</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">sql.js</span><span class="tech-pill">SSE</span></div><a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">04</span><h3>LifeStream V3 — Blood Match & Dispatch</h3></div><div class="project-card-body"><span class="project-type">Operations Service · IoT Telemetry</span><p class="project-desc">Real-time logistics platform with AI matching, Leaflet drone dispatch, and cold-chain IoT temperature simulation.</p><div class="project-tech"><span class="tech-pill">React 18</span><span class="tech-pill">Node.js</span><span class="tech-pill">Leaflet.js</span><span class="tech-pill">Haversine</span></div><a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">05</span><h3>DevFlow Pro — Task Management Engine</h3></div><div class="project-card-body"><span class="project-type">Enterprise SaaS · Real-Time Collaboration</span><p class="project-desc">Full-stack TypeScript environment for team task tracking, real-time board updates via Socket.io, and analytics metrics.</p><div class="project-tech"><span class="tech-pill">TypeScript</span><span class="tech-pill">React</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Socket.io</span></div><a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-          <div class="project-card reveal-up"><div class="project-card-header"><span class="project-card-number">06</span><h3>ArchitectAI Studio</h3></div><div class="project-card-body"><span class="project-type">AI-Powered · Visual Development</span><p class="project-desc">Interactive drag-and-drop node canvas with LangGraph multi-agent state engine, auto-generated mock REST servers, and WASM SQL simulator.</p><div class="project-tech"><span class="tech-pill">React 19</span><span class="tech-pill">LangGraph</span><span class="tech-pill">Gemini API</span><span class="tech-pill">SQL.js</span></div><a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository <i class="fas fa-arrow-right"></i></a></div></div>
-        </div>
-      </div>
-    </section>
-    <section id="skills">
-      <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">Technical <span>Arsenal</span></h2><div class="section-divider"></div></div>
-        <div class="skills-showcase">
-          <div class="skill-orbit-card reveal-scale"><div class="orbit-header"><div class="orbit-icon-wrap"><i class="fas fa-code"></i></div><h3>Languages</h3></div><div class="orbit-rings"><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="90"/></svg><span class="ring-val" data-target="90">0</span><span class="ring-name">JavaScript</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="80"/></svg><span class="ring-val" data-target="80">0</span><span class="ring-name">TypeScript</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="85"/></svg><span class="ring-val" data-target="85">0</span><span class="ring-name">Python</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="75"/></svg><span class="ring-val" data-target="75">0</span><span class="ring-name">Java</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="75"/></svg><span class="ring-val" data-target="75">0</span><span class="ring-name">C++</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="65"/></svg><span class="ring-val" data-target="65">0</span><span class="ring-name">Go</span></div></div></div>
-          <div class="skill-orbit-card reveal-scale"><div class="orbit-header"><div class="orbit-icon-wrap"><i class="fas fa-server"></i></div><h3>Web & Backend</h3></div><div class="orbit-rings"><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="90"/></svg><span class="ring-val" data-target="90">0</span><span class="ring-name">Node.js</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="88"/></svg><span class="ring-val" data-target="88">0</span><span class="ring-name">Express.js</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="88"/></svg><span class="ring-val" data-target="88">0</span><span class="ring-name">React.js</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="85"/></svg><span class="ring-val" data-target="85">0</span><span class="ring-name">REST APIs</span></div></div></div>
-          <div class="skill-orbit-card reveal-scale"><div class="orbit-header"><div class="orbit-icon-wrap"><i class="fas fa-brain"></i></div><h3>AI & ML</h3></div><div class="orbit-rings"><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="75"/></svg><span class="ring-val" data-target="75">0</span><span class="ring-name">NumPy</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="78"/></svg><span class="ring-val" data-target="78">0</span><span class="ring-name">Pandas</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="72"/></svg><span class="ring-val" data-target="72">0</span><span class="ring-name">scikit-learn</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="70"/></svg><span class="ring-val" data-target="70">0</span><span class="ring-name">TensorFlow</span></div></div></div>
-          <div class="skill-orbit-card reveal-scale"><div class="orbit-header"><div class="orbit-icon-wrap"><i class="fas fa-database"></i></div><h3>Databases</h3></div><div class="orbit-rings"><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="85"/></svg><span class="ring-val" data-target="85">0</span><span class="ring-name">MongoDB</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="80"/></svg><span class="ring-val" data-target="80">0</span><span class="ring-name">SQL</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="75"/></svg><span class="ring-val" data-target="75">0</span><span class="ring-name">PostgreSQL</span></div></div></div>
-          <div class="skill-orbit-card reveal-scale"><div class="orbit-header"><div class="orbit-icon-wrap"><i class="fas fa-tools"></i></div><h3>Dev Tools</h3></div><div class="orbit-rings"><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="90"/></svg><span class="ring-val" data-target="90">0</span><span class="ring-name">Git & GitHub</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="70"/></svg><span class="ring-val" data-target="70">0</span><span class="ring-name">Docker</span></div><div class="ring-item"><svg class="ring-svg" viewBox="0 0 120 120"><circle class="ring-track" cx="60" cy="60" r="52"/><circle class="ring-fill-circle" cx="60" cy="60" r="52" data-percent="90"/></svg><span class="ring-val" data-target="90">0</span><span class="ring-name">VS Code</span></div></div></div>
-        </div>
-      </div>
-    </section>
-    <section id="certifications">
-      <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">Certifications & <span>Journey</span></h2><div class="section-divider"></div><p class="section-subtitle">Click any certificate to explore the full details.</p></div>
-        <div class="cert-categories reveal-up">
-          <button class="cert-cat-btn active" data-filter="all">All</button>
-          <button class="cert-cat-btn" data-filter="fullstack">Full-Stack (Mimo)</button>
-          <button class="cert-cat-btn" data-filter="ai">AI & GenAI</button>
-          <button class="cert-cat-btn" data-filter="jobs">Job Simulations</button>
-          <button class="cert-cat-btn" data-filter="opensource">Open Source</button>
-          <button class="cert-cat-btn" data-filter="academic">Academic</button>
-        </div>
-        <div class="cert-grid">
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="Full-Stack Development" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Comprehensive validation of MERN stack capabilities covering frontend UI, backend API routing, database schema design, and deployment." data-img="certificates/Full stack development.png"><div class="cert-card-img"><img src="certificates/Full stack development.png" alt="Full-Stack"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>Full-Stack Development</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="Frontend Development" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Client-facing structures, UI layout rendering, document tree traversal, and responsive web styling." data-img="certificates/mimo-frontend.jpg"><div class="cert-card-img"><img src="certificates/mimo-frontend.jpg" alt="Frontend"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>Frontend Development</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="Backend Development" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Server architecture, API routing, request security, middleware pipelines, and database schema management." data-img="certificates/mimo-backend.jpg"><div class="cert-card-img"><img src="certificates/mimo-backend.jpg" alt="Backend"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>Backend Development</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="React Development" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Advanced routing, React Hooks, client state management, component tree optimizations." data-img="certificates/React.png"><div class="cert-card-img"><img src="certificates/React.png" alt="React"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>React Development</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="SQL Database Querying" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Relational schema querying, multi-table JOINs, data mutation handling, and index management." data-img="certificates/sql.png"><div class="cert-card-img"><img src="certificates/sql.png" alt="SQL"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>SQL Database Querying</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="fullstack" data-title="Python Development" data-issuer="Mimo" data-date="June 12, 2026" data-type="Professional Certification" data-desc="Object-oriented structures, script-based data transformations, and algorithm implementations." data-img="certificates/Python development.png"><div class="cert-card-img"><img src="certificates/Python development.png" alt="Python"></div><div class="cert-card-info"><span class="cert-badge">Mimo</span><h4>Python Development</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="ai" data-title="What Is Generative AI?" data-issuer="LinkedIn Learning" data-date="July 25, 2026" data-type="AI Certification · NASBA CPE Credit (2.00)" data-desc="Covers Generative AI Tools, Artificial Intelligence fundamentals, and practical GenAI applications." data-img="certificates/linkedin-learning-genai.jpg"><div class="cert-card-img"><img src="certificates/linkedin-learning-genai.jpg" alt="GenAI"></div><div class="cert-card-info"><span class="cert-badge">LinkedIn Learning</span><h4>Generative AI</h4><p class="cert-date">July 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="jobs" data-title="Data Analytics Job Simulation" data-issuer="Deloitte Australia (via Forage)" data-date="June 30, 2026" data-type="Job Simulation" data-desc="Practical tasks in data analysis, corporate forensic analysis, and data preparation pipelines." data-img="achievements/Deloitte Data Analytics job simulation.png"><div class="cert-card-img"><img src="achievements/Deloitte Data Analytics job simulation.png" alt="Deloitte"></div><div class="cert-card-info"><span class="cert-badge">Deloitte</span><h4>Data Analytics Simulation</h4><p class="cert-date">June 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="opensource" data-title="Commit31 — One-Month Open-Source Program" data-issuer="Linux Campus Club, JSS STU" data-date="March 1–31, 2026" data-type="Open Source Achievement" data-desc="One-month open-source contribution program. Faculty Coordinator: Dr. B T Prasanna." data-img="certificates/commit31-cert.jpg"><div class="cert-card-img"><img src="certificates/commit31-cert.jpg" alt="Commit31"></div><div class="cert-card-info"><span class="cert-badge">Open Source</span><h4>Commit31 Initiative</h4><p class="cert-date">March 2026</p></div></div>
-          <div class="cert-card reveal-up" data-category="academic" data-title="Diploma in Computer Application (DCA)" data-issuer="Edukare ITES, Mysore" data-date="Completed 2023, Certificate April 2024" data-type="Academic Diploma" data-desc="Computer Basics, C/C++, Java, and HTML — foundational programming diploma." data-img="certificates/dca-edukare.jpg"><div class="cert-card-img"><img src="certificates/dca-edukare.jpg" alt="DCA"></div><div class="cert-card-info"><span class="cert-badge">Edukare ITES</span><h4>Diploma in Computer Application</h4><p class="cert-date">2023–2024</p></div></div>
-        </div>
-      </div>
-    </section>
-    <div class="cert-modal" id="certModal">
-      <div class="cert-modal-overlay"></div>
-      <div class="cert-modal-content">
-        <button class="cert-modal-close"><i class="fas fa-times"></i></button>
-        <div class="cert-modal-image"><img id="modalCertImg" src="" alt="Certificate"></div>
-        <div class="cert-modal-details">
-          <span class="cert-modal-type" id="modalCertType"></span>
-          <h2 id="modalCertTitle"></h2>
-          <div class="cert-modal-meta"><div class="meta-item"><i class="fas fa-building"></i><span id="modalCertIssuer"></span></div><div class="meta-item"><i class="fas fa-calendar-alt"></i><span id="modalCertDate"></span></div></div>
-          <p class="cert-modal-desc" id="modalCertDesc"></p>
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="footer-social-icons">
+          <a href="https://github.com/Shashankcodelover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:shashank.j8426@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
-    <section id="achievements">
+    <div class="footer-bottom">
       <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">Achievements & <span>Recognition</span></h2><div class="section-divider"></div></div>
-        <div class="achieve-grid">
-          <div class="achieve-card reveal-up"><div class="achieve-img"><img src="achievements/Technotsav hackathon.png" alt="Technotsav"></div><div class="achieve-info"><span class="achieve-badge"><i class="fas fa-trophy"></i> Cybersecurity Hackathon</span><h4>Competitor — Technotsav 2026</h4><p>April 15–16, 2026 · VVCE Mysuru · IEEE CIS</p></div></div>
-          <div class="achieve-card reveal-up"><div class="achieve-img"><img src="achievements/Vibe with India 2.0 hackathon.png" alt="Vibe with India"></div><div class="achieve-info"><span class="achieve-badge"><i class="fas fa-trophy"></i> National Hackathon</span><h4>Participant — Vibe with India 2.0</h4><p>March 2026 · HackWithIndia · DevNovate</p></div></div>
-          <div class="achieve-card reveal-up"><div class="achieve-img"><img src="achievements/hackos-one 2026 hackathon.png" alt="HackOS-ONE"></div><div class="achieve-info"><span class="achieve-badge"><i class="fas fa-award"></i> Hackathon</span><h4>Competitor — HackOS-ONE 2026</h4><p>May 2026 · SCANSKIP/HackOS</p></div></div>
-          <div class="achieve-card reveal-up"><div class="achieve-img"><img src="achievements/Deloitte Data Analytics job simulation.png" alt="Deloitte"></div><div class="achieve-info"><span class="achieve-badge"><i class="fas fa-briefcase"></i> Deloitte Australia</span><h4>Data Analytics Job Simulation</h4><p>June 30, 2026 · Forage</p></div></div>
-          <div class="achieve-card reveal-up"><div class="achieve-img"><img src="achievements/hack-olympic 2026 hackathon voolenteering .png" alt="Hack-Olympic"></div><div class="achieve-info"><span class="achieve-badge"><i class="fas fa-hands-helping"></i> Organizer</span><h4>Volunteer — HACK-OLYMPIC 2026</h4><p>April 4–5, 2026 · JSS STU</p></div></div>
-        </div>
+        <p>&copy; 2026 Shashank J. All rights reserved. Built with clean vanilla architecture &amp; hosted on Vercel.</p>
       </div>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <div class="section-header reveal-up"><h2 class="section-title">Let's <span>Connect</span></h2><div class="section-divider"></div></div>
-        <div class="contact-grid">
-          <div class="contact-form-panel reveal-left"><h3>Send Me a Message</h3><p>Fill out the form to launch your email client.</p><form id="contactForm"><div class="form-group"><input type="text" id="contactName" placeholder=" " required><label for="contactName">Full Name</label></div><div class="form-group"><input type="email" id="contactEmail" placeholder=" " required><label for="contactEmail">Email Address</label></div><div class="form-group"><input type="text" id="contactSubject" placeholder=" " required><label for="contactSubject">Subject</label></div><div class="form-group"><textarea id="contactMessage" placeholder=" " rows="5" required></textarea><label for="contactMessage">Message</label></div><button type="submit" class="btn btn-primary btn-shimmer"><i class="fas fa-paper-plane"></i> Send Message</button></form></div>
-          <div class="contact-info-panel reveal-right"><h3>Contact Details</h3><p>Connect with me directly.</p><div class="contact-row"><i class="fas fa-envelope"></i><a href="mailto:shashank.j8426@gmail.com">shashank.j8426@gmail.com</a></div><div class="contact-row"><i class="fas fa-phone"></i><a href="tel:+919449478126">9449478126</a></div><div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Mysuru, Karnataka, India</span></div><div class="contact-socials"><a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/Shashankcodelover" target="_blank"><i class="fab fa-github"></i></a><a href="mailto:shashank.j8426@gmail.com"><i class="fas fa-envelope"></i></a></div></div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-name">Shashank J</div><p class="footer-tagline">Building operational software solutions for real-world scenarios.</p><div class="footer-socials"><a href="https://github.com/Shashankcodelover" target="_blank"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="mailto:shashank.j8426@gmail.com"><i class="fas fa-envelope"></i></a></div><p class="footer-copy">&copy; 2026 Shashank J. All rights reserved.</p></div></div></footer>
+    </div>
+  </footer>
+
+  <!-- Application Script -->
   <script src="script.js"></script>
 </body>
 </html>

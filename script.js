@@ -1,27 +1,28 @@
-/* ═══════════════════════════════════════════════════════
-   SHASHANK J — PORTFOLIO v3.0 SCRIPT
-   Premium Dark Theme · Vanilla JavaScript
-   ═══════════════════════════════════════════════════════ */
+/**
+ * Shashank J — Portfolio Interactive Controller
+ * High-Performance Vanilla JavaScript
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── 1. SCROLL PROGRESS BAR ──────────────────────────
-  const scrollProgress = document.getElementById('scrollProgress');
+  // ── 1. Scroll Progress Bar ─────────────────────────────────
+  const scrollProgressBar = document.getElementById('scrollProgress');
   
-  // ── 2. NAVBAR ───────────────────────────────────────
+  // ── 2. Navigation Bar & Scroll Spy ────────────────────────
   const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  // ── 3. HAMBURGER MENU ──────────────────────────────
   const hamburger = document.getElementById('hamburger');
-  const navLinksContainer = document.querySelector('.nav-links');
+  const navLinksContainer = document.getElementById('navLinks');
 
+  // Mobile Hamburger Toggle
   if (hamburger && navLinksContainer) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinksContainer.classList.toggle('active');
     });
+
+    // Close mobile nav on click
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -30,236 +31,237 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── SCROLL EVENTS ──────────────────────────────────
+  // Scroll Listener
   window.addEventListener('scroll', () => {
-    // Progress bar
-    const winScroll = document.documentElement.scrollTop;
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if (scrollProgress && height > 0) {
-      scrollProgress.style.width = (winScroll / height) * 100 + '%';
+    
+    // Update progress bar
+    if (scrollProgressBar && height > 0) {
+      const scrolled = (winScroll / height) * 100;
+      scrollProgressBar.style.width = `${scrolled}%`;
     }
 
-    // Navbar scrolled state
+    // Navbar elevation on scroll
     if (navbar) {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      if (winScroll > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
 
-    // Active link tracking
-    let current = '';
+    // Scroll Spy: highlight active nav item
+    let currentSectionId = '';
     sections.forEach(section => {
-      const top = section.offsetTop - 200;
-      if (window.scrollY >= top) current = section.getAttribute('id');
+      const sectionTop = section.offsetTop - 120;
+      if (winScroll >= sectionTop) {
+        currentSectionId = section.getAttribute('id');
+      }
     });
+
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href').includes(current)) link.classList.add('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
     });
   });
 
-  // ── 4. SCROLL REVEAL ───────────────────────────────
-  const revealEls = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale');
-  const revealObs = new IntersectionObserver((entries, obs) => {
+  // ── 3. Intersection Observer for Smooth Reveal Animations ──
+  const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -30px 0px'
+  });
 
-  // ── 5. STAGGER ANIMATIONS ─────────────────────────
-  const staggerGroups = document.querySelectorAll('[data-stagger-group]');
-  const staggerObs = new IntersectionObserver((entries, obs) => {
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // ── 4. Animated Stat Counters in Hero ───────────────────────
+  let hasAnimatedCounters = false;
+  const statElements = document.querySelectorAll('.hero-stat-num');
+
+  const statsObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('[data-stagger-item]').forEach((item, i) => {
-          setTimeout(() => item.classList.add('visible'), i * 100);
-        });
-        obs.unobserve(entry.target);
+      if (entry.isIntersecting && !hasAnimatedCounters) {
+        hasAnimatedCounters = true;
+        animateCounters();
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
-  staggerGroups.forEach(g => staggerObs.observe(g));
+  }, { threshold: 0.5 });
 
-  // ── 6. HERO COUNTER ANIMATION ─────────────────────
-  let countersAnimated = false;
+  const statsContainer = document.querySelector('.hero-stats-card');
+  if (statsContainer) {
+    statsObserver.observe(statsContainer);
+  }
+
   function animateCounters() {
-    if (countersAnimated) return;
-    countersAnimated = true;
-    document.querySelectorAll('.hero-stat-num').forEach(counter => {
-      const target = +counter.dataset.target;
-      const suffix = counter.dataset.suffix || '';
-      const duration = 2000;
-      const inc = target / (duration / 16);
-      let cur = 0;
-      const update = () => {
-        cur += inc;
-        if (cur < target) {
-          counter.textContent = Math.ceil(cur) + suffix;
-          requestAnimationFrame(update);
+    statElements.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      const duration = 1800; // ms
+      const steps = 50;
+      const stepTime = duration / steps;
+      const increment = target / steps;
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.textContent = `${target}${suffix}`;
+          clearInterval(timer);
         } else {
-          counter.textContent = target + suffix;
+          counter.textContent = `${Math.ceil(current)}${suffix}`;
         }
-      };
-      update();
+      }, stepTime);
     });
   }
 
-  // Observe hero stats for counter animation
-  const heroStats = document.querySelector('.hero-stats');
-  if (heroStats) {
-    const heroObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          heroObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    heroObs.observe(heroStats);
-  }
+  // ── 5. Skills Progress Rings Animation ──────────────────────
+  const skillRings = document.querySelectorAll('.ring-fill');
+  const circumference = 2 * Math.PI * 50; // ~314.15px
 
-  // ── 7. SKILL RING ANIMATION ───────────────────────
-  const circumference = 2 * Math.PI * 52; // ~326.73
-  document.querySelectorAll('.ring-fill-circle').forEach(c => {
-    c.style.strokeDasharray = circumference;
-    c.style.strokeDashoffset = circumference;
+  skillRings.forEach(ring => {
+    ring.style.strokeDasharray = `${circumference}`;
+    ring.style.strokeDashoffset = `${circumference}`;
   });
 
-  const ringItems = document.querySelectorAll('.ring-item');
-  const ringObs = new IntersectionObserver((entries, obs) => {
+  const skillsObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const circle = entry.target.querySelector('.ring-fill-circle');
-        const valEl = entry.target.querySelector('.ring-val');
-        if (circle) {
-          const pct = +circle.dataset.percent || 0;
-          const offset = circumference - (pct / 100) * circumference;
-          setTimeout(() => {
-            circle.style.transition = 'stroke-dashoffset 1.5s ease-out';
-            circle.style.strokeDashoffset = offset;
-          }, 200);
-          // Animate number
-          if (valEl) {
-            const target = +valEl.dataset.target || pct;
-            const dur = 1500;
-            const inc = target / (dur / 16);
-            let cur = 0;
-            const update = () => {
-              cur += inc;
-              if (cur < target) {
-                valEl.textContent = Math.ceil(cur) + '%';
-                requestAnimationFrame(update);
-              } else {
-                valEl.textContent = target + '%';
-              }
-            };
-            setTimeout(update, 200);
-          }
-        }
-        obs.unobserve(entry.target);
+        const ring = entry.target;
+        const percent = +ring.getAttribute('data-percent') || 0;
+        const offset = circumference - (percent / 100) * circumference;
+        
+        setTimeout(() => {
+          ring.style.strokeDashoffset = `${offset}`;
+        }, 150);
+
+        observer.unobserve(ring);
       }
     });
-  }, { threshold: 0.3 });
-  ringItems.forEach(item => ringObs.observe(item));
+  }, { threshold: 0.25 });
 
-  // ── 8. CONTACT FORM ───────────────────────────────
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('contactName')?.value || '';
-      const email = document.getElementById('contactEmail')?.value || '';
-      const subject = document.getElementById('contactSubject')?.value || '';
-      const message = document.getElementById('contactMessage')?.value || '';
-      const mailto = 'mailto:shashank.j8426@gmail.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      window.location.href = mailto;
-    });
-  }
+  skillRings.forEach(ring => skillsObserver.observe(ring));
 
-  // ── 9. CERTIFICATE FILTERING ──────────────────────
-  const certBtns = document.querySelectorAll('.cert-cat-btn');
-  const certCards = document.querySelectorAll('.cert-card');
+  // ── 6. Modular Journey & Credentials Category Filtering ────
+  const journeyTabs = document.querySelectorAll('.journey-tab-btn');
+  const credCards = document.querySelectorAll('.cred-card');
 
-  certBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      certBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+  journeyTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      journeyTabs.forEach(btn => btn.classList.remove('active'));
+      tab.classList.add('active');
 
-      certCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(10px)';
-        setTimeout(() => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = '';
-            requestAnimationFrame(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
-            });
-          } else {
+      const filter = tab.getAttribute('data-filter');
+
+      credCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        
+        if (filter === 'all' || cardCategory === filter) {
+          card.style.display = 'flex';
+          card.style.flexDirection = 'column';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
             card.style.display = 'none';
-          }
-        }, 250);
+          }, 250);
+        }
       });
     });
   });
 
-  // ── 10. CERTIFICATE MODAL ─────────────────────────
-  const certModal = document.getElementById('certModal');
-  const modalImg = document.getElementById('modalCertImg');
-  const modalTitle = document.getElementById('modalCertTitle');
-  const modalIssuer = document.getElementById('modalCertIssuer');
-  const modalDate = document.getElementById('modalCertDate');
-  const modalType = document.getElementById('modalCertType');
-  const modalDesc = document.getElementById('modalCertDesc');
-  const modalClose = document.querySelector('.cert-modal-close');
-  const modalOverlay = document.querySelector('.cert-modal-overlay');
+  // ── 7. Interactive Credential Inspection Modal ─────────────
+  const journeyModal = document.getElementById('journeyModal');
+  const modalImage = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalType = document.getElementById('modalType');
+  const modalIssuer = document.getElementById('modalIssuer');
+  const modalDate = document.getElementById('modalDate');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const modalBackdrop = document.getElementById('modalBackdrop');
 
-  certCards.forEach(card => {
+  credCards.forEach(card => {
     card.addEventListener('click', () => {
-      if (modalImg) modalImg.src = card.dataset.img || '';
-      if (modalTitle) modalTitle.textContent = card.dataset.title || '';
-      if (modalIssuer) modalIssuer.textContent = card.dataset.issuer || '';
-      if (modalDate) modalDate.textContent = card.dataset.date || '';
-      if (modalType) modalType.textContent = card.dataset.type || '';
-      if (modalDesc) modalDesc.textContent = card.dataset.desc || '';
-      if (certModal) {
-        certModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      const title = card.getAttribute('data-title') || '';
+      const issuer = card.getAttribute('data-issuer') || '';
+      const date = card.getAttribute('data-date') || '';
+      const type = card.getAttribute('data-type') || 'Certification';
+      const desc = card.getAttribute('data-desc') || '';
+      const img = card.getAttribute('data-img') || '';
+
+      if (modalTitle) modalTitle.textContent = title;
+      if (modalType) modalType.textContent = type;
+      if (modalIssuer) modalIssuer.textContent = issuer;
+      if (modalDate) modalDate.textContent = date;
+      if (modalDesc) modalDesc.textContent = desc;
+      if (modalImage) {
+        modalImage.src = img;
+        modalImage.alt = title;
+      }
+
+      if (journeyModal) {
+        journeyModal.classList.add('active');
+        journeyModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
       }
     });
   });
 
   function closeModal() {
-    if (certModal) {
-      certModal.classList.remove('active');
+    if (journeyModal) {
+      journeyModal.classList.remove('active');
+      journeyModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
   }
 
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+  // Close modal on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && journeyModal && journeyModal.classList.contains('active')) {
+      closeModal();
+    }
   });
 
-  // ── 11. STAGGER LIST ITEMS ────────────────────────
-  document.querySelectorAll('.involvement-right ul').forEach(list => {
-    const listObs = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('li.stagger').forEach((li, i) => {
-            setTimeout(() => li.classList.add('visible'), i * 100);
-          });
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    listObs.observe(list);
-  });
+  // ── 8. Contact Form Email Launch Handler ───────────────────
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('contactName')?.value.trim() || '';
+      const email = document.getElementById('contactEmail')?.value.trim() || '';
+      const subject = document.getElementById('contactSubject')?.value.trim() || 'Portfolio Inquiry';
+      const message = document.getElementById('contactMessage')?.value.trim() || '';
+
+      const recipient = 'shashank.j8426@gmail.com';
+      const fullSubject = encodeURIComponent(`[Portfolio Contact] ${subject}`);
+      const bodyContent = encodeURIComponent(
+        `Hi Shashank,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nSent via Portfolio Contact Form`
+      );
+
+      const mailtoLink = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
+      
+      window.location.href = mailtoLink;
+    });
+  }
 
 });
