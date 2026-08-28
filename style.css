@@ -479,9 +479,8 @@ ul {
 .hero-photo-wrapper {
   position: relative;
   width: 320px;
-  height: 400px;
+  height: 410px;
   margin: 0 auto 30px auto;
-  cursor: pointer;
 }
 
 .photo-frame {
@@ -491,22 +490,18 @@ ul {
   overflow: hidden;
   border: 2px solid var(--accent-border);
   box-shadow: var(--shadow-hover);
-  background-color: var(--bg-alt);
+  background-color: #f1f5f9;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-}
-
-.hero-photo-wrapper:hover .photo-frame {
-  transform: scale(1.02);
-  box-shadow: 0 20px 40px -4px rgba(15, 23, 42, 0.16);
 }
 
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Floating Badges Base */
+/* Floating Badges Base - ALWAYS VISIBLE */
 .floating-badge {
   position: absolute;
   background-color: #ffffff;
@@ -519,40 +514,38 @@ ul {
   box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
   z-index: 5;
   white-space: nowrap;
-  max-width: 255px;
-  transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 260px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
-/* PHOTO HOVER INTERACTION: All tags smoothly vanish when hovering photo */
-.hero-photo-wrapper:hover .floating-badge {
-  opacity: 0;
-  transform: scale(0.9) translateY(4px);
-  pointer-events: none;
+.floating-badge:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.16);
 }
 
 /* 4 DISTINCT VERTICAL LEVELS (Alternating Left - Right - Left - Right) */
 /* Level 1: Left */
 .badge-level-1 {
   top: 6%;
-  left: -40px;
+  left: -44px;
 }
 
 /* Level 2: Right */
 .badge-level-2 {
   top: 32%;
-  right: -40px;
+  right: -44px;
 }
 
 /* Level 3: Left */
 .badge-level-3 {
   top: 58%;
-  left: -40px;
+  left: -44px;
 }
 
 /* Level 4: Right */
 .badge-level-4 {
   top: 84%;
-  right: -40px;
+  right: -44px;
 }
 
 .badge-icon-box {
@@ -1083,7 +1076,7 @@ ul {
 .modal-dialog {
   position: relative;
   width: 94%;
-  max-width: 1060px;
+  max-width: 1080px;
   max-height: 90vh;
   background-color: #ffffff;
   border-radius: var(--radius-lg);
@@ -1154,36 +1147,36 @@ ul {
 
 .modal-body-split {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   overflow-y: auto;
   flex: 1;
 }
 
+/* Presentation Card Frame inside Left Column */
 .modal-image-col {
   background-color: #f1f5f9;
   padding: 24px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
   border-right: 1px solid var(--accent-border);
 }
 
 .modal-card-visual-frame {
   position: relative;
   width: 100%;
-  min-height: 280px;
-  max-height: 52vh;
+  height: 100%;
+  min-height: 320px;
+  max-height: 56vh;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
   border: 1.5px solid var(--accent-border);
   background-color: #ffffff;
-  padding: 10px;
+  padding: 12px;
 }
 
 .card-visual-badge {
@@ -1204,25 +1197,12 @@ ul {
 
 .modal-cert-image {
   max-width: 100%;
-  max-height: 48vh;
+  max-height: 52vh;
   width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
   border-radius: 6px;
-}
-
-.modal-image-action-row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.modal-fullview-btn {
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 6px 16px;
-  background-color: #ffffff;
 }
 
 .modal-details-col {
@@ -1829,11 +1809,11 @@ a.ci-val:hover {
     padding: 16px;
   }
   .modal-card-visual-frame {
-    min-height: 200px;
-    max-height: 35vh;
+    min-height: 220px;
+    max-height: 38vh;
   }
   .modal-cert-image {
-    max-height: 32vh;
+    max-height: 35vh;
   }
 }
 
@@ -1862,11 +1842,35 @@ a.ci-val:hover {
     font-size: 2.8rem;
   }
   .hero-photo-wrapper {
-    width: 250px;
-    height: 320px;
+    width: 270px;
+    height: 360px;
+  }
+  /* On mobile screens, adjust offsets so badges never clip or hide */
+  .badge-level-1 {
+    left: -16px;
+    top: 4%;
+  }
+  .badge-level-2 {
+    right: -16px;
+    top: 30%;
+  }
+  .badge-level-3 {
+    left: -16px;
+    top: 56%;
+  }
+  .badge-level-4 {
+    right: -16px;
+    top: 82%;
   }
   .floating-badge {
-    display: none;
+    padding: 6px 10px;
+    max-width: 220px;
+  }
+  .badge-title {
+    font-size: 0.76rem;
+  }
+  .badge-subtitle {
+    font-size: 0.65rem;
   }
   .hero-stats-card {
     flex-wrap: wrap;

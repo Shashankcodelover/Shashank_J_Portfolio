@@ -16,7 +16,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-FS-2026',
     type: 'Professional Certification',
     desc: 'Comprehensive full-stack engineering curriculum validation. Covered full MERN architecture (MongoDB, Express.js, React.js, Node.js), client-side state lifecycles, RESTful API design, database indexing, user authentication tokens (JWT), and end-to-end cloud deployment pipelines.',
-    img: 'certificates/cert-mimo-fullstack.png'
+    img: 'certificates/cert-mimo-fullstack.jpg'
   },
   {
     category: 'fullstack',
@@ -28,7 +28,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-FE-2026',
     type: 'Frontend Engineering',
     desc: 'Validated mastery of modern client-facing web architecture: DOM manipulation, modern CSS flexbox & grid design systems, asynchronous JavaScript event loops, responsive layout engineering, and web accessibility standards.',
-    img: 'certificates/cert-mimo-frontend.png'
+    img: 'certificates/cert-mimo-frontend.jpg'
   },
   {
     category: 'fullstack',
@@ -40,7 +40,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-BE-2026',
     type: 'Backend Engineering',
     desc: 'Validated server-side architecture configurations, Node.js runtime fundamentals, Express routing middleware pipelines, request security handling, rate limiting, and structured relational & document database integrations.',
-    img: 'certificates/cert-mimo-backend.png'
+    img: 'certificates/cert-mimo-backend.jpg'
   },
   {
     category: 'fullstack',
@@ -52,7 +52,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-REACT-2026',
     type: 'Modern UI Frameworks',
     desc: 'Advanced React Hooks (useState, useEffect, useMemo, useCallback), unidirectional state management, client-side SPA routing, virtual DOM optimization, custom hooks, and modular UI component composition.',
-    img: 'certificates/cert-mimo-react.png'
+    img: 'certificates/cert-mimo-react.jpg'
   },
   {
     category: 'fullstack',
@@ -64,7 +64,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-SQL-2026',
     type: 'Database Systems',
     desc: 'Relational database querying, multi-table complex JOIN operations, aggregation functions, subqueries, schema constraints, ACID transaction management, and indexing strategies for high-throughput reads.',
-    img: 'certificates/cert-mimo-sql.png'
+    img: 'certificates/cert-mimo-sql.jpg'
   },
   {
     category: 'fullstack',
@@ -76,7 +76,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-PY-2026',
     type: 'Core Programming',
     desc: 'Object-oriented programming in Python, algorithm implementation, script-based data transformations, file I/O streams, automation workflows, and backend service integration patterns.',
-    img: 'certificates/cert-mimo-python.png'
+    img: 'certificates/cert-mimo-python.jpg'
   },
 
   // ── Category 2: AI & Generative AI ──
@@ -271,7 +271,6 @@ function renderModalContent() {
   const modalCategoryTag = document.getElementById('modalCategoryTag');
   const modalCounter = document.getElementById('modalCounter');
   const modalImage = document.getElementById('modalImage');
-  const modalImgFullBtn = document.getElementById('modalImgFullBtn');
   const modalVisualBadge = document.getElementById('modalVisualBadge');
   const modalType = document.getElementById('modalType');
   const modalTitle = document.getElementById('modalTitle');
@@ -286,9 +285,6 @@ function renderModalContent() {
   if (modalImage) {
     modalImage.src = item.img;
     modalImage.alt = item.title;
-  }
-  if (modalImgFullBtn) {
-    modalImgFullBtn.href = item.img;
   }
   if (modalVisualBadge) modalVisualBadge.textContent = item.categoryLabel;
   if (modalType) modalType.textContent = item.type;
