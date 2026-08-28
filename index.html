@@ -13,6 +13,12 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Vercel Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -656,93 +662,97 @@
     <!-- ═══════════════════════════════════════════════════════
          PAGE 7 — CERTIFICATIONS (VERTICAL STICKY STACK)
          ═══════════════════════════════════════════════════════ -->
-    <div class="certs-scroll-wrapper">
-    <section id="certifications">
+        <div class="certs-scroll-wrapper">
+    <section id="certifications" style="text-align: center;">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-title">My <span>Certifications</span></h2>
+          <h2 class="section-title">Agent Gear <span>Journey & Certificates</span></h2>
           <div class="section-divider"></div>
-          <p class="section-subtitle">Professional courses completed to validate development skills. Stacks vertically as you scroll down.</p>
+          <p class="section-subtitle">Explore my authentic AI certifications, full-stack journey, and account details below.</p>
         </div>
 
-        <div class="certs-stack-container" id="certStack">
-          <!-- Card 1 — SQL -->
-          <div class="sticky-card" style="z-index: 1;">
-            <div class="card-image">
-              <img src="certificates/sql.png" alt="SQL Certificate">
-            </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>SQL Database Querying</h3>
-              <p class="card-date">2026</p>
-              <p>Validated relational schema querying, multi-table operations, data mutation handling, and index structure management.</p>
-            </div>
-          </div>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-shimmer" onclick="document.getElementById('journey-content').style.display = 'block'; document.getElementById('account-content').style.display = 'none';">
+                <i class="fas fa-map-marked-alt"></i> Explore Agent Gear Journey & AI Certificates
+            </button>
+            <button class="btn btn-outline" onclick="document.getElementById('account-content').style.display = 'block'; document.getElementById('journey-content').style.display = 'none';">
+                <i class="fas fa-user-circle"></i> Explore Account Details
+            </button>
+        </div>
 
-          <!-- Card 2 — Python development -->
-          <div class="sticky-card" style="z-index: 2;">
-            <div class="card-image">
-              <img src="certificates/Python development.png" alt="Python Development Certificate">
-            </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>Python Development</h3>
-              <p class="card-date">2026</p>
-              <p>Validation of core object-oriented structures, script-based data transformations, and algorithm implementations.</p>
-            </div>
-          </div>
+        <!-- Journey & AI Certificates Content -->
+        <div id="journey-content" style="display: none; animation: fadeIn 0.5s ease; text-align: left;">
+            <div class="certs-stack-container" id="certStack">
+              <!-- Card 1 — GenAI -->
+              <div class="sticky-card" style="z-index: 1;">
+                <div class="card-image">
+                  <img src="certificates/linkedin-learning-genai.jpg" alt="GenAI Certificate">
+                </div>
+                <div class="card-body">
+                  <span class="card-badge"><i class="fas fa-certificate"></i> LinkedIn Learning</span>
+                  <h3>Generative AI</h3>
+                  <p class="card-date">2026</p>
+                  <p>Authentic AI Certificate validating knowledge in Generative AI concepts.</p>
+                </div>
+              </div>
 
-          <!-- Card 3 — Frontend development -->
-          <div class="sticky-card" style="z-index: 3;">
-            <div class="card-image">
-              <img src="certificates/Frontend development.png" alt="Frontend Development Certificate">
-            </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>Frontend Development</h3>
-              <p class="card-date">2026</p>
-              <p>Validated client-facing structures, UI layout rendering, document tree traversal, and responsive web styling.</p>
-            </div>
-          </div>
+              <!-- Card 2 — Mimo Backend -->
+              <div class="sticky-card" style="z-index: 2;">
+                <div class="card-image">
+                  <img src="certificates/mimo-backend.jpg" alt="Backend Certificate">
+                </div>
+                <div class="card-body">
+                  <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
+                  <h3>Backend Development</h3>
+                  <p class="card-date">2026</p>
+                  <p>Validation of server architecture configurations, API routing structures, and database schemas.</p>
+                </div>
+              </div>
 
-          <!-- Card 4 — Backend development -->
-          <div class="sticky-card" style="z-index: 4;">
-            <div class="card-image">
-              <img src="certificates/Back end development.png" alt="Backend Development Certificate">
-            </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>Backend Development</h3>
-              <p class="card-date">2026</p>
-              <p>Validation of server architecture configurations, API routing structures, request security handling, and database schemas.</p>
-            </div>
-          </div>
+              <!-- Card 3 — Mimo Frontend -->
+              <div class="sticky-card" style="z-index: 3;">
+                <div class="card-image">
+                  <img src="certificates/mimo-frontend.jpg" alt="Frontend Certificate">
+                </div>
+                <div class="card-body">
+                  <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
+                  <h3>Frontend Development</h3>
+                  <p class="card-date">2026</p>
+                  <p>Validated client-facing structures, UI layout rendering, and document tree traversal.</p>
+                </div>
+              </div>
 
-          <!-- Card 5 — React -->
-          <div class="sticky-card" style="z-index: 5;">
-            <div class="card-image">
-              <img src="certificates/React.png" alt="React Certificate">
+              <!-- Card 4 — Commit31 -->
+              <div class="sticky-card" style="z-index: 4;">
+                <div class="card-image">
+                  <img src="certificates/commit31-cert.jpg" alt="Commit31 Certificate">
+                </div>
+                <div class="card-body">
+                  <span class="card-badge"><i class="fas fa-certificate"></i> Open Source</span>
+                  <h3>Commit31 Initiative</h3>
+                  <p class="card-date">2026</p>
+                  <p>Certificate of achievement for consistent open-source contributions.</p>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>React Development</h3>
-              <p class="card-date">2026</p>
-              <p>Advanced routing, React Hooks, client state management, component tree optimizations, and modular layout styles.</p>
-            </div>
-          </div>
+        </div>
 
-          <!-- Card 6 — Full stack development -->
-          <div class="sticky-card" style="z-index: 6;">
-            <div class="card-image">
-              <img src="certificates/Full stack development.png" alt="Full-Stack Development Certificate">
+        <!-- Account Details Content -->
+        <div id="account-content" style="display: none; animation: fadeIn 0.5s ease; text-align: left;">
+            <div style="background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid var(--border-light); margin: 0 auto; max-width: 800px;">
+                <h3 style="color: var(--accent); margin-bottom: 20px; font-size: 1.8rem;"><i class="fas fa-id-card"></i> Master Account Details</h3>
+                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 15px;">
+                    <strong>Primary Focus:</strong> Full-Stack Development (MERN ecosystem) & AI Engineering.<br/>
+                    <strong>Education:</strong> B.E. Computer Science & Engineering | JSS Science and Technology University (SJCE), Mysuru.<br/>
+                    <strong>Current Role:</strong> PR Team Member at Persona Plus Club, Hack-Olympic Organizer.<br/>
+                    <strong>Repositories Tracked:</strong> Campus-Search, blood-match-api, Devflow-Pro, GitHub Stats Transparent.<br/>
+                </p>
+                <div style="padding: 15px; background: rgba(255,255,255,0.05); border-left: 4px solid var(--accent); border-radius: 4px; margin-top: 20px;">
+                    <p style="font-style: italic; color: var(--text-muted); margin: 0;">
+                        "To build reliable, scalable software that solves practical operations problems and contributes to the developer community."
+                    </p>
+                </div>
             </div>
-            <div class="card-body">
-              <span class="card-badge"><i class="fas fa-certificate"></i> Mimo</span>
-              <h3>Full-Stack Development</h3>
-              <p class="card-date">June 2026</p>
-              <p>Validation of MERN stack capabilities, routing endpoints, responsive user interfaces, and structured SQL query integrations.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
