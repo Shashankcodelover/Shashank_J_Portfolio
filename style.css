@@ -468,7 +468,7 @@ ul {
   box-shadow: var(--shadow-card);
 }
 
-/* ── Hero Photo & Interactive Floating Badges ────────────── */
+/* ── Hero Photo & 4 Distinct Non-Overlapping Corner Badges ── */
 .hero-visual {
   position: relative;
   display: flex;
@@ -506,60 +506,63 @@ ul {
   object-fit: cover;
 }
 
-/* Floating Badges with High Contrast */
+/* 4 Distinct Corner Floating Badges (Zero Overlap) */
 .floating-badge {
   position: absolute;
   background-color: #ffffff;
   border: 1.5px solid var(--accent-border);
   border-radius: var(--radius-md);
-  padding: 10px 14px;
+  padding: 8px 13px;
   display: flex;
   align-items: center;
   gap: 10px;
   box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
   z-index: 5;
   white-space: nowrap;
+  max-width: 250px;
   transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* PHOTO HOVER INTERACTION: Smoothly fade out badges so photo is 100% clean */
+/* HOVER INTERACTION: When hovering photo, badges vanish cleanly */
 .hero-photo-wrapper:hover .floating-badge {
   opacity: 0;
   transform: scale(0.9) translateY(4px);
   pointer-events: none;
 }
 
+/* 4 Isolated Non-Colliding Corners */
+.badge-top-left {
+  top: -15px;
+  left: -35px;
+}
+
 .badge-top-right {
   top: -15px;
-  right: -25px;
+  right: -35px;
 }
 
-.badge-top-left {
-  top: 10px;
-  left: -40px;
-}
-
-.badge-mid-left {
-  top: 55%;
-  left: -45px;
+.badge-bottom-left {
+  bottom: -15px;
+  left: -35px;
 }
 
 .badge-bottom-right {
   bottom: -15px;
-  right: -20px;
+  right: -35px;
 }
 
 .badge-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-alt);
   color: var(--accent-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   border: 1px solid var(--accent-border);
+  flex-shrink: 0;
 }
 
 .badge-content {
@@ -568,14 +571,14 @@ ul {
 }
 
 .badge-title {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.2;
 }
 
 .badge-subtitle {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   font-weight: 500;
 }

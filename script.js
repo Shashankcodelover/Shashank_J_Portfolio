@@ -1,9 +1,9 @@
 /**
  * Shashank J — Portfolio Interactive Controller
- * Modular Journey Explorer & Data Store
+ * Modular Journey Explorer & Verified Data Store
  */
 
-// ── Complete Data Store for Credentials, Hackathons & Milestones ──
+// ── Complete Data Store with 100% Matched Authentic Notion & Repo Assets ──
 const journeyCredentials = [
   // ── Category 1: Full-Stack Development (Mimo Core) ──
   {
@@ -28,7 +28,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-FE-2026',
     type: 'Frontend Engineering',
     desc: 'Validated mastery of modern client-facing web architecture: DOM manipulation, modern CSS flexbox & grid design systems, asynchronous JavaScript event loops, responsive layout engineering, and web accessibility standards.',
-    img: 'certificates/mimo-frontend.jpg'
+    img: 'certificates/Frontend development.png'
   },
   {
     category: 'fullstack',
@@ -40,7 +40,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-BE-2026',
     type: 'Backend Engineering',
     desc: 'Validated server-side architecture configurations, Node.js runtime fundamentals, Express routing middleware pipelines, request security handling, rate limiting, and structured relational & document database integrations.',
-    img: 'certificates/mimo-backend.jpg'
+    img: 'certificates/Back end development.png'
   },
   {
     category: 'fullstack',
@@ -90,7 +90,7 @@ const journeyCredentials = [
     id: 'NASBA CPE Credits: 2.00 | Field: Information Technology',
     type: 'AI Credential (Accredited)',
     desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
-    img: 'certificates/linkedin-learning-genai.jpg'
+    img: 'certificates/_what_is_generative_ai_linkedin_learning_f64975ec.jpg'
   },
 
   // ── Category 3: Corporate Job Simulations ──
@@ -104,7 +104,7 @@ const journeyCredentials = [
     id: 'Verified Simulation Deliverables',
     type: 'Corporate AI Simulation',
     desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
-    img: 'certificates/linkedin-learning-genai.jpg'
+    img: 'achievements/_genai_job_simulation_bcg_x_via_forage_j_053ae799.jpg'
   },
   {
     category: 'jobs',
@@ -116,7 +116,7 @@ const journeyCredentials = [
     id: 'Verified Forensic Analytics Deliverables',
     type: 'Corporate Analytics Simulation',
     desc: 'Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, data preparation pipelines, and executive summary dashboard creation for senior forensic partners.',
-    img: 'achievements/Deloitte Data Analytics job simulation.png'
+    img: 'achievements/_data_analytics_job_simulation_deloitte__d22216cc.jpg'
   },
 
   // ── Category 4: National Hackathons & Competitions ──
@@ -130,7 +130,7 @@ const journeyCredentials = [
     id: '24-Hour National Hackathon Competitor',
     type: 'National Hackathon',
     desc: 'Competed in the Cybersecurity domain track during an intensive 24-hour sprint. Architected real-time vulnerability detection telemetry and cryptographic integrity mechanisms under strict time constraints.',
-    img: 'achievements/Technotsav hackathon.png'
+    img: 'achievements/_technotsav_2026_participant_competitor__9b5dd75b.jpg'
   },
   {
     category: 'hackathons',
@@ -142,7 +142,7 @@ const journeyCredentials = [
     id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
     type: 'Hackathon Leadership & Operations',
     desc: 'Core organizing team volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
-    img: 'achievements/hack-olympic 2026 hackathon voolenteering .png'
+    img: 'certificates/_hack-olympic_2026_volunteer_organizer_bb462ae6.jpg'
   },
   {
     category: 'hackathons',
@@ -154,7 +154,7 @@ const journeyCredentials = [
     id: 'National Hackathon Participant',
     type: 'National Hackathon',
     desc: 'Competed in developing social-impact engineering solutions tackling regional infrastructure optimization, distributed resource tracking, and high-reliability data services.',
-    img: 'achievements/Vibe with India 2.0 hackathon.png'
+    img: 'certificates/_vibe_with_india_2_0_participant_7287fe0a.jpg'
   },
   {
     category: 'hackathons',
@@ -166,7 +166,7 @@ const journeyCredentials = [
     id: 'Certificate ID: Cer-20260525143636561884',
     type: 'National Hackathon Challenge',
     desc: 'Participated in fast-turnaround product sprints, engineering functional full-stack prototypes and deploying live demonstration instances within competitive hackathon deadlines.',
-    img: 'achievements/hackos-one 2026 hackathon.png'
+    img: 'certificates/_hackos-one_2026_participant_58722d8d.jpg'
   },
   {
     category: 'hackathons',
@@ -178,7 +178,7 @@ const journeyCredentials = [
     id: 'Certificate ID: ABT-HK-GZGXR',
     type: 'Agentic AI Hackathon',
     desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
-    img: 'certificates/linkedin-learning-genai.jpg'
+    img: 'achievements/_vicodathon_2026_participant_3e22be57.jpg'
   },
   {
     category: 'hackathons',
@@ -190,7 +190,7 @@ const journeyCredentials = [
     id: 'Certificate ID: 2025H2S06AID-114351',
     type: 'Agentic AI Challenge',
     desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
-    img: 'certificates/linkedin-learning-genai.jpg'
+    img: 'certificates/_google_cloud_agentic_ai_day_participant_803828df.jpg'
   },
 
   // ── Category 5: Workshops & Open Source Programs ──
@@ -204,7 +204,7 @@ const journeyCredentials = [
     id: 'Verified Open Source Contributor • Pull Shark Badge',
     type: 'Structured Open Source Program',
     desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
-    img: 'certificates/commit31-cert.jpg'
+    img: 'certificates/_commit31_one-month_open-source_program__b876b84b.jpg'
   },
   {
     category: 'workshops',
@@ -216,7 +216,31 @@ const journeyCredentials = [
     id: 'Technical Workshop Certificate',
     type: 'Machine Learning Workshop',
     desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
-    img: 'certificates/Python development.png'
+    img: 'achievements/_hackathons_workshops_jobs_certification_141f916c.jpg'
+  },
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: '\'Hello Python\' Bootcamp — Developer Student Club',
+    issuer: 'Developer Student Club (DSC), JSS STU',
+    founder: 'DSC JSS STU Technical Lead Team',
+    date: 'November 17, 2024',
+    id: 'Bootcamp Certificate',
+    type: 'Python Bootcamp',
+    desc: 'Intensive practical bootcamp focused on core Python syntax, algorithm design, data structures, and script automation.',
+    img: 'achievements/_hackathons_workshops_jobs_certification_5f3b696f.jpg'
+  },
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: '\'Mystery of C\' Workshop — Linux Campus Club',
+    issuer: 'Linux Campus Club (LCC), JSS STU',
+    founder: 'Linux Campus Club Executive Team',
+    date: 'November 8 & 11, 2024',
+    id: 'C Systems Workshop',
+    type: 'C Systems Programming',
+    desc: 'Deep-dive into low-level memory allocation, pointers, struct alignment, and systems programming fundamentals in C.',
+    img: 'achievements/_hackathons_workshops_jobs_certification_ec3b22ab.jpg'
   }
 ];
 
