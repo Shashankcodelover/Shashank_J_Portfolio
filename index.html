@@ -100,15 +100,15 @@
             </div>
           </div>
 
-          <!-- Right Column: Visual Profile & Non-Overlapping 4 Corner Floating Badges -->
+          <!-- Right Column: Visual Profile & 4 Vertical Alternating Levels (Left - Right - Left - Right) -->
           <div class="hero-visual reveal-scale">
             <div class="hero-photo-wrapper" id="heroPhotoWrapper" title="Hover over photo to view clearly">
               <div class="photo-frame">
                 <img src="photo/profile photo.jpeg" alt="Shashank J — Profile Photo" class="profile-img">
               </div>
 
-              <!-- 4 Distinct Non-Overlapping Corner Badges (Smoothly vanish on photo hover) -->
-              <div class="floating-badge badge-top-left">
+              <!-- Level 1: Left Side -->
+              <div class="floating-badge badge-level-1">
                 <div class="badge-icon-box"><i class="fas fa-code-branch"></i></div>
                 <div class="badge-content">
                   <span class="badge-title">Open Source Contributor</span>
@@ -116,7 +116,8 @@
                 </div>
               </div>
 
-              <div class="floating-badge badge-top-right">
+              <!-- Level 2: Right Side -->
+              <div class="floating-badge badge-level-2">
                 <div class="badge-icon-box"><i class="fas fa-laptop-code"></i></div>
                 <div class="badge-content">
                   <span class="badge-title">Hackathon Competitor</span>
@@ -124,7 +125,8 @@
                 </div>
               </div>
 
-              <div class="floating-badge badge-bottom-left">
+              <!-- Level 3: Left Side -->
+              <div class="floating-badge badge-level-3">
                 <div class="badge-icon-box"><i class="fas fa-bullhorn"></i></div>
                 <div class="badge-content">
                   <span class="badge-title">PR Team Member</span>
@@ -132,7 +134,8 @@
                 </div>
               </div>
 
-              <div class="floating-badge badge-bottom-right">
+              <!-- Level 4: Right Side -->
+              <div class="floating-badge badge-level-4">
                 <div class="badge-icon-box"><i class="fas fa-hands-helping"></i></div>
                 <div class="badge-content">
                   <span class="badge-title">HACK-OLYMPIC 2026</span>
@@ -570,7 +573,6 @@
 
     <!-- ═══════════════════════════════════════════
          MODULAR JOURNEY & CREDENTIALS HUB
-         (Initial state: Clean Category Hub Cards with "Explore" Launchers)
          ═══════════════════════════════════════════ -->
     <section id="journey" class="section-bg-alt section-padding">
       <div class="container">
@@ -663,7 +665,7 @@
 
     <!-- ═══════════════════════════════════════════
          INTERACTIVE TWO-PANEL CREDENTIAL INSPECTOR MODAL
-         (Step-by-step modular inspector with Founder / Org / Deliverables)
+         (Guaranteed prominent certificate image display & deep-dive metadata)
          ═══════════════════════════════════════════ -->
     <div class="journey-modal" id="journeyModal" aria-hidden="true">
       <div class="modal-backdrop" id="modalBackdrop"></div>
@@ -673,7 +675,7 @@
         <div class="modal-top-bar">
           <div class="modal-stepper-info">
             <span class="modal-category-tag" id="modalCategoryTag">Credential Category</span>
-            <span class="modal-counter-indicator" id="modalCounter">1 of 18</span>
+            <span class="modal-counter-indicator" id="modalCounter">1 of 19</span>
           </div>
           <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
             <i class="fas fa-times"></i>
@@ -683,11 +685,16 @@
         <!-- Modal Split Body -->
         <div class="modal-body-split">
           
-          <!-- Left Panel: Card Preview & Image Frame -->
+          <!-- Left Panel: Card Preview & Prominent Image Frame -->
           <div class="modal-image-col">
             <div class="modal-card-visual-frame">
-              <div class="card-visual-badge" id="modalVisualBadge">Verified Credential</div>
-              <img src="" alt="Credential Certificate Preview" id="modalImage">
+              <div class="card-visual-badge" id="modalVisualBadge">Verified Proof</div>
+              <img src="certificates/cert-mimo-fullstack.png" alt="Credential Certificate Preview" id="modalImage" class="modal-cert-image">
+            </div>
+            <div class="modal-image-action-row">
+              <a href="certificates/cert-mimo-fullstack.png" target="_blank" rel="noopener noreferrer" id="modalImgFullBtn" class="btn btn-sm btn-outline modal-fullview-btn">
+                <i class="fas fa-search-plus"></i> Open High-Res Certificate <i class="fas fa-external-link-alt"></i>
+              </a>
             </div>
           </div>
 

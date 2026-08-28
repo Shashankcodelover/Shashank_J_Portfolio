@@ -16,7 +16,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-FS-2026',
     type: 'Professional Certification',
     desc: 'Comprehensive full-stack engineering curriculum validation. Covered full MERN architecture (MongoDB, Express.js, React.js, Node.js), client-side state lifecycles, RESTful API design, database indexing, user authentication tokens (JWT), and end-to-end cloud deployment pipelines.',
-    img: 'certificates/Full stack development.png'
+    img: 'certificates/cert-mimo-fullstack.png'
   },
   {
     category: 'fullstack',
@@ -28,7 +28,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-FE-2026',
     type: 'Frontend Engineering',
     desc: 'Validated mastery of modern client-facing web architecture: DOM manipulation, modern CSS flexbox & grid design systems, asynchronous JavaScript event loops, responsive layout engineering, and web accessibility standards.',
-    img: 'certificates/Frontend development.png'
+    img: 'certificates/cert-mimo-frontend.png'
   },
   {
     category: 'fullstack',
@@ -40,7 +40,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-BE-2026',
     type: 'Backend Engineering',
     desc: 'Validated server-side architecture configurations, Node.js runtime fundamentals, Express routing middleware pipelines, request security handling, rate limiting, and structured relational & document database integrations.',
-    img: 'certificates/Back end development.png'
+    img: 'certificates/cert-mimo-backend.png'
   },
   {
     category: 'fullstack',
@@ -52,7 +52,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-REACT-2026',
     type: 'Modern UI Frameworks',
     desc: 'Advanced React Hooks (useState, useEffect, useMemo, useCallback), unidirectional state management, client-side SPA routing, virtual DOM optimization, custom hooks, and modular UI component composition.',
-    img: 'certificates/React.png'
+    img: 'certificates/cert-mimo-react.png'
   },
   {
     category: 'fullstack',
@@ -64,7 +64,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-SQL-2026',
     type: 'Database Systems',
     desc: 'Relational database querying, multi-table complex JOIN operations, aggregation functions, subqueries, schema constraints, ACID transaction management, and indexing strategies for high-throughput reads.',
-    img: 'certificates/sql.png'
+    img: 'certificates/cert-mimo-sql.png'
   },
   {
     category: 'fullstack',
@@ -76,7 +76,7 @@ const journeyCredentials = [
     id: 'Credential ID: MIMO-PY-2026',
     type: 'Core Programming',
     desc: 'Object-oriented programming in Python, algorithm implementation, script-based data transformations, file I/O streams, automation workflows, and backend service integration patterns.',
-    img: 'certificates/Python development.png'
+    img: 'certificates/cert-mimo-python.png'
   },
 
   // ── Category 2: AI & Generative AI ──
@@ -90,7 +90,7 @@ const journeyCredentials = [
     id: 'NASBA CPE Credits: 2.00 | Field: Information Technology',
     type: 'AI Credential (Accredited)',
     desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
-    img: 'certificates/_what_is_generative_ai_linkedin_learning_f64975ec.jpg'
+    img: 'certificates/cert-linkedin-genai.jpg'
   },
 
   // ── Category 3: Corporate Job Simulations ──
@@ -104,7 +104,7 @@ const journeyCredentials = [
     id: 'Verified Simulation Deliverables',
     type: 'Corporate AI Simulation',
     desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
-    img: 'achievements/_genai_job_simulation_bcg_x_via_forage_j_053ae799.jpg'
+    img: 'achievements/sim-bcgx-genai.jpg'
   },
   {
     category: 'jobs',
@@ -116,7 +116,7 @@ const journeyCredentials = [
     id: 'Verified Forensic Analytics Deliverables',
     type: 'Corporate Analytics Simulation',
     desc: 'Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, data preparation pipelines, and executive summary dashboard creation for senior forensic partners.',
-    img: 'achievements/_data_analytics_job_simulation_deloitte__d22216cc.jpg'
+    img: 'achievements/sim-deloitte-analytics.jpg'
   },
 
   // ── Category 4: National Hackathons & Competitions ──
@@ -130,7 +130,7 @@ const journeyCredentials = [
     id: '24-Hour National Hackathon Competitor',
     type: 'National Hackathon',
     desc: 'Competed in the Cybersecurity domain track during an intensive 24-hour sprint. Architected real-time vulnerability detection telemetry and cryptographic integrity mechanisms under strict time constraints.',
-    img: 'achievements/_technotsav_2026_participant_competitor__9b5dd75b.jpg'
+    img: 'achievements/hack-technotsav.jpg'
   },
   {
     category: 'hackathons',
@@ -142,7 +142,7 @@ const journeyCredentials = [
     id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
     type: 'Hackathon Leadership & Operations',
     desc: 'Core organizing team volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
-    img: 'certificates/_hack-olympic_2026_volunteer_organizer_bb462ae6.jpg'
+    img: 'certificates/hack-olympic.jpg'
   },
   {
     category: 'hackathons',
@@ -154,7 +154,7 @@ const journeyCredentials = [
     id: 'National Hackathon Participant',
     type: 'National Hackathon',
     desc: 'Competed in developing social-impact engineering solutions tackling regional infrastructure optimization, distributed resource tracking, and high-reliability data services.',
-    img: 'certificates/_vibe_with_india_2_0_participant_7287fe0a.jpg'
+    img: 'certificates/hack-vibe-india.jpg'
   },
   {
     category: 'hackathons',
@@ -166,7 +166,7 @@ const journeyCredentials = [
     id: 'Certificate ID: Cer-20260525143636561884',
     type: 'National Hackathon Challenge',
     desc: 'Participated in fast-turnaround product sprints, engineering functional full-stack prototypes and deploying live demonstration instances within competitive hackathon deadlines.',
-    img: 'certificates/_hackos-one_2026_participant_58722d8d.jpg'
+    img: 'certificates/hack-hackos.jpg'
   },
   {
     category: 'hackathons',
@@ -178,7 +178,7 @@ const journeyCredentials = [
     id: 'Certificate ID: ABT-HK-GZGXR',
     type: 'Agentic AI Hackathon',
     desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
-    img: 'achievements/_vicodathon_2026_participant_3e22be57.jpg'
+    img: 'achievements/hack-vicodathon.jpg'
   },
   {
     category: 'hackathons',
@@ -190,7 +190,7 @@ const journeyCredentials = [
     id: 'Certificate ID: 2025H2S06AID-114351',
     type: 'Agentic AI Challenge',
     desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
-    img: 'certificates/_google_cloud_agentic_ai_day_participant_803828df.jpg'
+    img: 'certificates/hack-google-agentic.jpg'
   },
 
   // ── Category 5: Workshops & Open Source Programs ──
@@ -204,7 +204,7 @@ const journeyCredentials = [
     id: 'Verified Open Source Contributor • Pull Shark Badge',
     type: 'Structured Open Source Program',
     desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
-    img: 'certificates/_commit31_one-month_open-source_program__b876b84b.jpg'
+    img: 'certificates/prog-commit31.jpg'
   },
   {
     category: 'workshops',
@@ -216,7 +216,7 @@ const journeyCredentials = [
     id: 'Technical Workshop Certificate',
     type: 'Machine Learning Workshop',
     desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
-    img: 'achievements/_hackathons_workshops_jobs_certification_141f916c.jpg'
+    img: 'achievements/ws-ml-dsc.jpg'
   },
   {
     category: 'workshops',
@@ -228,7 +228,7 @@ const journeyCredentials = [
     id: 'Bootcamp Certificate',
     type: 'Python Bootcamp',
     desc: 'Intensive practical bootcamp focused on core Python syntax, algorithm design, data structures, and script automation.',
-    img: 'achievements/_hackathons_workshops_jobs_certification_5f3b696f.jpg'
+    img: 'achievements/ws-hello-python.jpg'
   },
   {
     category: 'workshops',
@@ -240,7 +240,7 @@ const journeyCredentials = [
     id: 'C Systems Workshop',
     type: 'C Systems Programming',
     desc: 'Deep-dive into low-level memory allocation, pointers, struct alignment, and systems programming fundamentals in C.',
-    img: 'achievements/_hackathons_workshops_jobs_certification_ec3b22ab.jpg'
+    img: 'achievements/ws-mystery-c.jpg'
   }
 ];
 
@@ -271,6 +271,7 @@ function renderModalContent() {
   const modalCategoryTag = document.getElementById('modalCategoryTag');
   const modalCounter = document.getElementById('modalCounter');
   const modalImage = document.getElementById('modalImage');
+  const modalImgFullBtn = document.getElementById('modalImgFullBtn');
   const modalVisualBadge = document.getElementById('modalVisualBadge');
   const modalType = document.getElementById('modalType');
   const modalTitle = document.getElementById('modalTitle');
@@ -285,6 +286,9 @@ function renderModalContent() {
   if (modalImage) {
     modalImage.src = item.img;
     modalImage.alt = item.title;
+  }
+  if (modalImgFullBtn) {
+    modalImgFullBtn.href = item.img;
   }
   if (modalVisualBadge) modalVisualBadge.textContent = item.categoryLabel;
   if (modalType) modalType.textContent = item.type;
