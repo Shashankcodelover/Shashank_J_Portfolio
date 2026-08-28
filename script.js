@@ -1,28 +1,328 @@
 /**
  * Shashank J — Portfolio Interactive Controller
- * High-Performance Vanilla JavaScript
+ * Modular Journey Explorer & Data Store
  */
 
+// ── Complete Data Store for Credentials, Hackathons & Milestones ──
+const journeyCredentials = [
+  // ── Category 1: Full-Stack Development (Mimo Core) ──
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'Full-Stack Development Professional Certification',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-FS-2026',
+    type: 'Professional Certification',
+    desc: 'Comprehensive full-stack engineering curriculum validation. Covered full MERN architecture (MongoDB, Express.js, React.js, Node.js), client-side state lifecycles, RESTful API design, database indexing, user authentication tokens (JWT), and end-to-end cloud deployment pipelines.',
+    img: 'certificates/Full stack development.png'
+  },
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'Frontend Development & Responsive Architecture',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-FE-2026',
+    type: 'Frontend Engineering',
+    desc: 'Validated mastery of modern client-facing web architecture: DOM manipulation, modern CSS flexbox & grid design systems, asynchronous JavaScript event loops, responsive layout engineering, and web accessibility standards.',
+    img: 'certificates/mimo-frontend.jpg'
+  },
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'Backend Development & Server Architecture',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-BE-2026',
+    type: 'Backend Engineering',
+    desc: 'Validated server-side architecture configurations, Node.js runtime fundamentals, Express routing middleware pipelines, request security handling, rate limiting, and structured relational & document database integrations.',
+    img: 'certificates/mimo-backend.jpg'
+  },
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'React.js Component Architecture & Hooks',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-REACT-2026',
+    type: 'Modern UI Frameworks',
+    desc: 'Advanced React Hooks (useState, useEffect, useMemo, useCallback), unidirectional state management, client-side SPA routing, virtual DOM optimization, custom hooks, and modular UI component composition.',
+    img: 'certificates/React.png'
+  },
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'SQL Relational Database Querying & Schema Design',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-SQL-2026',
+    type: 'Database Systems',
+    desc: 'Relational database querying, multi-table complex JOIN operations, aggregation functions, subqueries, schema constraints, ACID transaction management, and indexing strategies for high-throughput reads.',
+    img: 'certificates/sql.png'
+  },
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'Python Programming & Software Fundamentals',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-PY-2026',
+    type: 'Core Programming',
+    desc: 'Object-oriented programming in Python, algorithm implementation, script-based data transformations, file I/O streams, automation workflows, and backend service integration patterns.',
+    img: 'certificates/Python development.png'
+  },
+
+  // ── Category 2: AI & Generative AI ──
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'What Is Generative AI? (NASBA Accredited CPE)',
+    issuer: 'LinkedIn Learning',
+    founder: 'National Association of State Boards of Accountancy (NASBA)',
+    date: 'July 25, 2026',
+    id: 'NASBA CPE Credits: 2.00 | Field: Information Technology',
+    type: 'AI Credential (Accredited)',
+    desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
+    img: 'certificates/linkedin-learning-genai.jpg'
+  },
+
+  // ── Category 3: Corporate Job Simulations ──
+  {
+    category: 'jobs',
+    categoryLabel: 'Corporate Job Simulations',
+    title: 'BCG X — Generative AI Job Simulation',
+    issuer: 'BCG X (via Forage Platform)',
+    founder: 'BCG X Data Science & AI Engineering Leadership',
+    date: 'July 25, 2026',
+    id: 'Verified Simulation Deliverables',
+    type: 'Corporate AI Simulation',
+    desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
+    img: 'certificates/linkedin-learning-genai.jpg'
+  },
+  {
+    category: 'jobs',
+    categoryLabel: 'Corporate Job Simulations',
+    title: 'Deloitte Australia — Data Analytics & Forensic Tech',
+    issuer: 'Deloitte Australia (via Forage Platform)',
+    founder: 'Deloitte Forensic Technology Leadership Team',
+    date: 'June 30, 2026',
+    id: 'Verified Forensic Analytics Deliverables',
+    type: 'Corporate Analytics Simulation',
+    desc: 'Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, data preparation pipelines, and executive summary dashboard creation for senior forensic partners.',
+    img: 'achievements/Deloitte Data Analytics job simulation.png'
+  },
+
+  // ── Category 4: National Hackathons & Competitions ──
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'Technotsav 2026 — Cybersecurity Track Competitor',
+    issuer: 'Dept. of CSE (AI&ML) + IEEE CIS, VVCE Mysuru',
+    founder: 'IEEE Computational Intelligence Society & VVCE Faculty',
+    date: 'April 15–16, 2026',
+    id: '24-Hour National Hackathon Competitor',
+    type: 'National Hackathon',
+    desc: 'Competed in the Cybersecurity domain track during an intensive 24-hour sprint. Architected real-time vulnerability detection telemetry and cryptographic integrity mechanisms under strict time constraints.',
+    img: 'achievements/Technotsav hackathon.png'
+  },
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'HACK-OLYMPIC 2026 — Organizing Team Volunteer & Operations',
+    issuer: 'JSS STU + Artsy Technologies',
+    founder: 'Dept. of CSE, JSS STU & Artsy Technologies Leadership',
+    date: 'April 4–5, 2026',
+    id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
+    type: 'Hackathon Leadership & Operations',
+    desc: 'Core organizing team volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
+    img: 'achievements/hack-olympic 2026 hackathon voolenteering .png'
+  },
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'Vibe with India 2.0 National Hackathon',
+    issuer: 'HackWithIndia via DevNovate Platform',
+    founder: 'Aviral Bhardwaj (Founder, HackWithIndia)',
+    date: 'March 20, 2026',
+    id: 'National Hackathon Participant',
+    type: 'National Hackathon',
+    desc: 'Competed in developing social-impact engineering solutions tackling regional infrastructure optimization, distributed resource tracking, and high-reliability data services.',
+    img: 'achievements/Vibe with India 2.0 hackathon.png'
+  },
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'HackOS-ONE 2026 — Edition of Building Opportunity',
+    issuer: 'SCANSKIP / HackOS Organization',
+    founder: 'Yuktha Poorna Deepika.R (Event Coordinator)',
+    date: 'May 2026',
+    id: 'Certificate ID: Cer-20260525143636561884',
+    type: 'National Hackathon Challenge',
+    desc: 'Participated in fast-turnaround product sprints, engineering functional full-stack prototypes and deploying live demonstration instances within competitive hackathon deadlines.',
+    img: 'achievements/hackos-one 2026 hackathon.png'
+  },
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'ViCoDathon 2026 — India\'s AI Vibe Coding Hackathon',
+    issuer: 'AB Talks Organization',
+    founder: 'Anil Bajpai (Founder, AB Talks)',
+    date: 'August 14, 2026',
+    id: 'Certificate ID: ABT-HK-GZGXR',
+    type: 'Agentic AI Hackathon',
+    desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
+    img: 'certificates/linkedin-learning-genai.jpg'
+  },
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'Google Cloud Agentic AI Day Challenge',
+    issuer: 'Google Cloud (powered by Hack2skill)',
+    founder: 'Google Cloud India & Hack2skill Team',
+    date: 'July 2026',
+    id: 'Certificate ID: 2025H2S06AID-114351',
+    type: 'Agentic AI Challenge',
+    desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
+    img: 'certificates/linkedin-learning-genai.jpg'
+  },
+
+  // ── Category 5: Workshops & Open Source Programs ──
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: 'Commit31 — Month-Long Open-Source Contribution Program',
+    issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
+    founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
+    date: 'March 1–31, 2026',
+    id: 'Verified Open Source Contributor • Pull Shark Badge',
+    type: 'Structured Open Source Program',
+    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
+    img: 'certificates/commit31-cert.jpg'
+  },
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: 'Machine Learning Workshop — Developer Student Club',
+    issuer: 'Developer Student Club (DSC), JSS STU',
+    founder: 'DSC JSS STU Lead & Faculty Mentors',
+    date: 'July 2, 2025',
+    id: 'Technical Workshop Certificate',
+    type: 'Machine Learning Workshop',
+    desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
+    img: 'certificates/Python development.png'
+  }
+];
+
+// Current index in active credential list
+let activeCredentialsList = [...journeyCredentials];
+let currentCredentialIndex = 0;
+
+// ── Global Modal Control Functions ──
+window.openJourneyModal = function(index = 0) {
+  activeCredentialsList = [...journeyCredentials];
+  currentCredentialIndex = Math.max(0, Math.min(index, activeCredentialsList.length - 1));
+  renderModalContent();
+  showModal();
+};
+
+window.openJourneyCategory = function(category) {
+  activeCredentialsList = journeyCredentials.filter(c => c.category === category);
+  if (activeCredentialsList.length === 0) activeCredentialsList = [...journeyCredentials];
+  currentCredentialIndex = 0;
+  renderModalContent();
+  showModal();
+};
+
+function renderModalContent() {
+  const item = activeCredentialsList[currentCredentialIndex];
+  if (!item) return;
+
+  const modalCategoryTag = document.getElementById('modalCategoryTag');
+  const modalCounter = document.getElementById('modalCounter');
+  const modalImage = document.getElementById('modalImage');
+  const modalVisualBadge = document.getElementById('modalVisualBadge');
+  const modalType = document.getElementById('modalType');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalIssuer = document.getElementById('modalIssuer');
+  const modalFounder = document.getElementById('modalFounder');
+  const modalDate = document.getElementById('modalDate');
+  const modalId = document.getElementById('modalId');
+  const modalDesc = document.getElementById('modalDesc');
+
+  if (modalCategoryTag) modalCategoryTag.textContent = item.categoryLabel || 'Verified Credential';
+  if (modalCounter) modalCounter.textContent = `${currentCredentialIndex + 1} of ${activeCredentialsList.length}`;
+  if (modalImage) {
+    modalImage.src = item.img;
+    modalImage.alt = item.title;
+  }
+  if (modalVisualBadge) modalVisualBadge.textContent = item.categoryLabel;
+  if (modalType) modalType.textContent = item.type;
+  if (modalTitle) modalTitle.textContent = item.title;
+  if (modalIssuer) modalIssuer.textContent = item.issuer;
+  if (modalFounder) modalFounder.textContent = item.founder;
+  if (modalDate) modalDate.textContent = item.date;
+  if (modalId) modalId.textContent = item.id;
+  if (modalDesc) modalDesc.textContent = item.desc;
+
+  // Button disabled states
+  const prevBtn = document.getElementById('prevCredBtn');
+  const nextBtn = document.getElementById('nextCredBtn');
+  if (prevBtn) prevBtn.disabled = (currentCredentialIndex === 0);
+  if (nextBtn) nextBtn.disabled = (currentCredentialIndex === activeCredentialsList.length - 1);
+}
+
+function showModal() {
+  const modal = document.getElementById('journeyModal');
+  if (modal) {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function hideModal() {
+  const modal = document.getElementById('journeyModal');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+}
+
+function stepCredential(delta) {
+  const newIndex = currentCredentialIndex + delta;
+  if (newIndex >= 0 && newIndex < activeCredentialsList.length) {
+    currentCredentialIndex = newIndex;
+    renderModalContent();
+  }
+}
+
+// ── DOM Ready Initializations ─────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── 1. Scroll Progress Bar ─────────────────────────────────
+  // 1. Scroll Progress Bar
   const scrollProgressBar = document.getElementById('scrollProgress');
   
-  // ── 2. Navigation Bar & Scroll Spy ────────────────────────
+  // 2. Navigation Bar & Scroll Spy
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
   const hamburger = document.getElementById('hamburger');
   const navLinksContainer = document.getElementById('navLinks');
 
-  // Mobile Hamburger Toggle
   if (hamburger && navLinksContainer) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinksContainer.classList.toggle('active');
     });
 
-    // Close mobile nav on click
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -31,18 +331,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll Listener
   window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     
-    // Update progress bar
     if (scrollProgressBar && height > 0) {
       const scrolled = (winScroll / height) * 100;
       scrollProgressBar.style.width = `${scrolled}%`;
     }
 
-    // Navbar elevation on scroll
     if (navbar) {
       if (winScroll > 40) {
         navbar.classList.add('scrolled');
@@ -51,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Scroll Spy: highlight active nav item
     let currentSectionId = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
@@ -68,9 +364,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── 3. Intersection Observer for Smooth Reveal Animations ──
+  // 3. Reveal Animations
   const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
-  
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -78,29 +373,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -30px 0px'
-  });
-
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // ── 4. Animated Stat Counters in Hero ───────────────────────
+  // 4. Hero Animated Counters
   let hasAnimatedCounters = false;
   const statElements = document.querySelectorAll('.hero-stat-num');
-
-  const statsObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasAnimatedCounters) {
-        hasAnimatedCounters = true;
-        animateCounters();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
   const statsContainer = document.querySelector('.hero-stats-card');
+
   if (statsContainer) {
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimatedCounters) {
+          hasAnimatedCounters = true;
+          animateCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
     statsObserver.observe(statsContainer);
   }
 
@@ -108,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statElements.forEach(counter => {
       const target = +counter.getAttribute('data-target');
       const suffix = counter.getAttribute('data-suffix') || '';
-      const duration = 1800; // ms
+      const duration = 1800;
       const steps = 50;
       const stepTime = duration / steps;
       const increment = target / steps;
@@ -126,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 5. Skills Progress Rings Animation ──────────────────────
+  // 5. Skills Progress Rings Animation
   const skillRings = document.querySelectorAll('.ring-fill');
   const circumference = 2 * Math.PI * 50; // ~314.15px
 
@@ -141,112 +431,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const ring = entry.target;
         const percent = +ring.getAttribute('data-percent') || 0;
         const offset = circumference - (percent / 100) * circumference;
-        
         setTimeout(() => {
           ring.style.strokeDashoffset = `${offset}`;
         }, 150);
-
         observer.unobserve(ring);
       }
     });
   }, { threshold: 0.25 });
-
   skillRings.forEach(ring => skillsObserver.observe(ring));
 
-  // ── 6. Modular Journey & Credentials Category Filtering ────
-  const journeyTabs = document.querySelectorAll('.journey-tab-btn');
-  const credCards = document.querySelectorAll('.cred-card');
-
-  journeyTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      journeyTabs.forEach(btn => btn.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filter = tab.getAttribute('data-filter');
-
-      credCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        
-        if (filter === 'all' || cardCategory === filter) {
-          card.style.display = 'flex';
-          card.style.flexDirection = 'column';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(15px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
-        }
-      });
-    });
-  });
-
-  // ── 7. Interactive Credential Inspection Modal ─────────────
-  const journeyModal = document.getElementById('journeyModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalType = document.getElementById('modalType');
-  const modalIssuer = document.getElementById('modalIssuer');
-  const modalDate = document.getElementById('modalDate');
-  const modalDesc = document.getElementById('modalDesc');
+  // 6. Modal Stepper Controls
+  const prevBtn = document.getElementById('prevCredBtn');
+  const nextBtn = document.getElementById('nextCredBtn');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalBackdrop = document.getElementById('modalBackdrop');
 
-  credCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.getAttribute('data-title') || '';
-      const issuer = card.getAttribute('data-issuer') || '';
-      const date = card.getAttribute('data-date') || '';
-      const type = card.getAttribute('data-type') || 'Certification';
-      const desc = card.getAttribute('data-desc') || '';
-      const img = card.getAttribute('data-img') || '';
+  if (prevBtn) prevBtn.addEventListener('click', () => stepCredential(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => stepCredential(1));
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', hideModal);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', hideModal);
 
-      if (modalTitle) modalTitle.textContent = title;
-      if (modalType) modalType.textContent = type;
-      if (modalIssuer) modalIssuer.textContent = issuer;
-      if (modalDate) modalDate.textContent = date;
-      if (modalDesc) modalDesc.textContent = desc;
-      if (modalImage) {
-        modalImage.src = img;
-        modalImage.alt = title;
-      }
-
-      if (journeyModal) {
-        journeyModal.classList.add('active');
-        journeyModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      }
-    });
-  });
-
-  function closeModal() {
-    if (journeyModal) {
-      journeyModal.classList.remove('active');
-      journeyModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-
-  // Close modal on Escape key press
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && journeyModal && journeyModal.classList.contains('active')) {
-      closeModal();
-    }
+    const modal = document.getElementById('journeyModal');
+    if (!modal || !modal.classList.contains('active')) return;
+
+    if (e.key === 'Escape') hideModal();
+    if (e.key === 'ArrowLeft') stepCredential(-1);
+    if (e.key === 'ArrowRight') stepCredential(1);
   });
 
-  // ── 8. Contact Form Email Launch Handler ───────────────────
+  // 7. Contact Form Handler
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
       const name = document.getElementById('contactName')?.value.trim() || '';
       const email = document.getElementById('contactEmail')?.value.trim() || '';
       const subject = document.getElementById('contactSubject')?.value.trim() || 'Portfolio Inquiry';
@@ -258,9 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `Hi Shashank,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\nSent via Portfolio Contact Form`
       );
 
-      const mailtoLink = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
-      
-      window.location.href = mailtoLink;
+      window.location.href = `mailto:${recipient}?subject=${fullSubject}&body=${bodyContent}`;
     });
   }
 
