@@ -79,7 +79,19 @@ const journeyCredentials = [
     img: 'certificates/cert-mimo-python.jpg'
   },
 
-  // ── Category 2: AI & Generative AI ──
+  // ── Category 2: AI, Generative AI & Agentic Systems ──
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'BCG X — Generative AI Job Simulation',
+    issuer: 'BCG X (via Forage Platform)',
+    founder: 'BCG X Data Science & AI Engineering Leadership',
+    date: 'July 25, 2026',
+    id: 'Verified Simulation Deliverables',
+    type: 'Corporate AI Simulation',
+    desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
+    img: 'achievements/sim-bcgx-genai.jpg'
+  },
   {
     category: 'ai',
     categoryLabel: 'AI & Generative AI Systems',
@@ -92,20 +104,44 @@ const journeyCredentials = [
     desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
     img: 'certificates/cert-linkedin-genai.jpg'
   },
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'Google Cloud Agentic AI Day Challenge',
+    issuer: 'Google Cloud (powered by Hack2skill)',
+    founder: 'Google Cloud India & Hack2skill Team',
+    date: 'July 2026',
+    id: 'Certificate ID: 2025H2S06AID-114351',
+    type: 'Agentic AI Challenge',
+    desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
+    img: 'certificates/hack-google-agentic.jpg'
+  },
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'ViCoDathon 2026 — India\'s AI Vibe Coding Hackathon',
+    issuer: 'AB Talks Organization',
+    founder: 'Anil Bajpai (Founder, AB Talks)',
+    date: 'August 14, 2026',
+    id: 'Certificate ID: ABT-HK-GZGXR',
+    type: 'Agentic AI Hackathon',
+    desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
+    img: 'achievements/hack-vicodathon.jpg'
+  },
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'Machine Learning Workshop — Developer Student Club',
+    issuer: 'Developer Student Club (DSC), JSS STU',
+    founder: 'DSC JSS STU Lead & Faculty Mentors',
+    date: 'July 2, 2025',
+    id: 'Technical Workshop Certificate',
+    type: 'Machine Learning Workshop',
+    desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
+    img: 'achievements/ws-ml-dsc.jpg'
+  },
 
   // ── Category 3: Corporate Job Simulations ──
-  {
-    category: 'jobs',
-    categoryLabel: 'Corporate Job Simulations',
-    title: 'BCG X — Generative AI Job Simulation',
-    issuer: 'BCG X (via Forage Platform)',
-    founder: 'BCG X Data Science & AI Engineering Leadership',
-    date: 'July 25, 2026',
-    id: 'Verified Simulation Deliverables',
-    type: 'Corporate AI Simulation',
-    desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
-    img: 'achievements/sim-bcgx-genai.jpg'
-  },
   {
     category: 'jobs',
     categoryLabel: 'Corporate Job Simulations',
@@ -168,30 +204,6 @@ const journeyCredentials = [
     desc: 'Participated in fast-turnaround product sprints, engineering functional full-stack prototypes and deploying live demonstration instances within competitive hackathon deadlines.',
     img: 'certificates/hack-hackos.jpg'
   },
-  {
-    category: 'hackathons',
-    categoryLabel: 'Hackathons & Competitions',
-    title: 'ViCoDathon 2026 — India\'s AI Vibe Coding Hackathon',
-    issuer: 'AB Talks Organization',
-    founder: 'Anil Bajpai (Founder, AB Talks)',
-    date: 'August 14, 2026',
-    id: 'Certificate ID: ABT-HK-GZGXR',
-    type: 'Agentic AI Hackathon',
-    desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
-    img: 'achievements/hack-vicodathon.jpg'
-  },
-  {
-    category: 'hackathons',
-    categoryLabel: 'Hackathons & Competitions',
-    title: 'Google Cloud Agentic AI Day Challenge',
-    issuer: 'Google Cloud (powered by Hack2skill)',
-    founder: 'Google Cloud India & Hack2skill Team',
-    date: 'July 2026',
-    id: 'Certificate ID: 2025H2S06AID-114351',
-    type: 'Agentic AI Challenge',
-    desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
-    img: 'certificates/hack-google-agentic.jpg'
-  },
 
   // ── Category 5: Workshops & Open Source Programs ──
   {
@@ -205,18 +217,6 @@ const journeyCredentials = [
     type: 'Structured Open Source Program',
     desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
     img: 'certificates/prog-commit31.jpg'
-  },
-  {
-    category: 'workshops',
-    categoryLabel: 'Workshops & Open Source',
-    title: 'Machine Learning Workshop — Developer Student Club',
-    issuer: 'Developer Student Club (DSC), JSS STU',
-    founder: 'DSC JSS STU Lead & Faculty Mentors',
-    date: 'July 2, 2025',
-    id: 'Technical Workshop Certificate',
-    type: 'Machine Learning Workshop',
-    desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
-    img: 'achievements/ws-ml-dsc.jpg'
   },
   {
     category: 'workshops',
@@ -257,7 +257,39 @@ window.openJourneyModal = function(index = 0) {
 };
 
 window.openJourneyCategory = function(category) {
-  activeCredentialsList = journeyCredentials.filter(c => c.category === category);
+  if (category === 'ai') {
+    activeCredentialsList = journeyCredentials.filter(c => 
+      c.category === 'ai' || 
+      c.title.includes('BCG X') || 
+      c.title.includes('Agentic AI') || 
+      c.title.includes('ViCoDathon') || 
+      c.title.includes('Machine Learning')
+    );
+  } else if (category === 'jobs') {
+    activeCredentialsList = journeyCredentials.filter(c => 
+      c.category === 'jobs' || 
+      c.title.includes('BCG X') || 
+      c.title.includes('Deloitte')
+    );
+  } else if (category === 'hackathons') {
+    activeCredentialsList = journeyCredentials.filter(c => 
+      c.category === 'hackathons' || 
+      c.title.includes('ViCoDathon') || 
+      c.title.includes('Agentic AI')
+    );
+  } else if (category === 'fullstack') {
+    activeCredentialsList = journeyCredentials.filter(c => c.category === 'fullstack');
+  } else if (category === 'workshops') {
+    activeCredentialsList = journeyCredentials.filter(c => 
+      c.category === 'workshops' || 
+      c.title.includes('Commit31') || 
+      c.title.includes('Workshop') || 
+      c.title.includes('Bootcamp')
+    );
+  } else {
+    activeCredentialsList = [...journeyCredentials];
+  }
+  
   if (activeCredentialsList.length === 0) activeCredentialsList = [...journeyCredentials];
   currentCredentialIndex = 0;
   renderModalContent();
