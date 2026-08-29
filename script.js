@@ -248,12 +248,23 @@ const journeyCredentials = [
 let activeCredentialsList = [...journeyCredentials];
 let currentCredentialIndex = 0;
 
+// Helper to scroll modal panels back to top
+function scrollToModalTop() {
+  const modalBody = document.querySelector('.modal-body-split');
+  const modalDetails = document.querySelector('.modal-details-col');
+  const modalDialog = document.querySelector('.modal-dialog');
+  if (modalBody) modalBody.scrollTo({ top: 0, behavior: 'smooth' });
+  if (modalDetails) modalDetails.scrollTo({ top: 0, behavior: 'smooth' });
+  if (modalDialog) modalDialog.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 // ── Global Modal Control Functions ──
 window.openJourneyModal = function(index = 0) {
   activeCredentialsList = [...journeyCredentials];
   currentCredentialIndex = Math.max(0, Math.min(index, activeCredentialsList.length - 1));
   renderModalContent();
   showModal();
+  scrollToModalTop();
 };
 
 window.openJourneyCategory = function(category) {
@@ -294,6 +305,7 @@ window.openJourneyCategory = function(category) {
   currentCredentialIndex = 0;
   renderModalContent();
   showModal();
+  scrollToModalTop();
 };
 
 function renderModalContent() {
@@ -327,11 +339,24 @@ function renderModalContent() {
   if (modalId) modalId.textContent = item.id;
   if (modalDesc) modalDesc.textContent = item.desc;
 
-  // Button disabled states
+  // Stepper Buttons state
   const prevBtn = document.getElementById('prevCredBtn');
   const nextBtn = document.getElementById('nextCredBtn');
-  if (prevBtn) prevBtn.disabled = (currentCredentialIndex === 0);
-  if (nextBtn) nextBtn.disabled = (currentCredentialIndex === activeCredentialsList.length - 1);
+  
+  if (prevBtn) {
+    prevBtn.disabled = (currentCredentialIndex === 0);
+  }
+  
+  if (nextBtn) {
+    const isLast = (currentCredentialIndex === activeCredentialsList.length - 1);
+    if (isLast) {
+      nextBtn.innerHTML = `Done &amp; Close <i class="fas fa-check"></i>`;
+      nextBtn.classList.add('btn-done');
+    } else {
+      nextBtn.innerHTML = `Next <i class="fas fa-arrow-right"></i>`;
+      nextBtn.classList.remove('btn-done');
+    }
+  }
 }
 
 function showModal() {
@@ -353,10 +378,17 @@ function hideModal() {
 }
 
 function stepCredential(delta) {
+  // If on the last item and user clicks Next (delta > 0), close the modal!
+  if (delta > 0 && currentCredentialIndex >= activeCredentialsList.length - 1) {
+    hideModal();
+    return;
+  }
+
   const newIndex = currentCredentialIndex + delta;
   if (newIndex >= 0 && newIndex < activeCredentialsList.length) {
     currentCredentialIndex = newIndex;
     renderModalContent();
+    scrollToModalTop();
   }
 }
 

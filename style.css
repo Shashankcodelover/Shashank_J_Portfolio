@@ -1335,6 +1335,17 @@ ul {
   justify-content: space-between;
 }
 
+.btn-done {
+  background-color: #15803d !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
+}
+
+.btn-done:hover {
+  background-color: #166534 !important;
+  border-color: #166534 !important;
+}
+
 /* ── Technical Arsenal & Skills ──────────────────────────── */
 .skills-grid {
   display: grid;
