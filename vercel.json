@@ -1,4 +1,4 @@
-{
+﻿{
   "redirects": [
     {
       "source": "/campussearch",
@@ -7,6 +7,10 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/campussearch/",
+      "destination": "https://campus-search-theta.vercel.app/index.html"
+    },
     {
       "source": "/campussearch/:match*",
       "destination": "https://campus-search-theta.vercel.app/:match*"
