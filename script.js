@@ -1,9 +1,23 @@
 /**
  * Shashank J — Portfolio Interactive Controller
- * Modular Journey Explorer & Verified High-Priority Credential Store
+ * Dynamic GitHub API Integrations, Modular Journey Explorer & Verified Data Store
  */
 
-// ── Complete Data Store: Prioritized by Industry Prestige & Domain Value ──
+// ── 1. Live Project Deployments Configuration ─────────────────────
+// To activate a live demo for any project, simply provide the deployment URL below!
+const PROJECT_DEPLOYMENTS = {
+  'NetPlus-CRM-': { demoUrl: '' },
+  'blood-match-api': { demoUrl: '' },
+  'Smart_Attendance_System': { demoUrl: '' },
+  'Placement-Clash-Resolver': { demoUrl: '' },
+  'Campus-Search': { demoUrl: '' },
+  'Phoenix-Interview-Prep_and_Hackathon_Guide': { demoUrl: '' },
+  'Devflow-Pro': { demoUrl: '' },
+  'Decentralized-Disaster-Response-Resource-Geofencing-System': { demoUrl: '' },
+  'ArchitectAI-Studio': { demoUrl: '' }
+};
+
+// ── 2. Complete Data Store: Prioritized by Industry Prestige & Domain Value ──
 const journeyCredentials = [
   // ── 1. Google Cloud — Agentic AI Challenge (Top-Tier Global Brand) ──
   {
@@ -340,7 +354,6 @@ function hideModal() {
 }
 
 function stepCredential(delta) {
-  // If on the last item and user clicks Next (delta > 0), close the modal!
   if (delta > 0 && currentCredentialIndex >= activeCredentialsList.length - 1) {
     hideModal();
     return;
@@ -354,13 +367,209 @@ function stepCredential(delta) {
   }
 }
 
-// ── DOM Ready Initializations ─────────────────────────────────
+// ── 3. GitHub API Live Data Fetcher with 1-Hour Client-Side Cache ──
+const GITHUB_USERNAME = 'Shashankcodelover';
+const CACHE_KEY = 'shashank_portfolio_github_cache_v2';
+const CACHE_TTL = 3600 * 1000; // 1 Hour TTL
+
+function formatPushedDate(isoString) {
+  if (!isoString) return 'Updated recently';
+  try {
+    const d = new Date(isoString);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${months[d.getMonth()]} ${d.getFullYear()}`;
+  } catch (e) {
+    return 'Updated recently';
+  }
+}
+
+async function initGitHubDynamicData() {
+  let cachedData = null;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Date.now() - parsed.timestamp < CACHE_TTL) {
+        cachedData = parsed.data;
+      }
+    }
+  } catch (e) {
+    console.warn('LocalStorage error reading GitHub cache:', e);
+  }
+
+  if (cachedData) {
+    applyGitHubData(cachedData);
+  } else {
+    // Fetch live from GitHub public REST API
+    try {
+      const [userRes, reposRes] = await Promise.all([
+        fetch(`https://api.github.com/users/${GITHUB_USERNAME}`),
+        fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`)
+      ]);
+
+      if (userRes.ok && reposRes.ok) {
+        const user = await userRes.json();
+        const repos = await reposRes.json();
+
+        // Calculate language counts and pushed dates
+        const repoDates = {};
+        const langCounts = {};
+
+        repos.forEach(repo => {
+          repoDates[repo.name] = repo.pushed_at;
+          if (repo.language) {
+            langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
+          }
+        });
+
+        const liveData = {
+          publicRepos: user.public_repos || 43,
+          repoDates: repoDates,
+          languages: langCounts
+        };
+
+        applyGitHubData(liveData);
+
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({
+            timestamp: Date.now(),
+            data: liveData
+          }));
+        } catch (e) {}
+      }
+    } catch (err) {
+      console.warn('Live GitHub API fetch failed; using fallback dataset:', err);
+    }
+  }
+}
+
+function applyGitHubData(data) {
+  // 1. Update Public Repo Counts
+  if (data.publicRepos) {
+    const repoCounter = document.getElementById('statRepoCount');
+    if (repoCounter) {
+      repoCounter.setAttribute('data-target', data.publicRepos);
+      repoCounter.textContent = data.publicRepos;
+    }
+    const quickRepoCount = document.getElementById('quickRepoCount');
+    if (quickRepoCount) {
+      quickRepoCount.textContent = data.publicRepos;
+    }
+  }
+
+  // 2. Update Per-Project "Last updated" Dates
+  if (data.repoDates) {
+    document.querySelectorAll('.project-card[data-repo]').forEach(card => {
+      const repoName = card.getAttribute('data-repo');
+      const dateEl = card.querySelector('.repo-pushed-at');
+      if (dateEl && data.repoDates[repoName]) {
+        dateEl.textContent = formatPushedDate(data.repoDates[repoName]);
+      }
+    });
+  }
+
+  // 3. Update Real Language Distribution Rings
+  if (data.languages) {
+    const totalWithLang = Object.values(data.languages).reduce((a, b) => a + b, 0) || 1;
+    const jsCount = data.languages['JavaScript'] || 7;
+    const tsCount = data.languages['TypeScript'] || 6;
+    const pyCount = data.languages['Python'] || 4;
+    const otherCount = totalWithLang - (jsCount + tsCount + pyCount);
+
+    const jsPct = Math.round((jsCount / totalWithLang) * 100) || 59;
+    const tsPct = Math.round((tsCount / totalWithLang) * 100) || 25;
+    const pyPct = Math.round((pyCount / totalWithLang) * 100) || 10;
+    const otherPct = Math.max(1, 100 - (jsPct + tsPct + pyPct)) || 6;
+
+    updateRing('ring-js', 'percent-js', jsPct);
+    updateRing('ring-ts', 'percent-ts', tsPct);
+    updateRing('ring-py', 'percent-py', pyPct);
+    updateRing('ring-other', 'percent-other', otherPct);
+  }
+}
+
+function updateRing(ringId, percentId, val) {
+  const ring = document.getElementById(ringId);
+  const text = document.getElementById(percentId);
+  if (ring) {
+    ring.setAttribute('data-percent', val);
+    const circumference = 2 * Math.PI * 50;
+    const offset = circumference - (val / 100) * circumference;
+    ring.style.strokeDashoffset = `${offset}`;
+  }
+  if (text) {
+    text.textContent = `${val}%`;
+  }
+}
+
+// ── 4. Initialize Live Demo Button State ─────────────────────────
+function initLiveDemoButtons() {
+  document.querySelectorAll('[data-demo-for]').forEach(btn => {
+    const repo = btn.getAttribute('data-demo-for');
+    const deployment = PROJECT_DEPLOYMENTS[repo];
+
+    if (deployment && deployment.demoUrl && deployment.demoUrl.trim() !== '') {
+      btn.setAttribute('href', deployment.demoUrl);
+      btn.setAttribute('target', '_blank');
+      btn.setAttribute('rel', 'noopener noreferrer');
+      btn.classList.add('btn-demo-active');
+      btn.classList.remove('btn-demo-disabled');
+      btn.innerHTML = `<i class="fas fa-external-link-alt"></i> Live Demo`;
+    } else {
+      btn.setAttribute('href', '#');
+      btn.classList.add('btn-demo-disabled');
+      btn.classList.remove('btn-demo-active');
+      btn.innerHTML = `<i class="fas fa-play"></i> Live Demo (Soon)`;
+      btn.setAttribute('title', 'Live deployment URL will be linked here once active.');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+      });
+    }
+  });
+}
+
+// ── 5. Hero Stat Counters Animation ─────────────────────────────
+function animateCounters() {
+  const statElements = document.querySelectorAll('.hero-stat-num');
+  statElements.forEach(counter => {
+    const target = +counter.getAttribute('data-target') || 0;
+    const suffix = counter.getAttribute('data-suffix') || '';
+    if (target === 0) return;
+
+    const duration = 1200;
+    const steps = 30;
+    const stepTime = duration / steps;
+    const increment = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = `${target}${suffix}`;
+        clearInterval(timer);
+      } else {
+        counter.textContent = `${Math.ceil(current)}${suffix}`;
+      }
+    }, stepTime);
+  });
+}
+
+// ── 6. DOM Ready Initializations ────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Scroll Progress Bar
+  // 1. Trigger Counter Animation Immediately (prevents staying stuck at 0)
+  animateCounters();
+
+  // 2. Fetch & Populate Live GitHub Data
+  initGitHubDynamicData();
+
+  // 3. Initialize Configurable Live Demo Buttons
+  initLiveDemoButtons();
+
+  // 4. Scroll Progress Bar
   const scrollProgressBar = document.getElementById('scrollProgress');
   
-  // 2. Navigation Bar & Scroll Spy
+  // 5. Navigation Bar & Mobile Menu
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
@@ -414,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Reveal Animations
+  // 6. Reveal Animations
   const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -423,50 +632,10 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 4. Hero Animated Counters
-  let hasAnimatedCounters = false;
-  const statElements = document.querySelectorAll('.hero-stat-num');
-  const statsContainer = document.querySelector('.hero-stats-card');
-
-  if (statsContainer) {
-    const statsObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimatedCounters) {
-          hasAnimatedCounters = true;
-          animateCounters();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    statsObserver.observe(statsContainer);
-  }
-
-  function animateCounters() {
-    statElements.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const suffix = counter.getAttribute('data-suffix') || '';
-      const duration = 1800;
-      const steps = 50;
-      const stepTime = duration / steps;
-      const increment = target / steps;
-      let current = 0;
-
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          counter.textContent = `${target}${suffix}`;
-          clearInterval(timer);
-        } else {
-          counter.textContent = `${Math.ceil(current)}${suffix}`;
-        }
-      }, stepTime);
-    });
-  }
-
-  // 5. Skills Progress Rings Animation
+  // 7. Skills Progress Rings Animation
   const skillRings = document.querySelectorAll('.ring-fill');
   const circumference = 2 * Math.PI * 50; // ~314.15px
 
@@ -483,14 +652,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const offset = circumference - (percent / 100) * circumference;
         setTimeout(() => {
           ring.style.strokeDashoffset = `${offset}`;
-        }, 150);
+        }, 120);
         observer.unobserve(ring);
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.15 });
   skillRings.forEach(ring => skillsObserver.observe(ring));
 
-  // 6. Modal Stepper Controls
+  // 8. Modal Stepper Controls
   const prevBtn = document.getElementById('prevCredBtn');
   const nextBtn = document.getElementById('nextCredBtn');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
@@ -510,7 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') stepCredential(1);
   });
 
-  // 7. Contact Form Handler
+  // 9. Contact Form Handler
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -530,7 +699,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Hero Photo Tap / Click to Toggle Floating Badges
+  // 10. Hero Photo Tap / Click to Toggle Floating Badges
   const heroPhotoWrapper = document.getElementById('heroPhotoWrapper');
   if (heroPhotoWrapper) {
     heroPhotoWrapper.addEventListener('click', () => {

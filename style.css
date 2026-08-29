@@ -989,8 +989,78 @@ ul {
   border-top: 1px solid var(--accent-border);
   padding-top: 18px;
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-meta-row {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.project-updated-label {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-updated-label i {
+  font-size: 0.72rem;
+  color: var(--accent-blue);
+}
+
+.project-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.project-action-btns .btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.btn-demo-disabled {
+  background-color: var(--bg-alt) !important;
+  color: var(--text-muted) !important;
+  border: 1px dashed var(--accent-border) !important;
+  cursor: default !important;
+  opacity: 0.85;
+  box-shadow: none !important;
+}
+
+.btn-demo-disabled:hover {
+  transform: none !important;
+  border-color: var(--accent-border) !important;
+}
+
+.btn-demo-active {
+  background-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+
+.btn-demo-active:hover {
+  background-color: var(--accent-blue) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.skill-cat-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 2px;
 }
 
 /* ── Modular Journey & Category Hub Cards ─────────────────── */

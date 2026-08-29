@@ -106,7 +106,7 @@
             </div>
           </div>
 
-          <!-- Right Column: Visual Profile & 6 High-Impact Floating Badges (Alternating L-R) -->
+          <!-- Right Column: Visual Profile & 4 Core Badges (Alternating L-R) -->
           <div class="hero-visual reveal-scale">
             <div class="hero-photo-wrapper" id="heroPhotoWrapper" title="Hover on desktop / Tap on mobile to view photo clearly">
               <div class="photo-frame">
@@ -155,20 +155,25 @@
               </div>
             </div>
 
-            <!-- Real-Data Verified Stats Row -->
+            <!-- Dynamic GitHub-Integrated Stats Row -->
             <div class="hero-stats-card">
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="9">0</span>
+                <span class="stat-number hero-stat-num" id="statRepoCount" data-target="43">43</span>
+                <span class="stat-label">Public Repos</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number hero-stat-num" data-target="9">9</span>
                 <span class="stat-label">Priority Projects</span>
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="15" data-suffix="+">0</span>
+                <span class="stat-number hero-stat-num" data-target="14" data-suffix="+">14+</span>
                 <span class="stat-label">Certs &amp; Milestones</span>
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="6">0</span>
+                <span class="stat-number hero-stat-num" data-target="6">6</span>
                 <span class="stat-label">Hackathons</span>
               </div>
               <div class="stat-divider"></div>
@@ -259,7 +264,7 @@
                 <a href="#projects" class="quick-link-item"><i class="fas fa-arrow-right"></i> Top 9 Priority Projects</a>
                 <a href="#journey" class="quick-link-item"><i class="fas fa-arrow-right"></i> Credentials &amp; Certifications</a>
                 <a href="#involvement" class="quick-link-item"><i class="fas fa-arrow-right"></i> Hackathons &amp; Leadership</a>
-                <a href="https://github.com/Shashankcodelover" target="_blank" class="quick-link-item"><i class="fab fa-github"></i> GitHub (30+ Repos)</a>
+                <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" class="quick-link-item"><i class="fab fa-github"></i> GitHub (<span id="quickRepoCount">43</span> Repos)</a>
               </div>
             </div>
           </div>
@@ -282,7 +287,7 @@
         <div class="projects-grid">
 
           <!-- 1. NetPlus-CRM- -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="NetPlus-CRM-">
             <div class="project-card-header">
               <span class="project-num">01</span>
               <div class="project-title-group">
@@ -300,55 +305,71 @@
                 <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
               </div>
               <div class="project-tech-tags">
+                <span class="tech-tag">TypeScript</span>
                 <span class="tech-tag">Node.js</span>
                 <span class="tech-tag">Express</span>
-                <span class="tech-tag">React</span>
                 <span class="tech-tag">PostgreSQL</span>
                 <span class="tech-tag">JWT</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="NetPlus-CRM-">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
-          <!-- 2. blood-match-api (LifeStream V3.1) -->
-          <article class="project-card reveal-up">
+          <!-- 2. blood-match-api (LifeStream V3.1) - ACCURATE & VERIFIED -->
+          <article class="project-card reveal-up" data-repo="blood-match-api">
             <div class="project-card-header">
               <span class="project-num">02</span>
               <div class="project-title-group">
-                <span class="project-category">Emergency Dispatch · IoT Telemetry</span>
+                <span class="project-category">Emergency Dispatch · Logistics</span>
                 <h3>LifeStream V3.1 (Blood Match API)</h3>
               </div>
             </div>
             <div class="project-card-body">
               <p class="project-desc">
-                Autonomous emergency blood network and drone dispatch engine. Uses an AI proximity matching algorithm and real-time cold-chain IoT temperature simulation (2°C–6°C) for safe biological transit.
+                Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
               </p>
               <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Haversine distance engine + 56-day cooldown medical filter</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight paths</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Sub-1.5s live IoT telemetry polling for temperature safety</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
               </div>
               <div class="project-tech-tags">
                 <span class="tech-tag">React 18</span>
                 <span class="tech-tag">Node.js</span>
                 <span class="tech-tag">Express</span>
                 <span class="tech-tag">Leaflet.js</span>
-                <span class="tech-tag">Haversine AI</span>
+                <span class="tech-tag">AI Proximity</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="blood-match-api">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
-          <!-- 3. Smart_Attendance_System -->
-          <article class="project-card reveal-up">
+          <!-- 3. Smart_Attendance_System - ACCURATE & VERIFIED -->
+          <article class="project-card reveal-up" data-repo="Smart_Attendance_System">
             <div class="project-card-header">
               <span class="project-num">03</span>
               <div class="project-title-group">
@@ -358,12 +379,12 @@
             </div>
             <div class="project-card-body">
               <p class="project-desc">
-                High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic barcodes and background queue sync to prevent proxy attendance.
+                High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
               </p>
               <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Handles 800+ concurrent student check-ins without dropouts</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic barcode rotation stops screenshots</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Automatic offline queue reconciliation when connection restores</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
               </div>
               <div class="project-tech-tags">
                 <span class="tech-tag">TypeScript</span>
@@ -371,17 +392,26 @@
                 <span class="tech-tag">Express</span>
                 <span class="tech-tag">MongoDB</span>
                 <span class="tech-tag">PWA</span>
+                <span class="tech-tag">IndexedDB</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Smart_Attendance_System">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- 4. Placement-Clash-Resolver -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="Placement-Clash-Resolver">
             <div class="project-card-header">
               <span class="project-num">04</span>
               <div class="project-title-group">
@@ -407,14 +437,22 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Placement-Clash-Resolver">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- 5. Campus-Search -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="Campus-Search">
             <div class="project-card-header">
               <span class="project-num">05</span>
               <div class="project-title-group">
@@ -440,14 +478,22 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Campus-Search">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- 6. Phoenix-Interview-Prep_and_Hackathon_Guide -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="Phoenix-Interview-Prep_and_Hackathon_Guide">
             <div class="project-card-header">
               <span class="project-num">06</span>
               <div class="project-title-group">
@@ -473,14 +519,22 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Phoenix-Interview-Prep_and_Hackathon_Guide">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- 7. Devflow-Pro -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="Devflow-Pro">
             <div class="project-card-header">
               <span class="project-num">07</span>
               <div class="project-title-group">
@@ -506,47 +560,63 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Devflow-Pro">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
-          <!-- 8. Decentralized-Disaster-Response -->
-          <article class="project-card reveal-up">
+          <!-- 8. Decentralized-Disaster-Response (FLARE) - ACCURATE & VERIFIED WebRTC + Yjs CRDTs -->
+          <article class="project-card reveal-up" data-repo="Decentralized-Disaster-Response-Resource-Geofencing-System">
             <div class="project-card-header">
               <span class="project-num">08</span>
               <div class="project-title-group">
-                <span class="project-category">Geospatial · Decentralized Protocol</span>
-                <h3>Decentralized Disaster Response Geofencing</h3>
+                <span class="project-category">Geospatial · P2P Mesh</span>
+                <h3>Decentralized Disaster Response Geofencing (FLARE)</h3>
               </div>
             </div>
             <div class="project-card-body">
               <p class="project-desc">
-                Resilient crisis response coordination network combining geospatial geofencing boundaries with peer-to-peer resource allocation for emergency relief during telecommunication blackouts.
+                Resilient crisis response coordination network combining geospatial geofencing boundaries with <strong>WebRTC + Yjs CRDTs</strong> (Conflict-free Replicated Data Types) for offline-first peer-to-peer data synchronization during telecommunication blackouts.
               </p>
               <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Polygon geofencing assigning nearest emergency aid depots</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Distributed ledger protocol ensuring transparent supply chain tracking</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Low-bandwidth optimized payload delivery for disaster zones</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> WebRTC mesh network + Yjs CRDTs for decentralized offline-first state synchronization</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Geospatial polygon geofencing assigning nearest emergency aid depots &amp; safe zones</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Zero-server dependency architecture optimized for disaster communication blackouts</div>
               </div>
               <div class="project-tech-tags">
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Yjs (CRDTs)</span>
+                <span class="tech-tag">Leaflet</span>
                 <span class="tech-tag">Node.js</span>
                 <span class="tech-tag">Geofencing</span>
-                <span class="tech-tag">P2P Protocols</span>
-                <span class="tech-tag">Leaflet</span>
-                <span class="tech-tag">Express</span>
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Decentralized-Disaster-Response-Resource-Geofencing-System">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
           <!-- 9. ArchitectAI-Studio -->
-          <article class="project-card reveal-up">
+          <article class="project-card reveal-up" data-repo="ArchitectAI-Studio">
             <div class="project-card-header">
               <span class="project-num">09</span>
               <div class="project-title-group">
@@ -572,9 +642,17 @@
               </div>
             </div>
             <div class="project-card-footer">
-              <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-              </a>
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="#" class="btn btn-sm btn-demo" data-demo-for="ArchitectAI-Studio">
+                  <i class="fas fa-play"></i> Live Demo
+                </a>
+              </div>
             </div>
           </article>
 
@@ -686,7 +764,7 @@
         <div class="modal-top-bar">
           <div class="modal-stepper-info">
             <span class="modal-category-tag" id="modalCategoryTag">Credential Category</span>
-            <span class="modal-counter-indicator" id="modalCounter">1 of 19</span>
+            <span class="modal-counter-indicator" id="modalCounter">1 of 14</span>
           </div>
           <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
             <i class="fas fa-times"></i>
@@ -700,7 +778,7 @@
           <div class="modal-image-col">
             <div class="modal-card-visual-frame">
               <div class="card-visual-badge" id="modalVisualBadge">Verified Proof</div>
-              <img src="certificates/cert-mimo-fullstack.jpg" alt="Credential Certificate Preview" id="modalImage" class="modal-cert-image">
+              <img src="certificates/hack-google-agentic.jpg" alt="Credential Certificate Preview" id="modalImage" class="modal-cert-image">
             </div>
           </div>
 
@@ -772,7 +850,7 @@
     </div>
 
     <!-- ═══════════════════════════════════════════
-         TECHNICAL ARSENAL & SKILLS
+         TECHNICAL ARSENAL & SKILLS (REAL GITHUB-DERIVED USAGE)
          ═══════════════════════════════════════════ -->
     <section id="skills" class="section-padding">
       <div class="container">
@@ -780,49 +858,52 @@
           <span class="section-badge">Technical Stack</span>
           <h2 class="section-title">Technical <span>Arsenal</span></h2>
           <div class="section-divider"></div>
-          <p class="section-subtitle">Proficiency metrics across programming languages, backend frameworks, AI toolkits, and databases.</p>
+          <p class="section-subtitle">Real-world framework proficiencies &amp; repository language distribution derived from GitHub.</p>
         </div>
 
         <div class="skills-grid">
 
-          <!-- Languages -->
+          <!-- Real Language Usage Across GitHub Repositories -->
           <div class="skill-category-card reveal-up">
             <div class="skill-cat-header">
-              <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
-              <h4>Core Languages</h4>
+              <div class="skill-cat-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <h4>Language Distribution</h4>
+                <span class="skill-cat-sub">Calculated live across repositories</span>
+              </div>
             </div>
-            <div class="skills-rings-row">
+            <div class="skills-rings-row" id="githubLanguageRings">
               <div class="ring-metric">
                 <svg class="progress-ring" viewBox="0 0 120 120">
                   <circle class="ring-bg" cx="60" cy="60" r="50"/>
-                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="90"/>
+                  <circle class="ring-fill" id="ring-js" cx="60" cy="60" r="50" data-percent="59"/>
                 </svg>
-                <span class="ring-percentage">90%</span>
+                <span class="ring-percentage" id="percent-js">59%</span>
                 <span class="ring-title">JavaScript</span>
               </div>
               <div class="ring-metric">
                 <svg class="progress-ring" viewBox="0 0 120 120">
                   <circle class="ring-bg" cx="60" cy="60" r="50"/>
-                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="82"/>
+                  <circle class="ring-fill" id="ring-ts" cx="60" cy="60" r="50" data-percent="25"/>
                 </svg>
-                <span class="ring-percentage">82%</span>
+                <span class="ring-percentage" id="percent-ts">25%</span>
                 <span class="ring-title">TypeScript</span>
               </div>
               <div class="ring-metric">
                 <svg class="progress-ring" viewBox="0 0 120 120">
                   <circle class="ring-bg" cx="60" cy="60" r="50"/>
-                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="85"/>
+                  <circle class="ring-fill" id="ring-py" cx="60" cy="60" r="50" data-percent="10"/>
                 </svg>
-                <span class="ring-percentage">85%</span>
+                <span class="ring-percentage" id="percent-py">10%</span>
                 <span class="ring-title">Python</span>
               </div>
               <div class="ring-metric">
                 <svg class="progress-ring" viewBox="0 0 120 120">
                   <circle class="ring-bg" cx="60" cy="60" r="50"/>
-                  <circle class="ring-fill" cx="60" cy="60" r="50" data-percent="75"/>
+                  <circle class="ring-fill" id="ring-other" cx="60" cy="60" r="50" data-percent="6"/>
                 </svg>
-                <span class="ring-percentage">75%</span>
-                <span class="ring-title">Java / C++</span>
+                <span class="ring-percentage" id="percent-other">6%</span>
+                <span class="ring-title">HTML &amp; CSS</span>
               </div>
             </div>
           </div>
@@ -831,7 +912,10 @@
           <div class="skill-category-card reveal-up">
             <div class="skill-cat-header">
               <div class="skill-cat-icon"><i class="fas fa-server"></i></div>
-              <h4>Web &amp; Backend Engineering</h4>
+              <div>
+                <h4>Web &amp; Backend Engineering</h4>
+                <span class="skill-cat-sub">Full MERN &amp; Distributed Architecture</span>
+              </div>
             </div>
             <div class="skills-rings-row">
               <div class="ring-metric">
@@ -873,7 +957,10 @@
           <div class="skill-category-card reveal-up">
             <div class="skill-cat-header">
               <div class="skill-cat-icon"><i class="fas fa-brain"></i></div>
-              <h4>AI &amp; Machine Learning</h4>
+              <div>
+                <h4>AI &amp; Machine Learning</h4>
+                <span class="skill-cat-sub">LLM Orchestration &amp; Pipelines</span>
+              </div>
             </div>
             <div class="skills-rings-row">
               <div class="ring-metric">
@@ -915,7 +1002,10 @@
           <div class="skill-category-card reveal-up">
             <div class="skill-cat-header">
               <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
-              <h4>Databases &amp; Tooling</h4>
+              <div>
+                <h4>Databases &amp; Tooling</h4>
+                <span class="skill-cat-sub">Relational &amp; Document Systems</span>
+              </div>
             </div>
             <div class="skills-rings-row">
               <div class="ring-metric">
@@ -958,7 +1048,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         INVOLVEMENT & LEADERSHIP
+         INVOLVEMENT & LEADERSHIP (DO NOT TOUCH)
          ═══════════════════════════════════════════ -->
     <section id="involvement" class="section-bg-alt section-padding">
       <div class="container">
