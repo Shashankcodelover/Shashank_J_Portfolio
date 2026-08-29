@@ -1,109 +1,11 @@
 /**
  * Shashank J — Portfolio Interactive Controller
- * Modular Journey Explorer & Verified Data Store
+ * Modular Journey Explorer & Verified High-Priority Credential Store
  */
 
-// ── Complete Data Store with 100% Matched Authentic Notion & Repo Assets ──
+// ── Complete Data Store: Prioritized by Industry Prestige & Domain Value ──
 const journeyCredentials = [
-  // ── Category 1: Full-Stack Development (Mimo Core) ──
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'Full-Stack Development Professional Certification',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-FS-2026',
-    type: 'Professional Certification',
-    desc: 'Comprehensive full-stack engineering curriculum validation. Covered full MERN architecture (MongoDB, Express.js, React.js, Node.js), client-side state lifecycles, RESTful API design, database indexing, user authentication tokens (JWT), and end-to-end cloud deployment pipelines.',
-    img: 'certificates/cert-mimo-fullstack.jpg'
-  },
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'Frontend Development & Responsive Architecture',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-FE-2026',
-    type: 'Frontend Engineering',
-    desc: 'Validated mastery of modern client-facing web architecture: DOM manipulation, modern CSS flexbox & grid design systems, asynchronous JavaScript event loops, responsive layout engineering, and web accessibility standards.',
-    img: 'certificates/cert-mimo-frontend.jpg'
-  },
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'Backend Development & Server Architecture',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-BE-2026',
-    type: 'Backend Engineering',
-    desc: 'Validated server-side architecture configurations, Node.js runtime fundamentals, Express routing middleware pipelines, request security handling, rate limiting, and structured relational & document database integrations.',
-    img: 'certificates/cert-mimo-backend.jpg'
-  },
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'React.js Component Architecture & Hooks',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-REACT-2026',
-    type: 'Modern UI Frameworks',
-    desc: 'Advanced React Hooks (useState, useEffect, useMemo, useCallback), unidirectional state management, client-side SPA routing, virtual DOM optimization, custom hooks, and modular UI component composition.',
-    img: 'certificates/cert-mimo-react.jpg'
-  },
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'SQL Relational Database Querying & Schema Design',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-SQL-2026',
-    type: 'Database Systems',
-    desc: 'Relational database querying, multi-table complex JOIN operations, aggregation functions, subqueries, schema constraints, ACID transaction management, and indexing strategies for high-throughput reads.',
-    img: 'certificates/cert-mimo-sql.jpg'
-  },
-  {
-    category: 'fullstack',
-    categoryLabel: 'Full-Stack Web Development',
-    title: 'Python Programming & Software Fundamentals',
-    issuer: 'Mimo (Accredited Platform)',
-    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
-    date: 'June 12, 2026',
-    id: 'Credential ID: MIMO-PY-2026',
-    type: 'Core Programming',
-    desc: 'Object-oriented programming in Python, algorithm implementation, script-based data transformations, file I/O streams, automation workflows, and backend service integration patterns.',
-    img: 'certificates/cert-mimo-python.jpg'
-  },
-
-  // ── Category 2: AI, Generative AI & Agentic Systems ──
-  {
-    category: 'ai',
-    categoryLabel: 'AI & Generative AI Systems',
-    title: 'BCG X — Generative AI Job Simulation',
-    issuer: 'BCG X (via Forage Platform)',
-    founder: 'BCG X Data Science & AI Engineering Leadership',
-    date: 'July 25, 2026',
-    id: 'Verified Simulation Deliverables',
-    type: 'Corporate AI Simulation',
-    desc: 'Engineered an AI-powered financial analysis chatbot. Conducted automated financial document parsing (10-K filings), created structured data extraction pipelines, and benchmarked chatbot financial reasoning accuracy for corporate clients.',
-    img: 'achievements/sim-bcgx-genai.jpg'
-  },
-  {
-    category: 'ai',
-    categoryLabel: 'AI & Generative AI Systems',
-    title: 'What Is Generative AI? (NASBA Accredited CPE)',
-    issuer: 'LinkedIn Learning',
-    founder: 'National Association of State Boards of Accountancy (NASBA)',
-    date: 'July 25, 2026',
-    id: 'NASBA CPE Credits: 2.00 | Field: Information Technology',
-    type: 'AI Credential (Accredited)',
-    desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
-    img: 'certificates/cert-linkedin-genai.jpg'
-  },
+  // ── 1. Google Cloud — Agentic AI Challenge (Top-Tier Global Brand) ──
   {
     category: 'ai',
     categoryLabel: 'AI & Generative AI Systems',
@@ -113,35 +15,25 @@ const journeyCredentials = [
     date: 'July 2026',
     id: 'Certificate ID: 2025H2S06AID-114351',
     type: 'Agentic AI Challenge',
-    desc: 'Designed and submitted multi-agent autonomous system architectures addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
+    desc: 'Architected and engineered multi-agent autonomous system prototypes addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
     img: 'certificates/hack-google-agentic.jpg'
   },
+
+  // ── 2. BCG X — Generative AI Financial Chatbot Simulation ──
   {
-    category: 'ai',
-    categoryLabel: 'AI & Generative AI Systems',
-    title: 'ViCoDathon 2026 — India\'s AI Vibe Coding Hackathon',
-    issuer: 'AB Talks Organization',
-    founder: 'Anil Bajpai (Founder, AB Talks)',
-    date: 'August 14, 2026',
-    id: 'Certificate ID: ABT-HK-GZGXR',
-    type: 'Agentic AI Hackathon',
-    desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
-    img: 'achievements/hack-vicodathon.jpg'
-  },
-  {
-    category: 'ai',
-    categoryLabel: 'AI & Generative AI Systems',
-    title: 'Machine Learning Workshop — Developer Student Club',
-    issuer: 'Developer Student Club (DSC), JSS STU',
-    founder: 'DSC JSS STU Lead & Faculty Mentors',
-    date: 'July 2, 2025',
-    id: 'Technical Workshop Certificate',
-    type: 'Machine Learning Workshop',
-    desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
-    img: 'achievements/ws-ml-dsc.jpg'
+    category: 'jobs',
+    categoryLabel: 'Corporate Job Simulations',
+    title: 'BCG X — Generative AI Job Simulation',
+    issuer: 'BCG X (via Forage Platform)',
+    founder: 'BCG X Data Science & AI Engineering Leadership',
+    date: 'July 25, 2026',
+    id: 'Verified Simulation Deliverables',
+    type: 'Corporate AI Simulation',
+    desc: 'Engineered an AI-powered financial analysis chatbot for corporate clients. Automated structured 10-K financial document extraction pipelines and benchmarked chatbot financial reasoning accuracy.',
+    img: 'achievements/sim-bcgx-genai.jpg'
   },
 
-  // ── Category 3: Corporate Job Simulations ──
+  // ── 3. Deloitte Australia — Forensic Tech & Data Analytics ──
   {
     category: 'jobs',
     categoryLabel: 'Corporate Job Simulations',
@@ -155,7 +47,35 @@ const journeyCredentials = [
     img: 'achievements/sim-deloitte-analytics.jpg'
   },
 
-  // ── Category 4: National Hackathons & Competitions ──
+  // ── 4. LinkedIn Learning / NASBA CPE — Generative AI Certification ──
+  {
+    category: 'ai',
+    categoryLabel: 'AI & Generative AI Systems',
+    title: 'What Is Generative AI? (NASBA Accredited CPE)',
+    issuer: 'LinkedIn Learning',
+    founder: 'National Association of State Boards of Accountancy (NASBA)',
+    date: 'July 25, 2026',
+    id: 'NASBA CPE Credits: 2.00 | Field: Information Technology',
+    type: 'AI Credential (Accredited)',
+    desc: 'Formal certification covering core Generative AI architectures, foundation models, LLM application development, prompt engineering methodologies, neural language models, and practical integration of AI agents into software engineering workflows.',
+    img: 'certificates/cert-linkedin-genai.jpg'
+  },
+
+  // ── 5. Open Source Milestone — Commit31 Linux Campus Club ──
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: 'Commit31 — Month-Long Open-Source Contribution Program',
+    issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
+    founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
+    date: 'March 1–31, 2026',
+    id: 'Verified Open Source Contributor • Pull Shark Badge',
+    type: 'Structured Open Source Program',
+    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
+    img: 'certificates/prog-commit31.jpg'
+  },
+
+  // ── 6. Technotsav 2026 — Cybersecurity Track (IEEE CIS + VVCE) ──
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
@@ -168,18 +88,36 @@ const journeyCredentials = [
     desc: 'Competed in the Cybersecurity domain track during an intensive 24-hour sprint. Architected real-time vulnerability detection telemetry and cryptographic integrity mechanisms under strict time constraints.',
     img: 'achievements/hack-technotsav.jpg'
   },
+
+  // ── 7. ViCoDathon 2026 — AI Vibe Coding Hackathon ──
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
-    title: 'HACK-OLYMPIC 2026 — Organizing Team Volunteer & Operations',
+    title: 'ViCoDathon 2026 — India\'s AI Vibe Coding Hackathon',
+    issuer: 'AB Talks Organization',
+    founder: 'Anil Bajpai (Founder, AB Talks)',
+    date: 'August 14, 2026',
+    id: 'Certificate ID: ABT-HK-GZGXR',
+    type: 'Agentic AI Hackathon',
+    desc: 'Competed in India\'s premier AI Vibe Coding challenge: accelerated autonomous prototyping utilizing modern coding agents, LLM pipelines, prompt-driven scaffolding, and rapid production deployment.',
+    img: 'achievements/hack-vicodathon.jpg'
+  },
+
+  // ── 8. HACK-OLYMPIC 2026 — Organizing Team Volunteer (JSS Mahavidyapeetha) ──
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'HACK-OLYMPIC 2026 — Organizing Team Volunteer',
     issuer: 'JSS STU + Artsy Technologies',
     founder: 'Dept. of CSE, JSS STU & Artsy Technologies Leadership',
     date: 'April 4–5, 2026',
     id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
-    type: 'Hackathon Leadership & Operations',
-    desc: 'Core organizing team volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
+    type: 'Hackathon Leadership & Operations Volunteer',
+    desc: 'Core operations volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
     img: 'certificates/hack-olympic.jpg'
   },
+
+  // ── 9. Vibe with India 2.0 National Hackathon ──
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
@@ -192,6 +130,8 @@ const journeyCredentials = [
     desc: 'Competed in developing social-impact engineering solutions tackling regional infrastructure optimization, distributed resource tracking, and high-reliability data services.',
     img: 'certificates/hack-vibe-india.jpg'
   },
+
+  // ── 10. HackOS-ONE 2026 Challenge ──
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
@@ -205,19 +145,35 @@ const journeyCredentials = [
     img: 'certificates/hack-hackos.jpg'
   },
 
-  // ── Category 5: Workshops & Open Source Programs ──
+  // ── 11. Machine Learning Workshop (Developer Student Club / Google DSC) ──
   {
     category: 'workshops',
     categoryLabel: 'Workshops & Open Source',
-    title: 'Commit31 — Month-Long Open-Source Contribution Program',
-    issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
-    founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
-    date: 'March 1–31, 2026',
-    id: 'Verified Open Source Contributor • Pull Shark Badge',
-    type: 'Structured Open Source Program',
-    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
-    img: 'certificates/prog-commit31.jpg'
+    title: 'Machine Learning Workshop — Developer Student Club',
+    issuer: 'Developer Student Club (DSC), JSS STU',
+    founder: 'DSC JSS STU Lead & Faculty Mentors',
+    date: 'July 2, 2025',
+    id: 'Technical Workshop Certificate',
+    type: 'Machine Learning Workshop',
+    desc: 'Hands-on technical workshop covering data manipulation pipelines in NumPy/Pandas, supervised regression & classification models with scikit-learn, and neural network fundamentals.',
+    img: 'achievements/ws-ml-dsc.jpg'
   },
+
+  // ── 12. Full-Stack Web Development Master Professional Certification ──
+  {
+    category: 'fullstack',
+    categoryLabel: 'Full-Stack Web Development',
+    title: 'Full-Stack Development Professional Certification',
+    issuer: 'Mimo (Accredited Platform)',
+    founder: 'Johannes Berger (Co-Founder & CEO, Mimo)',
+    date: 'June 12, 2026',
+    id: 'Credential ID: MIMO-FS-2026',
+    type: 'Professional Certification',
+    desc: 'Comprehensive full-stack engineering curriculum validation. Covered full MERN architecture (MongoDB, Express.js, React.js, Node.js), client-side state lifecycles, RESTful API design, database indexing, user authentication tokens (JWT), and end-to-end cloud deployment pipelines.',
+    img: 'certificates/cert-mimo-fullstack.jpg'
+  },
+
+  // ── 13. 'Hello Python' Bootcamp (DSC JSS STU) ──
   {
     category: 'workshops',
     categoryLabel: 'Workshops & Open Source',
@@ -230,6 +186,8 @@ const journeyCredentials = [
     desc: 'Intensive practical bootcamp focused on core Python syntax, algorithm design, data structures, and script automation.',
     img: 'achievements/ws-hello-python.jpg'
   },
+
+  // ── 14. 'Mystery of C' Workshop (Linux Campus Club) ──
   {
     category: 'workshops',
     categoryLabel: 'Workshops & Open Source',
@@ -272,7 +230,7 @@ window.openJourneyCategory = function(category) {
     activeCredentialsList = journeyCredentials.filter(c => 
       c.category === 'ai' || 
       c.title.includes('BCG X') || 
-      c.title.includes('Agentic AI') || 
+      c.title.includes('Google Cloud') || 
       c.title.includes('ViCoDathon') || 
       c.title.includes('Machine Learning')
     );
@@ -285,8 +243,12 @@ window.openJourneyCategory = function(category) {
   } else if (category === 'hackathons') {
     activeCredentialsList = journeyCredentials.filter(c => 
       c.category === 'hackathons' || 
+      c.title.includes('Technotsav') || 
       c.title.includes('ViCoDathon') || 
-      c.title.includes('Agentic AI')
+      c.title.includes('HACK-OLYMPIC') || 
+      c.title.includes('Google Cloud') || 
+      c.title.includes('Vibe with India') || 
+      c.title.includes('HackOS')
     );
   } else if (category === 'fullstack') {
     activeCredentialsList = journeyCredentials.filter(c => c.category === 'fullstack');
