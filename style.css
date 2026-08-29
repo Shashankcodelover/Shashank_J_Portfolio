@@ -489,7 +489,7 @@ ul {
   box-shadow: var(--shadow-card);
 }
 
-/* ── Hero Photo & Desktop Floating Badges ────────────────── */
+/* ── Hero Photo & 6 Floating Badges ──────────────────────── */
 .hero-visual {
   position: relative;
   display: flex;
@@ -501,8 +501,9 @@ ul {
 .hero-photo-wrapper {
   position: relative;
   width: 320px;
-  height: 410px;
+  height: 420px;
   margin: 0 auto 30px auto;
+  cursor: pointer;
 }
 
 .photo-frame {
@@ -528,13 +529,17 @@ ul {
   display: block;
 }
 
-/* Desktop Floating Badges Base */
+.photo-tap-hint {
+  display: none;
+}
+
+/* Floating Badges Base */
 .floating-badge {
   position: absolute;
   background-color: #ffffff;
   border: 1.5px solid var(--accent-border);
   border-radius: var(--radius-md);
-  padding: 8px 14px;
+  padding: 7px 13px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -545,7 +550,7 @@ ul {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
-/* Desktop Hover: Badges smoothly fade when mouse moves over photo */
+/* Desktop Hover: Badges smoothly fade when mouse hovers on photo */
 @media (hover: hover) and (pointer: fine) {
   .hero-photo-wrapper:hover .floating-badge {
     opacity: 0;
@@ -554,37 +559,54 @@ ul {
   }
 }
 
-/* 4 DISTINCT VERTICAL LEVELS (Alternating Left - Right - Left - Right on Desktop) */
+/* When user taps on photo on mobile (or toggles), smoothly hide badges */
+.hero-photo-wrapper.badges-hidden .floating-badge {
+  opacity: 0 !important;
+  transform: scale(0.85) !important;
+  pointer-events: none !important;
+}
+
+/* 6 DISTINCT VERTICAL LEVELS (Alternating Left - Right - Left - Right) */
 .badge-level-1 {
-  top: 6%;
-  left: -44px;
+  top: 2%;
+  left: -46px;
 }
 
 .badge-level-2 {
-  top: 32%;
-  right: -44px;
+  top: 19%;
+  right: -46px;
 }
 
 .badge-level-3 {
-  top: 58%;
-  left: -44px;
+  top: 36%;
+  left: -46px;
 }
 
 .badge-level-4 {
-  top: 84%;
-  right: -44px;
+  top: 53%;
+  right: -46px;
+}
+
+.badge-level-5 {
+  top: 70%;
+  left: -46px;
+}
+
+.badge-level-6 {
+  top: 87%;
+  right: -46px;
 }
 
 .badge-icon-box {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-alt);
   color: var(--accent-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   border: 1px solid var(--accent-border);
   flex-shrink: 0;
 }
@@ -595,14 +617,14 @@ ul {
 }
 
 .badge-title {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-main);
   line-height: 1.2;
 }
 
 .badge-subtitle {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   font-weight: 500;
 }
@@ -1903,48 +1925,88 @@ a.ci-val:hover {
     font-size: 0.98rem;
   }
   
-  /* Mobile Profile Photo: 100% Clean & Full View */
+  /* Mobile Profile Photo Wrapper (Perfect Width, Zero Overflow) */
   .hero-photo-wrapper {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    margin: 0 auto 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    width: 270px;
+    height: 380px;
+    margin: 0 auto 24px auto;
+    position: relative;
+    cursor: pointer;
   }
   
   .photo-frame {
-    width: 240px;
-    height: 300px;
-    flex-shrink: 0;
-    margin-bottom: 8px;
+    width: 100%;
+    height: 100%;
   }
 
-  /* On Mobile: Badges sit in a clean row/column BELOW the photo (NO OVERLAYS & NO HORIZONTAL OVERFLOW) */
+  /* Sleek Hint Badge on Mobile */
+  .photo-tap-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-light);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Compact Floating Badges on Mobile (Within Screen Bounds) */
   .floating-badge {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: 100% !important;
-    max-width: 300px !important;
-    box-sizing: border-box !important;
-    transform: none !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    margin: 0 auto;
-    padding: 8px 12px;
-    justify-content: flex-start;
+    position: absolute !important;
+    padding: 5px 9px;
+    max-width: 155px;
+    border-radius: 10px;
+    gap: 7px;
+    z-index: 5;
+    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.14);
+  }
+
+  .badge-icon-box {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+    border-radius: 6px;
   }
 
   .badge-title {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
+    line-height: 1.15;
+    white-space: normal;
   }
   .badge-subtitle {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
+    white-space: normal;
+  }
+
+  /* Tight, well-proportioned mobile offsets (Zero horizontal scroll) */
+  .badge-level-1 {
+    top: 2%;
+    left: -10px;
+  }
+  .badge-level-2 {
+    top: 18%;
+    right: -10px;
+  }
+  .badge-level-3 {
+    top: 35%;
+    left: -10px;
+  }
+  .badge-level-4 {
+    top: 52%;
+    right: -10px;
+  }
+  .badge-level-5 {
+    top: 69%;
+    left: -10px;
+  }
+  .badge-level-6 {
+    top: 86%;
+    right: -10px;
   }
 
   .hero-stats-card {

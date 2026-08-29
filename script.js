@@ -568,4 +568,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 8. Hero Photo Tap / Click to Toggle Floating Badges
+  const heroPhotoWrapper = document.getElementById('heroPhotoWrapper');
+  if (heroPhotoWrapper) {
+    heroPhotoWrapper.addEventListener('click', () => {
+      heroPhotoWrapper.classList.toggle('badges-hidden');
+    });
+  }
+
 });
