@@ -19,6 +19,10 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+
   <!-- Vercel Web Analytics -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -272,17 +276,25 @@
             </div>
 
             <!-- LinkedIn Profile Card in About Sidebar -->
-            <div class="linkedin-badge-card reveal-right">
-              <div class="linkedin-card-header">
-                <i class="fab fa-linkedin linkedin-icon-main"></i>
-                <div>
-                  <h4>Verified LinkedIn Profile</h4>
-                  <span class="linkedin-card-sub">Shashank J • Software Engineer</span>
+            <div class="custom-linkedin-card reveal-right" style="margin-top: 24px;">
+              <div class="li-card-banner"></div>
+              <div class="li-card-body">
+                <div class="li-avatar-wrap">
+                  <img src="photo/profile-photo.jpeg" alt="Shashank J — LinkedIn Profile" class="li-avatar-img">
+                  <div class="li-logo-pill"><i class="fab fa-linkedin-in"></i></div>
                 </div>
-              </div>
-              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="shashank-j-code-lover" data-version="v1">
-                <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashank-j-code-lover?trk=profile-badge">
-                  <i class="fab fa-linkedin"></i> View Shashank J on LinkedIn
+                <div class="li-info-wrap">
+                  <div class="li-name-row">
+                    <h4 class="li-name">Shashank J</h4>
+                    <span class="li-badge-verified" title="Verified LinkedIn Member"><i class="fas fa-check-circle"></i></span>
+                  </div>
+                  <p class="li-headline">Computer Science Scholar • JSS STU (SJCE), Mysuru | Full-Stack &amp; AI Builder</p>
+                  <div class="li-org-meta">
+                    <i class="fas fa-university"></i> JSS Science and Technology University
+                  </div>
+                </div>
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="li-connect-btn">
+                  <i class="fab fa-linkedin"></i> View Profile on LinkedIn <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
             </div>
@@ -1273,12 +1285,26 @@
               </div>
             </div>
 
-            <!-- Official Verified LinkedIn Profile Badge -->
-            <div class="linkedin-badge-wrapper">
-              <span class="linkedin-badge-heading"><i class="fab fa-linkedin"></i> Verified LinkedIn Profile</span>
-              <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="shashank-j-code-lover" data-version="v1">
-                <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shashank-j-code-lover?trk=profile-badge">
-                  <i class="fab fa-linkedin"></i> View Shashank J on LinkedIn
+            <!-- Official Verified LinkedIn Profile Card -->
+            <div class="custom-linkedin-card" style="margin-top: 24px;">
+              <div class="li-card-banner"></div>
+              <div class="li-card-body">
+                <div class="li-avatar-wrap">
+                  <img src="photo/profile-photo.jpeg" alt="Shashank J — LinkedIn Profile" class="li-avatar-img">
+                  <div class="li-logo-pill"><i class="fab fa-linkedin-in"></i></div>
+                </div>
+                <div class="li-info-wrap">
+                  <div class="li-name-row">
+                    <h4 class="li-name">Shashank J</h4>
+                    <span class="li-badge-verified" title="Verified LinkedIn Member"><i class="fas fa-check-circle"></i></span>
+                  </div>
+                  <p class="li-headline">Computer Science Scholar • JSS STU (SJCE), Mysuru | Full-Stack &amp; AI Builder</p>
+                  <div class="li-org-meta">
+                    <i class="fas fa-university"></i> JSS Science and Technology University
+                  </div>
+                </div>
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="li-connect-btn">
+                  <i class="fab fa-linkedin"></i> Connect on LinkedIn <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
             </div>

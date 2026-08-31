@@ -1792,121 +1792,143 @@ a.ci-val:hover {
   background-color: #084e96;
 }
 
-/* Official LinkedIn Profile Badge Cards */
-.linkedin-badge-card {
+/* Custom Official-Style Verified LinkedIn Profile Card Component */
+.custom-linkedin-card {
+  width: 100%;
+  max-width: 320px;
   background-color: var(--bg-card);
-  border: 1.5px solid var(--accent-border);
+  border: 1px solid var(--accent-border);
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
   text-align: center;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  margin: 0 auto;
 }
 
-.linkedin-badge-card:hover {
+.custom-linkedin-card:hover {
   transform: translateY(-4px);
   border-color: #0a66c2;
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 10px 30px rgba(10, 102, 194, 0.15);
 }
 
-.linkedin-card-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+.li-card-banner {
+  height: 52px;
+  background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
   width: 100%;
-  text-align: left;
-  border-bottom: 1px solid var(--accent-border);
-  padding-bottom: 12px;
+  position: relative;
 }
 
-.linkedin-icon-main {
-  font-size: 1.8rem;
-  color: #0a66c2;
-  flex-shrink: 0;
-}
-
-.linkedin-card-header h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-
-.linkedin-card-sub {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.linkedin-badge-wrapper {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid var(--accent-border);
+.li-card-body {
+  padding: 0 18px 20px 18px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  text-align: center;
 }
 
-.linkedin-badge-heading {
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-  margin-bottom: 14px;
-  display: inline-flex;
+.li-avatar-wrap {
+  position: relative;
+  margin-top: -36px;
+  margin-bottom: 12px;
+  width: 72px;
+  height: 72px;
+}
+
+.li-avatar-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.li-logo-pill {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #0a66c2;
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  font-size: 0.75rem;
+  border: 2px solid #ffffff;
 }
 
-.linkedin-badge-heading i {
+.li-info-wrap {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.li-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.li-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.li-badge-verified {
   color: #0a66c2;
   font-size: 0.95rem;
 }
 
-.LI-profile-badge {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 250px;
-  margin: 0 auto !important;
+.li-headline {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
-.LI-profile-badge iframe {
-  max-width: 100% !important;
-  border-radius: var(--radius-md) !important;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08) !important;
+.li-org-meta {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
 }
 
-.badge-base__link.LI-simple-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  padding: 12px 22px !important;
-  background-color: #0a66c2 !important;
+.li-org-meta i {
+  color: #0a66c2;
+}
+
+.li-connect-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 16px;
+  background-color: #0a66c2;
   color: #ffffff !important;
-  font-weight: 600 !important;
-  font-size: 0.88rem !important;
-  border-radius: var(--radius-sm) !important;
-  text-decoration: none !important;
-  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.25) !important;
-  transition: all var(--transition-fast) !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.25);
+  transition: all var(--transition-fast);
 }
 
-.badge-base__link.LI-simple-link:hover {
-  background-color: #084e96 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.35) !important;
+.li-connect-btn:hover {
+  background-color: #084e96;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.35);
+  color: #ffffff !important;
 }
 
 /* ── Footer ──────────────────────────────────────────────── */
