@@ -1818,7 +1818,113 @@ a.ci-val:hover {
   background-color: #084e96;
 }
 
-/* Custom Official-Style Verified LinkedIn Profile Card Component */
+/* ── 1. Compact / Short Single-Line Badge (Centered & Uniform) ── */
+.linkedin-compact-badge-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.linkedin-compact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  border: 1.5px solid #0a66c2;
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(10, 102, 194, 0.12);
+  transition: all var(--transition-fast);
+  width: 100%;
+  justify-content: center;
+}
+
+.linkedin-compact-badge:hover {
+  background-color: #0a66c2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10, 102, 194, 0.25);
+}
+
+.li-compact-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #0a66c2;
+  color: #ffffff;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.linkedin-compact-badge:hover .li-compact-icon {
+  background-color: #ffffff;
+  color: #0a66c2;
+}
+
+.li-compact-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  transition: color var(--transition-fast);
+}
+
+.li-compact-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.linkedin-compact-badge:hover .li-compact-name,
+.linkedin-compact-badge:hover .li-compact-role {
+  color: #ffffff;
+}
+
+.li-compact-arrow {
+  font-size: 0.75rem;
+  color: #0a66c2;
+  margin-left: 2px;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.linkedin-compact-badge:hover .li-compact-arrow {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* ── 2. Medium 3-Line Profile Card Badge (Uniform & Centered) ── */
+.linkedin-card-uniform-wrap {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--accent-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.uniform-badge-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.uniform-badge-label i {
+  color: #0a66c2;
+}
+
 .custom-linkedin-card {
   width: 100%;
   max-width: 320px;
@@ -1839,14 +1945,14 @@ a.ci-val:hover {
 }
 
 .li-card-banner {
-  height: 52px;
+  height: 48px;
   background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
   width: 100%;
   position: relative;
 }
 
 .li-card-body {
-  padding: 0 18px 20px 18px;
+  padding: 0 18px 18px 18px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1855,15 +1961,15 @@ a.ci-val:hover {
 
 .li-avatar-wrap {
   position: relative;
-  margin-top: -36px;
-  margin-bottom: 12px;
-  width: 72px;
-  height: 72px;
+  margin-top: -34px;
+  margin-bottom: 10px;
+  width: 68px;
+  height: 68px;
 }
 
 .li-avatar-img {
-  width: 72px;
-  height: 72px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   border: 3px solid #ffffff;
   object-fit: cover;
@@ -1876,18 +1982,18 @@ a.ci-val:hover {
   right: 0;
   background-color: #0a66c2;
   color: #ffffff;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   border: 2px solid #ffffff;
 }
 
 .li-info-wrap {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   width: 100%;
 }
 
@@ -1896,11 +2002,11 @@ a.ci-val:hover {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .li-name {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.01em;
@@ -1908,24 +2014,32 @@ a.ci-val:hover {
 
 .li-badge-verified {
   color: #0a66c2;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-.li-headline {
+.li-line-1 {
   font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+
+.li-line-2 {
+  font-size: 0.74rem;
   font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  margin-bottom: 6px;
 }
 
 .li-org-meta {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   font-weight: 600;
 }
 
@@ -1937,12 +2051,12 @@ a.ci-val:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   width: 100%;
-  padding: 9px 16px;
+  padding: 8px 16px;
   background-color: #0a66c2;
   color: #ffffff !important;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   border-radius: var(--radius-full);
   text-decoration: none;
