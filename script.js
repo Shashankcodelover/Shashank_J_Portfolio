@@ -700,11 +700,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 10. Hero Photo Tap / Click to Toggle Floating Badges
+  // 10. Hero Photo Tap & Mobile Toggle Button Handler
   const heroPhotoWrapper = document.getElementById('heroPhotoWrapper');
+  const photoTagsToggleBtn = document.getElementById('photoTagsToggleBtn');
+  const tagsToggleText = document.getElementById('tagsToggleText');
+
+  function toggleMobileBadges() {
+    if (!heroPhotoWrapper) return;
+    const isVisible = heroPhotoWrapper.classList.toggle('mobile-badges-visible');
+    if (photoTagsToggleBtn) {
+      photoTagsToggleBtn.classList.toggle('active', isVisible);
+      const icon = photoTagsToggleBtn.querySelector('i');
+      if (icon) {
+        icon.className = isVisible ? 'fas fa-times' : 'fas fa-tags';
+      }
+    }
+    if (tagsToggleText) {
+      tagsToggleText.textContent = isVisible ? 'Hide Highlights' : 'Show Highlights';
+    }
+  }
+
+  if (photoTagsToggleBtn) {
+    photoTagsToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileBadges();
+    });
+  }
+
   if (heroPhotoWrapper) {
     heroPhotoWrapper.addEventListener('click', () => {
-      heroPhotoWrapper.classList.toggle('badges-hidden');
+      if (window.innerWidth <= 768) {
+        toggleMobileBadges();
+      }
     });
   }
 

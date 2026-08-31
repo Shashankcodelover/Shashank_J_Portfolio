@@ -34,9 +34,6 @@
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
-
-  <!-- LinkedIn Official Profile Badge Platform Script -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </head>
 <body>
 
@@ -115,14 +112,9 @@
 
           <!-- Right Column: Visual Profile & 4 Core Badges (Alternating L-R) -->
           <div class="hero-visual reveal-scale">
-            <div class="hero-photo-wrapper" id="heroPhotoWrapper" title="Hover on desktop / Tap on mobile to view photo clearly">
+            <div class="hero-photo-wrapper" id="heroPhotoWrapper" title="Hover to clear photo on desktop / Use button to toggle on mobile">
               <div class="photo-frame">
                 <img src="photo/profile-photo.jpeg" alt="Shashank J — Profile Photo" class="profile-img">
-              </div>
-
-              <!-- Interactive Mobile Tap Indicator -->
-              <div class="photo-tap-hint">
-                <i class="fas fa-hand-pointer"></i> Tap photo to toggle tags
               </div>
 
               <!-- Badge 1: Open Source & Git -->
@@ -160,6 +152,13 @@
                   <span class="badge-subtitle">HACK-OLYMPIC 2026 Volunteer</span>
                 </div>
               </div>
+            </div>
+
+            <!-- Mobile Exclusive Highlights Toggle Button -->
+            <div class="photo-mobile-toggle-wrapper">
+              <button class="photo-mobile-toggle-btn" id="photoTagsToggleBtn" aria-label="Toggle photo tags on mobile">
+                <i class="fas fa-tags"></i> <span id="tagsToggleText">Show Highlights</span>
+              </button>
             </div>
 
             <!-- Dynamic GitHub-Integrated Stats Row -->
@@ -1348,9 +1347,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- LinkedIn Profile Badge Script -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
   <!-- Application Script -->
   <script src="script.js"></script>
