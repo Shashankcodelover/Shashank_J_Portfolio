@@ -1792,6 +1792,47 @@ a.ci-val:hover {
   background-color: #084e96;
 }
 
+/* Official LinkedIn Profile Badge */
+.linkedin-badge-wrapper {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--accent-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.linkedin-badge-heading {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.linkedin-badge-heading i {
+  color: #0a66c2;
+  font-size: 0.95rem;
+}
+
+.linkedin-badge-wrapper .badge-base {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08) !important;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+
+.linkedin-badge-wrapper .badge-base:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12) !important;
+}
+
 /* ── Footer ──────────────────────────────────────────────── */
 .site-footer {
   background-color: var(--accent-primary);
