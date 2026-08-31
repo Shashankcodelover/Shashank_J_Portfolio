@@ -14,7 +14,8 @@ const PROJECT_DEPLOYMENTS = {
   'Phoenix-Interview-Prep_and_Hackathon_Guide': { demoUrl: '' },
   'Devflow-Pro': { demoUrl: '' },
   'Decentralized-Disaster-Response-Resource-Geofencing-System': { demoUrl: '' },
-  'ArchitectAI-Studio': { demoUrl: '' }
+  'ArchitectAI-Studio': { demoUrl: '' },
+  'regulaite-ai': { demoUrl: 'https://lnkd.in/gaERH9Ya' }
 };
 
 // ── 2. Complete Data Store: Prioritized by Industry Prestige & Domain Value ──
