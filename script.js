@@ -737,145 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ── 11. Architectural Systems Inspector & Project Archive Modals ──
-const systemsData = {
-  sync: {
-    title: "Offline-First Synchronization Engine",
-    badge: "Distributed Systems · PWA",
-    icon: "fa-sync-alt",
-    subtitle: "IndexedDB event queue with background state reconciliation",
-    overview: "Engineered to withstand severe network degradation in dense university lecture halls. Implements a client-side transaction buffer in IndexedDB that serializes user events, attaches cryptographic nonces, and performs idempotent bulk reconciliation with the central Node.js server upon connection restore.",
-    architecture: [
-      "Client writes write-ahead event logs to local IndexedDB store",
-      "Network observer monitors navigator.onLine and ping intervals",
-      "Reconciliation queue dispatches batched payloads with exponential backoff retry",
-      "Server verifies cryptographic signature and acknowledges committed batches"
-    ],
-    stack: ["TypeScript", "IndexedDB", "Service Worker", "Express", "Node.js"],
-    repo: "https://github.com/Shashankcodelover/Smart_Attendance_System"
-  },
-  multiagent: {
-    title: "Autonomous Multi-Agent AI Pipelines",
-    badge: "Agentic AI · LangGraph",
-    icon: "fa-robot",
-    subtitle: "Orchestrated cyclic state graphs with automated tool calling & reasoning",
-    overview: "Developed as part of the Google Cloud Agentic AI Day Challenge and BCG X Simulation. Implements cyclic state graphs where specialized sub-agents perform document extraction, verification, financial risk calculations, and synthesis with zero human bottleneck.",
-    architecture: [
-      "LangGraph StateGraph coordinating parallel agent execution tasks",
-      "Context compaction and structured output validation via Pydantic schemas",
-      "Memory checkpoints allowing state rollbacks on execution faults",
-      "Vertex AI orchestration with Gemini multimodal reasoning"
-    ],
-    stack: ["Python", "LangGraph", "Vertex AI", "Gemini API", "FastAPI"],
-    repo: "https://github.com/Shashankcodelover/ArchitectAI-Studio"
-  },
-  telemetry: {
-    title: "Real-Time Telemetry & Proximity Routing",
-    badge: "Geospatial · Drone Logistics",
-    icon: "fa-route",
-    subtitle: "AI-scored donor matching with biological cold-chain tracking",
-    overview: "Powers the LifeStream V3.1 engine. Computes dynamic Haversine proximity scores for emergency medical units, calculates vector flight paths for autonomous delivery drones, and streams simulated biological temperature telemetry over WebSockets.",
-    architecture: [
-      "Sub-second geospatial distance indexing using spatial coordinates",
-      "Continuous simulated IoT telemetry stream for biological transport",
-      "Dark Matter Leaflet canvas rendering real-time vector flight routes",
-      "Automatic failover alerts when ambient temp breaches cold-chain safety limits"
-    ],
-    stack: ["React 18", "Leaflet.js", "Node.js", "Socket.io", "Express"],
-    repo: "https://github.com/Shashankcodelover/blood-match-api"
-  },
-  qr: {
-    title: "Cryptographic Anti-Proxy Verification",
-    badge: "Cybersecurity · Auth",
-    icon: "fa-qrcode",
-    subtitle: "Rotating time-synchronized dynamic QR codes preventing screenshot proxy",
-    overview: "Eliminates student attendance proxying through rotating TOTP-inspired QR generation. The educator dashboard renders a new cryptographically signed token every 5 seconds, invalidating static photo capture or instant message forwards.",
-    architecture: [
-      "SHA-256 HMAC salted with rotating timestamp windows",
-      "Client-side QR rendering loop synchronized with server clock drift",
-      "Single-use verification token consumed immediately upon scan",
-      "Geofence validation rejecting check-ins outside the lecture hall"
-    ],
-    stack: ["Node.js", "Web Crypto API", "JWT", "MongoDB", "Tailwind"],
-    repo: "https://github.com/Shashankcodelover/Smart_Attendance_System"
-  },
-  broadcast: {
-    title: "Peer Hardware Exchange & Broadcast Flow",
-    badge: "Peer-to-Peer · WASM SQLite",
-    icon: "fa-broadcast-tower",
-    subtitle: "Campus-wide component availability broadcasting with instant UPI settlement",
-    overview: "Powers CampusSearch v2.0. Instead of traditional static listings, buyers can post broadcast inquiries that dispatch availability alerts to matching lab peers across campus. Features in-browser WASM SQLite fallback and integrated peer UPI QR checkout.",
-    architecture: [
-      "Server-Sent Events (SSE) channel for sub-50ms peer alerts",
-      "Smart category and keyword match engine pairing buyers with sellers",
-      "One-click acceptance auto-declines concurrent conflicting requests",
-      "Dynamic in-memory peer transaction ledger with UPI payment generation"
-    ],
-    stack: ["React 18", "PostgreSQL", "SSE", "sql.js (WASM)", "Express"],
-    repo: "https://github.com/Shashankcodelover/Campus-Search"
-  },
-  forensic: {
-    title: "Forensic Transaction Anomaly Detection",
-    badge: "Big Data · Deloitte Model",
-    icon: "fa-search-dollar",
-    subtitle: "Auditing enterprise financial ledgers for suspicious deviation patterns",
-    overview: "Engineered from the Deloitte Australia Forensic Technology simulation. Automatically parses high-volume relational ledger entries to flag suspicious vendor splits, off-hours batch postings, and duplicate invoice patterns for audit teams.",
-    architecture: [
-      "Relational schema indexing for multi-million row ledger streams",
-      "Statistical z-score outlier detection identifying anomalous transaction volumes",
-      "Automated Benford's Law compliance checks on first-digit disbursements",
-      "Executive summary reporting dashboard for compliance officers"
-    ],
-    stack: ["Python", "PostgreSQL", "Pandas", "Data Analytics", "Forensic Tech"],
-    repo: "https://github.com/Shashankcodelover/NetPlus-CRM-"
-  }
-};
-
-window.openSystemModal = function(key) {
-  const data = systemsData[key];
-  if (!data) return;
-
-  const modal = document.getElementById('systemDetailModal');
-  if (!modal) return;
-
-  document.getElementById('sysModalIcon').className = `fas ${data.icon}`;
-  document.getElementById('sysModalBadge').textContent = data.badge;
-  document.getElementById('sysModalTitle').textContent = data.title;
-  document.getElementById('sysModalSubtitle').textContent = data.subtitle;
-  document.getElementById('sysModalOverview').textContent = data.overview;
-
-  const archList = document.getElementById('sysModalArchList');
-  archList.innerHTML = '';
-  data.architecture.forEach(item => {
-    const li = document.createElement('li');
-    li.innerHTML = `<i class="fas fa-check-circle" style="color: #0066ff; margin-right: 8px;"></i> ${item}`;
-    li.style.marginBottom = '8px';
-    archList.appendChild(li);
-  });
-
-  const techBox = document.getElementById('sysModalTechTags');
-  techBox.innerHTML = '';
-  data.stack.forEach(tech => {
-    const tag = document.createElement('span');
-    tag.className = 'system-tag';
-    tag.textContent = tech;
-    techBox.appendChild(tag);
-  });
-
-  const repoLink = document.getElementById('sysModalRepoLink');
-  if (repoLink) repoLink.href = data.repo;
-
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-};
-
-window.closeSystemModal = function() {
-  const modal = document.getElementById('systemDetailModal');
-  if (modal) {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-  }
-};
+// ── 11. Project Archive Modal ──
 
 window.openProjectArchiveModal = function() {
   const modal = document.getElementById('projectArchiveModal');
@@ -896,7 +758,187 @@ window.closeProjectArchiveModal = function() {
 // Global escape key listener for new modals
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeSystemModal();
     closeProjectArchiveModal();
   }
 });
+
+// ── 12. 3D Presentation Deck Controller (Frame-Lifting & Parallax Stack) ──
+(function initPresentationDeck() {
+  const deck = document.getElementById('presentationDeck');
+  if (!deck) return;
+
+  const slides = Array.from(deck.querySelectorAll('.deck-slide'));
+  const totalSlides = slides.length;
+  let currentSlide = 0;
+  let isTransitioning = false;
+
+  const counterEl = document.getElementById('deckCounter');
+  const dots = Array.from(document.querySelectorAll('.deck-dot'));
+  const navLinks = Array.from(document.querySelectorAll('.nav-links .nav-link'));
+
+  function updateDeckState(targetIndex) {
+    if (targetIndex < 0 || targetIndex >= totalSlides) return;
+    currentSlide = targetIndex;
+
+    slides.forEach((slide, idx) => {
+      slide.classList.remove('lifted', 'active', 'queued', 'deep-queued');
+      if (idx < currentSlide) {
+        // Frame is lifted up into the air and away
+        slide.classList.add('lifted');
+      } else if (idx === currentSlide) {
+        // Frame is front and center
+        slide.classList.add('active');
+      } else if (idx === currentSlide + 1) {
+        // Frame rests directly behind the active frame
+        slide.classList.add('queued');
+      } else {
+        // Frame is deep in the deck stack
+        slide.classList.add('deep-queued');
+      }
+    });
+
+    // Update Stepper Dots
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentSlide);
+    });
+
+    // Update Counter (e.g. 01 / 07)
+    if (counterEl) {
+      counterEl.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+    }
+
+    // Update Navbar Links
+    const slideIds = slides.map(s => '#' + s.id);
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === slideIds[currentSlide]);
+    });
+  }
+
+  window.goToSlide = function(index) {
+    if (index === currentSlide) return;
+    if (isTransitioning) return;
+    if (index < 0 || index >= totalSlides) return;
+
+    isTransitioning = true;
+    updateDeckState(index);
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 850);
+  };
+
+  window.deckNext = function() {
+    if (currentSlide < totalSlides - 1) {
+      window.goToSlide(currentSlide + 1);
+    }
+  };
+
+  window.deckPrev = function() {
+    if (currentSlide > 0) {
+      window.goToSlide(currentSlide - 1);
+    }
+  };
+
+  // Stepper Up / Down Controls
+  const prevBtn = document.getElementById('deckPrevBtn');
+  const nextBtn = document.getElementById('deckNextBtn');
+  if (prevBtn) prevBtn.addEventListener('click', () => window.deckPrev());
+  if (nextBtn) nextBtn.addEventListener('click', () => window.deckNext());
+
+  // Stepper Dot Clicks
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.getAttribute('data-slide'), 10);
+      window.goToSlide(idx);
+    });
+  });
+
+  // Intercept Navbar Clicks for Seamless Slide Switching
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetIdx = slides.findIndex(s => '#' + s.id === href);
+        if (targetIdx !== -1) {
+          e.preventDefault();
+          window.goToSlide(targetIdx);
+          // Close mobile menu if open
+          const navLinksContainer = document.getElementById('navLinks');
+          const navToggle = document.getElementById('navToggle');
+          if (navLinksContainer && navLinksContainer.classList.contains('active')) {
+            navLinksContainer.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
+          }
+        }
+      }
+    });
+  });
+
+  // Wheel listener: checks if card has internal scrollable room
+  window.addEventListener('wheel', (e) => {
+    if (isTransitioning) return;
+    // Don't intercept when inspecting modals
+    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
+
+    const activeSlide = slides[currentSlide];
+    if (!activeSlide) return;
+
+    const card = activeSlide.querySelector('.deck-slide-card');
+    if (card) {
+      const isAtBottom = Math.ceil(card.scrollTop + card.clientHeight) >= card.scrollHeight - 5;
+      const isAtTop = card.scrollTop <= 5;
+
+      if (e.deltaY > 40) {
+        if (!isAtBottom) return; // Allow internal card reading
+        e.preventDefault();
+        window.deckNext();
+      } else if (e.deltaY < -40) {
+        if (!isAtTop) return; // Allow internal card reading
+        e.preventDefault();
+        window.deckPrev();
+      }
+    }
+  }, { passive: false });
+
+  // Touch swipe support for mobile
+  let touchStartY = 0;
+  window.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  window.addEventListener('touchend', (e) => {
+    if (isTransitioning) return;
+    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
+
+    const touchEndY = e.changedTouches[0].clientY;
+    const diff = touchStartY - touchEndY;
+
+    const activeSlide = slides[currentSlide];
+    const card = activeSlide?.querySelector('.deck-slide-card');
+
+    if (Math.abs(diff) > 55) {
+      if (diff > 0) {
+        // Swiping up -> next slide
+        if (card && Math.ceil(card.scrollTop + card.clientHeight) < card.scrollHeight - 10) return;
+        window.deckNext();
+      } else {
+        // Swiping down -> prev slide
+        if (card && card.scrollTop > 10) return;
+        window.deckPrev();
+      }
+    }
+  }, { passive: true });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+      window.deckNext();
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      window.deckPrev();
+    }
+  });
+
+  // Initialize initial state
+  updateDeckState(0);
+})();

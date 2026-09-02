@@ -2408,115 +2408,231 @@ a.ci-val:hover {
   transition: border-color 0.3s ease;
 }
 
-/* 3. Horizontal Systems Carousel & Moving Blocks Track */
-.systems-section {
-  position: relative;
-  overflow: hidden;
-}
-.systems-carousel-container {
+/* ==========================================================================
+   INTERACTIVE 3D PRESENTATION DECK (LIFTING FRAME PARALLAX STACK)
+   ========================================================================== */
+
+/* Main Deck Wrapper: Single-window presentation mode */
+.presentation-deck {
   position: relative;
   width: 100%;
-  padding: 10px 0 25px;
+  height: 100vh;
   overflow: hidden;
-}
-.systems-track {
-  display: flex;
-  gap: 24px;
-  width: max-content;
-  animation: scrollHorizontal 38s linear infinite;
-  padding: 10px 4px;
-}
-.systems-carousel-container:hover .systems-track {
-  animation-play-state: paused;
-}
-@keyframes scrollHorizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 12px)); }
+  background: var(--bg-alt);
+  perspective: 1200px;
 }
 
-.system-card {
-  flex: 0 0 360px;
-  max-width: 360px;
-  background: var(--bg-card);
-  border: 1px solid var(--accent-border);
-  border-radius: 18px;
-  padding: 26px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-}
-.system-card:hover {
-  transform: translateY(-8px);
-  border-color: #0066ff;
-  box-shadow: 0 18px 36px -10px rgba(0, 102, 255, 0.18);
-}
-.system-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.system-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(0, 102, 255, 0.08);
-  color: #0066ff;
+/* Each Stage / Slide in the Deck */
+.deck-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  padding: 85px 24px 20px;
+  box-sizing: border-box;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s ease,
+              box-shadow 0.85s ease;
+  will-change: transform, opacity;
 }
-.system-domain-badge {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--text-secondary);
-}
-.system-card-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 8px;
-  line-height: 1.35;
-}
-.system-card-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 18px;
-  flex: 1;
-}
-.system-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-.system-tag {
-  font-size: 11px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: var(--bg-pill);
+
+/* Framed Physical Card (The visual slide) */
+.deck-slide-card {
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 110px);
+  max-height: 860px;
+  background: var(--bg-card);
   border: 1px solid var(--accent-border);
-  color: var(--text-secondary);
-  font-weight: 600;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.10), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+  padding: 36px 42px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.system-card-action {
+
+/* Custom internal scrollbar for slide card */
+.deck-slide-card::-webkit-scrollbar {
+  width: 5px;
+}
+.deck-slide-card::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* 1. LIFTED STATE: Frame has been lifted up and away into the air */
+.deck-slide.lifted {
+  transform: translateY(-115%) scale(0.92) rotate(-1.5deg);
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(2px);
+  box-shadow: 0 45px 90px rgba(15, 23, 42, 0.35);
+  z-index: 20;
+}
+
+/* 2. ACTIVE STATE: The current frontmost frame in the viewport */
+.deck-slide.active {
+  transform: translateY(0) scale(1) rotate(0deg);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 10;
+  filter: blur(0);
+}
+
+/* 3. QUEUED STATE: Directly behind the active frame */
+.deck-slide.queued {
+  transform: translateY(0) scale(0.95);
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 5;
+  filter: blur(1.5px);
+}
+
+/* 4. DEEP QUEUED: Further down in the deck */
+.deck-slide.deep-queued {
+  transform: translateY(0) scale(0.90);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Deck Stepper Widget (Elevator Control) */
+.deck-stepper {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accent-border);
+  padding: 14px 10px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+.deck-step-arrow {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0066ff;
-  border-top: 1px solid var(--accent-border);
-  padding-top: 12px;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.deck-step-arrow:hover {
+  background: var(--bg-pill);
+  color: var(--text-main);
+  transform: scale(1.1);
+}
+.deck-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.deck-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+.deck-dot.active {
+  background: #0066ff;
+  height: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.4);
+}
+.deck-counter {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+@media (max-width: 992px) {
+  .deck-stepper {
+    right: 12px;
+    padding: 10px 6px;
+  }
+  .deck-slide {
+    padding: 75px 12px 16px;
+  }
+  .deck-slide-card {
+    padding: 24px 18px;
+    height: calc(100vh - 95px);
+  }
+}
+
+@media (max-width: 768px) {
+  .deck-stepper {
+    right: 6px;
+    padding: 6px 3px;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.92);
+  }
+  .deck-slide {
+    padding: 68px 6px 10px;
+  }
+  .deck-slide-card {
+    padding: 20px 36px 20px 14px; /* Right padding preserves clearance for stepper */
+    height: calc(100vh - 82px);
+    border-radius: 20px;
+  }
+  .deck-step-arrow {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .deck-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .deck-dot.active {
+    height: 14px;
+  }
+  .deck-counter {
+    font-size: 8.5px;
+  }
+}
+
+body:has(.presentation-deck) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.deck-slide-card .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+.deck-slide-card .section-padding {
+  padding: 0;
+}
+.deck-slide-card .section-header {
+  margin-bottom: 24px;
 }
 
 /* 4. Top 4 Projects Archive Trigger Banner */

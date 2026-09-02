@@ -49,7 +49,6 @@
       <div class="nav-links" id="navLinks">
         <a href="#landing" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="#systems" class="nav-link">Systems Deck</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#journey" class="nav-link">Journey &amp; Certs</a>
         <a href="#skills" class="nav-link">Skills</a>
@@ -67,755 +66,472 @@
     </div>
   </nav>
 
-  <main>
+  <main class="presentation-deck" id="presentationDeck">
 
     <!-- ═══════════════════════════════════════════
-         HERO / LANDING SECTION
+         HERO / LANDING SECTION (SLIDE 0)
          ═══════════════════════════════════════════ -->
-    <section id="landing" class="hero-section">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <!-- Left Column: Impressive Introduction -->
-          <div class="hero-text">
-            <div class="hero-status-pill reveal-up">
-              <span class="status-indicator"></span> Available for Software Engineering &amp; AI Roles
-            </div>
-            <h1 class="hero-name reveal-up">
-              Hi, I'm <span class="text-highlight">Shashank J</span>
-            </h1>
-            <p class="hero-tagline reveal-up">
-              Full-Stack Software Architect &nbsp;•&nbsp; AI Systems Builder &nbsp;•&nbsp; Hackathon Competitor
-            </p>
-            <p class="hero-intro reveal-up">
-              Computer Science &amp; Engineering scholar at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10). I engineer high-reliability web platforms, offline-first sync protocols, and autonomous AI pipelines designed for real-world operational scale.
-            </p>
-            <div class="hero-cta reveal-up">
-              <a href="#projects" class="btn btn-dark">
-                <i class="fas fa-layer-group"></i> Explore 4 Flagship Projects
-              </a>
-              <a href="#systems" class="btn btn-outline">
-                <i class="fas fa-microchip"></i> Architectural Systems Deck
-              </a>
-            </div>
-            <div class="hero-socials reveal-up">
-              <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="mailto:shashank.j8426@gmail.com" aria-label="Email Me" class="social-icon">
-                <i class="fas fa-envelope"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: Clean Visual Profile & Unified Stats Strip -->
-          <div class="hero-visual reveal-scale">
-            <div class="hero-photo-wrapper hero-photo-clean" id="heroPhotoWrapper">
-              <div class="photo-frame">
-                <img src="photo/profile-photo.jpeg" alt="Shashank J — Full-Stack Software Engineer" class="profile-img">
-              </div>
-            </div>
-
-            <!-- Dynamic GitHub-Integrated Stats Row -->
-            <div class="hero-stats-card">
-              <div class="stat-item">
-                <span class="stat-number hero-stat-num" id="statRepoCount" data-target="43">43</span>
-                <span class="stat-label">Public Repos</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="4">4</span>
-                <span class="stat-label">Flagships</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="14" data-suffix="+">14+</span>
-                <span class="stat-label">Certs &amp; Milestones</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="6">6</span>
-                <span class="stat-label">Hackathons</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <span class="stat-number">8.4</span>
-                <span class="stat-label">CGPA (JSS STU)</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         ABOUT ME & EDUCATION
-         ═══════════════════════════════════════════ -->
-    <section id="about" class="section-bg-alt">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Engineering Foundation</span>
-          <h2 class="section-title">About <span>Me</span></h2>
-          <div class="section-divider"></div>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card-main reveal-left">
-            <h3>Engineering Mindset &amp; Architecture</h3>
-            <p>
-              I am a Computer Science &amp; Engineering undergraduate at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (Batch 2024–2028 | Current CGPA: 8.4/10). My engineering philosophy revolves around building scalable, robust systems that withstand network degradation, operational spikes, and complex data dependencies.
-            </p>
-            <p>
-              My primary tech stack spans the full MERN ecosystem (MongoDB, Express.js, React.js, Node.js) paired with relational SQL databases (PostgreSQL, SQLite/WASM). I specialize in designing systems built for real-world constraints: offline synchronization queues, real-time Server-Sent Events (SSE), WebSocket streams, and autonomous multi-agent AI pipelines.
-            </p>
-            <p>
-              Beyond core software engineering, I have completed corporate job simulations with <strong>BCG X (Generative AI Financial Chatbots)</strong> and <strong>Deloitte Australia (Forensic Technology &amp; Data Analytics)</strong>. On campus, I serve as a PR Team Member for the Persona Plus Club and volunteer with the Linux Campus Club and hackathon organizing committees.
-            </p>
-
-            <div class="mission-vision-container">
-              <div class="mv-box">
-                <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
-                <div>
-                  <h4>Mission</h4>
-                  <p>To engineer resilient, production-grade systems that solve real operational challenges and contribute open-source value.</p>
-                </div>
-              </div>
-              <div class="mv-box">
-                <div class="mv-icon"><i class="fas fa-microchip"></i></div>
-                <div>
-                  <h4>Vision</h4>
-                  <p>To pioneer intelligent autonomous systems combining full-stack scalable infrastructure with applied multi-agent AI.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="education-sidebar reveal-right">
-            <div class="edu-card">
-              <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-              <span class="edu-type">Bachelor of Engineering (B.E.)</span>
-              <h4>Computer Science &amp; Engineering</h4>
-              <p class="edu-institution">JSS Science and Technology University (SJCE), Mysuru</p>
-              <div class="edu-meta-grid">
-                <div class="meta-cell">
-                  <span class="meta-label">Timeline</span>
-                  <span class="meta-val">2024 – 2028</span>
-                </div>
-                <div class="meta-cell">
-                  <span class="meta-label">Current CGPA</span>
-                  <span class="meta-val highlight-val">8.4 / 10.0</span>
-                </div>
-              </div>
-              <div class="edu-coursework">
-                <h5>Core Competencies</h5>
-                <div class="tags-group">
-                  <span class="tag">Data Structures &amp; Algorithms</span>
-                  <span class="tag">DBMS &amp; SQL</span>
-                  <span class="tag">Operating Systems</span>
-                  <span class="tag">Computer Networks</span>
-                  <span class="tag">Full-Stack Architecture</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="quick-links-card">
-              <h4>Quick Navigation</h4>
-              <div class="quick-links-list">
-                <a href="#projects" class="quick-link-item"><i class="fas fa-arrow-right"></i> Top 10 Priority Projects</a>
-                <a href="#journey" class="quick-link-item"><i class="fas fa-arrow-right"></i> Credentials &amp; Certifications</a>
-                <a href="#involvement" class="quick-link-item"><i class="fas fa-arrow-right"></i> Hackathons &amp; Leadership</a>
-                <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" class="quick-link-item"><i class="fab fa-github"></i> GitHub (<span id="quickRepoCount">43</span> Repos)</a>
-              </div>
-            </div>
-
-            <!-- Badge 1: Short / Compact Single-Line Badge (Centered & Uniform) -->
-            <div class="linkedin-compact-badge-wrap reveal-up">
-              <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="linkedin-compact-badge" title="Connect with Shashank J on LinkedIn">
-                <span class="li-compact-icon"><i class="fab fa-linkedin-in"></i></span>
-                <span class="li-compact-name">Shashank J</span>
-                <span class="li-compact-role">• Software Engineer</span>
-                <span class="li-compact-arrow"><i class="fas fa-arrow-right"></i></span>
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         ENGINEERING SYSTEMS & ARCHITECTURAL DECK
-         ═══════════════════════════════════════════ -->
-    <section id="systems" class="section-padding systems-section">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Distributed Systems &amp; Applied AI</span>
-          <h2 class="section-title">Architectural Systems &amp; <span>Live Deck</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Interactive horizontal systems deck — hover to pause, or click any system block to inspect deep-dive architecture, failure modes, and codebases.</p>
-        </div>
-
-        <div class="systems-carousel-container reveal-up">
-          <div class="systems-track">
-            <!-- Block 1: Offline Sync -->
-            <div class="system-card" onclick="openSystemModal('sync');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-sync-alt"></i></div>
-                <span class="system-domain-badge">PWA · Distributed</span>
-              </div>
-              <h4 class="system-card-title">Offline-First Synchronization Engine</h4>
-              <p class="system-card-desc">IndexedDB client write-ahead buffer serializing events during network dead zones with idempotent backend bulk reconciliation.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">IndexedDB</span>
-                <span class="system-tag">Service Workers</span>
-                <span class="system-tag">Node.js</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Block 2: Multi-Agent AI -->
-            <div class="system-card" onclick="openSystemModal('multiagent');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-robot"></i></div>
-                <span class="system-domain-badge">Agentic AI</span>
-              </div>
-              <h4 class="system-card-title">Autonomous Multi-Agent AI Pipelines</h4>
-              <p class="system-card-desc">LangGraph state graphs orchestrating specialized sub-agents for automated document extraction, audit checks, and financial reasoning.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">LangGraph</span>
-                <span class="system-tag">Vertex AI</span>
-                <span class="system-tag">Gemini API</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Block 3: Telemetry & Proximity -->
-            <div class="system-card" onclick="openSystemModal('telemetry');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-route"></i></div>
-                <span class="system-domain-badge">Drone Telemetry</span>
-              </div>
-              <h4 class="system-card-title">Real-Time Telemetry &amp; Proximity Routing</h4>
-              <p class="system-card-desc">Emergency biological dispatch engine computing AI proximity scores and streaming cold-chain temperature telemetry over WebSockets.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">Leaflet.js</span>
-                <span class="system-tag">WebSockets</span>
-                <span class="system-tag">Haversine</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Block 4: Dynamic QR -->
-            <div class="system-card" onclick="openSystemModal('qr');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-qrcode"></i></div>
-                <span class="system-domain-badge">Security · Auth</span>
-              </div>
-              <h4 class="system-card-title">Cryptographic Anti-Proxy Verification</h4>
-              <p class="system-card-desc">Rotating time-synchronized dynamic QR generator invalidating screenshots and proxy attendance across university sessions.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">Web Crypto</span>
-                <span class="system-tag">TOTP</span>
-                <span class="system-tag">HMAC-SHA256</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Block 5: Campus Broadcast -->
-            <div class="system-card" onclick="openSystemModal('broadcast');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-broadcast-tower"></i></div>
-                <span class="system-domain-badge">P2P Hardware</span>
-              </div>
-              <h4 class="system-card-title">Peer Hardware Exchange &amp; Broadcast SSE</h4>
-              <p class="system-card-desc">Hyper-local component broadcast matching with sub-50ms SSE notification dispatch and instant UPI settlement generation.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">SSE</span>
-                <span class="system-tag">PostgreSQL</span>
-                <span class="system-tag">UPI QR</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Block 6: Forensic Analytics -->
-            <div class="system-card" onclick="openSystemModal('forensic');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-search-dollar"></i></div>
-                <span class="system-domain-badge">Big Data · Audit</span>
-              </div>
-              <h4 class="system-card-title">Forensic Transaction Anomaly Detection</h4>
-              <p class="system-card-desc">High-volume financial transaction stream inspector identifying vendor splits, Benford law violations, and off-hour batch anomalies.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">PostgreSQL</span>
-                <span class="system-tag">Pandas</span>
-                <span class="system-tag">Statistical Audit</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <!-- Duplicate Set for Seamless Infinite Loop -->
-            <div class="system-card" onclick="openSystemModal('sync');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-sync-alt"></i></div>
-                <span class="system-domain-badge">PWA · Distributed</span>
-              </div>
-              <h4 class="system-card-title">Offline-First Synchronization Engine</h4>
-              <p class="system-card-desc">IndexedDB client write-ahead buffer serializing events during network dead zones with idempotent backend bulk reconciliation.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">IndexedDB</span>
-                <span class="system-tag">Service Workers</span>
-                <span class="system-tag">Node.js</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <div class="system-card" onclick="openSystemModal('multiagent');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-robot"></i></div>
-                <span class="system-domain-badge">Agentic AI</span>
-              </div>
-              <h4 class="system-card-title">Autonomous Multi-Agent AI Pipelines</h4>
-              <p class="system-card-desc">LangGraph state graphs orchestrating specialized sub-agents for automated document extraction, audit checks, and financial reasoning.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">LangGraph</span>
-                <span class="system-tag">Vertex AI</span>
-                <span class="system-tag">Gemini API</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <div class="system-card" onclick="openSystemModal('telemetry');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-route"></i></div>
-                <span class="system-domain-badge">Drone Telemetry</span>
-              </div>
-              <h4 class="system-card-title">Real-Time Telemetry &amp; Proximity Routing</h4>
-              <p class="system-card-desc">Emergency biological dispatch engine computing AI proximity scores and streaming cold-chain temperature telemetry over WebSockets.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">Leaflet.js</span>
-                <span class="system-tag">WebSockets</span>
-                <span class="system-tag">Haversine</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-
-            <div class="system-card" onclick="openSystemModal('qr');">
-              <div class="system-card-top">
-                <div class="system-icon-box"><i class="fas fa-qrcode"></i></div>
-                <span class="system-domain-badge">Security · Auth</span>
-              </div>
-              <h4 class="system-card-title">Cryptographic Anti-Proxy Verification</h4>
-              <p class="system-card-desc">Rotating time-synchronized dynamic QR generator invalidating screenshots and proxy attendance across university sessions.</p>
-              <div class="system-card-tags">
-                <span class="system-tag">Web Crypto</span>
-                <span class="system-tag">TOTP</span>
-                <span class="system-tag">HMAC-SHA256</span>
-              </div>
-              <div class="system-card-action">
-                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         PRIORITIZED PROJECTS (TOP 4 FLAGSHIP PROJECTS)
-         ═══════════════════════════════════════════ -->
-    <section id="projects" class="section-padding">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Production &amp; Engineering Work</span>
-          <h2 class="section-title">Top 4 <span>Flagship Projects</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Ranked in exact order of architectural depth, deployment readiness, and operational impact.</p>
-        </div>
-
-        <div class="projects-grid">
-
-          <!-- 1. NetPlus-CRM- -->
-          <article class="project-card reveal-up" data-repo="NetPlus-CRM-">
-            <div class="project-card-header">
-              <span class="project-num">01</span>
-              <div class="project-title-group">
-                <span class="project-category">Enterprise Operations · CRM</span>
-                <h3>NetPlus-CRM</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">JWT</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="#" class="btn btn-sm btn-demo" data-demo-for="NetPlus-CRM-">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. blood-match-api (LifeStream V3.1) - ACCURATE & VERIFIED -->
-          <article class="project-card reveal-up" data-repo="blood-match-api">
-            <div class="project-card-header">
-              <span class="project-num">02</span>
-              <div class="project-title-group">
-                <span class="project-category">Emergency Dispatch · Logistics</span>
-                <h3>LifeStream V3.1 (Blood Match API)</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">React 18</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">Leaflet.js</span>
-                <span class="tech-tag">AI Proximity</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="#" class="btn btn-sm btn-demo" data-demo-for="blood-match-api">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Smart_Attendance_System - ACCURATE & VERIFIED -->
-          <article class="project-card reveal-up" data-repo="Smart_Attendance_System">
-            <div class="project-card-header">
-              <span class="project-num">03</span>
-              <div class="project-title-group">
-                <span class="project-category">Progressive Web App · Offline-First</span>
-                <h3>Smart Attendance System</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">PWA</span>
-                <span class="tech-tag">IndexedDB</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Smart_Attendance_System">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. Campus-Search v2.0 (Peer Hardware Exchange & Broadcast Engine) -->
-          <article class="project-card reveal-up" data-repo="Campus-Search">
-            <div class="project-card-header">
-              <span class="project-num">04</span>
-              <div class="project-title-group">
-                <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
-                <h3>CampusSearch v2.0</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">React 18</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">SSE</span>
-                <span class="tech-tag">sql.js (WASM)</span>
-                <span class="tech-tag">UPI QR</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://campussearch.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Archive Trigger Banner -->
-        <div class="project-archive-banner reveal-up">
-          <div style="font-size: 32px; color: #0066ff;"><i class="fas fa-layer-group"></i></div>
-          <h3>Explore Complete Project Archive (6 Additional Systems)</h3>
-          <p>Explore specialized solutions in university placement arbitration, disaster mesh geofencing, sprint workflow SaaS, legal compliance analysis, and AI developer tooling.</p>
-          <button class="btn btn-dark" onclick="openProjectArchiveModal();">
-            <i class="fas fa-archive"></i> View All 10 Projects in Archive
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         MODULAR JOURNEY & CREDENTIALS HUB
-         ═══════════════════════════════════════════ -->
-    <section id="journey" class="section-bg-alt section-padding">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Verified Credentials &amp; Events</span>
-          <h2 class="section-title">Top 4 <span>Industry Credentials</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Ranked by corporate prestige, domain complexity, and architectural validation.</p>
-        </div>
-
-        <!-- Top 4 Quality Certificates Grid -->
-        <div class="top-certs-grid reveal-up">
-          
-          <!-- Cert 1: Google Cloud -->
-          <div class="cert-flagship-card" onclick="openJourneyModal(0);">
-            <div class="cert-flagship-badge"><i class="fas fa-brain"></i> Agentic AI Global Challenge</div>
-            <h4 class="cert-flagship-title">Google Cloud Agentic AI Day Challenge</h4>
-            <div class="cert-flagship-meta">Google Cloud (powered by Hack2skill) · July 2026</div>
-            <p class="cert-flagship-desc">Architected and engineered multi-agent autonomous system prototypes addressing enterprise operational friction utilizing Vertex AI orchestration patterns.</p>
-            <div class="system-card-action">
-              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-
-          <!-- Cert 2: BCG X -->
-          <div class="cert-flagship-card" onclick="openJourneyModal(1);">
-            <div class="cert-flagship-badge"><i class="fas fa-briefcase"></i> Corporate AI Simulation</div>
-            <h4 class="cert-flagship-title">BCG X — Generative AI Job Simulation</h4>
-            <div class="cert-flagship-meta">BCG X (via Forage Platform) · July 2026</div>
-            <p class="cert-flagship-desc">Engineered an AI-powered financial analysis chatbot for corporate clients. Automated structured 10-K document extraction pipelines and benchmarked chatbot reasoning.</p>
-            <div class="system-card-action">
-              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-
-          <!-- Cert 3: Deloitte Australia -->
-          <div class="cert-flagship-card" onclick="openJourneyModal(2);">
-            <div class="cert-flagship-badge"><i class="fas fa-search-dollar"></i> Forensic Technology</div>
-            <h4 class="cert-flagship-title">Deloitte Australia — Data Analytics &amp; Forensic Tech</h4>
-            <div class="cert-flagship-meta">Deloitte Australia (via Forage Platform) · June 2026</div>
-            <p class="cert-flagship-desc">Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in financial streams, and executive forensic dashboards.</p>
-            <div class="system-card-action">
-              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-
-          <!-- Cert 4: LinkedIn Learning NASBA -->
-          <div class="cert-flagship-card" onclick="openJourneyModal(3);">
-            <div class="cert-flagship-badge"><i class="fas fa-award"></i> NASBA Accredited CPE</div>
-            <h4 class="cert-flagship-title">What Is Generative AI? (NASBA Accredited)</h4>
-            <div class="cert-flagship-meta">LinkedIn Learning &amp; NASBA · July 2026</div>
-            <p class="cert-flagship-desc">Formal certification covering core Generative AI architectures, foundation models, prompt engineering methodologies, and integration of AI agents into software engineering.</p>
-            <div class="system-card-action">
-              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Direct Action Bar to Open All 14+ Credentials -->
-        <div class="journey-action-bar reveal-up" style="text-align: center; margin-top: 24px;">
-          <button class="btn btn-dark btn-lg" onclick="openJourneyModal(0);">
-            <i class="fas fa-layer-group"></i> Explore All 14+ Credentials &amp; Badges Hub
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════
-         INTERACTIVE TWO-PANEL CREDENTIAL INSPECTOR MODAL
-         (Card-style presentation panel + deep-dive metadata panel)
-         ═══════════════════════════════════════════ -->
-    <div class="journey-modal" id="journeyModal" aria-hidden="true">
-      <div class="modal-backdrop" id="modalBackdrop"></div>
-      <div class="modal-dialog">
-        
-        <!-- Modal Top Bar -->
-        <div class="modal-top-bar">
-          <div class="modal-stepper-info">
-            <span class="modal-category-tag" id="modalCategoryTag">Credential Category</span>
-            <span class="modal-counter-indicator" id="modalCounter">1 of 14</span>
-          </div>
-          <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <!-- Modal Split Body -->
-        <div class="modal-body-split">
-          
-          <!-- Left Panel: Card Preview Frame (Clean Invitation / ID Card Style) -->
-          <div class="modal-image-col">
-            <div class="modal-card-visual-frame">
-              <div class="card-visual-badge" id="modalVisualBadge">Verified Proof</div>
-              <img src="certificates/hack-google-agentic.jpg" alt="Credential Certificate Preview" id="modalImage" class="modal-cert-image">
-            </div>
-          </div>
-
-          <!-- Right Panel: Deep-Dive Structural Details -->
-          <div class="modal-details-col">
+    <section id="landing" class="hero-section deck-slide active" data-slide-index="0">
+      <div class="deck-slide-card hero-slide-card">
+        <div class="container">
+          <div class="hero-grid">
             
-            <div class="details-header-group">
-              <span class="modal-type-badge" id="modalType">Certification Type</span>
-              <h3 class="modal-title" id="modalTitle">Credential Title</h3>
-            </div>
-
-            <!-- Metadata Matrix: Organization, Founder/Leader, Date, ID -->
-            <div class="modal-meta-matrix">
-              <div class="meta-cell">
-                <i class="fas fa-building meta-icon"></i>
-                <div class="meta-text-wrap">
-                  <span class="meta-label">Issuing Organization</span>
-                  <span class="meta-value" id="modalIssuer">Organization Name</span>
-                </div>
+            <!-- Left Column: Impressive Introduction -->
+            <div class="hero-text">
+              <div class="hero-status-pill reveal-up">
+                <span class="status-indicator"></span> Available for Software Engineering &amp; AI Roles
               </div>
-
-              <div class="meta-cell">
-                <i class="fas fa-user-tie meta-icon"></i>
-                <div class="meta-text-wrap">
-                  <span class="meta-label">Founder / Leadership / Host</span>
-                  <span class="meta-value" id="modalFounder">Host / Coordinator</span>
-                </div>
-              </div>
-
-              <div class="meta-cell">
-                <i class="fas fa-calendar-check meta-icon"></i>
-                <div class="meta-text-wrap">
-                  <span class="meta-label">Issued / Event Date</span>
-                  <span class="meta-value" id="modalDate">Date</span>
-                </div>
-              </div>
-
-              <div class="meta-cell">
-                <i class="fas fa-shield-alt meta-icon"></i>
-                <div class="meta-text-wrap">
-                  <span class="meta-label">Credential Status / ID</span>
-                  <span class="meta-value" id="modalId">Verified</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- In-Depth Technical Description & Scope -->
-            <div class="modal-desc-box">
-              <span class="desc-heading">Technical Scope &amp; Verified Competencies</span>
-              <p class="modal-description" id="modalDesc">Detailed description of skills validated, algorithms implemented, and project deliverables.</p>
-            </div>
-
-            <!-- Navigation Controls: Step through One-by-One -->
-            <div class="modal-stepper-footer">
-              <div class="stepper-buttons">
-                <button class="btn btn-sm btn-outline" id="prevCredBtn">
-                  <i class="fas fa-arrow-left"></i> Previous
+              <h1 class="hero-name reveal-up">
+                Hi, I'm <span class="text-highlight">Shashank J</span>
+              </h1>
+              <p class="hero-tagline reveal-up">
+                Full-Stack Software Architect &nbsp;•&nbsp; AI Systems Builder &nbsp;•&nbsp; Hackathon Competitor
+              </p>
+              <p class="hero-intro reveal-up">
+                Computer Science &amp; Engineering scholar at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10). I engineer high-reliability web platforms, offline-first sync protocols, and autonomous AI pipelines designed for real-world operational scale.
+              </p>
+              <div class="hero-cta reveal-up">
+                <button class="btn btn-dark" onclick="window.goToSlide(2);">
+                  <i class="fas fa-layer-group"></i> Explore 4 Flagship Projects
                 </button>
-                <button class="btn btn-sm btn-dark" id="nextCredBtn">
-                  Next <i class="fas fa-arrow-right"></i>
+                <button class="btn btn-outline" onclick="window.goToSlide(3);">
+                  <i class="fas fa-award"></i> Verified Credentials &amp; Certs
                 </button>
+              </div>
+              <div class="hero-socials reveal-up">
+                <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-icon">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:shashank.j8426@gmail.com" aria-label="Email Me" class="social-icon">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Clean Visual Profile & Unified Stats Strip -->
+            <div class="hero-visual reveal-scale">
+              <div class="hero-photo-wrapper hero-photo-clean" id="heroPhotoWrapper">
+                <div class="photo-frame">
+                  <img src="photo/profile-photo.jpeg" alt="Shashank J — Full-Stack Software Engineer" class="profile-img">
+                </div>
+              </div>
+
+              <!-- Dynamic GitHub-Integrated Stats Row -->
+              <div class="hero-stats-card">
+                <div class="stat-item">
+                  <span class="stat-number hero-stat-num" id="statRepoCount" data-target="43">43</span>
+                  <span class="stat-label">Public Repos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <span class="stat-number hero-stat-num" data-target="4">4</span>
+                  <span class="stat-label">Flagships</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <span class="stat-number hero-stat-num" data-target="14" data-suffix="+">14+</span>
+                  <span class="stat-label">Certs &amp; Milestones</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <span class="stat-number hero-stat-num" data-target="6">6</span>
+                  <span class="stat-label">Hackathons</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <span class="stat-number">8.4</span>
+                  <span class="stat-label">CGPA (JSS STU)</span>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
 
     <!-- ═══════════════════════════════════════════
-         TECHNICAL ARSENAL & SKILLS (REAL GITHUB-DERIVED USAGE)
+         ABOUT ME & EDUCATION (SLIDE 1)
          ═══════════════════════════════════════════ -->
-    <section id="skills" class="section-padding">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Technical Stack</span>
-          <h2 class="section-title">Technical <span>Arsenal</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Real-world framework proficiencies &amp; repository language distribution derived from GitHub.</p>
+    <section id="about" class="section-bg-alt deck-slide queued" data-slide-index="1">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Engineering Foundation</span>
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="section-divider"></div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card-main reveal-left">
+              <h3>Engineering Mindset &amp; Architecture</h3>
+              <p>
+                I am a Computer Science &amp; Engineering undergraduate at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (Batch 2024–2028 | Current CGPA: 8.4/10). My engineering philosophy revolves around building scalable, robust systems that withstand network degradation, operational spikes, and complex data dependencies.
+              </p>
+              <p>
+                My primary tech stack spans the full MERN ecosystem (MongoDB, Express.js, React.js, Node.js) paired with relational SQL databases (PostgreSQL, SQLite/WASM). I specialize in designing systems built for real-world constraints: offline synchronization queues, real-time Server-Sent Events (SSE), WebSocket streams, and autonomous multi-agent AI pipelines.
+              </p>
+              <p>
+                Beyond core software engineering, I have completed corporate job simulations with <strong>BCG X (Generative AI Financial Chatbots)</strong> and <strong>Deloitte Australia (Forensic Technology &amp; Data Analytics)</strong>. On campus, I serve as a PR Team Member for the Persona Plus Club and volunteer with the Linux Campus Club and hackathon organizing committees.
+              </p>
+
+              <div class="mission-vision-container">
+                <div class="mv-box">
+                  <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                  <div>
+                    <h4>Mission</h4>
+                    <p>To engineer resilient, production-grade systems that solve real operational challenges and contribute open-source value.</p>
+                  </div>
+                </div>
+                <div class="mv-box">
+                  <div class="mv-icon"><i class="fas fa-microchip"></i></div>
+                  <div>
+                    <h4>Vision</h4>
+                    <p>To pioneer intelligent autonomous systems combining full-stack scalable infrastructure with applied multi-agent AI.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="education-sidebar reveal-right">
+              <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <span class="edu-type">Bachelor of Engineering (B.E.)</span>
+                <h4>Computer Science &amp; Engineering</h4>
+                <p class="edu-institution">JSS Science and Technology University (SJCE), Mysuru</p>
+                <div class="edu-meta-grid">
+                  <div class="meta-cell">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-val">2024 – 2028</span>
+                  </div>
+                  <div class="meta-cell">
+                    <span class="meta-label">Current CGPA</span>
+                    <span class="meta-val highlight-val">8.4 / 10.0</span>
+                  </div>
+                </div>
+                <div class="edu-coursework">
+                  <h5>Core Competencies</h5>
+                  <div class="tags-group">
+                    <span class="tag">Data Structures &amp; Algorithms</span>
+                    <span class="tag">DBMS &amp; SQL</span>
+                    <span class="tag">Operating Systems</span>
+                    <span class="tag">Computer Networks</span>
+                    <span class="tag">Full-Stack Architecture</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="quick-links-card">
+                <h4>Quick Navigation</h4>
+                <div class="quick-links-list">
+                  <a href="#" onclick="window.goToSlide(2); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Top 4 Flagship Projects</a>
+                  <a href="#" onclick="window.goToSlide(3); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Credentials &amp; Certifications</a>
+                  <a href="#" onclick="window.goToSlide(5); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Hackathons &amp; Leadership</a>
+                  <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" class="quick-link-item"><i class="fab fa-github"></i> GitHub (<span id="quickRepoCount">43</span> Repos)</a>
+                </div>
+              </div>
+
+              <!-- Badge 1: Short / Compact Single-Line Badge (Centered & Uniform) -->
+              <div class="linkedin-compact-badge-wrap reveal-up">
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="linkedin-compact-badge" title="Connect with Shashank J on LinkedIn">
+                  <span class="li-compact-icon"><i class="fab fa-linkedin-in"></i></span>
+                  <span class="li-compact-name">Shashank J</span>
+                  <span class="li-compact-role">• Software Engineer</span>
+                  <span class="li-compact-arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRIORITIZED PROJECTS (SLIDE 2: TOP 4 FLAGSHIP PROJECTS)
+         ═══════════════════════════════════════════ -->
+    <section id="projects" class="deck-slide deep-queued" data-slide-index="2">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Production &amp; Engineering Work</span>
+            <h2 class="section-title">Top 4 <span>Flagship Projects</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Ranked in exact order of architectural depth, deployment readiness, and operational impact.</p>
+          </div>
+
+          <div class="projects-grid">
+
+            <!-- 1. NetPlus-CRM- -->
+            <article class="project-card reveal-up" data-repo="NetPlus-CRM-">
+              <div class="project-card-header">
+                <span class="project-num">01</span>
+                <div class="project-title-group">
+                  <span class="project-category">Enterprise Operations · CRM</span>
+                  <h3>NetPlus-CRM</h3>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <p class="project-desc">
+                  Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
+                </p>
+                <div class="project-highlights">
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
+                </div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">JWT</span>
+                </div>
+              </div>
+              <div class="project-card-footer">
+                <div class="project-meta-row">
+                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                </div>
+                <div class="project-action-btns">
+                  <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="NetPlus-CRM-">
+                    <i class="fas fa-play"></i> Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. blood-match-api (LifeStream V3.1) - ACCURATE & VERIFIED -->
+            <article class="project-card reveal-up" data-repo="blood-match-api">
+              <div class="project-card-header">
+                <span class="project-num">02</span>
+                <div class="project-title-group">
+                  <span class="project-category">Emergency Dispatch · Logistics</span>
+                  <h3>LifeStream V3.1 (Blood Match API)</h3>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <p class="project-desc">
+                  Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
+                </p>
+                <div class="project-highlights">
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
+                </div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">React 18</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">Leaflet.js</span>
+                  <span class="tech-tag">AI Proximity</span>
+                </div>
+              </div>
+              <div class="project-card-footer">
+                <div class="project-meta-row">
+                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                </div>
+                <div class="project-action-btns">
+                  <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="blood-match-api">
+                    <i class="fas fa-play"></i> Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. Smart_Attendance_System - ACCURATE & VERIFIED -->
+            <article class="project-card reveal-up" data-repo="Smart_Attendance_System">
+              <div class="project-card-header">
+                <span class="project-num">03</span>
+                <div class="project-title-group">
+                  <span class="project-category">Progressive Web App · Offline-First</span>
+                  <h3>Smart Attendance System</h3>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <p class="project-desc">
+                  High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
+                </p>
+                <div class="project-highlights">
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
+                </div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">PWA</span>
+                  <span class="tech-tag">IndexedDB</span>
+                </div>
+              </div>
+              <div class="project-card-footer">
+                <div class="project-meta-row">
+                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                </div>
+                <div class="project-action-btns">
+                  <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="Smart_Attendance_System">
+                    <i class="fas fa-play"></i> Live Demo
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. Campus-Search v2.0 (Peer Hardware Exchange & Broadcast Engine) -->
+            <article class="project-card reveal-up" data-repo="Campus-Search">
+              <div class="project-card-header">
+                <span class="project-num">04</span>
+                <div class="project-title-group">
+                  <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
+                  <h3>CampusSearch v2.0</h3>
+                </div>
+              </div>
+              <div class="project-card-body">
+                <p class="project-desc">
+                  Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
+                </p>
+                <div class="project-highlights">
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
+                  <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
+                </div>
+                <div class="project-tech-tags">
+                  <span class="tech-tag">React 18</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">SSE</span>
+                  <span class="tech-tag">sql.js (WASM)</span>
+                  <span class="tech-tag">UPI QR</span>
+                </div>
+              </div>
+              <div class="project-card-footer">
+                <div class="project-meta-row">
+                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
+                </div>
+                <div class="project-action-btns">
+                  <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://campussearch.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                    <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Archive Trigger Banner -->
+          <div class="project-archive-banner reveal-up">
+            <div style="font-size: 32px; color: #0066ff;"><i class="fas fa-layer-group"></i></div>
+            <h3>Explore Complete Project Archive (6 Additional Systems)</h3>
+            <p>Explore specialized solutions in university placement arbitration, disaster mesh geofencing, sprint workflow SaaS, legal compliance analysis, and AI developer tooling.</p>
+            <button class="btn btn-dark" onclick="openProjectArchiveModal();">
+              <i class="fas fa-archive"></i> View All 10 Projects in Archive
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MODULAR JOURNEY & CREDENTIALS HUB (SLIDE 3)
+         ═══════════════════════════════════════════ -->
+    <section id="journey" class="section-bg-alt deck-slide deep-queued" data-slide-index="3">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Verified Credentials &amp; Events</span>
+            <h2 class="section-title">Top 4 <span>Industry Credentials</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Ranked by corporate prestige, domain complexity, and architectural validation.</p>
+          </div>
+
+          <!-- Top 4 Quality Certificates Grid -->
+          <div class="top-certs-grid reveal-up">
+            
+            <!-- Cert 1: Google Cloud -->
+            <div class="cert-flagship-card" onclick="openJourneyModal(0);">
+              <div class="cert-flagship-badge"><i class="fas fa-brain"></i> Agentic AI Global Challenge</div>
+              <h4 class="cert-flagship-title">Google Cloud Agentic AI Day Challenge</h4>
+              <div class="cert-flagship-meta">Google Cloud (powered by Hack2skill) · July 2026</div>
+              <p class="cert-flagship-desc">Architected and engineered multi-agent autonomous system prototypes addressing enterprise operational friction utilizing Vertex AI orchestration patterns.</p>
+              <div class="system-card-action">
+                <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Cert 2: BCG X -->
+            <div class="cert-flagship-card" onclick="openJourneyModal(1);">
+              <div class="cert-flagship-badge"><i class="fas fa-briefcase"></i> Corporate AI Simulation</div>
+              <h4 class="cert-flagship-title">BCG X — Generative AI Job Simulation</h4>
+              <div class="cert-flagship-meta">BCG X (via Forage Platform) · July 2026</div>
+              <p class="cert-flagship-desc">Engineered an AI-powered financial analysis chatbot for corporate clients. Automated structured 10-K document extraction pipelines and benchmarked chatbot reasoning.</p>
+              <div class="system-card-action">
+                <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Cert 3: Deloitte Australia -->
+            <div class="cert-flagship-card" onclick="openJourneyModal(2);">
+              <div class="cert-flagship-badge"><i class="fas fa-search-dollar"></i> Forensic Technology</div>
+              <h4 class="cert-flagship-title">Deloitte Australia — Data Analytics &amp; Forensic Tech</h4>
+              <div class="cert-flagship-meta">Deloitte Australia (via Forage Platform) · June 2026</div>
+              <p class="cert-flagship-desc">Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in financial streams, and executive forensic dashboards.</p>
+              <div class="system-card-action">
+                <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Cert 4: LinkedIn Learning NASBA -->
+            <div class="cert-flagship-card" onclick="openJourneyModal(3);">
+              <div class="cert-flagship-badge"><i class="fas fa-award"></i> NASBA Accredited CPE</div>
+              <h4 class="cert-flagship-title">What Is Generative AI? (NASBA Accredited)</h4>
+              <div class="cert-flagship-meta">LinkedIn Learning &amp; NASBA · July 2026</div>
+              <p class="cert-flagship-desc">Formal certification covering core Generative AI architectures, foundation models, prompt engineering methodologies, and integration of AI agents into software engineering.</p>
+              <div class="system-card-action">
+                <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Action Bar to Open All 14+ Credentials -->
+          <div class="journey-action-bar reveal-up" style="text-align: center; margin-top: 24px;">
+            <button class="btn btn-dark btn-lg" onclick="openJourneyModal(0);">
+              <i class="fas fa-layer-group"></i> Explore All 14+ Credentials &amp; Badges Hub
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         TECHNICAL ARSENAL & SKILLS (SLIDE 4)
+         ═══════════════════════════════════════════ -->
+    <section id="skills" class="deck-slide deep-queued" data-slide-index="4">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Technical Stack</span>
+            <h2 class="section-title">Technical <span>Arsenal</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Real-world framework proficiencies &amp; repository language distribution derived from GitHub.</p>
+          </div>
 
         <div class="skills-grid">
 
@@ -999,21 +715,23 @@
             </div>
           </div>
 
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════
-         INVOLVEMENT & LEADERSHIP (DO NOT TOUCH)
+         INVOLVEMENT & LEADERSHIP (SLIDE 5)
          ═══════════════════════════════════════════ -->
-    <section id="involvement" class="section-bg-alt section-padding">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Community &amp; Organization</span>
-          <h2 class="section-title">Involvement &amp; <span>Leadership</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Active campus organizing, technical club volunteering, and event coordination roles.</p>
-        </div>
+    <section id="involvement" class="section-bg-alt deck-slide deep-queued" data-slide-index="5">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Community &amp; Organization</span>
+            <h2 class="section-title">Involvement &amp; <span>Leadership</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Active campus organizing, technical club volunteering, and event coordination roles.</p>
+          </div>
 
         <div class="involvement-cards-stack">
 
@@ -1074,19 +792,21 @@
 
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- ═══════════════════════════════════════════
-         CONTACT SECTION
+         CONTACT SECTION (SLIDE 6)
          ═══════════════════════════════════════════ -->
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <div class="section-header reveal-up">
-          <span class="section-badge">Get in Touch</span>
-          <h2 class="section-title">Let's <span>Connect</span></h2>
-          <div class="section-divider"></div>
-          <p class="section-subtitle">Interested in collaborating, discussing technical architectures, or exploring engineering opportunities? Reach out anytime.</p>
-        </div>
+    <section id="contact" class="deck-slide deep-queued" data-slide-index="6">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="section-badge">Get in Touch</span>
+            <h2 class="section-title">Let's <span>Connect</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Interested in collaborating, discussing technical architectures, or exploring engineering opportunities? Reach out anytime.</p>
+          </div>
 
         <div class="contact-layout">
           
@@ -1201,42 +921,157 @@
           </div>
 
         </div>
+
+        <!-- Integrated Clean Deck Footer -->
+        <footer class="site-footer" style="margin-top: 36px; border-top: 1px solid var(--accent-border); padding-top: 24px; background: transparent;">
+          <div class="container footer-container">
+            <div class="footer-left">
+              <a href="#" onclick="window.goToSlide(0); return false;" class="footer-logo">Shashank J<span>.</span></a>
+              <p class="footer-bio">Computer Science &amp; Engineering student at JSS STU (SJCE), Mysuru. Building scalable, fault-tolerant full-stack applications and AI systems.</p>
+            </div>
+            <div class="footer-links">
+              <h4>Navigation</h4>
+              <a href="#" onclick="window.goToSlide(0); return false;">Home</a>
+              <a href="#" onclick="window.goToSlide(1); return false;">About</a>
+              <a href="#" onclick="window.goToSlide(2); return false;">Projects</a>
+              <a href="#" onclick="window.goToSlide(3); return false;">Journey &amp; Certs</a>
+              <a href="#" onclick="window.goToSlide(6); return false;">Contact</a>
+            </div>
+            <div class="footer-social">
+              <h4>Connect</h4>
+              <div class="footer-social-icons">
+                <a href="https://github.com/Shashankcodelover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:shashank.j8426@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="container">
+              <p>&copy; 2026 Shashank J. All rights reserved. Built with clean vanilla architecture &amp; hosted on Vercel.</p>
+            </div>
+          </div>
+        </footer>
+
       </div>
     </section>
 
   </main>
 
   <!-- ═══════════════════════════════════════════
-       FOOTER
+       FLOATING 3D PRESENTATION DECK STEPPER & ELEVATOR
        ═══════════════════════════════════════════ -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <a href="#landing" class="footer-logo">Shashank J<span>.</span></a>
-        <p class="footer-bio">Computer Science &amp; Engineering student at JSS STU (SJCE), Mysuru. Building scalable, fault-tolerant full-stack applications and AI systems.</p>
+  <aside class="deck-stepper" id="deckStepper" aria-label="Presentation Deck Navigator">
+    <button class="deck-step-arrow" id="deckPrevBtn" title="Previous Slide (Up)"><i class="fas fa-chevron-up"></i></button>
+    <div class="deck-dots">
+      <button class="deck-dot active" data-slide="0" title="01 - Home"></button>
+      <button class="deck-dot" data-slide="1" title="02 - About"></button>
+      <button class="deck-dot" data-slide="2" title="03 - Flagship Projects"></button>
+      <button class="deck-dot" data-slide="3" title="04 - Verified Credentials"></button>
+      <button class="deck-dot" data-slide="4" title="05 - Skills Arsenal"></button>
+      <button class="deck-dot" data-slide="5" title="06 - Leadership"></button>
+      <button class="deck-dot" data-slide="6" title="07 - Contact"></button>
+    </div>
+    <button class="deck-step-arrow" id="deckNextBtn" title="Next Slide (Down)"><i class="fas fa-chevron-down"></i></button>
+    <div class="deck-counter" id="deckCounter">01 / 07</div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       INTERACTIVE TWO-PANEL CREDENTIAL INSPECTOR MODAL
+       ═══════════════════════════════════════════ -->
+  <div class="journey-modal" id="journeyModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      
+      <!-- Modal Top Bar -->
+      <div class="modal-top-bar">
+        <div class="modal-stepper-info">
+          <span class="modal-category-tag" id="modalCategoryTag">Credential Category</span>
+          <span class="modal-counter-indicator" id="modalCounter">1 of 14</span>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <a href="#landing">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#journey">Journey &amp; Certs</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-social">
-        <h4>Connect</h4>
-        <div class="footer-social-icons">
-          <a href="https://github.com/Shashankcodelover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:shashank.j8426@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+
+      <!-- Modal Split Body -->
+      <div class="modal-body-split">
+        
+        <!-- Left Panel: Card Preview Frame -->
+        <div class="modal-image-col">
+          <div class="modal-card-visual-frame">
+            <div class="card-visual-badge" id="modalVisualBadge">Verified Proof</div>
+            <img src="certificates/hack-google-agentic.jpg" alt="Credential Certificate Preview" id="modalImage" class="modal-cert-image">
+          </div>
+        </div>
+
+        <!-- Right Panel: Deep-Dive Structural Details -->
+        <div class="modal-details-col">
+          
+          <div class="details-header-group">
+            <span class="modal-type-badge" id="modalType">Certification Type</span>
+            <h3 class="modal-title" id="modalTitle">Credential Title</h3>
+          </div>
+
+          <!-- Metadata Matrix -->
+          <div class="modal-meta-matrix">
+            <div class="meta-cell">
+              <i class="fas fa-building meta-icon"></i>
+              <div class="meta-text-wrap">
+                <span class="meta-label">Issuing Organization</span>
+                <span class="meta-value" id="modalIssuer">Organization Name</span>
+              </div>
+            </div>
+
+            <div class="meta-cell">
+              <i class="fas fa-user-tie meta-icon"></i>
+              <div class="meta-text-wrap">
+                <span class="meta-label">Founder / Leadership / Host</span>
+                <span class="meta-value" id="modalFounder">Host / Coordinator</span>
+              </div>
+            </div>
+
+            <div class="meta-cell">
+              <i class="fas fa-calendar-check meta-icon"></i>
+              <div class="meta-text-wrap">
+                <span class="meta-label">Issued / Event Date</span>
+                <span class="meta-value" id="modalDate">Date</span>
+              </div>
+            </div>
+
+            <div class="meta-cell">
+              <i class="fas fa-shield-alt meta-icon"></i>
+              <div class="meta-text-wrap">
+                <span class="meta-label">Credential Status / ID</span>
+                <span class="meta-value" id="modalId">Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- In-Depth Technical Description & Scope -->
+          <div class="modal-desc-box">
+            <span class="desc-heading">Technical Scope &amp; Verified Competencies</span>
+            <p class="modal-description" id="modalDesc">Detailed description of skills validated, algorithms implemented, and project deliverables.</p>
+          </div>
+
+          <!-- Navigation Controls: Step through One-by-One -->
+          <div class="modal-stepper-footer">
+            <div class="stepper-buttons">
+              <button class="btn btn-sm btn-outline" id="prevCredBtn">
+                <i class="fas fa-arrow-left"></i> Previous
+              </button>
+              <button class="btn btn-sm btn-dark" id="nextCredBtn">
+                Next <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Shashank J. All rights reserved. Built with clean vanilla architecture &amp; hosted on Vercel.</p>
-      </div>
-    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════
        PROJECT ARCHIVE MODAL (ADDITIONAL 6 PROJECTS)
        ═══════════════════════════════════════════ -->
@@ -1368,51 +1203,6 @@
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       SYSTEM DETAIL INSPECTOR MODAL
-       ═══════════════════════════════════════════ -->
-  <div class="custom-flat-modal" id="systemDetailModal" aria-hidden="true">
-    <div class="modal-backdrop" onclick="closeSystemModal();"></div>
-    <div class="custom-flat-dialog" style="max-width: 720px;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--accent-border); padding-bottom: 16px;">
-        <div style="display: flex; gap: 14px; align-items: center;">
-          <div class="system-icon-box" style="width: 50px; height: 50px; font-size: 22px;">
-            <i id="sysModalIcon" class="fas fa-microchip"></i>
-          </div>
-          <div>
-            <span id="sysModalBadge" class="system-domain-badge">Domain</span>
-            <h3 id="sysModalTitle" style="font-size: 22px; font-weight: 800; margin-top: 4px; color: var(--text-main);">System Architecture Title</h3>
-            <div id="sysModalSubtitle" style="font-size: 13px; color: var(--text-secondary); margin-top: 2px;">Subtitle</div>
-          </div>
-        </div>
-        <button class="modal-close-btn" onclick="closeSystemModal();" aria-label="Close system modal">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 8px;">Engineering Problem &amp; Overview</h4>
-        <p id="sysModalOverview" style="font-size: 14px; line-height: 1.6; color: var(--text-main);"></p>
-      </div>
-
-      <div style="margin-bottom: 20px;">
-        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 10px;">Architectural Implementation Principles</h4>
-        <ul id="sysModalArchList" style="list-style: none; padding-left: 0; font-size: 13px; color: var(--text-secondary); line-height: 1.5;"></ul>
-      </div>
-
-      <div style="margin-bottom: 24px;">
-        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 10px;">Core Tech Stack</h4>
-        <div id="sysModalTechTags" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
-      </div>
-
-      <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid var(--accent-border); padding-top: 16px;">
-        <a id="sysModalRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
-          <i class="fab fa-github"></i> View Production Codebase <i class="fas fa-external-link-alt" style="margin-left: 6px;"></i>
-        </a>
       </div>
     </div>
   </div>
