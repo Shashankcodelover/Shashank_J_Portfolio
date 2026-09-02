@@ -49,6 +49,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#landing" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
+        <a href="#systems" class="nav-link">Systems Deck</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#journey" class="nav-link">Journey &amp; Certs</a>
         <a href="#skills" class="nav-link">Skills</a>
@@ -87,14 +88,14 @@
               Full-Stack Software Architect &nbsp;•&nbsp; AI Systems Builder &nbsp;•&nbsp; Hackathon Competitor
             </p>
             <p class="hero-intro reveal-up">
-              Computer Science &amp; Engineering scholar at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10). I specialize in engineering high-reliability full-stack systems, offline-first synchronization protocols, real-time emergency dispatch telemetry, and autonomous multi-agent AI pipelines. Driven by shipping production-grade code that solves mission-critical operations bottlenecks.
+              Computer Science &amp; Engineering scholar at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10). I engineer high-reliability web platforms, offline-first sync protocols, and autonomous AI pipelines designed for real-world operational scale.
             </p>
             <div class="hero-cta reveal-up">
               <a href="#projects" class="btn btn-dark">
-                <i class="fas fa-folder-open"></i> Explore 10 Priority Projects
+                <i class="fas fa-layer-group"></i> Explore 4 Flagship Projects
               </a>
-              <a href="#journey" class="btn btn-outline" onclick="openJourneyModal(0);">
-                <i class="fas fa-compass"></i> Launch Journey &amp; Credentials Hub
+              <a href="#systems" class="btn btn-outline">
+                <i class="fas fa-microchip"></i> Architectural Systems Deck
               </a>
             </div>
             <div class="hero-socials reveal-up">
@@ -110,55 +111,12 @@
             </div>
           </div>
 
-          <!-- Right Column: Visual Profile & 4 Core Badges (Alternating L-R) -->
+          <!-- Right Column: Clean Visual Profile & Unified Stats Strip -->
           <div class="hero-visual reveal-scale">
-            <div class="hero-photo-wrapper" id="heroPhotoWrapper" title="Hover to clear photo on desktop / Use button to toggle on mobile">
+            <div class="hero-photo-wrapper hero-photo-clean" id="heroPhotoWrapper">
               <div class="photo-frame">
-                <img src="photo/profile-photo.jpeg" alt="Shashank J — Profile Photo" class="profile-img">
+                <img src="photo/profile-photo.jpeg" alt="Shashank J — Full-Stack Software Engineer" class="profile-img">
               </div>
-
-              <!-- Badge 1: Open Source & Git -->
-              <div class="floating-badge badge-level-1">
-                <div class="badge-icon-box"><i class="fas fa-code-branch"></i></div>
-                <div class="badge-content">
-                  <span class="badge-title">Open Source Contributor</span>
-                  <span class="badge-subtitle">Commit31 • Pull Shark</span>
-                </div>
-              </div>
-
-              <!-- Badge 2: Competitions & Hackathons -->
-              <div class="floating-badge badge-level-2">
-                <div class="badge-icon-box"><i class="fas fa-trophy"></i></div>
-                <div class="badge-content">
-                  <span class="badge-title">Hackathon Competitor</span>
-                  <span class="badge-subtitle">6 National Events</span>
-                </div>
-              </div>
-
-              <!-- Badge 3: Soft Skill - Communication -->
-              <div class="floating-badge badge-level-3">
-                <div class="badge-icon-box"><i class="fas fa-bullhorn"></i></div>
-                <div class="badge-content">
-                  <span class="badge-title">Good Communicator</span>
-                  <span class="badge-subtitle">PR Team • Persona Plus Club</span>
-                </div>
-              </div>
-
-              <!-- Badge 4: Soft Skill - Leadership (Volunteer) -->
-              <div class="floating-badge badge-level-4">
-                <div class="badge-icon-box"><i class="fas fa-hands-helping"></i></div>
-                <div class="badge-content">
-                  <span class="badge-title">Leadership Quality</span>
-                  <span class="badge-subtitle">HACK-OLYMPIC 2026 Volunteer</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mobile Exclusive Highlights Toggle Button -->
-            <div class="photo-mobile-toggle-wrapper">
-              <button class="photo-mobile-toggle-btn" id="photoTagsToggleBtn" aria-label="Toggle photo tags on mobile">
-                <i class="fas fa-tags"></i> <span id="tagsToggleText">Show Highlights</span>
-              </button>
             </div>
 
             <!-- Dynamic GitHub-Integrated Stats Row -->
@@ -169,8 +127,8 @@
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="10">10</span>
-                <span class="stat-label">Priority Projects</span>
+                <span class="stat-number hero-stat-num" data-target="4">4</span>
+                <span class="stat-label">Flagships</span>
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
@@ -290,13 +248,208 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         PRIORITIZED PROJECTS (ALL 10 TOP PROJECTS)
+         ENGINEERING SYSTEMS & ARCHITECTURAL DECK
+         ═══════════════════════════════════════════ -->
+    <section id="systems" class="section-padding systems-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Distributed Systems &amp; Applied AI</span>
+          <h2 class="section-title">Architectural Systems &amp; <span>Live Deck</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Interactive horizontal systems deck — hover to pause, or click any system block to inspect deep-dive architecture, failure modes, and codebases.</p>
+        </div>
+
+        <div class="systems-carousel-container reveal-up">
+          <div class="systems-track">
+            <!-- Block 1: Offline Sync -->
+            <div class="system-card" onclick="openSystemModal('sync');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-sync-alt"></i></div>
+                <span class="system-domain-badge">PWA · Distributed</span>
+              </div>
+              <h4 class="system-card-title">Offline-First Synchronization Engine</h4>
+              <p class="system-card-desc">IndexedDB client write-ahead buffer serializing events during network dead zones with idempotent backend bulk reconciliation.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">IndexedDB</span>
+                <span class="system-tag">Service Workers</span>
+                <span class="system-tag">Node.js</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Block 2: Multi-Agent AI -->
+            <div class="system-card" onclick="openSystemModal('multiagent');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-robot"></i></div>
+                <span class="system-domain-badge">Agentic AI</span>
+              </div>
+              <h4 class="system-card-title">Autonomous Multi-Agent AI Pipelines</h4>
+              <p class="system-card-desc">LangGraph state graphs orchestrating specialized sub-agents for automated document extraction, audit checks, and financial reasoning.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">LangGraph</span>
+                <span class="system-tag">Vertex AI</span>
+                <span class="system-tag">Gemini API</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Block 3: Telemetry & Proximity -->
+            <div class="system-card" onclick="openSystemModal('telemetry');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-route"></i></div>
+                <span class="system-domain-badge">Drone Telemetry</span>
+              </div>
+              <h4 class="system-card-title">Real-Time Telemetry &amp; Proximity Routing</h4>
+              <p class="system-card-desc">Emergency biological dispatch engine computing AI proximity scores and streaming cold-chain temperature telemetry over WebSockets.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">Leaflet.js</span>
+                <span class="system-tag">WebSockets</span>
+                <span class="system-tag">Haversine</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Block 4: Dynamic QR -->
+            <div class="system-card" onclick="openSystemModal('qr');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-qrcode"></i></div>
+                <span class="system-domain-badge">Security · Auth</span>
+              </div>
+              <h4 class="system-card-title">Cryptographic Anti-Proxy Verification</h4>
+              <p class="system-card-desc">Rotating time-synchronized dynamic QR generator invalidating screenshots and proxy attendance across university sessions.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">Web Crypto</span>
+                <span class="system-tag">TOTP</span>
+                <span class="system-tag">HMAC-SHA256</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Block 5: Campus Broadcast -->
+            <div class="system-card" onclick="openSystemModal('broadcast');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-broadcast-tower"></i></div>
+                <span class="system-domain-badge">P2P Hardware</span>
+              </div>
+              <h4 class="system-card-title">Peer Hardware Exchange &amp; Broadcast SSE</h4>
+              <p class="system-card-desc">Hyper-local component broadcast matching with sub-50ms SSE notification dispatch and instant UPI settlement generation.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">SSE</span>
+                <span class="system-tag">PostgreSQL</span>
+                <span class="system-tag">UPI QR</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Block 6: Forensic Analytics -->
+            <div class="system-card" onclick="openSystemModal('forensic');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-search-dollar"></i></div>
+                <span class="system-domain-badge">Big Data · Audit</span>
+              </div>
+              <h4 class="system-card-title">Forensic Transaction Anomaly Detection</h4>
+              <p class="system-card-desc">High-volume financial transaction stream inspector identifying vendor splits, Benford law violations, and off-hour batch anomalies.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">PostgreSQL</span>
+                <span class="system-tag">Pandas</span>
+                <span class="system-tag">Statistical Audit</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Duplicate Set for Seamless Infinite Loop -->
+            <div class="system-card" onclick="openSystemModal('sync');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-sync-alt"></i></div>
+                <span class="system-domain-badge">PWA · Distributed</span>
+              </div>
+              <h4 class="system-card-title">Offline-First Synchronization Engine</h4>
+              <p class="system-card-desc">IndexedDB client write-ahead buffer serializing events during network dead zones with idempotent backend bulk reconciliation.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">IndexedDB</span>
+                <span class="system-tag">Service Workers</span>
+                <span class="system-tag">Node.js</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <div class="system-card" onclick="openSystemModal('multiagent');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-robot"></i></div>
+                <span class="system-domain-badge">Agentic AI</span>
+              </div>
+              <h4 class="system-card-title">Autonomous Multi-Agent AI Pipelines</h4>
+              <p class="system-card-desc">LangGraph state graphs orchestrating specialized sub-agents for automated document extraction, audit checks, and financial reasoning.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">LangGraph</span>
+                <span class="system-tag">Vertex AI</span>
+                <span class="system-tag">Gemini API</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <div class="system-card" onclick="openSystemModal('telemetry');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-route"></i></div>
+                <span class="system-domain-badge">Drone Telemetry</span>
+              </div>
+              <h4 class="system-card-title">Real-Time Telemetry &amp; Proximity Routing</h4>
+              <p class="system-card-desc">Emergency biological dispatch engine computing AI proximity scores and streaming cold-chain temperature telemetry over WebSockets.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">Leaflet.js</span>
+                <span class="system-tag">WebSockets</span>
+                <span class="system-tag">Haversine</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <div class="system-card" onclick="openSystemModal('qr');">
+              <div class="system-card-top">
+                <div class="system-icon-box"><i class="fas fa-qrcode"></i></div>
+                <span class="system-domain-badge">Security · Auth</span>
+              </div>
+              <h4 class="system-card-title">Cryptographic Anti-Proxy Verification</h4>
+              <p class="system-card-desc">Rotating time-synchronized dynamic QR generator invalidating screenshots and proxy attendance across university sessions.</p>
+              <div class="system-card-tags">
+                <span class="system-tag">Web Crypto</span>
+                <span class="system-tag">TOTP</span>
+                <span class="system-tag">HMAC-SHA256</span>
+              </div>
+              <div class="system-card-action">
+                <span>Inspect Architecture</span> <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRIORITIZED PROJECTS (TOP 4 FLAGSHIP PROJECTS)
          ═══════════════════════════════════════════ -->
     <section id="projects" class="section-padding">
       <div class="container">
         <div class="section-header reveal-up">
           <span class="section-badge">Production &amp; Engineering Work</span>
-          <h2 class="section-title">Top 10 <span>Priority Projects</span></h2>
+          <h2 class="section-title">Top 4 <span>Flagship Projects</span></h2>
           <div class="section-divider"></div>
           <p class="section-subtitle">Ranked in exact order of architectural depth, deployment readiness, and operational impact.</p>
         </div>
@@ -427,294 +580,60 @@
             </div>
           </article>
 
-          <!-- 4. Placement-Clash-Resolver -->
-          <article class="project-card reveal-up" data-repo="Placement-Clash-Resolver">
+          <!-- 4. Campus-Search v2.0 (Peer Hardware Exchange & Broadcast Engine) -->
+          <article class="project-card reveal-up" data-repo="Campus-Search">
             <div class="project-card-header">
               <span class="project-num">04</span>
               <div class="project-title-group">
-                <span class="project-category">Scheduling Engine · Conflict Arbitration</span>
-                <h3>Placement Clash Resolver</h3>
+                <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
+                <h3>CampusSearch v2.0</h3>
               </div>
             </div>
             <div class="project-card-body">
               <p class="project-desc">
-                Automated scheduling and conflict resolution engine designed for university placement cells to eliminate simultaneous interview overlaps, exam clashes, and company slot collisions.
+                Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
               </p>
               <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Interval graph algorithm for optimal time-slot assignments</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Multi-company priority arbitration and student eligibility checks</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Instant alert dispatcher notifying candidates of rescheduled slots</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Algorithms</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">REST API</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="#" class="btn btn-sm btn-demo" data-demo-for="Placement-Clash-Resolver">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5. Campus-Search -->
-          <article class="project-card reveal-up" data-repo="Campus-Search">
-            <div class="project-card-header">
-              <span class="project-num">05</span>
-              <div class="project-title-group">
-                <span class="project-category">Full-Stack Marketplace · WASM SQLite</span>
-                <h3>CampusSearch v1.1</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Peer-to-peer campus hardware component exchange marketplace. Enables students to trade sensors, Arduino boards, and lab gear with student domain gating, item escrow locking, and SSE notifications.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite data layer with zero server lock-in</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time push updates via Server-Sent Events (SSE) stream</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Automated wishlist matching and scam keyword moderation</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
+                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
               </div>
               <div class="project-tech-tags">
                 <span class="tech-tag">React 18</span>
-                <span class="tech-tag">Vite</span>
-                <span class="tech-tag">sql.js (WASM)</span>
-                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">PostgreSQL</span>
                 <span class="tech-tag">SSE</span>
+                <span class="tech-tag">sql.js (WASM)</span>
+                <span class="tech-tag">UPI QR</span>
               </div>
             </div>
             <div class="project-card-footer">
               <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
               </div>
               <div class="project-action-btns">
                 <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
                   <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="https://campus-search.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. Phoenix-Interview-Prep_and_Hackathon_Guide -->
-          <article class="project-card reveal-up" data-repo="Phoenix-Interview-Prep_and_Hackathon_Guide">
-            <div class="project-card-header">
-              <span class="project-num">06</span>
-              <div class="project-title-group">
-                <span class="project-category">Developer Education · Gamified Loop</span>
-                <h3>Phoenix Interview Prep &amp; Hackathon Guide</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Developer career acceleration suite bridging DSA interview preparation with hackathon track execution into a unified, gamified milestone progression system.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Dynamic study roadmap generator personalized to target role timeline</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> AI story miner extracting STAR-format behavioral interview points</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Skill graph tying algorithm milestones directly to hackathon challenges</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Socket.io</span>
-                <span class="tech-tag">Express</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://phoenix.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 7. Devflow-Pro -->
-          <article class="project-card reveal-up" data-repo="Devflow-Pro">
-            <div class="project-card-header">
-              <span class="project-num">07</span>
-              <div class="project-title-group">
-                <span class="project-category">Enterprise SaaS · TypeScript</span>
-                <h3>DevFlow Pro</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Enterprise sprint workflow and real-time task management engine. Full-stack TypeScript architecture integrating PostgreSQL relational integrity with Socket.io real-time kanban synchronization.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Live board updates via Socket.io with conflict resolution</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Type-safe PostgreSQL integration with relational integrity checks</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Sprint velocity analytics, role hierarchies, and task assignment</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">React 18</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Socket.io</span>
-                <span class="tech-tag">Tailwind</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://devflow-pro.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8. Decentralized-Disaster-Response (FLARE) - ACCURATE & VERIFIED WebRTC + Yjs CRDTs -->
-          <article class="project-card reveal-up" data-repo="Decentralized-Disaster-Response-Resource-Geofencing-System">
-            <div class="project-card-header">
-              <span class="project-num">08</span>
-              <div class="project-title-group">
-                <span class="project-category">Geospatial · P2P Mesh</span>
-                <h3>Decentralized Disaster Response Geofencing (FLARE)</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Resilient crisis response coordination network combining geospatial geofencing boundaries with <strong>WebRTC + Yjs CRDTs</strong> (Conflict-free Replicated Data Types) for offline-first peer-to-peer data synchronization during telecommunication blackouts.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> WebRTC mesh network + Yjs CRDTs for decentralized offline-first state synchronization</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Geospatial polygon geofencing assigning nearest emergency aid depots &amp; safe zones</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Zero-server dependency architecture optimized for disaster communication blackouts</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">WebRTC</span>
-                <span class="tech-tag">Yjs (CRDTs)</span>
-                <span class="tech-tag">Leaflet</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Geofencing</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://lifestream-v3.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 9. ArchitectAI-Studio -->
-          <article class="project-card reveal-up" data-repo="ArchitectAI-Studio">
-            <div class="project-card-header">
-              <span class="project-num">09</span>
-              <div class="project-title-group">
-                <span class="project-category">Multi-Agent AI · Visual Studio</span>
-                <h3>ArchitectAI Studio</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Visual multi-agent systems architecting studio. Features an interactive node canvas tracking live agent execution states, LangGraph multi-agent execution, and an in-browser WASM SQL validator.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> LangGraph multi-agent state graph compiler with Gemini API</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Auto-generated live mock REST endpoints for instant testing</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM SQL simulator for visual database schema validation</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">React 19</span>
-                <span class="tech-tag">LangGraph</span>
-                <span class="tech-tag">Gemini API</span>
-                <span class="tech-tag">SQL.js (WASM)</span>
-                <span class="tech-tag">Node.js</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                  <i class="fas fa-play"></i> Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 10. RegulAIte (regulaite-ai) -->
-          <article class="project-card reveal-up" data-repo="regulaite-ai">
-            <div class="project-card-header">
-              <span class="project-num">10</span>
-              <div class="project-title-group">
-                <span class="project-category">Legal Compliance · Multi-Agent AI</span>
-                <h3>RegulAIte</h3>
-              </div>
-            </div>
-            <div class="project-card-body">
-              <p class="project-desc">
-                Autonomous AI compliance engine for legal and contractual documents. Identifies hidden operational liabilities, computes a quantifiable Risk Score index, and auto-generates renegotiated "safe" alternative clause variants.
-              </p>
-              <div class="project-highlights">
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Multi-agent AI orchestration pipeline parsing complex legal &amp; contractual documentation</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Automated liability risk scoring with granular line-item risk index breakdown</div>
-                <div class="highlight-item"><i class="fas fa-check-circle"></i> Context-aware safe clause generator producing redlined negotiation alternatives</div>
-              </div>
-              <div class="project-tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Streamlit</span>
-                <span class="tech-tag">Agentic AI</span>
-                <span class="tech-tag">LLM Pipelines</span>
-                <span class="tech-tag">NLP</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <div class="project-meta-row">
-                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">May 2026</span></span>
-              </div>
-              <div class="project-action-btns">
-                <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                  <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="regulaite-ai">
-                  <i class="fas fa-external-link-alt"></i> Live Demo
+                <a href="https://campussearch.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
             </div>
           </article>
 
         </div>
+
+        <!-- Archive Trigger Banner -->
+        <div class="project-archive-banner reveal-up">
+          <div style="font-size: 32px; color: #0066ff;"><i class="fas fa-layer-group"></i></div>
+          <h3>Explore Complete Project Archive (6 Additional Systems)</h3>
+          <p>Explore specialized solutions in university placement arbitration, disaster mesh geofencing, sprint workflow SaaS, legal compliance analysis, and AI developer tooling.</p>
+          <button class="btn btn-dark" onclick="openProjectArchiveModal();">
+            <i class="fas fa-archive"></i> View All 10 Projects in Archive
+          </button>
+        </div>
+
       </div>
     </section>
 
@@ -725,85 +644,64 @@
       <div class="container">
         <div class="section-header reveal-up">
           <span class="section-badge">Verified Credentials &amp; Events</span>
-          <h2 class="section-title">Explore My <span>Journey &amp; Certifications</span></h2>
+          <h2 class="section-title">Top 4 <span>Industry Credentials</span></h2>
           <div class="section-divider"></div>
-          <p class="section-subtitle">A modular inspection hub organizing my technical credentials, hackathons, corporate simulations, and open-source milestones.</p>
+          <p class="section-subtitle">Ranked by corporate prestige, domain complexity, and architectural validation.</p>
         </div>
 
-        <!-- Category Hub Cards — Main Entry Point for Modular Inspection -->
-        <div class="journey-hub-grid reveal-up">
+        <!-- Top 4 Quality Certificates Grid -->
+        <div class="top-certs-grid reveal-up">
           
-          <!-- Category 1: AI, Generative AI & Agentic Systems -->
-          <div class="journey-category-card" onclick="openJourneyCategory('ai');">
-            <div class="jcat-icon jcat-ai"><i class="fas fa-brain"></i></div>
-            <div class="jcat-header">
-              <span class="jcat-badge badge-ai">5 Verified Milestones</span>
-              <h3>AI, Generative AI &amp; Agentic Systems</h3>
-              <p>Google Cloud Agentic AI Day, BCG X GenAI chatbot simulation, LinkedIn NASBA CPE certification, ViCoDathon, and ML workshops.</p>
+          <!-- Cert 1: Google Cloud -->
+          <div class="cert-flagship-card" onclick="openJourneyModal(0);">
+            <div class="cert-flagship-badge"><i class="fas fa-brain"></i> Agentic AI Global Challenge</div>
+            <h4 class="cert-flagship-title">Google Cloud Agentic AI Day Challenge</h4>
+            <div class="cert-flagship-meta">Google Cloud (powered by Hack2skill) · July 2026</div>
+            <p class="cert-flagship-desc">Architected and engineered multi-agent autonomous system prototypes addressing enterprise operational friction utilizing Vertex AI orchestration patterns.</p>
+            <div class="system-card-action">
+              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
             </div>
-            <button class="btn btn-sm btn-outline jcat-btn">
-              <span>Inspect Credentials</span> <i class="fas fa-arrow-right"></i>
-            </button>
           </div>
 
-          <!-- Category 2: Corporate Job Simulations -->
-          <div class="journey-category-card" onclick="openJourneyCategory('jobs');">
-            <div class="jcat-icon jcat-corp"><i class="fas fa-briefcase"></i></div>
-            <div class="jcat-header">
-              <span class="jcat-badge badge-corp">2 Industry Simulations</span>
-              <h3>Corporate Job Simulations</h3>
-              <p>Industry deliverables completed with BCG X (GenAI Financial Systems) and Deloitte Australia (Forensic Technology &amp; Analytics).</p>
+          <!-- Cert 2: BCG X -->
+          <div class="cert-flagship-card" onclick="openJourneyModal(1);">
+            <div class="cert-flagship-badge"><i class="fas fa-briefcase"></i> Corporate AI Simulation</div>
+            <h4 class="cert-flagship-title">BCG X — Generative AI Job Simulation</h4>
+            <div class="cert-flagship-meta">BCG X (via Forage Platform) · July 2026</div>
+            <p class="cert-flagship-desc">Engineered an AI-powered financial analysis chatbot for corporate clients. Automated structured 10-K document extraction pipelines and benchmarked chatbot reasoning.</p>
+            <div class="system-card-action">
+              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
             </div>
-            <button class="btn btn-sm btn-outline jcat-btn">
-              <span>Inspect Credentials</span> <i class="fas fa-arrow-right"></i>
-            </button>
           </div>
 
-          <!-- Category 3: Hackathons & Competitions -->
-          <div class="journey-category-card" onclick="openJourneyCategory('hackathons');">
-            <div class="jcat-icon jcat-hack"><i class="fas fa-trophy"></i></div>
-            <div class="jcat-header">
-              <span class="jcat-badge badge-hack">6 National Events</span>
-              <h3>Hackathons &amp; Competitions</h3>
-              <p>Technotsav 2026 (Cybersecurity IEEE CIS), ViCoDathon AI, Google Cloud Agentic AI Day, HACK-OLYMPIC 2026, and HackOS-ONE.</p>
+          <!-- Cert 3: Deloitte Australia -->
+          <div class="cert-flagship-card" onclick="openJourneyModal(2);">
+            <div class="cert-flagship-badge"><i class="fas fa-search-dollar"></i> Forensic Technology</div>
+            <h4 class="cert-flagship-title">Deloitte Australia — Data Analytics &amp; Forensic Tech</h4>
+            <div class="cert-flagship-meta">Deloitte Australia (via Forage Platform) · June 2026</div>
+            <p class="cert-flagship-desc">Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in financial streams, and executive forensic dashboards.</p>
+            <div class="system-card-action">
+              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
             </div>
-            <button class="btn btn-sm btn-outline jcat-btn">
-              <span>Inspect Credentials</span> <i class="fas fa-arrow-right"></i>
-            </button>
           </div>
 
-          <!-- Category 4: Open Source & Technical Workshops -->
-          <div class="journey-category-card" onclick="openJourneyCategory('workshops');">
-            <div class="jcat-icon jcat-oss"><i class="fas fa-tools"></i></div>
-            <div class="jcat-header">
-              <span class="jcat-badge badge-oss">Programs &amp; Workshops</span>
-              <h3>Open Source &amp; Workshops</h3>
-              <p>Commit31 month-long open source sprint (Linux Campus Club • Pull Shark), DSC Machine Learning Workshop, and 'Hello Python' Bootcamp.</p>
+          <!-- Cert 4: LinkedIn Learning NASBA -->
+          <div class="cert-flagship-card" onclick="openJourneyModal(3);">
+            <div class="cert-flagship-badge"><i class="fas fa-award"></i> NASBA Accredited CPE</div>
+            <h4 class="cert-flagship-title">What Is Generative AI? (NASBA Accredited)</h4>
+            <div class="cert-flagship-meta">LinkedIn Learning &amp; NASBA · July 2026</div>
+            <p class="cert-flagship-desc">Formal certification covering core Generative AI architectures, foundation models, prompt engineering methodologies, and integration of AI agents into software engineering.</p>
+            <div class="system-card-action">
+              <span>Inspect Credential &amp; Proof</span> <i class="fas fa-arrow-right"></i>
             </div>
-            <button class="btn btn-sm btn-outline jcat-btn">
-              <span>Inspect Credentials</span> <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-
-          <!-- Category 5: Full-Stack Web Development -->
-          <div class="journey-category-card" onclick="openJourneyCategory('fullstack');">
-            <div class="jcat-icon"><i class="fas fa-code"></i></div>
-            <div class="jcat-header">
-              <span class="jcat-badge">Master Credential</span>
-              <h3>Full-Stack Web Development</h3>
-              <p>Mimo accredited professional certification validating complete MERN architecture, RESTful API design, database schemas, and cloud deployment.</p>
-            </div>
-            <button class="btn btn-sm btn-outline jcat-btn">
-              <span>Inspect Credentials</span> <i class="fas fa-arrow-right"></i>
-            </button>
           </div>
 
         </div>
 
-        <!-- Direct Action Bar -->
-        <div class="journey-action-bar reveal-up">
+        <!-- Direct Action Bar to Open All 14+ Credentials -->
+        <div class="journey-action-bar reveal-up" style="text-align: center; margin-top: 24px;">
           <button class="btn btn-dark btn-lg" onclick="openJourneyModal(0);">
-            <i class="fas fa-layer-group"></i> Launch Full Journey Explorer (Inspect One-by-One)
+            <i class="fas fa-layer-group"></i> Explore All 14+ Credentials &amp; Badges Hub
           </button>
         </div>
 
@@ -1339,7 +1237,185 @@
         <p>&copy; 2026 Shashank J. All rights reserved. Built with clean vanilla architecture &amp; hosted on Vercel.</p>
       </div>
     </div>
-  </footer>
+  <!-- ═══════════════════════════════════════════
+       PROJECT ARCHIVE MODAL (ADDITIONAL 6 PROJECTS)
+       ═══════════════════════════════════════════ -->
+  <div class="custom-flat-modal" id="projectArchiveModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeProjectArchiveModal();"></div>
+    <div class="custom-flat-dialog">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--accent-border); padding-bottom: 16px;">
+        <div>
+          <span class="section-badge">Complete Engineering Portfolio</span>
+          <h3 style="font-size: 24px; font-weight: 800; margin-top: 6px;">Projects Archive (6 Additional Systems)</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Explore specialized architectures in conflict resolution, P2P mesh geofencing, real-time SaaS, and multi-agent compliance.</p>
+        </div>
+        <button class="modal-close-btn" onclick="closeProjectArchiveModal();" aria-label="Close archive modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="flat-archive-grid">
+        <!-- Archive 1: Placement Clash Resolver -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">Graph Theory · Scheduling</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Placement Clash Resolver</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Automated interview scheduling and slot arbitration engine eliminating simultaneous company interview clashes for university placement cells.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">Node.js</span>
+            <span class="system-tag">Algorithms</span>
+            <span class="system-tag">Express</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 2: Phoenix Interview Prep -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">EdTech · Gamification</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Phoenix Interview Prep</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Gamified career roadmap engine bridging DSA algorithmic milestones with hackathon track challenges and STAR-format behavioral points.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">React.js</span>
+            <span class="system-tag">MongoDB</span>
+            <span class="system-tag">Socket.io</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://phoenix.shashankj.tech" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 3: DevFlow Pro -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">Enterprise SaaS · TypeScript</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">DevFlow Pro</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Full-stack TypeScript agile management engine with Socket.io real-time board synchronization and PostgreSQL relational constraints.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">TypeScript</span>
+            <span class="system-tag">PostgreSQL</span>
+            <span class="system-tag">Socket.io</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://devflow-pro.shashankj.tech" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 4: FLARE Disaster Response -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">Geospatial · P2P Mesh</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">Disaster Geofencing (FLARE)</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Crisis coordination network combining geospatial geofencing boundaries with WebRTC and Yjs CRDTs for decentralized data synchronization.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">WebRTC</span>
+            <span class="system-tag">Yjs (CRDTs)</span>
+            <span class="system-tag">Leaflet</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 5: ArchitectAI Studio -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">Visual AI Studio · LangGraph</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">ArchitectAI Studio</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Visual node canvas compiling multi-agent state graphs using LangGraph and Gemini API with in-browser WASM SQL validation.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">React 19</span>
+            <span class="system-tag">LangGraph</span>
+            <span class="system-tag">Gemini API</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 6: RegulAIte AI -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 10px;">Legal Tech · Agentic AI</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px;">RegulAIte AI</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; flex: 1;">Autonomous compliance analyzer identifying contractual liabilities, computing numerical risk scores, and generating safe renegotiated clauses.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;">
+            <span class="system-tag">Python</span>
+            <span class="system-tag">Streamlit</span>
+            <span class="system-tag">LLM Pipelines</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px;">
+            <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: #0066ff;">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SYSTEM DETAIL INSPECTOR MODAL
+       ═══════════════════════════════════════════ -->
+  <div class="custom-flat-modal" id="systemDetailModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeSystemModal();"></div>
+    <div class="custom-flat-dialog" style="max-width: 720px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--accent-border); padding-bottom: 16px;">
+        <div style="display: flex; gap: 14px; align-items: center;">
+          <div class="system-icon-box" style="width: 50px; height: 50px; font-size: 22px;">
+            <i id="sysModalIcon" class="fas fa-microchip"></i>
+          </div>
+          <div>
+            <span id="sysModalBadge" class="system-domain-badge">Domain</span>
+            <h3 id="sysModalTitle" style="font-size: 22px; font-weight: 800; margin-top: 4px; color: var(--text-main);">System Architecture Title</h3>
+            <div id="sysModalSubtitle" style="font-size: 13px; color: var(--text-secondary); margin-top: 2px;">Subtitle</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeSystemModal();" aria-label="Close system modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 8px;">Engineering Problem &amp; Overview</h4>
+        <p id="sysModalOverview" style="font-size: 14px; line-height: 1.6; color: var(--text-main);"></p>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 10px;">Architectural Implementation Principles</h4>
+        <ul id="sysModalArchList" style="list-style: none; padding-left: 0; font-size: 13px; color: var(--text-secondary); line-height: 1.5;"></ul>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h4 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 10px;">Core Tech Stack</h4>
+        <div id="sysModalTechTags" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid var(--accent-border); padding-top: 16px;">
+        <a id="sysModalRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+          <i class="fab fa-github"></i> View Production Codebase <i class="fas fa-external-link-alt" style="margin-left: 6px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Application Script -->
   <script src="script.js"></script>
