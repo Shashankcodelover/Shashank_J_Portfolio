@@ -942,3 +942,92 @@ document.addEventListener('keydown', (e) => {
   // Initialize initial state
   updateDeckState(0);
 })();
+
+// ── 13. Horizontal Interactive Projects Showcase (Auto-Scroll & Chevrons) ──
+(function initHorizontalProjectsShowcase() {
+  const wrapper = document.getElementById('projectsHorizontalWrapper');
+  const prevBtn = document.getElementById('projPrevBtn');
+  const nextBtn = document.getElementById('projNextBtn');
+  const counterBadge = document.getElementById('projCounter');
+
+  if (!wrapper) return;
+
+  const cards = Array.from(wrapper.querySelectorAll('.project-card-horizontal'));
+  const totalCards = cards.length;
+  let autoScrollTimer = null;
+  let isUserInteracting = false;
+
+  function updateCounter() {
+    if (!counterBadge || totalCards === 0) return;
+    const scrollLeft = wrapper.scrollLeft;
+    const cardWidth = (cards[0]?.offsetWidth || 460) + 22;
+    const activeIndex = Math.min(totalCards - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
+    counterBadge.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(totalCards).padStart(2, '0')}`;
+  }
+
+  function scrollByCard(direction) {
+    if (!cards.length) return;
+    const cardWidth = (cards[0]?.offsetWidth || 460) + 22;
+    wrapper.scrollBy({
+      left: direction * cardWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      scrollByCard(-1);
+      resetAutoScroll();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      scrollByCard(1);
+      resetAutoScroll();
+    });
+  }
+
+  wrapper.addEventListener('scroll', updateCounter, { passive: true });
+
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollTimer = setInterval(() => {
+      if (isUserInteracting) return;
+      if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 20) {
+        wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollByCard(1);
+      }
+    }, 4500);
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollTimer) {
+      clearInterval(autoScrollTimer);
+      autoScrollTimer = null;
+    }
+  }
+
+  function resetAutoScroll() {
+    stopAutoScroll();
+    setTimeout(startAutoScroll, 6000);
+  }
+
+  wrapper.addEventListener('mouseenter', () => { isUserInteracting = true; });
+  wrapper.addEventListener('mouseleave', () => { isUserInteracting = false; });
+  wrapper.addEventListener('touchstart', () => { isUserInteracting = true; }, { passive: true });
+  wrapper.addEventListener('touchend', () => { isUserInteracting = false; }, { passive: true });
+
+  // Wheel horizontal scrolling interception on the projects wrapper
+  wrapper.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+      wrapper.scrollLeft += e.deltaY;
+      e.stopPropagation();
+    }
+  }, { passive: true });
+
+  startAutoScroll();
+  updateCounter();
+})();
+

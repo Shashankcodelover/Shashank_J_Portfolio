@@ -258,185 +258,241 @@
         <div class="container">
           <div class="section-header reveal-up">
             <span class="section-badge">Production &amp; Engineering Work</span>
-            <h2 class="section-title">Top 4 <span>Flagship Projects</span></h2>
+            <h2 class="section-title">Flagship <span>Engineering Systems</span></h2>
             <div class="section-divider"></div>
-            <p class="section-subtitle">Ranked in exact order of architectural depth, deployment readiness, and operational impact.</p>
+            <p class="section-subtitle">Ranked by architectural complexity, deployment readiness, and operational impact. Auto-scrolling horizontal showcase.</p>
           </div>
 
-          <div class="projects-grid">
+          <!-- Horizontal Carousel Navigation Header -->
+          <div class="carousel-nav-bar reveal-up">
+            <div class="carousel-hint-text">
+              <i class="fas fa-arrows-alt-h"></i> Horizontal Showcase &bull; Auto-Scrolls &bull; Drag or Use Chevrons
+            </div>
+            <div class="carousel-nav-controls">
+              <button class="carousel-nav-btn" id="projPrevBtn" aria-label="Previous Project"><i class="fas fa-chevron-left"></i></button>
+              <span class="carousel-counter-badge" id="projCounter">01 / 05</span>
+              <button class="carousel-nav-btn" id="projNextBtn" aria-label="Next Project"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
 
-            <!-- 1. NetPlus-CRM- -->
-            <article class="project-card reveal-up" data-repo="NetPlus-CRM-">
-              <div class="project-card-header">
-                <span class="project-num">01</span>
-                <div class="project-title-group">
-                  <span class="project-category">Enterprise Operations · CRM</span>
-                  <h3>NetPlus-CRM</h3>
-                </div>
-              </div>
-              <div class="project-card-body">
-                <p class="project-desc">
-                  Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
-                </p>
-                <div class="project-highlights">
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
-                </div>
-                <div class="project-tech-tags">
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">JWT</span>
-                </div>
-              </div>
-              <div class="project-card-footer">
-                <div class="project-meta-row">
-                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-                </div>
-                <div class="project-action-btns">
-                  <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="NetPlus-CRM-">
-                    <i class="fas fa-play"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </article>
+          <!-- Horizontal Scrollable Showcase Reel -->
+          <div class="projects-horizontal-wrapper reveal-up" id="projectsHorizontalWrapper">
+            <div class="projects-horizontal-track" id="projectsTrack">
 
-            <!-- 2. blood-match-api (LifeStream V3.1) - ACCURATE & VERIFIED -->
-            <article class="project-card reveal-up" data-repo="blood-match-api">
-              <div class="project-card-header">
-                <span class="project-num">02</span>
-                <div class="project-title-group">
-                  <span class="project-category">Emergency Dispatch · Logistics</span>
-                  <h3>LifeStream V3.1 (Blood Match API)</h3>
+              <!-- 1. NetPlus-CRM -->
+              <article class="project-card project-card-horizontal" data-repo="NetPlus-CRM-">
+                <div class="project-card-header">
+                  <span class="project-num">01</span>
+                  <div class="project-title-group">
+                    <span class="project-category">Enterprise Operations · CRM</span>
+                    <h3>NetPlus-CRM</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-body">
-                <p class="project-desc">
-                  Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
-                </p>
-                <div class="project-highlights">
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
+                <div class="project-card-body">
+                  <p class="project-desc">
+                    Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
+                  </p>
+                  <div class="project-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
+                  </div>
+                  <div class="project-tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">JWT</span>
+                  </div>
                 </div>
-                <div class="project-tech-tags">
-                  <span class="tech-tag">React 18</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">Leaflet.js</span>
-                  <span class="tech-tag">AI Proximity</span>
+                <div class="project-card-footer">
+                  <div class="project-meta-row">
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                  </div>
+                  <div class="project-action-btns">
+                    <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                      <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://netpulse.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                      <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-footer">
-                <div class="project-meta-row">
-                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-                </div>
-                <div class="project-action-btns">
-                  <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="blood-match-api">
-                    <i class="fas fa-play"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
 
-            <!-- 3. Smart_Attendance_System - ACCURATE & VERIFIED -->
-            <article class="project-card reveal-up" data-repo="Smart_Attendance_System">
-              <div class="project-card-header">
-                <span class="project-num">03</span>
-                <div class="project-title-group">
-                  <span class="project-category">Progressive Web App · Offline-First</span>
-                  <h3>Smart Attendance System</h3>
+              <!-- 2. blood-match-api (LifeStream V3.1) -->
+              <article class="project-card project-card-horizontal" data-repo="blood-match-api">
+                <div class="project-card-header">
+                  <span class="project-num">02</span>
+                  <div class="project-title-group">
+                    <span class="project-category">Emergency Dispatch · Logistics</span>
+                    <h3>LifeStream V3.1 (Blood Match API)</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-body">
-                <p class="project-desc">
-                  High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
-                </p>
-                <div class="project-highlights">
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
+                <div class="project-card-body">
+                  <p class="project-desc">
+                    Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
+                  </p>
+                  <div class="project-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
+                  </div>
+                  <div class="project-tech-tags">
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">Leaflet.js</span>
+                    <span class="tech-tag">AI Proximity</span>
+                  </div>
                 </div>
-                <div class="project-tech-tags">
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">MongoDB</span>
-                  <span class="tech-tag">PWA</span>
-                  <span class="tech-tag">IndexedDB</span>
+                <div class="project-card-footer">
+                  <div class="project-meta-row">
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                  </div>
+                  <div class="project-action-btns">
+                    <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                      <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://lifestream-v3.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                      <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-footer">
-                <div class="project-meta-row">
-                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
-                </div>
-                <div class="project-action-btns">
-                  <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-demo" data-demo-for="Smart_Attendance_System">
-                    <i class="fas fa-play"></i> Live Demo
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
 
-            <!-- 4. Campus-Search v2.0 (Peer Hardware Exchange & Broadcast Engine) -->
-            <article class="project-card reveal-up" data-repo="Campus-Search">
-              <div class="project-card-header">
-                <span class="project-num">04</span>
-                <div class="project-title-group">
-                  <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
-                  <h3>CampusSearch v2.0</h3>
+              <!-- 3. Smart_Attendance_System -->
+              <article class="project-card project-card-horizontal" data-repo="Smart_Attendance_System">
+                <div class="project-card-header">
+                  <span class="project-num">03</span>
+                  <div class="project-title-group">
+                    <span class="project-category">Progressive Web App · Offline-First</span>
+                    <h3>Smart Attendance System</h3>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-body">
-                <p class="project-desc">
-                  Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
-                </p>
-                <div class="project-highlights">
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
-                  <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
+                <div class="project-card-body">
+                  <p class="project-desc">
+                    High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
+                  </p>
+                  <div class="project-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
+                  </div>
+                  <div class="project-tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">PWA</span>
+                    <span class="tech-tag">IndexedDB</span>
+                  </div>
                 </div>
-                <div class="project-tech-tags">
-                  <span class="tech-tag">React 18</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">PostgreSQL</span>
-                  <span class="tech-tag">SSE</span>
-                  <span class="tech-tag">sql.js (WASM)</span>
-                  <span class="tech-tag">UPI QR</span>
+                <div class="project-card-footer">
+                  <div class="project-meta-row">
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                  </div>
+                  <div class="project-action-btns">
+                    <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                      <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://smart-attendance-system.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                      <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="project-card-footer">
-                <div class="project-meta-row">
-                  <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
-                </div>
-                <div class="project-action-btns">
-                  <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
-                  </a>
-                  <a href="https://campussearch.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
-                    <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
 
+              <!-- 4. Phoenix Interview Prep & Hackathon Guide -->
+              <article class="project-card project-card-horizontal" data-repo="Phoenix-Interview-Prep">
+                <div class="project-card-header">
+                  <span class="project-num">04</span>
+                  <div class="project-title-group">
+                    <span class="project-category">EdTech · Real-Time Gamification</span>
+                    <h3>Phoenix Interview Prep</h3>
+                  </div>
+                </div>
+                <div class="project-card-body">
+                  <p class="project-desc">
+                    Gamified technical career accelerator bridging DSA milestones with real-world hackathon tracks. Features interactive mock interview prompts, STAR-format behavioral grading, and peer-to-peer competition leaderboard.
+                  </p>
+                  <div class="project-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Interactive algorithmic roadmap with progress telemetry and milestone rewards</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time WebSocket room arbitration for collaborative interview mock rounds</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Curated hackathon project archive with starter templates and submission checkers</div>
+                  </div>
+                  <div class="project-tech-tags">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">Gamification</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <div class="project-meta-row">
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                  </div>
+                  <div class="project-action-btns">
+                    <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                      <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://phoenix.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                      <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 5. Campus-Search v2.0 -->
+              <article class="project-card project-card-horizontal" data-repo="Campus-Search">
+                <div class="project-card-header">
+                  <span class="project-num">05</span>
+                  <div class="project-title-group">
+                    <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
+                    <h3>CampusSearch v2.0</h3>
+                  </div>
+                </div>
+                <div class="project-card-body">
+                  <p class="project-desc">
+                    Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
+                  </p>
+                  <div class="project-highlights">
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
+                    <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
+                  </div>
+                  <div class="project-tech-tags">
+                    <span class="tech-tag">React 18</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">SSE</span>
+                    <span class="tech-tag">sql.js (WASM)</span>
+                    <span class="tech-tag">UPI QR</span>
+                  </div>
+                </div>
+                <div class="project-card-footer">
+                  <div class="project-meta-row">
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
+                  </div>
+                  <div class="project-action-btns">
+                    <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                      <i class="fab fa-github"></i> View Repository <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://campus-search.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                      <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </div>
           </div>
 
           <!-- Archive Trigger Banner -->
           <div class="project-archive-banner reveal-up">
             <div style="font-size: 32px; color: #0066ff;"><i class="fas fa-layer-group"></i></div>
-            <h3>Explore Complete Project Archive (6 Additional Systems)</h3>
+            <h3>Explore Complete Project Archive (All 10 Systems Live)</h3>
             <p>Explore specialized solutions in university placement arbitration, disaster mesh geofencing, sprint workflow SaaS, legal compliance analysis, and AI developer tooling.</p>
             <button class="btn btn-dark" onclick="openProjectArchiveModal();">
               <i class="fas fa-archive"></i> View All 10 Projects in Archive
@@ -1100,9 +1156,12 @@
             <span class="system-tag">Algorithms</span>
             <span class="system-tag">Express</span>
           </div>
-          <div style="display: flex; justify-content: flex-start; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
             <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://placement-clash-resolver.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+              Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
@@ -1157,9 +1216,12 @@
             <span class="system-tag">Yjs (CRDTs)</span>
             <span class="system-tag">Leaflet</span>
           </div>
-          <div style="display: flex; justify-content: flex-start; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
             <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://flare.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+              Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
@@ -1198,7 +1260,7 @@
             <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://regulaite.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
