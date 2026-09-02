@@ -6,16 +6,16 @@
 // ── 1. Live Project Deployments Configuration ─────────────────────
 // To activate a live demo for any project, simply provide the deployment URL below!
 const PROJECT_DEPLOYMENTS = {
-  'NetPlus-CRM-': { demoUrl: '' },
-  'blood-match-api': { demoUrl: '' },
-  'Smart_Attendance_System': { demoUrl: '' },
-  'Placement-Clash-Resolver': { demoUrl: '' },
-  'Campus-Search': { demoUrl: '' },
-  'Phoenix-Interview-Prep_and_Hackathon_Guide': { demoUrl: '' },
-  'Devflow-Pro': { demoUrl: '' },
-  'Decentralized-Disaster-Response-Resource-Geofencing-System': { demoUrl: '' },
-  'ArchitectAI-Studio': { demoUrl: '' },
-  'regulaite-ai': { demoUrl: 'https://lnkd.in/gaERH9Ya' }
+  'NetPlus-CRM-': { demoUrl: 'https://netpulse.shashankj.tech' },
+  'blood-match-api': { demoUrl: 'https://lifestream-v3.shashankj.tech' },
+  'Smart_Attendance_System': { demoUrl: 'https://smart-attendance-system.shashankj.tech' },
+  'Placement-Clash-Resolver': { demoUrl: 'https://placement-clash-resolver.shashankj.tech' },
+  'Campus-Search': { demoUrl: 'https://campus-search.shashankj.tech' },
+  'Phoenix-Interview-Prep_and_Hackathon_Guide': { demoUrl: 'https://phoenix.shashankj.tech' },
+  'Devflow-Pro': { demoUrl: 'https://devflow-pro.shashankj.tech' },
+  'Decentralized-Disaster-Response-Resource-Geofencing-System': { demoUrl: 'https://flare.shashankj.tech' },
+  'ArchitectAI-Studio': { demoUrl: 'https://architectai-studio.shashankj.tech' },
+  'regulaite-ai': { demoUrl: 'https://regulaite.shashankj.tech' }
 };
 
 // ── 2. Complete Data Store: Prioritized by Industry Prestige & Domain Value ──
@@ -735,299 +735,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 11. Initialize Smooth Horizontal Auto-Scrolling Showcase
+  initHorizontalAutoScroll();
+
 });
 
-// ── 11. Project Archive Modal ──
-
-window.openProjectArchiveModal = function() {
-  const modal = document.getElementById('projectArchiveModal');
-  if (modal) {
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-  }
-};
-
-window.closeProjectArchiveModal = function() {
-  const modal = document.getElementById('projectArchiveModal');
-  if (modal) {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-  }
-};
-
-// Global escape key listener for new modals
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeProjectArchiveModal();
-  }
-});
-
-// ── 12. 3D Presentation Deck Controller (Frame-Lifting & Parallax Stack) ──
-(function initPresentationDeck() {
-  const deck = document.getElementById('presentationDeck');
-  if (!deck) return;
-
-  const slides = Array.from(deck.querySelectorAll('.deck-slide'));
-  const totalSlides = slides.length;
-  let currentSlide = 0;
-  let isTransitioning = false;
-
-  const counterEl = document.getElementById('deckCounter');
-  const dots = Array.from(document.querySelectorAll('.deck-dot'));
-  const navLinks = Array.from(document.querySelectorAll('.nav-links .nav-link'));
-
-  function updateDeckState(targetIndex) {
-    if (targetIndex < 0 || targetIndex >= totalSlides) return;
-    currentSlide = targetIndex;
-
-    slides.forEach((slide, idx) => {
-      slide.classList.remove('lifted', 'active', 'queued', 'deep-queued');
-      if (idx < currentSlide) {
-        // Frame is lifted up into the air and away
-        slide.classList.add('lifted');
-      } else if (idx === currentSlide) {
-        // Frame is front and center
-        slide.classList.add('active');
-      } else if (idx === currentSlide + 1) {
-        // Frame rests directly behind the active frame
-        slide.classList.add('queued');
-      } else {
-        // Frame is deep in the deck stack
-        slide.classList.add('deep-queued');
-      }
-    });
-
-    // Update Stepper Dots
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentSlide);
-    });
-
-    // Update Counter (e.g. 01 / 07)
-    if (counterEl) {
-      counterEl.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
-    }
-
-    // Update Navbar Links
-    const slideIds = slides.map(s => '#' + s.id);
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      link.classList.toggle('active', href === slideIds[currentSlide]);
-    });
-  }
-
-  window.goToSlide = function(index) {
-    if (index === currentSlide) return;
-    if (isTransitioning) return;
-    if (index < 0 || index >= totalSlides) return;
-
-    isTransitioning = true;
-    updateDeckState(index);
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 850);
-  };
-
-  window.deckNext = function() {
-    if (currentSlide < totalSlides - 1) {
-      window.goToSlide(currentSlide + 1);
-    }
-  };
-
-  window.deckPrev = function() {
-    if (currentSlide > 0) {
-      window.goToSlide(currentSlide - 1);
-    }
-  };
-
-  // Stepper Up / Down Controls
-  const prevBtn = document.getElementById('deckPrevBtn');
-  const nextBtn = document.getElementById('deckNextBtn');
-  if (prevBtn) prevBtn.addEventListener('click', () => window.deckPrev());
-  if (nextBtn) nextBtn.addEventListener('click', () => window.deckNext());
-
-  // Stepper Dot Clicks
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.getAttribute('data-slide'), 10);
-      window.goToSlide(idx);
-    });
-  });
-
-  // Intercept Navbar Clicks for Seamless Slide Switching
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const targetIdx = slides.findIndex(s => '#' + s.id === href);
-        if (targetIdx !== -1) {
-          e.preventDefault();
-          window.goToSlide(targetIdx);
-          // Close mobile menu if open
-          const navLinksContainer = document.getElementById('navLinks');
-          const navToggle = document.getElementById('navToggle');
-          if (navLinksContainer && navLinksContainer.classList.contains('active')) {
-            navLinksContainer.classList.remove('active');
-            if (navToggle) navToggle.classList.remove('active');
-          }
-        }
-      }
-    });
-  });
-
-  // Wheel listener: checks if card has internal scrollable room
-  window.addEventListener('wheel', (e) => {
-    if (isTransitioning) return;
-    // Don't intercept when inspecting modals
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-
-    const activeSlide = slides[currentSlide];
-    if (!activeSlide) return;
-
-    const card = activeSlide.querySelector('.deck-slide-card');
-    if (card) {
-      const isAtBottom = Math.ceil(card.scrollTop + card.clientHeight) >= card.scrollHeight - 5;
-      const isAtTop = card.scrollTop <= 5;
-
-      if (e.deltaY > 40) {
-        if (!isAtBottom) return; // Allow internal card reading
-        e.preventDefault();
-        window.deckNext();
-      } else if (e.deltaY < -40) {
-        if (!isAtTop) return; // Allow internal card reading
-        e.preventDefault();
-        window.deckPrev();
-      }
-    }
-  }, { passive: false });
-
-  // Touch swipe support for mobile
-  let touchStartY = 0;
-  window.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  window.addEventListener('touchend', (e) => {
-    if (isTransitioning) return;
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-
-    const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY - touchEndY;
-
-    const activeSlide = slides[currentSlide];
-    const card = activeSlide?.querySelector('.deck-slide-card');
-
-    if (Math.abs(diff) > 55) {
-      if (diff > 0) {
-        // Swiping up -> next slide
-        if (card && Math.ceil(card.scrollTop + card.clientHeight) < card.scrollHeight - 10) return;
-        window.deckNext();
-      } else {
-        // Swiping down -> prev slide
-        if (card && card.scrollTop > 10) return;
-        window.deckPrev();
-      }
-    }
-  }, { passive: true });
-
-  // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      window.deckNext();
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      window.deckPrev();
-    }
-  });
-
-  // Initialize initial state
-  updateDeckState(0);
-})();
-
-// ── 13. Horizontal Interactive Projects Showcase (Auto-Scroll & Chevrons) ──
-(function initHorizontalProjectsShowcase() {
+// ── 11. Horizontal Auto-Scrolling Showcase Engine (Smooth Linear Flow) ──
+function initHorizontalAutoScroll() {
   const wrapper = document.getElementById('projectsHorizontalWrapper');
+  const track = document.getElementById('projectsTrack');
   const prevBtn = document.getElementById('projPrevBtn');
   const nextBtn = document.getElementById('projNextBtn');
-  const counterBadge = document.getElementById('projCounter');
+  if (!wrapper || !track) return;
 
-  if (!wrapper) return;
+  let isHovered = false;
+  let scrollSpeed = 0.85; // Butter-smooth px per frame
+  let animationFrameId = null;
 
-  const cards = Array.from(wrapper.querySelectorAll('.project-card-horizontal'));
-  const totalCards = cards.length;
-  let autoScrollTimer = null;
-  let isUserInteracting = false;
+  wrapper.addEventListener('mouseenter', () => { isHovered = true; });
+  wrapper.addEventListener('mouseleave', () => { isHovered = false; });
+  wrapper.addEventListener('touchstart', () => { isHovered = true; }, { passive: true });
+  wrapper.addEventListener('touchend', () => {
+    setTimeout(() => { isHovered = false; }, 2500);
+  }, { passive: true });
 
-  function updateCounter() {
-    if (!counterBadge || totalCards === 0) return;
-    const scrollLeft = wrapper.scrollLeft;
-    const cardWidth = (cards[0]?.offsetWidth || 460) + 22;
-    const activeIndex = Math.min(totalCards - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
-    counterBadge.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(totalCards).padStart(2, '0')}`;
+  function step() {
+    if (!isHovered) {
+      wrapper.scrollLeft += scrollSpeed;
+      // Loop around seamlessly
+      if (wrapper.scrollLeft >= track.scrollWidth - wrapper.clientWidth - 4) {
+        wrapper.scrollLeft = 0;
+      }
+    }
+    animationFrameId = requestAnimationFrame(step);
   }
 
-  function scrollByCard(direction) {
-    if (!cards.length) return;
-    const cardWidth = (cards[0]?.offsetWidth || 460) + 22;
-    wrapper.scrollBy({
-      left: direction * cardWidth,
-      behavior: 'smooth'
-    });
-  }
+  animationFrameId = requestAnimationFrame(step);
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      scrollByCard(-1);
-      resetAutoScroll();
+      wrapper.scrollBy({ left: -400, behavior: 'smooth' });
     });
   }
-
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      scrollByCard(1);
-      resetAutoScroll();
+      wrapper.scrollBy({ left: 400, behavior: 'smooth' });
     });
   }
-
-  wrapper.addEventListener('scroll', updateCounter, { passive: true });
-
-  function startAutoScroll() {
-    stopAutoScroll();
-    autoScrollTimer = setInterval(() => {
-      if (isUserInteracting) return;
-      if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 20) {
-        wrapper.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        scrollByCard(1);
-      }
-    }, 4500);
-  }
-
-  function stopAutoScroll() {
-    if (autoScrollTimer) {
-      clearInterval(autoScrollTimer);
-      autoScrollTimer = null;
-    }
-  }
-
-  function resetAutoScroll() {
-    stopAutoScroll();
-    setTimeout(startAutoScroll, 6000);
-  }
-
-  wrapper.addEventListener('mouseenter', () => { isUserInteracting = true; });
-  wrapper.addEventListener('mouseleave', () => { isUserInteracting = false; });
-  wrapper.addEventListener('touchstart', () => { isUserInteracting = true; }, { passive: true });
-  wrapper.addEventListener('touchend', () => { isUserInteracting = false; }, { passive: true });
-
-  // Wheel horizontal scrolling interception on the projects wrapper
-  wrapper.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
-      wrapper.scrollLeft += e.deltaY;
-      e.stopPropagation();
-    }
-  }, { passive: true });
-
-  startAutoScroll();
-  updateCounter();
-})();
-
+}
