@@ -1094,7 +1094,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
   updateCounter();
 }
 
-// Initialize all three horizontal reels with active 2.2s visible cadence
+// Initialize all three horizontal reels with responsive, swift 1.6s - 1.8s auto-glide cadence
 setupHorizontalReel({
   wrapperId: 'projectsHorizontalWrapper',
   prevBtnId: 'projPrevBtn',
@@ -1102,7 +1102,7 @@ setupHorizontalReel({
   counterId: 'projCounter',
   cardSelector: '.project-card-horizontal',
   gap: 22,
-  interval: 2200
+  interval: 1600
 });
 
 setupHorizontalReel({
@@ -1112,7 +1112,7 @@ setupHorizontalReel({
   counterId: 'sysCounter',
   cardSelector: '.system-arch-card',
   gap: 18,
-  interval: 2500
+  interval: 1800
 });
 
 setupHorizontalReel({
@@ -1122,6 +1122,6 @@ setupHorizontalReel({
   counterId: 'certCounter',
   cardSelector: '.cert-horizontal-card',
   gap: 18,
-  interval: 2400
+  interval: 1800
 });
 
