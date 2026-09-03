@@ -874,29 +874,49 @@ document.addEventListener('keydown', (e) => {
     });
   });
 
-  // Wheel listener: checks if card has internal scrollable room
+  // Wheel-based stage lifting
+  let lastWheelTime = 0;
   window.addEventListener('wheel', (e) => {
+    const now = Date.now();
+    if (now - lastWheelTime < 450) return; // Debounce
+    lastWheelTime = now;
+
     if (isTransitioning) return;
     // Don't intercept when inspecting modals
     if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
 
-    const activeSlide = slides[currentSlide];
-    if (!activeSlide) return;
-
-    const card = activeSlide.querySelector('.deck-slide-card');
-    if (card) {
-      const isAtBottom = Math.ceil(card.scrollTop + card.clientHeight) >= card.scrollHeight - 5;
-      const isAtTop = card.scrollTop <= 5;
-
-      if (e.deltaY > 40) {
-        if (!isAtBottom) return; // Allow internal card reading
-        e.preventDefault();
-        window.deckNext();
-      } else if (e.deltaY < -40) {
-        if (!isAtTop) return; // Allow internal card reading
-        e.preventDefault();
-        window.deckPrev();
+    // In-Frame Substage Interception for Slide 1 (About)
+    if (currentSlide === 1) {
+      if (e.deltaY > 25) {
+        if (window.currentAboutSubStage === 0) {
+          e.preventDefault();
+          window.switchSubStage('about', 1);
+          return;
+        } else {
+          e.preventDefault();
+          window.deckNext();
+          return;
+        }
+      } else if (e.deltaY < -25) {
+        if (window.currentAboutSubStage === 1) {
+          e.preventDefault();
+          window.switchSubStage('about', 0);
+          return;
+        } else {
+          e.preventDefault();
+          window.deckPrev();
+          return;
+        }
       }
+    }
+
+    // Default slide navigation
+    if (e.deltaY > 40) {
+      e.preventDefault();
+      window.deckNext();
+    } else if (e.deltaY < -40) {
+      e.preventDefault();
+      window.deckPrev();
     }
   }, { passive: false });
 
@@ -913,18 +933,21 @@ document.addEventListener('keydown', (e) => {
     const touchEndY = e.changedTouches[0].clientY;
     const diff = touchStartY - touchEndY;
 
-    const activeSlide = slides[currentSlide];
-    const card = activeSlide?.querySelector('.deck-slide-card');
-
-    if (Math.abs(diff) > 55) {
+    if (Math.abs(diff) > 50) {
       if (diff > 0) {
-        // Swiping up -> next slide
-        if (card && Math.ceil(card.scrollTop + card.clientHeight) < card.scrollHeight - 10) return;
-        window.deckNext();
+        // Swiping up (moving forward)
+        if (currentSlide === 1 && window.currentAboutSubStage === 0) {
+          window.switchSubStage('about', 1);
+        } else {
+          window.deckNext();
+        }
       } else {
-        // Swiping down -> prev slide
-        if (card && card.scrollTop > 10) return;
-        window.deckPrev();
+        // Swiping down (moving backward)
+        if (currentSlide === 1 && window.currentAboutSubStage === 1) {
+          window.switchSubStage('about', 0);
+        } else {
+          window.deckPrev();
+        }
       }
     }
   }, { passive: true });
@@ -933,9 +956,17 @@ document.addEventListener('keydown', (e) => {
   window.addEventListener('keydown', (e) => {
     if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
     if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      window.deckNext();
+      if (currentSlide === 1 && window.currentAboutSubStage === 0) {
+        window.switchSubStage('about', 1);
+      } else {
+        window.deckNext();
+      }
     } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      window.deckPrev();
+      if (currentSlide === 1 && window.currentAboutSubStage === 1) {
+        window.switchSubStage('about', 0);
+      } else {
+        window.deckPrev();
+      }
     }
   });
 
@@ -943,8 +974,41 @@ document.addEventListener('keydown', (e) => {
   updateDeckState(0);
 })();
 
-// ── 13. Universal Horizontal Interactive Reels (Auto-Scroll & Chevrons) ──
-function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardSelector, gap = 18, interval = 4500 }) {
+// ── 13. In-Frame Sub-Stage Zoom & Toggle Controller ──
+window.currentAboutSubStage = 0;
+window.switchSubStage = function(slideKey, stageIdx) {
+  if (slideKey === 'about') {
+    const btn0 = document.getElementById('substageAboutBtn0');
+    const btn1 = document.getElementById('substageAboutBtn1');
+    const view0 = document.getElementById('substageAbout0');
+    const view1 = document.getElementById('substageAbout1');
+
+    if (!view0 || !view1) return;
+
+    if (stageIdx === 0) {
+      window.currentAboutSubStage = 0;
+      btn0?.classList.add('active');
+      btn1?.classList.remove('active');
+
+      view0.classList.remove('zoom-out');
+      view0.classList.add('active');
+
+      view1.classList.remove('active');
+    } else {
+      window.currentAboutSubStage = 1;
+      btn1?.classList.add('active');
+      btn0?.classList.remove('active');
+
+      view0.classList.add('zoom-out');
+      view0.classList.remove('active');
+
+      view1.classList.add('active');
+    }
+  }
+};
+
+// ── 14. Universal Horizontal Interactive Reels (Visible 0.5s Transitions / 2.2s Hold) ──
+function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardSelector, gap = 20, interval = 2200 }) {
   const wrapper = document.getElementById(wrapperId);
   const prevBtn = document.getElementById(prevBtnId);
   const nextBtn = document.getElementById(nextBtnId);
@@ -960,14 +1024,14 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
   function updateCounter() {
     if (!counterBadge || totalCards === 0) return;
     const scrollLeft = wrapper.scrollLeft;
-    const cardWidth = (cards[0]?.offsetWidth || 380) + gap;
+    const cardWidth = (cards[0]?.offsetWidth || 480) + gap;
     const activeIndex = Math.min(totalCards - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
     counterBadge.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(totalCards).padStart(2, '0')}`;
   }
 
   function scrollByCard(direction) {
     if (!cards.length) return;
-    const cardWidth = (cards[0]?.offsetWidth || 380) + gap;
+    const cardWidth = (cards[0]?.offsetWidth || 480) + gap;
     wrapper.scrollBy({
       left: direction * cardWidth,
       behavior: 'smooth'
@@ -994,7 +1058,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
     stopAutoScroll();
     autoScrollTimer = setInterval(() => {
       if (isUserInteracting) return;
-      if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 20) {
+      if (wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 30) {
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
         scrollByCard(1);
@@ -1011,7 +1075,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
 
   function resetAutoScroll() {
     stopAutoScroll();
-    setTimeout(startAutoScroll, 6000);
+    setTimeout(startAutoScroll, 4000);
   }
 
   wrapper.addEventListener('mouseenter', () => { isUserInteracting = true; });
@@ -1030,7 +1094,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
   updateCounter();
 }
 
-// Initialize all three horizontal reels
+// Initialize all three horizontal reels with active 2.2s visible cadence
 setupHorizontalReel({
   wrapperId: 'projectsHorizontalWrapper',
   prevBtnId: 'projPrevBtn',
@@ -1038,7 +1102,7 @@ setupHorizontalReel({
   counterId: 'projCounter',
   cardSelector: '.project-card-horizontal',
   gap: 22,
-  interval: 4500
+  interval: 2200
 });
 
 setupHorizontalReel({
@@ -1048,7 +1112,7 @@ setupHorizontalReel({
   counterId: 'sysCounter',
   cardSelector: '.system-arch-card',
   gap: 18,
-  interval: 5000
+  interval: 2500
 });
 
 setupHorizontalReel({
@@ -1058,6 +1122,6 @@ setupHorizontalReel({
   counterId: 'certCounter',
   cardSelector: '.cert-horizontal-card',
   gap: 18,
-  interval: 4800
+  interval: 2400
 });
 

@@ -79,23 +79,23 @@
             <!-- Left Column: Impressive Introduction -->
             <div class="hero-text">
               <div class="hero-status-pill reveal-up">
-                <span class="status-indicator"></span> Available for Software Engineering &amp; AI Roles
+                <span class="status-indicator"></span> Architecting Fault-Tolerant Distributed &amp; AI Systems
               </div>
               <h1 class="hero-name reveal-up">
                 Hi, I'm <span class="text-highlight">Shashank J</span>
               </h1>
               <p class="hero-tagline reveal-up">
-                Full-Stack Software Architect &nbsp;•&nbsp; AI Systems Builder &nbsp;•&nbsp; Hackathon Competitor
+                Relentless Systems Architect &nbsp;•&nbsp; AI Engineer &nbsp;•&nbsp; High-Velocity Problem Solver
               </p>
               <p class="hero-intro reveal-up">
-                Computer Science &amp; Engineering scholar at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10). I engineer high-reliability web platforms, offline-first sync protocols, and autonomous AI pipelines designed for real-world operational scale.
+                <strong>I build software that refuses to break when reality gets chaotic.</strong> Driven by an intense obsession with distributed reliability, offline-first resilience, and autonomous AI pipelines, I don't build superficial clones—I engineer hardened platforms that solve acute human and enterprise bottlenecks. From emergency drone blood delivery to zero-fraud cryptographic roll-calls, my work is defined by speed, craftsmanship, and fearless execution.
               </p>
               <div class="hero-cta reveal-up">
                 <button class="btn btn-dark" onclick="window.goToSlide(2);">
-                  <i class="fas fa-layer-group"></i> Explore 4 Flagship Projects
+                  <i class="fas fa-layer-group"></i> Inspect 5 Flagship Systems
                 </button>
-                <button class="btn btn-outline" onclick="window.goToSlide(3);">
-                  <i class="fas fa-award"></i> Verified Credentials &amp; Certs
+                <button class="btn btn-outline" onclick="window.goToSlide(1);">
+                  <i class="fas fa-bolt"></i> The Engineering Philosophy
                 </button>
               </div>
               <div class="hero-socials reveal-up">
@@ -127,8 +127,8 @@
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                  <span class="stat-number hero-stat-num" data-target="4">4</span>
-                  <span class="stat-label">Flagships</span>
+                  <span class="stat-number hero-stat-num" data-target="5">5</span>
+                  <span class="stat-label">Live Flagships</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
@@ -142,8 +142,8 @@
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                  <span class="stat-number">8.4</span>
-                  <span class="stat-label">CGPA (JSS STU)</span>
+                  <span class="stat-number">&lt;10ms</span>
+                  <span class="stat-label">Edge Target</span>
                 </div>
               </div>
             </div>
@@ -159,178 +159,195 @@
     <section id="about" class="section-bg-alt deck-slide queued" data-slide-index="1">
       <div class="deck-slide-card">
         <div class="container">
-          <div class="section-header reveal-up">
-            <span class="section-badge">Engineering Foundation</span>
-            <h2 class="section-title">About <span>Me</span></h2>
-            <div class="section-divider"></div>
+          <!-- In-Frame Sub-Stage Switcher -->
+          <div class="deck-substage-nav reveal-up">
+            <button class="substage-pill active" id="substageAboutBtn0" onclick="window.switchSubStage('about', 0);">
+              <span class="substage-dot"></span> Part 1: Engineer's Character &amp; Drive
+            </button>
+            <button class="substage-pill" id="substageAboutBtn1" onclick="window.switchSubStage('about', 1);">
+              <span class="substage-dot"></span> Part 2: Systems Architecture Blueprints
+            </button>
           </div>
 
-          <div class="about-grid">
-            <div class="about-card-main reveal-left">
-              <h3>Engineering Mindset &amp; Architecture</h3>
-              <p>
-                I am a Computer Science &amp; Engineering undergraduate at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (Batch 2024–2028 | Current CGPA: 8.4/10). My engineering philosophy revolves around building scalable, robust systems that withstand network degradation, operational spikes, and complex data dependencies.
-              </p>
-              <p>
-                My primary tech stack spans the full MERN ecosystem (MongoDB, Express.js, React.js, Node.js) paired with relational SQL databases (PostgreSQL, SQLite/WASM). I specialize in designing systems built for real-world constraints: offline synchronization queues, real-time Server-Sent Events (SSE), WebSocket streams, and autonomous multi-agent AI pipelines.
-              </p>
-              <p>
-                Beyond core software engineering, I have completed corporate job simulations with <strong>BCG X (Generative AI Financial Chatbots)</strong> and <strong>Deloitte Australia (Forensic Technology &amp; Data Analytics)</strong>. On campus, I serve as a PR Team Member for the Persona Plus Club and volunteer with the Linux Campus Club and hackathon organizing committees.
-              </p>
+          <div class="substage-container" id="substageContainerAbout">
+            
+            <!-- Substage 0: The Character, Motivation & Foundation -->
+            <div class="substage-view substage-0 active" id="substageAbout0">
+              <div class="section-header reveal-up" style="margin-bottom: 20px;">
+                <span class="section-badge">The Mindset &amp; Drive</span>
+                <h2 class="section-title">Character &amp; <span>Engineering DNA</span></h2>
+                <div class="section-divider" style="margin: 12px auto;"></div>
+              </div>
 
-              <div class="mission-vision-container">
-                <div class="mv-box">
-                  <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
-                  <div>
-                    <h4>Mission</h4>
-                    <p>To engineer resilient, production-grade systems that solve real operational challenges and contribute open-source value.</p>
+              <div class="about-grid">
+                <div class="about-card-main reveal-left">
+                  <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">
+                    Uncompromising Reliability &amp; Systems Rigor
+                  </h3>
+                  <p style="font-size: 0.98rem; line-height: 1.65; margin-bottom: 12px;">
+                    I don't write code just to make features work; <strong>I engineer systems to withstand real-world failure modes.</strong> Network dead zones, sudden transaction spikes, corrupted client state, and distributed race conditions are not edge cases to me—they are the primary engineering battlefield.
+                  </p>
+                  <p style="font-size: 0.98rem; line-height: 1.65; margin-bottom: 12px;">
+                    My foundation bridges rigorous computer science fundamentals at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CSE Batch 2024–2028 | Current CGPA: 8.4/10) with battle-tested full-stack infrastructure. Whether crafting an offline-first reconciliation queue in IndexedDB, implementing sub-10s rotating HMAC-SHA256 nonces, or orchestrating autonomous LangGraph state graphs, my focus is strictly on <em>fault tolerance, speed, and real-world utility</em>.
+                  </p>
+                  <p style="font-size: 0.98rem; line-height: 1.65; margin-bottom: 16px;">
+                    I operate with a bias toward high-velocity building. I've delivered corporate simulations with <strong>BCG X</strong> (Generative AI Chatbots) and <strong>Deloitte Australia</strong> (Forensic Analytics), lead PR communications for campus clubs, and actively compete in national hackathons including SIH.
+                  </p>
+
+                  <div class="mission-vision-container">
+                    <div class="mv-box">
+                      <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                      <div>
+                        <h4>Mission</h4>
+                        <p>To engineer zero-flaw, production-grade distributed architectures that solve acute operational chaos.</p>
+                      </div>
+                    </div>
+                    <div class="mv-box">
+                      <div class="mv-icon"><i class="fas fa-microchip"></i></div>
+                      <div>
+                        <h4>Vision</h4>
+                        <p>To pioneer autonomous software systems where intelligent multi-agent AI and resilient offline-first infrastructure converge.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="mv-box">
-                  <div class="mv-icon"><i class="fas fa-microchip"></i></div>
-                  <div>
-                    <h4>Vision</h4>
-                    <p>To pioneer intelligent autonomous systems combining full-stack scalable infrastructure with applied multi-agent AI.</p>
+
+                <div class="education-sidebar reveal-right">
+                  <div class="edu-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="edu-type">Bachelor of Engineering (B.E.)</span>
+                    <h4>Computer Science &amp; Engineering</h4>
+                    <p class="edu-institution">JSS Science and Technology University (SJCE), Mysuru</p>
+                    <div class="edu-meta-grid">
+                      <div class="meta-cell">
+                        <span class="meta-label">Timeline</span>
+                        <span class="meta-val">2024 – 2028</span>
+                      </div>
+                      <div class="meta-cell">
+                        <span class="meta-label">Academic Standing</span>
+                        <span class="meta-val highlight-val">CGPA: 8.4 / 10</span>
+                      </div>
+                    </div>
+                    <div class="edu-coursework">
+                      <h5>Core Competencies</h5>
+                      <div class="tags-group">
+                        <span class="tag">Distributed Systems</span>
+                        <span class="tag">Data Structures &amp; Algorithms</span>
+                        <span class="tag">DBMS &amp; SQL</span>
+                        <span class="tag">Operating Systems</span>
+                        <span class="tag">Agentic AI Workflows</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="linkedin-compact-badge-wrap reveal-up" style="margin-top: 14px;">
+                    <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="linkedin-compact-badge" title="Connect with Shashank J on LinkedIn">
+                      <span class="li-compact-icon"><i class="fab fa-linkedin-in"></i></span>
+                      <span class="li-compact-name">Shashank J</span>
+                      <span class="li-compact-role">• Connect on LinkedIn</span>
+                      <span class="li-compact-arrow"><i class="fas fa-arrow-right"></i></span>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="education-sidebar reveal-right">
-              <div class="edu-card">
-                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                <span class="edu-type">Bachelor of Engineering (B.E.)</span>
-                <h4>Computer Science &amp; Engineering</h4>
-                <p class="edu-institution">JSS Science and Technology University (SJCE), Mysuru</p>
-                <div class="edu-meta-grid">
-                  <div class="meta-cell">
-                    <span class="meta-label">Timeline</span>
-                    <span class="meta-val">2024 – 2028</span>
+            <!-- Substage 1: Systems Architecture Paradigms (Continuous Glide) -->
+            <div class="substage-view substage-1" id="substageAbout1">
+              <div class="section-header reveal-up" style="margin-bottom: 16px;">
+                <span class="section-badge">Architectural Paradigms</span>
+                <h2 class="section-title">Core Systems <span>Blueprints</span></h2>
+                <div class="section-divider" style="margin: 10px auto;"></div>
+                <p class="section-subtitle">Architectural design patterns engineered across my production systems. Continuous horizontal showcase.</p>
+              </div>
+
+              <!-- Systems Carousel Navigation Controls -->
+              <div class="carousel-nav-bar reveal-up" style="margin-bottom: 10px;">
+                <div class="carousel-hint-text">
+                  <i class="fas fa-microchip"></i> Continuous Auto-Glide &bull; Hover to Pause &bull; Chevrons to Snap
+                </div>
+                <div class="carousel-nav-controls">
+                  <button class="carousel-nav-btn" id="sysPrevBtn" aria-label="Previous System"><i class="fas fa-chevron-left"></i></button>
+                  <span class="carousel-counter-badge" id="sysCounter">01 / 05</span>
+                  <button class="carousel-nav-btn" id="sysNextBtn" aria-label="Next System"><i class="fas fa-chevron-right"></i></button>
+                </div>
+              </div>
+
+              <div class="systems-horizontal-wrapper reveal-up" id="systemsHorizontalWrapper">
+                <div class="systems-horizontal-track" id="systemsTrack">
+                  <!-- Sys 1 -->
+                  <div class="system-arch-card">
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #0066ff; text-transform: uppercase; margin-bottom: 6px;">PWA · Offline Consensus</div>
+                      <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Offline-First Write-Ahead Buffers</h4>
+                      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">IndexedDB client write-ahead queue serializing state mutations during network dead zones with idempotent bulk server reconciliation.</p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;">
+                      <span class="tag">IndexedDB</span>
+                      <span class="tag">Service Workers</span>
+                      <span class="tag">WASM</span>
+                    </div>
                   </div>
-                  <div class="meta-cell">
-                    <span class="meta-label">Current CGPA</span>
-                    <span class="meta-val highlight-val">8.4 / 10.0</span>
+
+                  <!-- Sys 2 -->
+                  <div class="system-arch-card">
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; margin-bottom: 6px;">AI Pipelines · LangGraph</div>
+                      <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Autonomous Multi-Agent State Graphs</h4>
+                      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">LangGraph state machines orchestrating specialized sub-agents for automated document extraction, audit reconciliation, and reasoning.</p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;">
+                      <span class="tag">LangGraph</span>
+                      <span class="tag">Vertex AI</span>
+                      <span class="tag">Gemini API</span>
+                    </div>
+                  </div>
+
+                  <!-- Sys 3 -->
+                  <div class="system-arch-card">
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-bottom: 6px;">Distributed Streams · SSE</div>
+                      <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Real-Time Telemetry &amp; Event Relays</h4>
+                      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">Low-overhead Server-Sent Events architecture broadcasting real-time peer hardware inquiries and cold-chain temperature telemetry.</p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;">
+                      <span class="tag">SSE Streams</span>
+                      <span class="tag">Node.js</span>
+                      <span class="tag">Redis</span>
+                    </div>
+                  </div>
+
+                  <!-- Sys 4 -->
+                  <div class="system-arch-card">
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #f59e0b; text-transform: uppercase; margin-bottom: 6px;">Security · Cryptography</div>
+                      <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Rotating HMAC-SHA256 QR Tokens</h4>
+                      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">Time-synchronous rotating cryptographic QR nonces with sub-10s validity windows, preventing proxy attendance and screen captures.</p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;">
+                      <span class="tag">HMAC-SHA256</span>
+                      <span class="tag">Web Crypto</span>
+                      <span class="tag">Geofencing</span>
+                    </div>
+                  </div>
+
+                  <!-- Sys 5 -->
+                  <div class="system-arch-card">
+                    <div>
+                      <div style="font-size: 0.75rem; font-weight: 700; color: #ef4444; text-transform: uppercase; margin-bottom: 6px;">Algorithms · CRM Ops</div>
+                      <h4 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px;">Algorithmic Relationship Half-Life Engine</h4>
+                      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">Mathematical relationship decay engine factoring recency, tier importance, and engagement history to flag SLA cadence breaches.</p>
+                    </div>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px;">
+                      <span class="tag">Scoring Algorithms</span>
+                      <span class="tag">PostgreSQL</span>
+                      <span class="tag">TypeScript</span>
+                    </div>
                   </div>
                 </div>
-                <div class="edu-coursework">
-                  <h5>Core Competencies</h5>
-                  <div class="tags-group">
-                    <span class="tag">Data Structures &amp; Algorithms</span>
-                    <span class="tag">DBMS &amp; SQL</span>
-                    <span class="tag">Operating Systems</span>
-                    <span class="tag">Computer Networks</span>
-                    <span class="tag">Full-Stack Architecture</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="quick-links-card">
-                <h4>Quick Navigation</h4>
-                <div class="quick-links-list">
-                  <a href="#" onclick="window.goToSlide(2); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Top 4 Flagship Projects</a>
-                  <a href="#" onclick="window.goToSlide(3); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Credentials &amp; Certifications</a>
-                  <a href="#" onclick="window.goToSlide(5); return false;" class="quick-link-item"><i class="fas fa-arrow-right"></i> Hackathons &amp; Leadership</a>
-                  <a href="https://github.com/Shashankcodelover" target="_blank" rel="noopener noreferrer" class="quick-link-item"><i class="fab fa-github"></i> GitHub (<span id="quickRepoCount">43</span> Repos)</a>
-                </div>
-              </div>
-
-              <!-- Badge 1: Short / Compact Single-Line Badge (Centered & Uniform) -->
-              <div class="linkedin-compact-badge-wrap reveal-up">
-                <a href="https://www.linkedin.com/in/shashank-j-code-lover/" target="_blank" rel="noopener noreferrer" class="linkedin-compact-badge" title="Connect with Shashank J on LinkedIn">
-                  <span class="li-compact-icon"><i class="fab fa-linkedin-in"></i></span>
-                  <span class="li-compact-name">Shashank J</span>
-                  <span class="li-compact-role">• Software Engineer</span>
-                  <span class="li-compact-arrow"><i class="fas fa-arrow-right"></i></span>
-                </a>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Systems Architecture Paradigms (Horizontal Auto-Scrolling Reel) -->
-          <div class="carousel-nav-bar reveal-up" style="margin-top: 24px; margin-bottom: 8px;">
-            <div class="carousel-hint-text">
-              <i class="fas fa-microchip"></i> Architectural Paradigms &bull; Auto-Scrolls &bull; Drag or Use Controls
-            </div>
-            <div class="carousel-nav-controls">
-              <button class="carousel-nav-btn" id="sysPrevBtn" aria-label="Previous System"><i class="fas fa-chevron-left"></i></button>
-              <span class="carousel-counter-badge" id="sysCounter">01 / 05</span>
-              <button class="carousel-nav-btn" id="sysNextBtn" aria-label="Next System"><i class="fas fa-chevron-right"></i></button>
-            </div>
-          </div>
-
-          <div class="systems-horizontal-wrapper reveal-up" id="systemsHorizontalWrapper">
-            <div class="systems-horizontal-track" id="systemsTrack">
-              <!-- Sys 1 -->
-              <div class="system-arch-card">
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #0066ff; text-transform: uppercase; margin-bottom: 6px;">PWA · Offline Consensus</div>
-                  <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Offline-First Write-Ahead Buffers</h4>
-                  <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">IndexedDB client write-ahead queue serializing state mutations during network dead zones with idempotent bulk server reconciliation.</p>
-                </div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
-                  <span class="tag">IndexedDB</span>
-                  <span class="tag">Service Workers</span>
-                  <span class="tag">WASM</span>
-                </div>
-              </div>
-
-              <!-- Sys 2 -->
-              <div class="system-arch-card">
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; margin-bottom: 6px;">AI Pipelines · LangGraph</div>
-                  <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Autonomous Multi-Agent State Graphs</h4>
-                  <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">LangGraph state machines orchestrating specialized sub-agents for automated document extraction, audit reconciliation, and reasoning.</p>
-                </div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
-                  <span class="tag">LangGraph</span>
-                  <span class="tag">Vertex AI</span>
-                  <span class="tag">Gemini API</span>
-                </div>
-              </div>
-
-              <!-- Sys 3 -->
-              <div class="system-arch-card">
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-bottom: 6px;">Distributed Streams · SSE</div>
-                  <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Real-Time Telemetry &amp; Event Relays</h4>
-                  <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Low-overhead Server-Sent Events architecture broadcasting real-time peer hardware inquiries and cold-chain temperature telemetry.</p>
-                </div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
-                  <span class="tag">SSE Streams</span>
-                  <span class="tag">Node.js</span>
-                  <span class="tag">Redis</span>
-                </div>
-              </div>
-
-              <!-- Sys 4 -->
-              <div class="system-arch-card">
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #f59e0b; text-transform: uppercase; margin-bottom: 6px;">Security · Cryptography</div>
-                  <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Rotating HMAC-SHA256 QR Tokens</h4>
-                  <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Time-synchronous rotating cryptographic QR nonces with sub-10s validity windows, preventing proxy attendance and screen captures.</p>
-                </div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
-                  <span class="tag">HMAC-SHA256</span>
-                  <span class="tag">Web Crypto</span>
-                  <span class="tag">Geofencing</span>
-                </div>
-              </div>
-
-              <!-- Sys 5 -->
-              <div class="system-arch-card">
-                <div>
-                  <div style="font-size: 0.75rem; font-weight: 700; color: #ef4444; text-transform: uppercase; margin-bottom: 6px;">Algorithms · CRM Ops</div>
-                  <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 8px;">Algorithmic Relationship Half-Life Engine</h4>
-                  <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Mathematical relationship decay engine factoring recency, tier importance, and engagement history to flag SLA cadence breaches.</p>
-                </div>
-                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
-                  <span class="tag">Scoring Algorithms</span>
-                  <span class="tag">PostgreSQL</span>
-                  <span class="tag">TypeScript</span>
-                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -349,15 +366,20 @@
             <p class="section-subtitle">Ranked by architectural complexity, deployment readiness, and operational impact. Auto-scrolling horizontal showcase.</p>
           </div>
 
-          <!-- Horizontal Carousel Navigation Header -->
+          <!-- Horizontal Carousel Navigation Header with Archive Action -->
           <div class="carousel-nav-bar reveal-up">
             <div class="carousel-hint-text">
-              <i class="fas fa-arrows-alt-h"></i> Horizontal Showcase &bull; Auto-Scrolls &bull; Drag or Use Chevrons
+              <i class="fas fa-arrows-alt-h"></i> Horizontal Showcase &bull; 2s Auto-Glide &bull; Hover to Inspect
             </div>
-            <div class="carousel-nav-controls">
-              <button class="carousel-nav-btn" id="projPrevBtn" aria-label="Previous Project"><i class="fas fa-chevron-left"></i></button>
-              <span class="carousel-counter-badge" id="projCounter">01 / 05</span>
-              <button class="carousel-nav-btn" id="projNextBtn" aria-label="Next Project"><i class="fas fa-chevron-right"></i></button>
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <button class="btn btn-sm btn-dark" onclick="openProjectArchiveModal();" style="border-radius: 20px; padding: 7px 16px; font-size: 0.82rem; font-weight: 600;">
+                <i class="fas fa-archive"></i> All 10 Projects Archive
+              </button>
+              <div class="carousel-nav-controls">
+                <button class="carousel-nav-btn" id="projPrevBtn" aria-label="Previous Project"><i class="fas fa-chevron-left"></i></button>
+                <span class="carousel-counter-badge" id="projCounter">01 / 05</span>
+                <button class="carousel-nav-btn" id="projNextBtn" aria-label="Next Project"><i class="fas fa-chevron-right"></i></button>
+              </div>
             </div>
           </div>
 
@@ -365,35 +387,46 @@
           <div class="projects-horizontal-wrapper reveal-up" id="projectsHorizontalWrapper">
             <div class="projects-horizontal-track" id="projectsTrack">
 
-              <!-- 1. NetPlus-CRM -->
+              <!-- 1. NetPlus-CRM (NetPulse) -->
               <article class="project-card project-card-horizontal" data-repo="NetPlus-CRM-">
                 <div class="project-card-header">
                   <span class="project-num">01</span>
-                  <div class="project-title-group">
-                    <span class="project-category">Enterprise Operations · CRM</span>
-                    <h3>NetPlus-CRM</h3>
+                  <div class="project-title-group" style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="project-category">CRM INTELLIGENCE · DISTRIBUTED ARCHITECTURE</span>
+                      <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                    </div>
+                    <h3>NetPlus-CRM (NetPulse)</h3>
                   </div>
                 </div>
+
+                <!-- Problem & Stakes Hook -->
+                <div class="project-hook-banner">
+                  "High-stakes business deals don't die with an explosion; they rot quietly when critical relationships go cold."
+                </div>
+
                 <div class="project-card-body">
                   <p class="project-desc">
-                    Full-scale Customer Relationship &amp; Operations Management platform designed to streamline multi-tier client interactions, lead pipelines, support ticket resolution, and workflow automation.
+                    An autonomous relationship intelligence platform engineered to eliminate network decay before high-stakes connections collapse. Built with deterministic half-life decay mathematics, an offline-first IndexedDB buffer, an interactive 5-stage pipeline, and PulseBot—an autonomous AI copilot that synthesizes deep-context reconnect strategies in seconds.
                   </p>
                   <div class="project-highlights">
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Complete client lifecycle &amp; contract tracking modules</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Role-based access control (RBAC) with audit logging</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Optimized PostgreSQL database schema with indexing</div>
+                    <div class="highlight-item"><i class="fas fa-bolt" style="color: #0066ff;"></i> <strong>Mathematical Half-Life Decay:</strong> Algorithmic urgency weighting based on custom SLA cadence thresholds.</div>
+                    <div class="highlight-item"><i class="fas fa-robot" style="color: #7c3aed;"></i> <strong>PulseBot AI Relationship Copilot:</strong> Instant multi-angle reconnect generator with 1-click clipboard integration.</div>
+                    <div class="highlight-item"><i class="fas fa-columns" style="color: #10b981;"></i> <strong>5-Stage Operational Pipeline:</strong> Visual Kanban board tracking relationship states from queue to anchor.</div>
+                    <div class="highlight-item"><i class="fas fa-shield-alt" style="color: #f59e0b;"></i> <strong>Instant Judge Sandbox:</strong> 25 pre-seeded Silicon Valley leaders for immediate live evaluation.</div>
                   </div>
                   <div class="project-tech-tags">
+                    <span class="tech-tag">Next.js 16</span>
                     <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Edge Runtime</span>
+                    <span class="tech-tag">Scoring Engine</span>
+                    <span class="tech-tag">Kanban</span>
                   </div>
                 </div>
                 <div class="project-card-footer">
                   <div class="project-meta-row">
-                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; Imagine Cup Tier</span>
                   </div>
                   <div class="project-action-btns">
                     <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
@@ -410,19 +443,28 @@
               <article class="project-card project-card-horizontal" data-repo="blood-match-api">
                 <div class="project-card-header">
                   <span class="project-num">02</span>
-                  <div class="project-title-group">
-                    <span class="project-category">Emergency Dispatch · Logistics</span>
+                  <div class="project-title-group" style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="project-category">HEALTHCARE EMERGENCY · DRONE DISPATCH</span>
+                      <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                    </div>
                     <h3>LifeStream V3.1 (Blood Match API)</h3>
                   </div>
                 </div>
+
+                <!-- Problem & Stakes Hook -->
+                <div class="project-hook-banner">
+                  "In emergency trauma, a 15-minute blood transit delay turns survivable surgery into irreversible cardiac arrest."
+                </div>
+
                 <div class="project-card-body">
                   <p class="project-desc">
-                    Real-time emergency blood network and drone dispatch engine. Features an AI-scored donor proximity matching algorithm and simulated cold-chain temperature telemetry tracking for safe biological transport logistics.
+                    Mission-critical emergency blood dispatch platform transforming chaotic supply panics into sub-second deterministic matches. Powered by multi-parameter donor proximity vectors, simulated autonomous drone flight corridors with radar tracking, and continuous cold-chain temperature telemetry that ensures biological viability from takeoff to transfusion.
                   </p>
                   <div class="project-highlights">
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> AI proximity matching algorithm scoring urgent donor compatibility</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Dark Matter Leaflet radar map with simulated drone flight routes &amp; dispatch vectors</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Simulated cold-chain temperature telemetry tracking for safe biological transit</div>
+                    <div class="highlight-item"><i class="fas fa-plane" style="color: #0066ff;"></i> <strong>Autonomous Drone Corridor Simulation:</strong> Leaflet Dark Matter radar mapping live flight vectors to trauma ICUs.</div>
+                    <div class="highlight-item"><i class="fas fa-thermometer-half" style="color: #ef4444;"></i> <strong>Cold-Chain Telemetry Guard:</strong> Automated alarm triggers when transit blood breaches 2°C–6°C safe limits.</div>
+                    <div class="highlight-item"><i class="fas fa-heartbeat" style="color: #ec4899;"></i> <strong>Algorithmic Compatibility Matrix:</strong> Sub-second pairing across ABO/Rh vectors and donor proximity.</div>
                   </div>
                   <div class="project-tech-tags">
                     <span class="tech-tag">React 18</span>
@@ -430,11 +472,12 @@
                     <span class="tech-tag">Express</span>
                     <span class="tech-tag">Leaflet.js</span>
                     <span class="tech-tag">AI Proximity</span>
+                    <span class="tech-tag">Telemetry</span>
                   </div>
                 </div>
                 <div class="project-card-footer">
                   <div class="project-meta-row">
-                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
                   </div>
                   <div class="project-action-btns">
                     <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
@@ -451,19 +494,28 @@
               <article class="project-card project-card-horizontal" data-repo="Smart_Attendance_System">
                 <div class="project-card-header">
                   <span class="project-num">03</span>
-                  <div class="project-title-group">
-                    <span class="project-category">Progressive Web App · Offline-First</span>
+                  <div class="project-title-group" style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="project-category">CRYPTOGRAPHIC SECURITY · CAMPUS PWA</span>
+                      <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                    </div>
                     <h3>Smart Attendance System</h3>
                   </div>
                 </div>
+
+                <!-- Problem & Stakes Hook -->
+                <div class="project-hook-banner">
+                  "Campus proxy fraud leaks 30%+ institutional trust while manual roll-calls waste 15 minutes of every lecture."
+                </div>
+
                 <div class="project-card-body">
                   <p class="project-desc">
-                    High-reliability offline-first attendance tracking system built for dense campus environments. Features rotating cryptographic QR codes to eliminate proxy check-ins, with automatic queue reconciliation upon connection restore.
+                    A zero-hardware, tamper-proof attendance infrastructure designed for dense 300+ student lecture halls. Eliminates proxy fraud through time-synchronous rotating HMAC-SHA256 QR nonces refreshing every 10 seconds, dual-layer GPS geofenced perimeter checks, and an offline-first IndexedDB buffer that syncs seamlessly when campus Wi-Fi fails.
                   </p>
                   <div class="project-highlights">
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Time-synchronized dynamic rotating QR codes to prevent screenshot sharing &amp; proxy attendance</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Offline-first IndexedDB / local storage queue with background synchronization</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Robust educator dashboard for instant session exports &amp; roll-call reconciliation</div>
+                    <div class="highlight-item"><i class="fas fa-qrcode" style="color: #0066ff;"></i> <strong>Anti-Screenshot Cryptographic Tokens:</strong> Sub-10s rolling nonces render camera photos and shared screenshots dead on arrival.</div>
+                    <div class="highlight-item"><i class="fas fa-wifi" style="color: #10b981;"></i> <strong>100% Offline-First Architecture:</strong> Students sign roll-call underground; automatically reconciles with backend upon signal restore.</div>
+                    <div class="highlight-item"><i class="fas fa-chart-line" style="color: #f59e0b;"></i> <strong>Zero-Latency Faculty Suite:</strong> Instant roll-call heatmaps, anomaly detection, and 1-click forensic Excel exports.</div>
                   </div>
                   <div class="project-tech-tags">
                     <span class="tech-tag">TypeScript</span>
@@ -472,11 +524,12 @@
                     <span class="tech-tag">MongoDB</span>
                     <span class="tech-tag">PWA</span>
                     <span class="tech-tag">IndexedDB</span>
+                    <span class="tech-tag">HMAC-SHA256</span>
                   </div>
                 </div>
                 <div class="project-card-footer">
                   <div class="project-meta-row">
-                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
                   </div>
                   <div class="project-action-btns">
                     <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
@@ -493,19 +546,28 @@
               <article class="project-card project-card-horizontal" data-repo="Phoenix-Interview-Prep">
                 <div class="project-card-header">
                   <span class="project-num">04</span>
-                  <div class="project-title-group">
-                    <span class="project-category">EdTech · Real-Time Gamification</span>
+                  <div class="project-title-group" style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="project-category">REAL-TIME WEBSOCKETS · CAREER ACCELERATOR</span>
+                      <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                    </div>
                     <h3>Phoenix Interview Prep</h3>
                   </div>
                 </div>
+
+                <!-- Problem & Stakes Hook -->
+                <div class="project-hook-banner">
+                  "Brilliant engineers fail interviews not from a lack of coding skill, but from freeze-up under unstructured pressure."
+                </div>
+
                 <div class="project-card-body">
                   <p class="project-desc">
-                    Gamified technical career accelerator bridging DSA milestones with real-world hackathon tracks. Features interactive mock interview prompts, STAR-format behavioral grading, and peer-to-peer competition leaderboard.
+                    A gamified career flight simulator that converts technical interview terror into calm, reflexive mastery. Features bidirectional WebSocket mock interview battle rooms, automated STAR-format behavioral response grading, algorithmic skill tree progression, and real-world hackathon project blueprints.
                   </p>
                   <div class="project-highlights">
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Interactive algorithmic roadmap with progress telemetry and milestone rewards</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time WebSocket room arbitration for collaborative interview mock rounds</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Curated hackathon project archive with starter templates and submission checkers</div>
+                    <div class="highlight-item"><i class="fas fa-terminal" style="color: #7c3aed;"></i> <strong>Live Peer WebSocket Battle Rooms:</strong> Synchronized coding challenges with bidirectional peer grading channels.</div>
+                    <div class="highlight-item"><i class="fas fa-trophy" style="color: #f59e0b;"></i> <strong>Algorithmic Leveling Roadmap:</strong> Gamified skill progression matching candidates to verified FAANG benchmarks.</div>
+                    <div class="highlight-item"><i class="fas fa-code-branch" style="color: #10b981;"></i> <strong>Hackathon Project Incubator:</strong> Curated repository of production architectural starters with validation tests.</div>
                   </div>
                   <div class="project-tech-tags">
                     <span class="tech-tag">React.js</span>
@@ -513,11 +575,12 @@
                     <span class="tech-tag">MongoDB</span>
                     <span class="tech-tag">Socket.io</span>
                     <span class="tech-tag">Gamification</span>
+                    <span class="tech-tag">WebSockets</span>
                   </div>
                 </div>
                 <div class="project-card-footer">
                   <div class="project-meta-row">
-                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Aug 2026</span></span>
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
                   </div>
                   <div class="project-action-btns">
                     <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
@@ -534,19 +597,28 @@
               <article class="project-card project-card-horizontal" data-repo="Campus-Search">
                 <div class="project-card-header">
                   <span class="project-num">05</span>
-                  <div class="project-title-group">
-                    <span class="project-category">Full-Stack Marketplace · Real-Time P2P</span>
+                  <div class="project-title-group" style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                      <span class="project-category">HYPER-LOCAL P2P · DISTRIBUTED HARDWARE EXCHANGE</span>
+                      <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                    </div>
                     <h3>CampusSearch v2.0</h3>
                   </div>
                 </div>
+
+                <!-- Problem & Stakes Hook -->
+                <div class="project-hook-banner">
+                  "Engineering teams delay lab milestones by weeks waiting for sensor deliveries while peers have them gathering dust."
+                </div>
+
                 <div class="project-card-body">
                   <p class="project-desc">
-                    Hyper-local peer-to-peer campus hardware exchange network. Enables lab engineering students to exchange microcontrollers, sensors, and equipment with student verification, broadcast availability inquiries, real-time peer chat, and custom UPI settlement.
+                    Hyper-local peer hardware exchange network crowdsourcing lab microcontrollers, sensors, and equipment across campus. Features real-time broadcast matching alerts, Server-Sent Events (SSE) notification streams, peer chat, and in-browser WASM SQLite fallback with instant UPI settlement.
                   </p>
                   <div class="project-highlights">
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time broadcast inquiry matching engine dispatching instant alerts to campus peers</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time Server-Sent Events (SSE) notification streams and integrated peer chat</div>
-                    <div class="highlight-item"><i class="fas fa-check-circle"></i> In-browser WASM sql.js SQLite offline fallback with dynamic peer UPI QR generation</div>
+                    <div class="highlight-item"><i class="fas fa-broadcast-tower" style="color: #0066ff;"></i> <strong>Broadcast Inquiry Matching Engine:</strong> Microsecond alert dispatch pinging verified peers holding required hardware.</div>
+                    <div class="highlight-item"><i class="fas fa-database" style="color: #10b981;"></i> <strong>In-Browser WASM SQLite Engine:</strong> Local sql.js database operates with zero backend connectivity.</div>
+                    <div class="highlight-item"><i class="fas fa-qrcode" style="color: #f59e0b;"></i> <strong>Dynamic UPI Settlement:</strong> Peer-to-peer instant checkout with zero platform commissions.</div>
                   </div>
                   <div class="project-tech-tags">
                     <span class="tech-tag">React 18</span>
@@ -559,7 +631,7 @@
                 </div>
                 <div class="project-card-footer">
                   <div class="project-meta-row">
-                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span></span>
+                    <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
                   </div>
                   <div class="project-action-btns">
                     <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
@@ -573,16 +645,6 @@
               </article>
 
             </div>
-          </div>
-
-          <!-- Archive Trigger Banner -->
-          <div class="project-archive-banner reveal-up">
-            <div style="font-size: 32px; color: #0066ff;"><i class="fas fa-layer-group"></i></div>
-            <h3>Explore Complete Project Archive (All 10 Systems Live)</h3>
-            <p>Explore specialized solutions in university placement arbitration, disaster mesh geofencing, sprint workflow SaaS, legal compliance analysis, and AI developer tooling.</p>
-            <button class="btn btn-dark" onclick="openProjectArchiveModal();">
-              <i class="fas fa-archive"></i> View All 10 Projects in Archive
-            </button>
           </div>
 
         </div>
