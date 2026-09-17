@@ -50,6 +50,8 @@
         <a href="#landing" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
+        <a href="#fleet-mesh" class="nav-link">Fleet Mesh</a>
+        <a href="#fleet-ingest" class="nav-link">Batch Studio</a>
         <a href="#journey" class="nav-link">Journey &amp; Certs</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#involvement" class="nav-link">Leadership</a>
@@ -92,10 +94,13 @@
               </p>
               <div class="hero-cta reveal-up">
                 <button class="btn btn-dark" onclick="window.goToSlide(2);">
-                  <i class="fas fa-layer-group"></i> Inspect 5 Flagship Systems
+                  <i class="fas fa-layer-group"></i> Inspect Flagships
+                </button>
+                <button class="btn btn-primary" onclick="window.goToSlide(3);" style="background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue);">
+                  <i class="fas fa-network-wired"></i> Fleet Relational Mesh
                 </button>
                 <button class="btn btn-outline" onclick="window.goToSlide(1);">
-                  <i class="fas fa-bolt"></i> The Engineering Philosophy
+                  <i class="fas fa-bolt"></i> The Philosophy
                 </button>
               </div>
               <div class="hero-socials reveal-up">
@@ -652,9 +657,203 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
+         ENTERPRISE FLEET RELATIONAL TOPOLOGY MESH (SLIDE 3)
+         ═══════════════════════════════════════════ -->
+    <section id="fleet-mesh" class="section-bg-alt deck-slide deep-queued" data-slide-index="3">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up" style="margin-bottom: 8px;">
+            <span class="section-badge"><i class="fas fa-network-wired"></i> Enterprise Fleet Architecture</span>
+            <h2 class="section-title">Cross-Fleet <span>Relational Topology &amp; Governance</span></h2>
+            <div class="section-divider" style="margin: 4px auto;"></div>
+            <p class="section-subtitle">Real-time mTLS, PQC, and WebSocket interoperability corridors interconnecting all 15 flagship platforms.</p>
+          </div>
+
+          <!-- 5-KPI Fleet Telemetry Strip -->
+          <div class="fleet-telemetry-strip reveal-up" id="fleetTelemetryStrip">
+            <div class="fleet-kpi-card">
+              <div class="kpi-icon kpi-blue"><i class="fas fa-route"></i></div>
+              <div class="kpi-meta">
+                <span class="kpi-label">Active Corridors</span>
+                <span class="kpi-value" id="kpiActiveCorridors">8 / 8 Active</span>
+              </div>
+            </div>
+            <div class="fleet-kpi-card">
+              <div class="kpi-icon kpi-green"><i class="fas fa-shield-alt"></i></div>
+              <div class="kpi-meta">
+                <span class="kpi-label">Security Integrity</span>
+                <span class="kpi-value" id="kpiSecurityIntegrity">99.6% PQC</span>
+              </div>
+            </div>
+            <div class="fleet-kpi-card">
+              <div class="kpi-icon kpi-purple"><i class="fas fa-cubes"></i></div>
+              <div class="kpi-meta">
+                <span class="kpi-label">Governed Systems</span>
+                <span class="kpi-value" id="kpiGovernedSystems">15 Flagships</span>
+              </div>
+            </div>
+            <div class="fleet-kpi-card">
+              <div class="kpi-icon kpi-amber"><i class="fas fa-bolt"></i></div>
+              <div class="kpi-meta">
+                <span class="kpi-label">Latency SLA</span>
+                <span class="kpi-value" id="kpiLatencySla">13ms (Sub-25ms)</span>
+              </div>
+            </div>
+            <div class="fleet-kpi-card">
+              <div class="kpi-icon kpi-rose"><i class="fas fa-star"></i></div>
+              <div class="kpi-meta">
+                <span class="kpi-label">Production Impact</span>
+                <span class="kpi-value" id="kpiProductionImpact">790+ Stars</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Fleet Mesh Container with 2 Sub-Tabs/Views -->
+          <div class="fleet-substage-container reveal-up">
+            <div class="fleet-tabs-bar">
+              <div class="fleet-tabs-left">
+                <button class="fleet-tab-btn active" id="tabCorridorsBtn" onclick="switchFleetView('corridors')">
+                  <i class="fas fa-project-diagram"></i> Interoperability Corridors (<span id="corridorsBadgeCount">8</span>)
+                </button>
+                <button class="fleet-tab-btn" id="tabPlatformsBtn" onclick="switchFleetView('platforms')">
+                  <i class="fas fa-server"></i> Governed Engineering Platforms (<span id="platformsBadgeCount">15</span>)
+                </button>
+              </div>
+              <div class="fleet-tabs-actions">
+                <button class="btn btn-sm btn-outline" onclick="openProvisionModal()">
+                  <i class="fas fa-plus"></i> Provision Corridor
+                </button>
+                <button class="btn btn-sm btn-dark" onclick="refreshFleetTopology()">
+                  <i class="fas fa-sync-alt"></i> Sync Telemetry
+                </button>
+              </div>
+            </div>
+
+            <!-- VIEW 1: Corridors Table -->
+            <div class="fleet-view-panel active" id="fleetCorridorsPanel">
+              <div class="fleet-table-container">
+                <table class="fleet-table" id="fleetCorridorsTable">
+                  <thead>
+                    <tr>
+                      <th>Corridor ID</th>
+                      <th>Source Platform</th>
+                      <th>Relational Target</th>
+                      <th>Protocol &amp; Bandwidth</th>
+                      <th>Latency</th>
+                      <th>Integrity</th>
+                      <th>Status</th>
+                      <th style="text-align: right;">1-Click Sever Controls</th>
+                    </tr>
+                  </thead>
+                  <tbody id="corridorsTableBody">
+                    <!-- Populated dynamically by script.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- VIEW 2: Governed Platforms Roster -->
+            <div class="fleet-view-panel" id="fleetPlatformsPanel" style="display: none;">
+              <div class="fleet-platforms-grid" id="fleetPlatformsGrid">
+                <!-- Populated dynamically by script.js -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ENTERPRISE BATCH INGESTION & GOVERNANCE STUDIO (SLIDE 4)
+         ═══════════════════════════════════════════ -->
+    <section id="fleet-ingest" class="deck-slide deep-queued" data-slide-index="4">
+      <div class="deck-slide-card">
+        <div class="container">
+          <div class="section-header reveal-up" style="margin-bottom: 8px;">
+            <span class="section-badge"><i class="fas fa-file-import"></i> Schema Validation &amp; Governance</span>
+            <h2 class="section-title">Batch Ingestion &amp; <span>Universal Governance</span></h2>
+            <div class="section-divider" style="margin: 4px auto;"></div>
+            <p class="section-subtitle">RFC 4180 CSV &amp; Strict JSON payload ingestion engine with cascading schema enforcement and universal fleet purge controls.</p>
+          </div>
+
+          <!-- Ingestion Controls Header -->
+          <div class="ingest-toolbar reveal-up">
+            <div class="ingest-toolbar-group">
+              <label class="ingest-label"><i class="fas fa-layer-group"></i> Entity:</label>
+              <select id="ingestTargetEntity" class="ingest-select">
+                <option value="corridors">Interoperability Corridors</option>
+                <option value="platforms">Governed Platforms</option>
+              </select>
+              <label class="ingest-label" style="margin-left: 12px;"><i class="fas fa-code"></i> Format:</label>
+              <select id="ingestFormat" class="ingest-select" onchange="handleFormatChange()">
+                <option value="csv">RFC 4180 CSV</option>
+                <option value="json">Strict JSON</option>
+              </select>
+            </div>
+            <div class="ingest-toolbar-actions">
+              <button class="btn btn-sm btn-outline" onclick="loadSampleIngestTemplate()">
+                <i class="fas fa-file-code"></i> Load Preset Template
+              </button>
+              <button class="btn btn-sm btn-dark" id="btnRunIngest" onclick="executeBatchIngest()">
+                <i class="fas fa-upload"></i> Execute Batch Ingest
+              </button>
+            </div>
+          </div>
+
+          <!-- Dual-Pane Editor & Execution Console -->
+          <div class="ingest-dual-pane reveal-up">
+            <!-- Left Pane: Buffer Editor -->
+            <div class="ingest-pane-editor">
+              <div class="pane-header">
+                <span class="pane-title"><i class="fas fa-edit"></i> Batch Ingestion Buffer</span>
+                <span class="pane-badge" id="bufferStatsBadge">RFC 4180 Validated</span>
+              </div>
+              <textarea id="ingestBuffer" class="ingest-textarea" placeholder="Paste RFC 4180 CSV or Strict JSON payload here..."></textarea>
+            </div>
+
+            <!-- Right Pane: Execution Terminal Log -->
+            <div class="ingest-pane-terminal">
+              <div class="pane-header terminal-header">
+                <span class="pane-title"><i class="fas fa-terminal"></i> Ingestion Execution &amp; Audit Log</span>
+                <button class="terminal-clear-btn" onclick="clearIngestTerminal()">Clear</button>
+              </div>
+              <div class="terminal-body" id="ingestTerminalBody">
+                <div class="term-line info">[SYSTEM] Ingestion Studio Ready. Select Entity and Format to stream payloads.</div>
+                <div class="term-line success">[SCHEMA] Strict RFC 4180 CSV &amp; JSON parsers mounted.</div>
+                <div class="term-line highlight">[GOVERNANCE] Cascading integrity validation active across 15 platforms.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Universal Cascade Purge Zone -->
+          <div class="fleet-purge-zone reveal-up">
+            <div class="purge-warning-text">
+              <i class="fas fa-exclamation-triangle purge-icon"></i>
+              <div>
+                <strong>Universal Cascade Fleet Purge</strong>
+                <p>Purges all platform nodes and instantly drops all interoperability corridors. Type <code>PURGE-ALL-FLEET-ENTITIES</code> to authorize.</p>
+              </div>
+            </div>
+            <div class="purge-actions-group">
+              <input type="text" id="purgeConfirmInput" class="purge-input" placeholder="Type: PURGE-ALL-FLEET-ENTITIES">
+              <button class="btn btn-sm btn-danger" onclick="triggerUniversalFleetPurge()">
+                <i class="fas fa-fire"></i> Execute Cascade Purge
+              </button>
+              <button class="btn btn-sm btn-outline" onclick="restoreDefaultFleetTopology()">
+                <i class="fas fa-undo"></i> Reset to Default
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
          MODULAR JOURNEY & CREDENTIALS HUB (SLIDE 3)
          ═══════════════════════════════════════════ -->
-    <section id="journey" class="section-bg-alt deck-slide deep-queued" data-slide-index="3">
+    <section id="journey" class="section-bg-alt deck-slide deep-queued" data-slide-index="5">
       <div class="deck-slide-card">
         <div class="container">
           <div class="section-header reveal-up">
@@ -785,7 +984,7 @@
     <!-- ═══════════════════════════════════════════
          TECHNICAL ARSENAL & SKILLS (SLIDE 4)
          ═══════════════════════════════════════════ -->
-    <section id="skills" class="deck-slide deep-queued" data-slide-index="4">
+    <section id="skills" class="deck-slide deep-queued" data-slide-index="6">
       <div class="deck-slide-card">
         <div class="container">
           <div class="section-header reveal-up">
@@ -985,7 +1184,7 @@
     <!-- ═══════════════════════════════════════════
          INVOLVEMENT & LEADERSHIP (SLIDE 5)
          ═══════════════════════════════════════════ -->
-    <section id="involvement" class="section-bg-alt deck-slide deep-queued" data-slide-index="5">
+    <section id="involvement" class="section-bg-alt deck-slide deep-queued" data-slide-index="7">
       <div class="deck-slide-card">
         <div class="container">
           <div class="section-header reveal-up">
@@ -1060,7 +1259,7 @@
     <!-- ═══════════════════════════════════════════
          CONTACT SECTION (SLIDE 6)
          ═══════════════════════════════════════════ -->
-    <section id="contact" class="deck-slide deep-queued" data-slide-index="6">
+    <section id="contact" class="deck-slide deep-queued" data-slide-index="8">
       <div class="deck-slide-card">
         <div class="container">
           <div class="section-header reveal-up">
@@ -1196,8 +1395,10 @@
               <a href="#" onclick="window.goToSlide(0); return false;">Home</a>
               <a href="#" onclick="window.goToSlide(1); return false;">About</a>
               <a href="#" onclick="window.goToSlide(2); return false;">Projects</a>
-              <a href="#" onclick="window.goToSlide(3); return false;">Journey &amp; Certs</a>
-              <a href="#" onclick="window.goToSlide(6); return false;">Contact</a>
+              <a href="#" onclick="window.goToSlide(3); return false;">Fleet Relational Mesh</a>
+              <a href="#" onclick="window.goToSlide(4); return false;">Batch Ingestion Studio</a>
+              <a href="#" onclick="window.goToSlide(5); return false;">Journey &amp; Certs</a>
+              <a href="#" onclick="window.goToSlide(8); return false;">Contact</a>
             </div>
             <div class="footer-social">
               <h4>Connect</h4>
@@ -1229,10 +1430,12 @@
       <button class="deck-dot active" data-slide="0" title="01 - Home"></button>
       <button class="deck-dot" data-slide="1" title="02 - About"></button>
       <button class="deck-dot" data-slide="2" title="03 - Flagship Projects"></button>
-      <button class="deck-dot" data-slide="3" title="04 - Verified Credentials"></button>
-      <button class="deck-dot" data-slide="4" title="05 - Skills Arsenal"></button>
-      <button class="deck-dot" data-slide="5" title="06 - Leadership"></button>
-      <button class="deck-dot" data-slide="6" title="07 - Contact"></button>
+      <button class="deck-dot" data-slide="3" title="04 - Fleet Relational Mesh"></button>
+      <button class="deck-dot" data-slide="4" title="05 - Batch Ingestion Studio"></button>
+      <button class="deck-dot" data-slide="5" title="06 - Verified Credentials"></button>
+      <button class="deck-dot" data-slide="6" title="07 - Skills Arsenal"></button>
+      <button class="deck-dot" data-slide="7" title="08 - Leadership"></button>
+      <button class="deck-dot" data-slide="8" title="09 - Contact"></button>
     </div>
     <button class="deck-step-arrow" id="deckNextBtn" title="Next Slide (Down)"><i class="fas fa-chevron-down"></i></button>
     <div class="deck-counter" id="deckCounter">01 / 07</div>
@@ -1477,6 +1680,68 @@
 
   <!-- Application Script -->
   <script src="script.js"></script>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL: PROVISION INTEROPERABILITY CORRIDOR
+       ═══════════════════════════════════════════ -->
+  <div class="journey-modal" id="provisionCorridorModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeProvisionModal()"></div>
+    <div class="modal-container" style="max-width: 560px; padding: 20px 24px;">
+      <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--accent-border);">
+        <div class="modal-title-group">
+          <span class="section-badge" style="font-size: 0.7rem; padding: 2px 8px;"><i class="fas fa-network-wired"></i> Mesh Provisioning</span>
+          <h3 class="modal-title" style="margin: 4px 0 0 0; font-size: 1.15rem;">Provision Interoperability Corridor</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeProvisionModal()" style="background: transparent; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="provisionCorridorForm" onsubmit="handleProvisionCorridor(event)">
+          <div class="form-group" style="margin-bottom: 12px;">
+            <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Corridor Identifier</label>
+            <input type="text" id="provCorridorId" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.84rem;" required placeholder="e.g. CORR-09" value="CORR-09">
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Source Platform</label>
+              <select id="provSourcePlatform" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.82rem;" required></select>
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Target Platform</label>
+              <select id="provTargetPlatform" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.82rem;" required></select>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Protocol</label>
+              <select id="provProtocol" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.82rem;">
+                <option value="mTLS-gRPC">mTLS-gRPC</option>
+                <option value="PQC-Channel">PQC-Channel</option>
+                <option value="WebSocket-Mesh">WebSocket-Mesh</option>
+                <option value="REST-Webhook">REST-Webhook</option>
+              </select>
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Bandwidth</label>
+              <input type="text" id="provBandwidth" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.82rem;" value="25 Gbps">
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Latency (ms)</label>
+              <input type="number" id="provLatency" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.82rem;" value="12">
+            </div>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 4px; color: var(--text-secondary);">Description &amp; Channel Purpose</label>
+            <input type="text" id="provDescription" style="width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--accent-border); font-size: 0.84rem;" value="Autonomous high-throughput telemetry stream">
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 8px;">
+            <button type="button" class="btn btn-sm btn-outline" onclick="closeProvisionModal()">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-dark"><i class="fas fa-check"></i> Provision Corridor</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
 
