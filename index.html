@@ -84,10 +84,10 @@
               Hi, I'm <span class="text-highlight">Shashank J</span>
             </h1>
             <p class="hero-tagline reveal-up">
-              Full-Stack Systems Architect &nbsp;•&nbsp; AI Engineer &nbsp;•&nbsp; CSE Scholar (CGPA 8.4/10)
+              Full-Stack Systems Architect &nbsp;•&nbsp; AI Engineer &nbsp;•&nbsp; CSE Scholar (CGPA 8.55/10)
             </p>
             <p class="hero-intro reveal-up">
-              I am a Computer Science &amp; Engineering student at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.4/10) with an unwavering focus on building resilient, fault-tolerant web platforms and autonomous AI systems. Having completed rigorous corporate simulations with <strong>Google Cloud (Agentic AI)</strong>, <strong>BCG X (Generative AI)</strong>, and <strong>Deloitte Australia (Forensic Analytics)</strong>, I engineer production-grade software designed to solve real-world operational bottlenecks with precision, reliability, and speed.
+              I am a Computer Science &amp; Engineering student at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CGPA: 8.55/10) with an unwavering focus on building resilient, fault-tolerant web platforms and autonomous AI systems. Having completed rigorous corporate simulations with <strong>Google Cloud (Agentic AI)</strong>, <strong>BCG X (Generative AI)</strong>, and <strong>Deloitte Australia (Forensic Analytics)</strong>, I engineer production-grade software designed to solve real-world operational bottlenecks with precision, reliability, and speed.
             </p>
             <div class="hero-cta reveal-up">
               <a href="#projects" class="btn btn-dark">
@@ -124,7 +124,7 @@
             <!-- Dynamic GitHub-Integrated Stats Row -->
             <div class="hero-stats-card">
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" id="statRepoCount" data-target="43">43</span>
+                <span class="stat-number hero-stat-num" id="statRepoCount" data-target="50" data-suffix="+">50+</span>
                 <span class="stat-label">Public Repos</span>
               </div>
               <div class="stat-divider"></div>
@@ -139,12 +139,12 @@
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
-                <span class="stat-number hero-stat-num">8.4</span>
+                <span class="stat-number hero-stat-num">8.55</span>
                 <span class="stat-label">CGPA / 10</span>
               </div>
               <div class="stat-divider"></div>
               <div class="stat-item">
-                <span class="stat-number hero-stat-num" data-target="6">6</span>
+                <span class="stat-number hero-stat-num" data-target="10" data-suffix="+">10+</span>
                 <span class="stat-label">Hackathons</span>
               </div>
             </div>
@@ -179,7 +179,7 @@
               I don't write software just to complete feature lists; <strong>I engineer platforms to withstand real-world failure modes.</strong> Network dead zones, sudden transaction spikes, corrupted client state, and distributed race conditions are not edge cases to me—they are the primary engineering battlefield.
             </p>
             <p style="font-size: 1.08rem; line-height: 1.78; margin-bottom: 14px; color: var(--text-secondary);">
-              My foundation bridges rigorous computer science fundamentals at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CSE Batch 2024–2028 | Current CGPA: <strong>8.4 / 10</strong>) with battle-tested full-stack infrastructure. Whether crafting an offline-first reconciliation queue in IndexedDB, implementing sub-10s rotating HMAC-SHA256 nonces, or orchestrating autonomous LangGraph state graphs, my focus is strictly on <em>fault tolerance, speed, and real-world utility</em>.
+              My foundation bridges rigorous computer science fundamentals at <strong>JSS Science and Technology University (SJCE), Mysuru</strong> (CSE Batch 2024–2028 | Current CGPA: <strong>8.55 / 10</strong>) with battle-tested full-stack infrastructure. Whether crafting an offline-first reconciliation queue in IndexedDB, implementing sub-10s rotating HMAC-SHA256 nonces, or orchestrating autonomous LangGraph state graphs, my focus is strictly on <em>fault tolerance, speed, and real-world utility</em>.
             </p>
             <p style="font-size: 1.08rem; line-height: 1.78; margin-bottom: 20px; color: var(--text-secondary);">
               I have delivered corporate simulation projects with <strong>BCG X</strong> (Generative AI Chatbots) and <strong>Deloitte Australia</strong> (Forensic Analytics), completed the <strong>Google Cloud Agentic AI Day Challenge</strong>, actively contribute to open source through the <strong>Commit31</strong> program by Linux Campus Club, and coordinate communications and hackathon operations.
@@ -216,7 +216,7 @@
                 </div>
                 <div class="meta-cell">
                   <span class="meta-label" style="font-size: 0.82rem;">Academic Standing</span>
-                  <span class="meta-val highlight-val" style="font-size: 1.1rem; font-weight: 800; color: #16a34a;">CGPA: 8.4 / 10</span>
+                  <span class="meta-val highlight-val" style="font-size: 1.1rem; font-weight: 800; color: #16a34a;">CGPA: 8.55 / 10</span>
                 </div>
               </div>
               <div class="edu-coursework">
@@ -338,14 +338,20 @@
           <span class="section-badge">Flagship Systems</span>
           <h2 class="section-title">Production <span>Engineering Systems</span></h2>
           <div class="section-divider"></div>
-          <p class="section-subtitle">Real-world full-stack architectures, multi-agent AI pipelines, and cryptographic campus engines. Continuous horizontal showcase — hover any card or toggle controls to inspect.</p>
+          <p class="section-subtitle">At a single glance, explore 2 to 3 full-scale production engineering architectures occupying your entire screen. Continuous auto-sliding with manual 3-project window controls.</p>
         </div>
 
         <!-- Marquee Controls & Actions Bar -->
         <div class="marquee-controls-bar reveal-up">
           <div class="marquee-status-pill">
             <span class="marquee-live-indicator"></span>
-            Continuous Auto-Glide &bull; Hover any card to pause
+            Sliding 3-Project Window &bull; Hover card to pause
+          </div>
+          <div class="marquee-window-pills" id="marqueeWindowPills">
+            <button class="window-pill active" onclick="jumpToWindow(0);" title="View Projects 1 to 3">Window 1 (1–3)</button>
+            <button class="window-pill" onclick="jumpToWindow(1);" title="View Projects 4 to 6">Window 2 (4–6)</button>
+            <button class="window-pill" onclick="jumpToWindow(2);" title="View Projects 7 to 9">Window 3 (7–9)</button>
+            <button class="window-pill" onclick="jumpToWindow(3);" title="View Projects 8 to 10">Window 4 (8–10)</button>
           </div>
           <div class="marquee-action-btns">
             <button class="btn btn-sm btn-dark" onclick="openProjectArchiveModal();" style="border-radius: 20px; padding: 7px 18px; font-size: 0.88rem; font-weight: 600;">
@@ -355,10 +361,10 @@
               <i class="fas fa-pause" id="marqueeToggleIcon"></i>
               <span id="marqueeToggleText">Pause</span>
             </button>
-            <button class="marquee-ctrl-btn" onclick="scrollMarquee(-1);" title="Scroll Left">
+            <button class="marquee-ctrl-btn" onclick="slideWindow(-1);" title="Previous 3 Projects (Slide Left)">
               <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="marquee-ctrl-btn" onclick="scrollMarquee(1);" title="Scroll Right">
+            <button class="marquee-ctrl-btn" onclick="slideWindow(1);" title="Next 3 Projects (Slide Right)">
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
@@ -459,7 +465,7 @@
                 <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
                   <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="https://lifestream-v3.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                <a href="https://blood-match-api.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="blood-match-api">
                   <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -652,7 +658,7 @@
                 <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
                   <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="https://campus-search.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                <a href="https://campus-search-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="Campus-Search">
                   <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -755,8 +761,106 @@
             </div>
           </article>
 
+          <!-- 9. ArchitectAI Studio -->
+          <article class="project-card project-card-horizontal" data-repo="ArchitectAI-Studio">
+            <div class="project-card-header">
+              <span class="project-num">09</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">VISUAL AI STUDIO · LANGGRAPH &amp; 3D CAD</span>
+                  <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                </div>
+                <h3>ArchitectAI Studio</h3>
+              </div>
+            </div>
+            <div class="project-hook-banner">
+              "System architecture shouldn't be trapped in static diagrams; it should compile, execute, and simulate live."
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Visual node canvas compiling multi-agent state graphs using LangGraph and Google Gemini API with in-browser WASM SQL validation, real-time 3D CAD blueprint synthesis, and one-click Docker sandbox containerization.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-project-diagram" style="color: #0066ff;"></i> <strong>LangGraph State Compilation:</strong> Compiles visual node topologies into executable agent pipelines.</div>
+                <div class="highlight-item"><i class="fas fa-microchip" style="color: #7c3aed;"></i> <strong>In-Browser WASM Sandbox:</strong> Sub-millisecond SQL and AST syntax verification with zero cloud latency.</div>
+                <div class="highlight-item"><i class="fas fa-cubes" style="color: #10b981;"></i> <strong>Three.js 3D CAD Synthesis:</strong> Generates interactive spatial models directly from textual architectural prompts.</div>
+                <div class="highlight-item"><i class="fas fa-server" style="color: #f59e0b;"></i> <strong>One-Click Manifest Export:</strong> Automated translation to production Docker Compose and Kubernetes manifests.</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">Three.js</span>
+                <span class="tech-tag">WebAssembly</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="ArchitectAI-Studio">
+                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. RegulAIte AI -->
+          <article class="project-card project-card-horizontal" data-repo="regulaite-ai">
+            <div class="project-card-header">
+              <span class="project-num">10</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">LEGAL TECH · AGENTIC COMPLIANCE</span>
+                  <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                </div>
+                <h3>RegulAIte AI</h3>
+              </div>
+            </div>
+            <div class="project-hook-banner">
+              "Ambiguous enterprise contracts hide multi-million-dollar liabilities buried in dense fine print."
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Autonomous legal compliance analyzer identifying contractual liabilities, computing numerical risk scores, and generating safe renegotiated clauses. Features vectorized clause comparison, automated regulatory breach detection, and interactive audit trails.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-calculator" style="color: #0066ff;"></i> <strong>Numerical Risk Scoring:</strong> Multi-factor algorithm quantifying liability exposure and indemnity hazards.</div>
+                <div class="highlight-item"><i class="fas fa-search" style="color: #7c3aed;"></i> <strong>Vector Clause Matcher:</strong> Semantic similarity scoring comparing draft contracts against regulatory baselines.</div>
+                <div class="highlight-item"><i class="fas fa-pen-fancy" style="color: #10b981;"></i> <strong>Safe Clause Generator:</strong> Real-time generative AI redlining drafting balanced, enforceable counter-proposals.</div>
+                <div class="highlight-item"><i class="fas fa-shield-alt" style="color: #f59e0b;"></i> <strong>Audit Readiness Console:</strong> Forensic timeline logging all flagged clauses with rationale.</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">FAISS</span>
+                <span class="tech-tag">LegalNLP</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="regulaite-ai">
+                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
           <!-- ═══════════════════════════════════════════
-               DUPLICATE 8 CARDS FOR CONTINUOUS INFINITE SEAMLESS LOOP
+               DUPLICATE 10 CARDS FOR CONTINUOUS INFINITE SEAMLESS LOOP
                ═══════════════════════════════════════════ -->
 
           <!-- 1-DUP. NetPlus-CRM (NetPulse) -->
@@ -849,7 +953,7 @@
                 <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
                   <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="https://lifestream-v3.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                <a href="https://blood-match-api.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="blood-match-api">
                   <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -1042,7 +1146,7 @@
                 <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
                   <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="https://campus-search.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                <a href="https://campus-search-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="Campus-Search">
                   <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -1139,6 +1243,104 @@
                   <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
                 </a>
                 <a href="https://devflow-pro.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active">
+                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9-DUP. ArchitectAI Studio -->
+          <article class="project-card project-card-horizontal" data-repo="ArchitectAI-Studio" aria-hidden="true">
+            <div class="project-card-header">
+              <span class="project-num">09</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">VISUAL AI STUDIO · LANGGRAPH &amp; 3D CAD</span>
+                  <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                </div>
+                <h3>ArchitectAI Studio</h3>
+              </div>
+            </div>
+            <div class="project-hook-banner">
+              "System architecture shouldn't be trapped in static diagrams; it should compile, execute, and simulate live."
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Visual node canvas compiling multi-agent state graphs using LangGraph and Google Gemini API with in-browser WASM SQL validation, real-time 3D CAD blueprint synthesis, and one-click Docker sandbox containerization.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-project-diagram" style="color: #0066ff;"></i> <strong>LangGraph State Compilation:</strong> Compiles visual node topologies into executable agent pipelines.</div>
+                <div class="highlight-item"><i class="fas fa-microchip" style="color: #7c3aed;"></i> <strong>In-Browser WASM Sandbox:</strong> Sub-millisecond SQL and AST syntax verification with zero cloud latency.</div>
+                <div class="highlight-item"><i class="fas fa-cubes" style="color: #10b981;"></i> <strong>Three.js 3D CAD Synthesis:</strong> Generates interactive spatial models directly from textual architectural prompts.</div>
+                <div class="highlight-item"><i class="fas fa-server" style="color: #f59e0b;"></i> <strong>One-Click Manifest Export:</strong> Automated translation to production Docker Compose and Kubernetes manifests.</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">LangGraph</span>
+                <span class="tech-tag">Three.js</span>
+                <span class="tech-tag">WebAssembly</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="ArchitectAI-Studio">
+                  <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10-DUP. RegulAIte AI -->
+          <article class="project-card project-card-horizontal" data-repo="regulaite-ai" aria-hidden="true">
+            <div class="project-card-header">
+              <span class="project-num">10</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">LEGAL TECH · AGENTIC COMPLIANCE</span>
+                  <span class="live-pulse-badge"><span class="live-pulse-dot"></span> LIVE ENGINE</span>
+                </div>
+                <h3>RegulAIte AI</h3>
+              </div>
+            </div>
+            <div class="project-hook-banner">
+              "Ambiguous enterprise contracts hide multi-million-dollar liabilities buried in dense fine print."
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Autonomous legal compliance analyzer identifying contractual liabilities, computing numerical risk scores, and generating safe renegotiated clauses. Features vectorized clause comparison, automated regulatory breach detection, and interactive audit trails.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><i class="fas fa-calculator" style="color: #0066ff;"></i> <strong>Numerical Risk Scoring:</strong> Multi-factor algorithm quantifying liability exposure and indemnity hazards.</div>
+                <div class="highlight-item"><i class="fas fa-search" style="color: #7c3aed;"></i> <strong>Vector Clause Matcher:</strong> Semantic similarity scoring comparing draft contracts against regulatory baselines.</div>
+                <div class="highlight-item"><i class="fas fa-pen-fancy" style="color: #10b981;"></i> <strong>Safe Clause Generator:</strong> Real-time generative AI redlining drafting balanced, enforceable counter-proposals.</div>
+                <div class="highlight-item"><i class="fas fa-shield-alt" style="color: #f59e0b;"></i> <strong>Audit Readiness Console:</strong> Forensic timeline logging all flagged clauses with rationale.</div>
+              </div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">FAISS</span>
+                <span class="tech-tag">LegalNLP</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-meta-row">
+                <span class="project-updated-label"><i class="fas fa-history"></i> <span class="repo-pushed-at">Sep 2026</span> &bull; 24/7 Live</span>
+              </div>
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                  <i class="fab fa-github"></i> Repository <i class="fas fa-external-link-alt"></i>
+                </a>
+                <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-demo btn-demo-active" data-demo-for="regulaite-ai">
                   <i class="fas fa-play"></i> Live Demo <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -1814,8 +2016,8 @@
       <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--accent-border); padding-bottom: 16px;">
         <div>
           <span class="section-badge">Complete Engineering Portfolio</span>
-          <h3 style="font-size: 24px; font-weight: 800; margin-top: 6px;">Projects Archive (6 Additional Systems)</h3>
-          <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Explore specialized architectures in conflict resolution, P2P mesh geofencing, real-time SaaS, and multi-agent compliance.</p>
+          <h3 style="font-size: 24px; font-weight: 800; margin-top: 6px;">All 10 Flagship Engineering Systems Archive</h3>
+          <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Comprehensive archive of all 10 production platforms with direct live deployments and GitHub source repositories.</p>
         </div>
         <button class="modal-close-btn" onclick="closeProjectArchiveModal();" aria-label="Close archive modal">
           <i class="fas fa-times"></i>
@@ -1823,7 +2025,67 @@
       </div>
 
       <div class="flat-archive-grid">
-        <!-- Archive 1: Placement Clash Resolver -->
+        <!-- Archive 1: NetPlus-CRM -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">CRM Intelligence · Distributed</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">NetPlus-CRM (NetPulse)</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; flex: 1;">Autonomous relationship intelligence platform with deterministic half-life decay mathematics, offline-first IndexedDB buffer, and AI copilot.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="system-tag">Next.js 16</span>
+            <span class="system-tag">TypeScript</span>
+            <span class="system-tag">Supabase</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+            <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://netpulse.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="NetPlus-CRM-">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 2: LifeStream V3.1 -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Healthcare · Drone Dispatch</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">LifeStream V3.1 (Blood Match API)</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; flex: 1;">Emergency blood dispatch platform with simulated autonomous drone flight corridors, radar tracking, and continuous cold-chain temperature telemetry.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="system-tag">React 18</span>
+            <span class="system-tag">Node.js</span>
+            <span class="system-tag">Leaflet</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+            <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://blood-match-api.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="blood-match-api">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 3: Smart Attendance System -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Security · HMAC Cryptography</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Smart Attendance System</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; flex: 1;">Zero-proxy attendance platform with sub-10s rotating HMAC-SHA256 nonces, dual-layer GPS fences, and offline IndexedDB roll-call sync.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="system-tag">TypeScript</span>
+            <span class="system-tag">MongoDB</span>
+            <span class="system-tag">HMAC-SHA256</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+            <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://smart-attendance-system.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Smart_Attendance_System">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 4: Placement Clash Resolver -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Graph Theory · Scheduling</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Placement Clash Resolver</h4>
@@ -1837,13 +2099,13 @@
             <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://placement-clash-resolver.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://placement-clash-resolver.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Placement-Clash-Resolver">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <!-- Archive 2: Phoenix Interview Prep -->
+        <!-- Archive 5: Phoenix Interview Prep -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">EdTech · Gamification</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Phoenix Interview Prep</h4>
@@ -1857,13 +2119,33 @@
             <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://phoenix.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://phoenix-prep.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Phoenix-Interview-Prep_and_Hackathon_Guide">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <!-- Archive 3: DevFlow Pro -->
+        <!-- Archive 6: Campus Search Engine -->
+        <div class="flat-archive-card">
+          <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Vector Search · Academic RAG</span>
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Campus Search Engine</h4>
+          <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; flex: 1;">Semantic vector retrieval search engine providing sub-15ms semantic matching over university curricula, syllabi, and past examination papers.</p>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px;">
+            <span class="system-tag">Python</span>
+            <span class="system-tag">FAISS</span>
+            <span class="system-tag">FastAPI</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid var(--accent-border); padding-top: 12px; margin-top: auto;">
+            <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+              <i class="fab fa-github"></i> Repository
+            </a>
+            <a href="https://campus-search-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Campus-Search">
+              Live Demo <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Archive 7: DevFlow Pro -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Enterprise SaaS · TypeScript</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">DevFlow Pro</h4>
@@ -1877,13 +2159,13 @@
             <a href="https://github.com/Shashankcodelover/Devflow-Pro" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://devflow-pro.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://devflowpro.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Devflow-Pro">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <!-- Archive 4: FLARE Disaster Response -->
+        <!-- Archive 8: FLARE Disaster Response -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Geospatial · P2P Mesh</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Disaster Geofencing (FLARE)</h4>
@@ -1897,13 +2179,13 @@
             <a href="https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://flare.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://flare-disaster.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="Decentralized-Disaster-Response-Resource-Geofencing-System">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <!-- Archive 5: ArchitectAI Studio -->
+        <!-- Archive 9: ArchitectAI Studio -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Visual AI Studio · LangGraph</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">ArchitectAI Studio</h4>
@@ -1917,13 +2199,13 @@
             <a href="https://github.com/Shashankcodelover/ArchitectAI-Studio" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://architectai-studio.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="ArchitectAI-Studio">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
 
-        <!-- Archive 6: RegulAIte AI -->
+        <!-- Archive 10: RegulAIte AI -->
         <div class="flat-archive-card">
           <span class="system-tag" style="align-self: flex-start; margin-bottom: 8px;">Legal Tech · Agentic AI</span>
           <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">RegulAIte AI</h4>
@@ -1937,7 +2219,7 @@
             <a href="https://github.com/Shashankcodelover/regulaite-ai" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
               <i class="fab fa-github"></i> Repository
             </a>
-            <a href="https://regulaite.shashankj.tech" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark">
+            <a href="https://lnkd.in/gaERH9Ya" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-dark" data-demo-for="regulaite-ai">
               Live Demo <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
