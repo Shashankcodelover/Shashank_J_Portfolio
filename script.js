@@ -738,12 +738,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── 11. Project Archive Modal ──
-
 window.openProjectArchiveModal = function() {
   const modal = document.getElementById('projectArchiveModal');
   if (modal) {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
 };
 
@@ -752,118 +752,60 @@ window.closeProjectArchiveModal = function() {
   if (modal) {
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 };
 
-// Global escape key listener for new modals
+// Global escape key listener for all modals
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     closeProjectArchiveModal();
+    if (typeof closeJourneyModal === 'function') closeJourneyModal();
   }
 });
 
-// ── 12. 3D Presentation Deck Controller (Frame-Lifting & Parallax Stack) ──
-(function initPresentationDeck() {
-  const deck = document.getElementById('presentationDeck');
-  if (!deck) return;
+// ── 12. Continuous Projects Marquee Controls ──────────────────────
+window.toggleMarquee = function() {
+  const track = document.getElementById('projectsMarqueeTrack');
+  const icon = document.getElementById('marqueeToggleIcon');
+  const text = document.getElementById('marqueeToggleText');
+  if (!track) return;
+  const isPaused = track.classList.toggle('is-paused');
+  if (icon) icon.className = isPaused ? 'fas fa-play' : 'fas fa-pause';
+  if (text) text.textContent = isPaused ? 'Resume' : 'Pause';
+};
 
-  const slides = Array.from(deck.querySelectorAll('.deck-slide'));
-  const totalSlides = slides.length;
-  let currentSlide = 0;
-  let isTransitioning = false;
-
-  const counterEl = document.getElementById('deckCounter');
-  const dots = Array.from(document.querySelectorAll('.deck-dot'));
-  const navLinks = Array.from(document.querySelectorAll('.nav-links .nav-link'));
-
-  function updateDeckState(targetIndex) {
-    if (targetIndex < 0 || targetIndex >= totalSlides) return;
-    currentSlide = targetIndex;
-
-    slides.forEach((slide, idx) => {
-      slide.classList.remove('lifted', 'active', 'queued', 'deep-queued');
-      if (idx < currentSlide) {
-        // Frame is lifted up into the air and away
-        slide.classList.add('lifted');
-      } else if (idx === currentSlide) {
-        // Frame is front and center
-        slide.classList.add('active');
-      } else if (idx === currentSlide + 1) {
-        // Frame rests directly behind the active frame
-        slide.classList.add('queued');
-      } else {
-        // Frame is deep in the deck stack
-        slide.classList.add('deep-queued');
-      }
-    });
-
-    // Update Stepper Dots
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentSlide);
-    });
-
-    // Update Counter (e.g. 01 / 07)
-    if (counterEl) {
-      counterEl.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
-    }
-
-    // Update Navbar Links
-    const slideIds = slides.map(s => '#' + s.id);
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      link.classList.toggle('active', href === slideIds[currentSlide]);
-    });
+window.scrollMarquee = function(direction) {
+  const wrapper = document.getElementById('projectsMarqueeWrapper');
+  if (wrapper) {
+    wrapper.scrollBy({ left: direction * 440, behavior: 'smooth' });
   }
+};
 
-  window.goToSlide = function(target) {
-    let index = typeof target === 'number' ? target : slides.findIndex(s => s.id === target || '#' + s.id === target);
-    if (index === -1) return;
-    if (index === currentSlide) return;
-    if (isTransitioning) return;
-    if (index < 0 || index >= totalSlides) return;
+// Graceful fallback for any residual goToSlide calls
+window.goToSlide = function(target) {
+  const slideMap = ['landing', 'about', 'projects', 'journey', 'skills', 'involvement', 'contact'];
+  const id = typeof target === 'number' ? slideMap[target] : (target && target.startsWith('#') ? target.slice(1) : target);
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
-    isTransitioning = true;
-    updateDeckState(index);
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 850);
-  };
+// ── 13. Natural Vertical Scrolling & Active Navbar Tracking ─────────
+(function initScrollNavigation() {
+  const navLinks = Array.from(document.querySelectorAll('.nav-links .nav-link'));
+  const sections = Array.from(document.querySelectorAll('.portfolio-section[id]'));
 
-  window.deckNext = function() {
-    if (currentSlide < totalSlides - 1) {
-      window.goToSlide(currentSlide + 1);
-    }
-  };
-
-  window.deckPrev = function() {
-    if (currentSlide > 0) {
-      window.goToSlide(currentSlide - 1);
-    }
-  };
-
-  // Stepper Up / Down Controls
-  const prevBtn = document.getElementById('deckPrevBtn');
-  const nextBtn = document.getElementById('deckNextBtn');
-  if (prevBtn) prevBtn.addEventListener('click', () => window.deckPrev());
-  if (nextBtn) nextBtn.addEventListener('click', () => window.deckNext());
-
-  // Stepper Dot Clicks
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.getAttribute('data-slide'), 10);
-      window.goToSlide(idx);
-    });
-  });
-
-  // Intercept Navbar Clicks for Seamless Slide Switching
+  // Smooth scroll for anchor clicks
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       if (href && href.startsWith('#')) {
-        const targetIdx = slides.findIndex(s => '#' + s.id === href);
-        if (targetIdx !== -1) {
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
           e.preventDefault();
-          window.goToSlide(targetIdx);
+          targetEl.scrollIntoView({ behavior: 'smooth' });
           // Close mobile menu if open
           const navLinksContainer = document.getElementById('navLinks');
           const navToggle = document.getElementById('navToggle');
@@ -876,140 +818,30 @@ document.addEventListener('keydown', (e) => {
     });
   });
 
-  // Wheel-based stage lifting
-  let lastWheelTime = 0;
-  window.addEventListener('wheel', (e) => {
-    const now = Date.now();
-    if (now - lastWheelTime < 450) return; // Debounce
-    lastWheelTime = now;
+  // IntersectionObserver to highlight current active section in navbar
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-25% 0px -55% 0px',
+      threshold: 0
+    };
 
-    if (isTransitioning) return;
-    // Don't intercept when inspecting modals
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-
-    // In-Frame Substage Interception for Slide 1 (About)
-    if (currentSlide === 1) {
-      if (e.deltaY > 25) {
-        if (window.currentAboutSubStage === 0) {
-          e.preventDefault();
-          window.switchSubStage('about', 1);
-          return;
-        } else {
-          e.preventDefault();
-          window.deckNext();
-          return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+          });
         }
-      } else if (e.deltaY < -25) {
-        if (window.currentAboutSubStage === 1) {
-          e.preventDefault();
-          window.switchSubStage('about', 0);
-          return;
-        } else {
-          e.preventDefault();
-          window.deckPrev();
-          return;
-        }
-      }
-    }
+      });
+    }, observerOptions);
 
-    // Default slide navigation
-    if (e.deltaY > 40) {
-      e.preventDefault();
-      window.deckNext();
-    } else if (e.deltaY < -40) {
-      e.preventDefault();
-      window.deckPrev();
-    }
-  }, { passive: false });
-
-  // Touch swipe support for mobile
-  let touchStartY = 0;
-  window.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  window.addEventListener('touchend', (e) => {
-    if (isTransitioning) return;
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-
-    const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY - touchEndY;
-
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        // Swiping up (moving forward)
-        if (currentSlide === 1 && window.currentAboutSubStage === 0) {
-          window.switchSubStage('about', 1);
-        } else {
-          window.deckNext();
-        }
-      } else {
-        // Swiping down (moving backward)
-        if (currentSlide === 1 && window.currentAboutSubStage === 1) {
-          window.switchSubStage('about', 0);
-        } else {
-          window.deckPrev();
-        }
-      }
-    }
-  }, { passive: true });
-
-  // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    if (document.querySelector('.journey-modal.active, .custom-flat-modal.active')) return;
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-      if (currentSlide === 1 && window.currentAboutSubStage === 0) {
-        window.switchSubStage('about', 1);
-      } else {
-        window.deckNext();
-      }
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-      if (currentSlide === 1 && window.currentAboutSubStage === 1) {
-        window.switchSubStage('about', 0);
-      } else {
-        window.deckPrev();
-      }
-    }
-  });
-
-  // Initialize initial state
-  updateDeckState(0);
+    sections.forEach(section => observer.observe(section));
+  }
 })();
 
-// ── 13. In-Frame Sub-Stage Zoom & Toggle Controller ──
-window.currentAboutSubStage = 0;
-window.switchSubStage = function(slideKey, stageIdx) {
-  if (slideKey === 'about') {
-    const btn0 = document.getElementById('substageAboutBtn0');
-    const btn1 = document.getElementById('substageAboutBtn1');
-    const view0 = document.getElementById('substageAbout0');
-    const view1 = document.getElementById('substageAbout1');
-
-    if (!view0 || !view1) return;
-
-    if (stageIdx === 0) {
-      window.currentAboutSubStage = 0;
-      btn0?.classList.add('active');
-      btn1?.classList.remove('active');
-
-      view0.classList.remove('zoom-out');
-      view0.classList.add('active');
-
-      view1.classList.remove('active');
-    } else {
-      window.currentAboutSubStage = 1;
-      btn1?.classList.add('active');
-      btn0?.classList.remove('active');
-
-      view0.classList.add('zoom-out');
-      view0.classList.remove('active');
-
-      view1.classList.add('active');
-    }
-  }
-};
-
-// ── 14. Universal Horizontal Interactive Reels (Visible 0.5s Transitions / 2.2s Hold) ──
+// ── 14. Universal Horizontal Interactive Reels (Blueprints & Certs) ──
 function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardSelector, gap = 20, interval = 2200 }) {
   const wrapper = document.getElementById(wrapperId);
   const prevBtn = document.getElementById(prevBtnId);
@@ -1028,7 +860,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
     const scrollLeft = wrapper.scrollLeft;
     const cardWidth = (cards[0]?.offsetWidth || 480) + gap;
     const activeIndex = Math.min(totalCards - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
-    counterBadge.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(totalCards).padStart(2, '0')}`;
+    counterBadge.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(totalCards).padStart(2, '0');
   }
 
   function scrollByCard(direction) {
@@ -1096,17 +928,7 @@ function setupHorizontalReel({ wrapperId, prevBtnId, nextBtnId, counterId, cardS
   updateCounter();
 }
 
-// Initialize all three horizontal reels with responsive, swift 1.6s - 1.8s auto-glide cadence
-setupHorizontalReel({
-  wrapperId: 'projectsHorizontalWrapper',
-  prevBtnId: 'projPrevBtn',
-  nextBtnId: 'projNextBtn',
-  counterId: 'projCounter',
-  cardSelector: '.project-card-horizontal',
-  gap: 22,
-  interval: 1600
-});
-
+// Initialize horizontal reels for systems blueprints and certificates
 setupHorizontalReel({
   wrapperId: 'systemsHorizontalWrapper',
   prevBtnId: 'sysPrevBtn',
@@ -1114,7 +936,7 @@ setupHorizontalReel({
   counterId: 'sysCounter',
   cardSelector: '.system-arch-card',
   gap: 18,
-  interval: 1800
+  interval: 2400
 });
 
 setupHorizontalReel({
@@ -1124,464 +946,5 @@ setupHorizontalReel({
   counterId: 'certCounter',
   cardSelector: '.cert-horizontal-card',
   gap: 18,
-  interval: 1800
-});
-
-
-
-/* ═══════════════════════════════════════════════════════════════
-   ENTERPRISE FLEET RELATIONAL TOPOLOGY & INGESTION CONTROLLER
-   ═══════════════════════════════════════════════════════════════ */
-
-let fleetData = {
-  platforms: [],
-  corridors: [],
-  telemetry: {}
-};
-
-async function fetchFleetOverview() {
-  try {
-    const res = await fetch('/api/fleet/overview');
-    if (!res.ok) throw new Error('Failed to fetch fleet overview');
-    const data = await res.json();
-    fleetData = data;
-    renderFleetUI();
-  } catch (err) {
-    console.warn('[FleetMesh] Running in offline / static mode fallback:', err.message);
-    // Fallback data if viewing purely static without server
-    renderFleetOfflineFallback();
-  }
-}
-
-function updateFleetTelemetryUI(tel) {
-  if (!tel) return;
-  const kpiCorridors = document.getElementById('kpiActiveCorridors');
-  const kpiSecurity = document.getElementById('kpiSecurityIntegrity');
-  const kpiPlatforms = document.getElementById('kpiGovernedSystems');
-  const kpiLatency = document.getElementById('kpiLatencySla');
-  const kpiImpact = document.getElementById('kpiProductionImpact');
-
-  if (kpiCorridors) kpiCorridors.textContent = `${tel.activeCorridors} / ${tel.totalCorridors} Active`;
-  if (kpiSecurity) kpiSecurity.textContent = `${tel.fleetSecurityIntegrity}% PQC`;
-  if (kpiPlatforms) kpiPlatforms.textContent = `${tel.governedPlatforms} Flagships`;
-  if (kpiLatency) kpiLatency.textContent = tel.crossFleetLatencySLA || '13ms';
-  if (kpiImpact) kpiImpact.textContent = tel.totalStarsAndDeployments ? tel.totalStarsAndDeployments.split(' ')[0] + ' Stars' : '790+ Stars';
-
-  const corrBadge = document.getElementById('corridorsBadgeCount');
-  if (corrBadge) corrBadge.textContent = tel.totalCorridors || (fleetData.corridors ? fleetData.corridors.length : 8);
-
-  const platBadge = document.getElementById('platformsBadgeCount');
-  if (platBadge) platBadge.textContent = tel.governedPlatforms || (fleetData.platforms ? fleetData.platforms.length : 15);
-}
-
-function renderFleetCorridorsTable(corridors) {
-  const tbody = document.getElementById('corridorsTableBody');
-  if (!tbody) return;
-
-  if (!corridors || corridors.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 24px; color: var(--text-muted);">No active interoperability corridors in fleet. Use Provision or Batch Ingest to establish routes.</td></tr>`;
-    return;
-  }
-
-  tbody.innerHTML = corridors.map(c => {
-    const isConn = c.status === 'CONNECTED';
-    const statusHtml = isConn
-      ? `<span class="status-badge connected"><i class="fas fa-check-circle"></i> Connected</span>`
-      : `<span class="status-badge severed"><i class="fas fa-exclamation-triangle"></i> Severed</span>`;
-
-    const toggleBtn = isConn
-      ? `<button class="btn-sever" onclick="severFleetCorridor('${c.id}')" title="Sever 1-click corridor"><i class="fas fa-bolt"></i> Sever</button>`
-      : `<button class="btn-restore" onclick="restoreFleetCorridor('${c.id}')" title="Restore 1-click corridor"><i class="fas fa-sync-alt"></i> Restore</button>`;
-
-    const sourcePlat = fleetData.platforms.find(p => p.id === c.source);
-    const targetPlat = fleetData.platforms.find(p => p.id === c.target);
-
-    const sourceName = sourcePlat ? sourcePlat.name : c.source;
-    const targetName = targetPlat ? targetPlat.name : c.target;
-
-    return `
-      <tr>
-        <td><strong>${c.id}</strong></td>
-        <td>
-          <div style="font-weight: 600; color: var(--text-main);">${sourceName}</div>
-          <div style="font-size: 0.72rem; color: var(--text-muted);">${c.source}</div>
-        </td>
-        <td>
-          <div style="font-weight: 600; color: var(--text-main);">${targetName}</div>
-          <div style="font-size: 0.72rem; color: var(--text-muted);">${c.target}</div>
-        </td>
-        <td>
-          <span style="font-weight: 600; color: var(--accent-blue);">${c.protocol}</span>
-          <span style="font-size: 0.74rem; color: var(--text-muted); margin-left: 6px;">${c.bandwidth}</span>
-        </td>
-        <td><strong>${c.latency}ms</strong></td>
-        <td>${c.status === 'CONNECTED' ? (c.integrityScore * 100).toFixed(1) + '%' : '0.0%'}</td>
-        <td>${statusHtml}</td>
-        <td>
-          <div class="action-btn-group">
-            ${toggleBtn}
-            <button class="btn-drop" onclick="deleteFleetCorridor('${c.id}')" title="Drop corridor permanently"><i class="fas fa-trash-alt"></i></button>
-          </div>
-        </td>
-      </tr>
-    `;
-  }).join('');
-}
-
-function renderFleetPlatformsGrid(platforms) {
-  const grid = document.getElementById('fleetPlatformsGrid');
-  if (!grid) return;
-
-  if (!platforms || platforms.length === 0) {
-    grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 24px; color: var(--text-muted);">Zero governed platforms found. Fleet has been purged. Use Reset to factory default or Ingest to rehydrate.</div>`;
-    return;
-  }
-
-  grid.innerHTML = platforms.map(p => {
-    return `
-      <div class="fleet-node-card">
-        <div class="node-card-header">
-          <div>
-            <div class="node-name">${p.name}</div>
-            <div style="font-size: 0.7rem; color: var(--text-muted); font-family: monospace;">${p.id}</div>
-          </div>
-          <span class="node-tier-pill">${p.tier}</span>
-        </div>
-        <div class="node-meta-row">
-          <span><i class="fas fa-tag"></i> ${p.category}</span>
-          <span><i class="fas fa-shield-alt"></i> SLA ${p.sla}</span>
-        </div>
-        <div class="node-meta-row">
-          <span><i class="fas fa-tachometer-alt"></i> ${p.latency}ms latency</span>
-          <span><i class="fas fa-star" style="color: #f59e0b;"></i> ${p.stars} stars</span>
-        </div>
-        <div class="node-action-footer">
-          <span style="font-size: 0.7rem; color: var(--accent-blue); font-weight: 600;">${p.version}</span>
-          <button class="btn-cascade-purge" onclick="deleteFleetPlatform('${p.id}', '${p.name.replace(/'/g, "\\'")}')">
-            <i class="fas fa-trash-alt"></i> Cascade Delete Node
-          </button>
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Update modal source/target selects
-  const provSource = document.getElementById('provSourcePlatform');
-  const provTarget = document.getElementById('provTargetPlatform');
-  if (provSource && provTarget) {
-    const opts = platforms.map(p => `<option value="${p.id}">${p.name} (${p.id})</option>`).join('');
-    provSource.innerHTML = opts;
-    provTarget.innerHTML = opts;
-    if (platforms.length > 1) {
-      provTarget.selectedIndex = 1;
-    }
-  }
-}
-
-function renderFleetUI() {
-  updateFleetTelemetryUI(fleetData.telemetry);
-  renderFleetCorridorsTable(fleetData.corridors);
-  renderFleetPlatformsGrid(fleetData.platforms);
-}
-
-function switchFleetView(view) {
-  const corrPanel = document.getElementById('fleetCorridorsPanel');
-  const platPanel = document.getElementById('fleetPlatformsPanel');
-  const corrBtn = document.getElementById('tabCorridorsBtn');
-  const platBtn = document.getElementById('tabPlatformsBtn');
-
-  if (view === 'corridors') {
-    if (corrPanel) corrPanel.style.display = 'block';
-    if (platPanel) platPanel.style.display = 'none';
-    if (corrBtn) corrBtn.classList.add('active');
-    if (platBtn) platBtn.classList.remove('active');
-  } else {
-    if (corrPanel) corrPanel.style.display = 'none';
-    if (platPanel) platPanel.style.display = 'block';
-    if (corrBtn) corrBtn.classList.remove('active');
-    if (platBtn) platBtn.classList.add('active');
-  }
-}
-
-// ── 1-Click Corridor Controls ──
-async function severFleetCorridor(id) {
-  try {
-    const res = await fetch(`/api/fleet/corridors/${encodeURIComponent(id)}/sever`, { method: 'POST' });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to sever corridor');
-    logIngestTerminal(`[SEVER] Corridor ${id} severed. Interop degraded.`, 'highlight');
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Error severing corridor: ' + err.message);
-  }
-}
-
-async function restoreFleetCorridor(id) {
-  try {
-    const res = await fetch(`/api/fleet/corridors/${encodeURIComponent(id)}/restore`, { method: 'POST' });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to restore corridor');
-    logIngestTerminal(`[RESTORE] Corridor ${id} restored. Security integrity normalized.`, 'success');
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Error restoring corridor: ' + err.message);
-  }
-}
-
-async function deleteFleetCorridor(id) {
-  if (!confirm(`Are you sure you want to permanently drop corridor ${id}?`)) return;
-  try {
-    const res = await fetch(`/api/fleet/corridors/${encodeURIComponent(id)}`, { method: 'DELETE' });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to delete corridor');
-    logIngestTerminal(`[DROP] Corridor ${id} dropped from topology mesh.`, 'info');
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Error dropping corridor: ' + err.message);
-  }
-}
-
-// ── Cascading Platform Deletion ──
-async function deleteFleetPlatform(id, name) {
-  const msg = `WARNING: Cascading Deletion Triggered!\n\nDeleting platform node "${name}" (${id}) will permanently drop the platform AND automatically sever and cascade-delete ALL interconnected corridors.\n\nProceed with cascading deletion?`;
-  if (!confirm(msg)) return;
-
-  try {
-    const res = await fetch(`/api/fleet/platforms/${encodeURIComponent(id)}`, { method: 'DELETE' });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to delete platform');
-    logIngestTerminal(`[CASCADE DELETION] Dropped platform ${id} and ${data.droppedCount} connected corridors.`, 'error');
-    alert(`Platform ${name} deleted.\nCascading effect: ${data.droppedCount} interconnected corridors were severed and removed.`);
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Error during cascading platform deletion: ' + err.message);
-  }
-}
-
-// ── Provision Modal ──
-function openProvisionModal() {
-  const modal = document.getElementById('provisionCorridorModal');
-  if (modal) {
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-  }
-}
-
-function closeProvisionModal() {
-  const modal = document.getElementById('provisionCorridorModal');
-  if (modal) {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-  }
-}
-
-async function handleProvisionCorridor(event) {
-  event.preventDefault();
-  const id = document.getElementById('provCorridorId').value;
-  const source = document.getElementById('provSourcePlatform').value;
-  const target = document.getElementById('provTargetPlatform').value;
-  const protocol = document.getElementById('provProtocol').value;
-  const bandwidth = document.getElementById('provBandwidth').value;
-  const latency = parseInt(document.getElementById('provLatency').value, 10);
-  const description = document.getElementById('provDescription').value;
-
-  try {
-    const res = await fetch('/api/fleet/corridors', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, source, target, protocol, bandwidth, latency, description })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to provision corridor');
-    logIngestTerminal(`[PROVISION] Successfully provisioned corridor ${id}: ${source} <-> ${target} (${protocol})`, 'success');
-    closeProvisionModal();
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Provisioning Error: ' + err.message);
-  }
-}
-
-// ── Batch Ingestion Studio ──
-function handleFormatChange() {
-  const format = document.getElementById('ingestFormat').value;
-  const badge = document.getElementById('bufferStatsBadge');
-  if (badge) {
-    badge.textContent = format === 'csv' ? 'RFC 4180 CSV' : 'Strict JSON Schema';
-  }
-}
-
-function loadSampleIngestTemplate() {
-  const entity = document.getElementById('ingestTargetEntity').value;
-  const format = document.getElementById('ingestFormat').value;
-  const buffer = document.getElementById('ingestBuffer');
-
-  if (entity === 'corridors') {
-    if (format === 'csv') {
-      buffer.value = [
-        'id,source,target,protocol,bandwidth,latency,description',
-        'CORR-EXP-01,NODE-NETPLUS,NODE-LIFESTREAM,mTLS-gRPC,20 Gbps,11,"Cross-domain emergency client telemetry stream"',
-        'CORR-EXP-02,NODE-AEGIS,NODE-QUANTUMSHIELD,PQC-Channel,50 Gbps,6,"Dual-channel payload sharding secured by Kyber-1024 QKD"',
-        'CORR-EXP-03,NODE-FLARE,NODE-CAMPUSSEARCH,REST-Webhook,10 Gbps,14,"Disaster vector index synchronization"'
-      ].join('\n');
-    } else {
-      buffer.value = JSON.stringify([
-        {
-          id: 'CORR-JSON-01',
-          source: 'NODE-NETPLUS',
-          target: 'NODE-PHOENIX',
-          protocol: 'WebSocket-Mesh',
-          bandwidth: '30 Gbps',
-          latency: 8,
-          description: 'Autonomous talent assessment pipeline synchronization'
-        },
-        {
-          id: 'CORR-JSON-02',
-          source: 'NODE-CRIMSONSENTINEL',
-          target: 'NODE-NYAYANODE',
-          protocol: 'mTLS-gRPC',
-          bandwidth: '15 Gbps',
-          latency: 12,
-          description: 'Decentralized voice audit ledger verification'
-        }
-      ], null, 2);
-    }
-  } else {
-    // Platforms
-    if (format === 'csv') {
-      buffer.value = [
-        'id,name,tier,category,status,sla,latency,version,stars',
-        'NODE-SYNTHEDGE,"SynthEdge Neural Mesh, Inc.",Enterprise Flagship,Edge AI / Neural,ACTIVE,99.99%,14,v1.0.0,42',
-        'NODE-HYPERGRID,"HyperGrid PQC Relays, Global",Mission-Critical,Quantum / Grid,ACTIVE,99.999%,8,v2.0.0,60'
-      ].join('\n');
-    } else {
-      buffer.value = JSON.stringify([
-        {
-          id: 'NODE-CHRONOS',
-          name: 'Chronos Distributed Timekeeper',
-          tier: 'Enterprise Flagship',
-          category: 'Consensus / Time',
-          status: 'ACTIVE',
-          sla: '99.999%',
-          latency: 4,
-          version: 'v1.5.0',
-          stars: 52
-        }
-      ], null, 2);
-    }
-  }
-  logIngestTerminal(`[PRESET] Loaded ${entity} (${format.toUpperCase()}) preset template into buffer.`, 'info');
-}
-
-async function executeBatchIngest() {
-  const entity = document.getElementById('ingestTargetEntity').value;
-  const format = document.getElementById('ingestFormat').value;
-  const buffer = document.getElementById('ingestBuffer').value;
-
-  if (!buffer.trim()) {
-    alert('Please enter or load payload data into the buffer.');
-    return;
-  }
-
-  logIngestTerminal(`[INGEST] Parsing batch payload for ${entity} (${format.toUpperCase()})...`, 'highlight');
-
-  try {
-    const res = await fetch('/api/fleet/ingest', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: entity, format, data: buffer })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Ingest failed');
-
-    logIngestTerminal(`[INGEST SUCCESS] Successfully imported ${data.importedCount} items into fleet.`, 'success');
-    if (data.errors && data.errors.length > 0) {
-      data.errors.forEach(err => logIngestTerminal(`[REJECTED] ${err}`, 'error'));
-    }
-    await fetchFleetOverview();
-  } catch (err) {
-    logIngestTerminal(`[INGEST ERROR] ${err.message}`, 'error');
-  }
-}
-
-function clearIngestTerminal() {
-  const body = document.getElementById('ingestTerminalBody');
-  if (body) {
-    body.innerHTML = `<div class="term-line info">[SYSTEM] Terminal cleared. Ready for operations.</div>`;
-  }
-}
-
-function logIngestTerminal(msg, type = 'info') {
-  const body = document.getElementById('ingestTerminalBody');
-  if (!body) return;
-  const time = new Date().toLocaleTimeString();
-  const div = document.createElement('div');
-  div.className = `term-line ${type}`;
-  div.textContent = `${time} ${msg}`;
-  body.appendChild(div);
-  body.scrollTop = body.scrollHeight;
-}
-
-// ── Universal Purge & Reset ──
-async function triggerUniversalFleetPurge() {
-  const input = document.getElementById('purgeConfirmInput');
-  const phrase = input ? input.value.trim() : '';
-
-  if (phrase !== 'PURGE-ALL-FLEET-ENTITIES') {
-    alert('SAFETY REJECTION: You must type PURGE-ALL-FLEET-ENTITIES to authorize universal destruction.');
-    return;
-  }
-
-  if (!confirm('FINAL WARNING: This will eradicate all 15 platforms and all interoperability corridors. Are you absolutely certain?')) return;
-
-  try {
-    const res = await fetch('/api/fleet/purge', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ confirmPhrase: phrase })
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Purge failed');
-
-    logIngestTerminal(`[UNIVERSAL PURGE] Eradicated ${data.purgedPlatforms} platforms and ${data.purgedCorridors} corridors.`, 'error');
-    if (input) input.value = '';
-    alert('Universal Purge Executed: Fleet topology completely cleared.');
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Purge Error: ' + err.message);
-  }
-}
-
-async function restoreDefaultFleetTopology() {
-  if (!confirm('Restore factory topology default (15 flagship platforms, 8 corridors)?')) return;
-  try {
-    const res = await fetch('/api/fleet/reset', { method: 'POST' });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Reset failed');
-    logIngestTerminal('[RESTORE] Factory fleet topology restored (15 platforms, 8 corridors).', 'success');
-    await fetchFleetOverview();
-  } catch (err) {
-    alert('Reset Error: ' + err.message);
-  }
-}
-
-function refreshFleetTopology() {
-  logIngestTerminal('[SYNC] Syncing fleet telemetry...', 'info');
-  fetchFleetOverview();
-}
-
-// Fallback if running offline
-function renderFleetOfflineFallback() {
-  updateFleetTelemetryUI({
-    governedPlatforms: 15,
-    activeCorridors: 8,
-    totalCorridors: 8,
-    fleetSecurityIntegrity: 99.6,
-    crossFleetLatencySLA: '13ms (Sub-25ms SLA)',
-    totalStarsAndDeployments: '790+ Stars across 15 Live Deployments'
-  });
-}
-
-// Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
-  fetchFleetOverview();
+  interval: 2200
 });
