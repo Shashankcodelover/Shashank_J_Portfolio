@@ -123,3 +123,10 @@ Open [http://localhost:8080](http://localhost:8080) in your web browser.
 - **Email**: [shashank.j8426@gmail.com](mailto:shashank.j8426@gmail.com)
 - **GitHub**: [@Shashankcodelover](https://github.com/Shashankcodelover)
 - **LinkedIn**: [shashank-j-code-lover](https://www.linkedin.com/in/shashank-j-code-lover/)
+
+
+## User Flow Verification
+
+![User Flow](docs/portfolio_home_verified.png)
+![User Flow](docs/portfolio_sage_verified.png)
+
