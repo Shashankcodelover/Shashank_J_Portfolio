@@ -45,11 +45,12 @@ If you want to update, add, or edit content, locate the specific files below:
 *   **Styles**: [style.css](file:///style.css) (`/* ── PROJECTS SCROLL OVERVIEW ── */`)
 *   **Behavior**: [script.js](file:///script.js) (`handleProjectsScroll()`)
 *   **List of Projects**:
-    1.  **NyayaNode — ONDC Dispute Arbitration**: Multi-agent FastAPI AI pipeline for autonomous dispute resolution.
-    2.  **Smart Offline-First Attendance**: React Native & Node.js application with rotating HMAC QR-OTP codes to prevent proxy fraud.
-    3.  **Phoenix — Developer preparation & Hackathon Suite**: Gamified interview prep linking mock roadmaps to active hackathon tracks.
-    4.  **LifeStream V3 — Blood Match & Dispatch**: Real-time dispatch telemetry and donor type compatibility logistics.
-    5.  **Corporate Memory NLP System**: Neo4j institutional knowledge retention mapping departure siloing risk.
+    1.  **NetPlus-CRM (NetPulse)**: Autonomous relationship intelligence platform with Half-Life decay math.
+    2.  **LifeStream V3.1 (Blood Match API)**: Mission-critical emergency blood dispatch platform.
+    3.  **Smart Attendance System**: Tamper-proof attendance infrastructure with cryptographic tokens.
+    4.  **Placement Clash Resolver**: Automated interview scheduling and slot arbitration engine.
+    5.  **Phoenix Interview Prep**: Gamified career flight simulator using WebSockets.
+    6.  **CampusSearch v2.0**: Hyper-local peer hardware exchange network.
 
 ### 6. Technical Skills (Dials)
 *   **Source File**: [index.html](file:///index.html) (`<section id="skills">`)
