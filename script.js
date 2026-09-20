@@ -35,7 +35,7 @@ const PROJECT_DEPLOYMENTS = {
     repoUrl: 'https://github.com/Shashankcodelover/Devflow-Pro'
   },
   'Decentralized-Disaster-Response-Resource-Geofencing-System': { 
-    demoUrl: 'https://flare-disaster.shashankj.tech',
+    demoUrl: 'https://flare.shashankj.tech',
     repoUrl: 'https://github.com/Shashankcodelover/Decentralized-Disaster-Response-Resource-Geofencing-System'
   },
   'ArchitectAI-Studio': { 
