@@ -1,102 +1,118 @@
-# Shashank J — Professional Software Engineering Portfolio
+# Shashank J — Software Engineering Portfolio
 
-A premium, interactive, and responsive portfolio showcasing technical capability, key projects, leadership involvement, certifications, and hackathon achievements.
+Personal software engineering portfolio showcasing full-stack projects, verified certifications, hackathon achievements, and campus leadership.
 
-Built with **HTML5, Vanilla CSS3 (Custom Design System with HSL variables), and Vanilla JavaScript**.
+Built with **HTML5, Vanilla CSS3 (Custom Design System with CSS variables), and Vanilla JavaScript**.
 
-## 🚀 Key Technical Features Added
+## Features
 
-### 1. Scroll-Linked Horizontal Overlapping Card Decks
-*   Used on **Projects**, **Certifications**, and **Achievements** sections.
-*   Pins the viewport in place and translates incoming cards horizontally from the right using custom scroll-progress bindings.
-*   Simulates 3D deck depth: older cards translate slightly left (`translateX(-12%)`), scale down (`scale(0.96)`), and dim to form a stacked deck under the current card.
-*   Opaque card backgrounds eliminate ghosting/bleeding of text during slides.
-*   Large booklet card dimensions (`520px` width) for optimal reading layout.
+### 1. Continuous Horizontal Projects Showcase
+- Displays 10 engineering projects in a continuous horizontal marquee track with duplicated cards for seamless infinite scrolling.
+- Provides window controls to jump between 3-card sliding windows (Window 1: 1–3, Window 2: 4–6, Window 3: 7–9, Window 4: 8–10).
+- Includes pause/resume toggle, directional slide buttons, and active live demo links.
+- Includes an "All 10 Projects Archive" modal dialog displaying the complete project catalog with direct repository and demo links.
 
-### 2. High-Performance Design System
-*   Smooth page-reveal animations (`reveal-up`, `reveal-left`, etc.) driven by JavaScript intersection observers.
-*   Dynamic technical skills dials (CSS circular SVG tracks) showing development percentages.
-*   Zero external JS animation libraries (such as GSAP or ScrollMagic) utilized, maintaining lightning-fast load times and keeping rendering performance at 60fps.
+### 2. Verified Industry Credentials & Modal Inspector
+- Displays verified credentials in an auto-scrolling horizontal reel with manual navigation buttons and card counters.
+- Provides an interactive two-panel modal inspector with certificate image previews, issuing organization details, verification IDs, and scope descriptions.
+- Supports category filtering (AI, Corporate Simulations, Hackathons, Full-Stack, Workshops) and sequential stepping through 14 verified credentials.
 
----
+### 3. Dynamic GitHub Data Integration
+- Fetches live repository metrics and commit data from the GitHub REST API (`api.github.com/users/Shashankcodelover`) with a 1-hour `localStorage` cache.
+- Computes language distribution percentages (JavaScript, TypeScript, Python, HTML/CSS) and animates SVG progress rings.
+- Updates repository counts and project "Last updated" timestamps dynamically, with fallback data if the API rate limit is reached.
 
-## 📂 Project Section Directory
+### 4. Systems Architecture Blueprints
+- Displays architectural design patterns (Offline-First Buffers, Multi-Agent State Graphs, Event Streams, Rotating Cryptographic Tokens, Half-Life Decay Engine) in a horizontal carousel.
 
-If you want to update, add, or edit content, locate the specific files below:
+### 5. Technical Skills Arsenal
+- Displays skill categories (GitHub Language Distribution, Web & Backend Engineering, AI & Machine Learning, Databases & Tooling) using circular SVG progress rings.
+- Animates ring offsets on scroll into view via `IntersectionObserver`.
 
-### 1. Navigation & Headers
-*   **Source File**: [index.html](file:///index.html) (Navbar lines 20–45, Hero lines 60–120)
-*   **Styles**: [style.css](file:///style.css) (`/* ── NAVIGATION & NAVBAR ── */` section)
+### 6. Interactive SAGE AI Assistant Widget
+- Provides a floating assistant widget offering quick prompt buttons ("Top Systems", "AI Experience") with simulated contextual guidance on projects and experience.
 
-### 2. About Me & Personal Info
-*   **Source File**: [index.html](file:///index.html) (`<section id="about">`)
-*   **Styles**: [style.css](file:///style.css) (`/* ── ABOUT SECTION ── */`)
+### 7. Campus Involvement & Leadership
+- Highlights active campus roles including Persona Plus PR team member, HACK-OLYMPIC 2026 organizing team volunteer, and Linux Campus Club volunteer.
 
-### 3. Leadership & Involvement
-*   **Source File**: [index.html](file:///index.html) (`<section id="involvement">`)
-*   **Styles**: [style.css](file:///style.css) (`/* ── LEADERSHIP & INVOLVEMENT ── */`)
-
-### 4. Education Highlights
-*   **Source File**: [index.html](file:///index.html) (`<section id="education">`)
-*   **Styles**: [style.css](file:///style.css) (`/* ── EDUCATION SECTION ── */`)
-
-### 5. Key Projects (Horizontal Booklet Slider)
-*   **Source File**: [index.html](file:///index.html) (`<section id="projects">` wrapper)
-*   **Styles**: [style.css](file:///style.css) (`/* ── PROJECTS SCROLL OVERVIEW ── */`)
-*   **Behavior**: [script.js](file:///script.js) (`handleProjectsScroll()`)
-*   **List of Projects**:
-    1.  **NetPlus-CRM (NetPulse)**: Autonomous relationship intelligence platform with Half-Life decay math.
-    2.  **LifeStream V3.1 (Blood Match API)**: Mission-critical emergency blood dispatch platform.
-    3.  **Smart Attendance System**: Tamper-proof attendance infrastructure with cryptographic tokens.
-    4.  **Placement Clash Resolver**: Automated interview scheduling and slot arbitration engine.
-    5.  **Phoenix Interview Prep**: Gamified career flight simulator using WebSockets.
-    6.  **CampusSearch v2.0**: Hyper-local peer hardware exchange network.
-
-### 6. Technical Skills (Dials)
-*   **Source File**: [index.html](file:///index.html) (`<section id="skills">`)
-*   **Styles**: [style.css](file:///style.css) (`/* ── SKILLS ORBIT CARDS ── */`)
-
-### 7. Certifications (Horizontal Booklet Slider)
-*   **Source File**: [index.html](file:///index.html) (`<section id="certifications">` wrapper)
-*   **Styles**: [style.css](file:///style.css) (`/* ── CERTIFICATIONS ── */`)
-*   **Behavior**: [script.js](file:///script.js) (`handleCertsScroll()`)
-*   **List of Certifications**:
-    *   SQL Database Querying (Mimo, 2026)
-    *   Python Development (Mimo, 2026)
-    *   Frontend Development (Mimo, 2026)
-    *   Backend Development (Mimo, 2026)
-    *   React Development (Mimo, 2026)
-    *   Full-Stack Development (Mimo, 2026)
-
-### 8. Achievements & Recognition (Horizontal Booklet Slider)
-*   **Source File**: [index.html](file:///index.html) (`<section id="achievements">` wrapper)
-*   **Styles**: [style.css](file:///style.css) (`/* ── ACHIEVEMENTS ── */`)
-*   **Behavior**: [script.js](file:///script.js) (`handleAchieveScroll()`)
-*   **List of Achievements**:
-    *   Cybersecurity Track Competitor — Technotsav 2026 (IEEE CIS)
-    *   National Hackathon Participant — Vibe with India 2.0 (2026)
-    *   Hackathon Competitor — Hackos-One 2026 (2026)
-    *   Data Analytics Job Simulation — Deloitte Australia (2026)
-    *   Organizer Volunteer Team — HACK-OLYMPIC 2026 JSS STU (2026)
-
-### 9. Contact Form
-*   **Source File**: [index.html](file:///index.html) (`<section id="contact">`)
-*   **Styles**: [style.css](file:///style.css) (`/* ── CONTACT SECTION ── */`)
+### 8. Contact Form
+- Form generates a prefilled `mailto:` draft addressed to `shashank.j8426@gmail.com`.
 
 ---
 
-## 🛠️ Local Development & Hosting
+## Featured Projects (10)
 
-### 1. Launching Local Server (No Cache)
-To run the portfolio locally without browser-side caching:
-```bash
-npx -y http-server ./ -p 8080 -c-1
+1. **NetPlus-CRM (NetPulse)** — Relationship management platform featuring half-life decay calculations, IndexedDB offline buffer, Kanban pipeline, and reconnection suggestions.
+2. **LifeStream V3.1 (Blood Match API)** — Emergency blood donor dispatch interface with Leaflet map tracking, simulated drone transit vectors, and cold-chain temperature telemetry alerts.
+3. **Smart Attendance System** — Attendance platform featuring rotating HMAC-SHA256 QR tokens with 10-second validity, dual-layer GPS geofence checks, and offline IndexedDB sync.
+4. **Placement Clash Resolver** — Interview scheduling conflict resolver utilizing bipartite graph matching and constraint backtracking algorithms to arbitrate recruiting slots.
+5. **Phoenix Interview Prep** — Technical interview preparation interface featuring WebSocket mock interview rooms, STAR behavioral assessment criteria, and curated hackathon blueprints.
+6. **CampusSearch v2.0** — Peer hardware exchange network featuring broadcast matching alerts, Server-Sent Events (SSE) notification streams, and client-side SQLite (WASM) fallback.
+7. **Disaster Geofencing (FLARE)** — Crisis coordination tool with geospatial polygon boundary alerts, WebRTC data channels, and Yjs CRDTs for peer-to-peer data synchronization.
+8. **DevFlow Pro** — Agile project management board with Socket.io real-time updates, PostgreSQL relational schema, and sprint burndown tracking.
+9. **ArchitectAI Studio** — Visual architecture canvas compiling multi-agent state graphs with LangGraph, Google Gemini API, Three.js 3D model visualization, and Docker Compose export.
+10. **RegulAIte AI** — Legal contract analyzer built with Python, Streamlit, and FastAPI that scans agreements for liability terms, calculates risk scores, and flags non-compliant clauses.
+
+---
+
+## Technology Stack
+
+- **Frontend**: HTML5, Vanilla CSS3 (Custom CSS Properties), Vanilla JavaScript (ES6+)
+- **Icons & Typography**: Font Awesome 6.5, Inter (Google Fonts)
+- **External Integrations**: GitHub REST API (Public Repositories & Language Stats)
+- **Server**: Node.js HTTP Server (`server.js`) with static asset delivery and fleet topology API endpoints (`/api/fleet/*`)
+- **Testing**: Node.js Test Runner (`node --test tests/enterpriseMesh.test.js`) and Playwright E2E (`flow_test.py`)
+- **Hosting Configuration**: `vercel.json` (Vercel clean URLs), `CNAME` (`shashankj.tech`)
+
+---
+
+## Project Structure
+
+```
+├── index.html                  # Main single-page portfolio application
+├── style.css                   # Core stylesheet with CSS custom properties and responsive rules
+├── script.js                   # Client controller (marquee, modal, GitHub API, reels)
+├── server.js                   # Node.js static & fleet API server
+├── core/
+│   └── fleetTopologyService.js # In-memory platform & corridor topology service
+├── tests/
+│   └── enterpriseMesh.test.js  # Unit tests for fleetTopologyService (13 passing tests)
+├── flow_test.py                # Playwright user flow verification test
+├── certificates/               # Credential verification images
+├── achievements/               # Hackathon and workshop certificate images
+├── photo/                      # Profile photo assets
+├── docs/                       # Verification screenshots
+├── screenshots/                # Desktop UI capture images
+├── vercel.json                 # Vercel deployment configuration
+├── CNAME                       # Custom domain pointer (shashankj.tech)
+└── README.md                   # Project documentation
 ```
 
-### 2. Updating content
-To add a new project, certificate, or achievement:
-1. Open [index.html](file:///index.html) and locate the respective list container (e.g. `#projectStack`, `#certStack`, `#achievementStack`).
-2. Add a new card element:
-   * **For Projects**: Add a card element with the project card structure.
-   * **For Certifications/Achievements**: Add a `.sticky-card` element.
-3. Update the corresponding wrapper scroll height media queries in [style.css](file:///style.css) to add `80vh` scroll headroom for the new slide.
+---
+
+## Getting Started
+
+### Local Development
+
+Run the built-in Node.js server:
+```bash
+node server.js
+```
+The server starts at `http://localhost:8080`.
+
+Alternatively, serve statically using any HTTP server:
+```bash
+npx http-server ./ -p 8080 -c-1
+```
+
+### Running Tests
+
+Run the unit test suite:
+```bash
+node --test tests/enterpriseMesh.test.js
+```
+
+Run Playwright E2E flow test (requires Python and playwright package):
+```bash
+python flow_test.py
+```
