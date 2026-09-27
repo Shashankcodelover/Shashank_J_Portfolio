@@ -6,22 +6,22 @@
 
 :root {
   /* Surface & Background Colors */
-  --bg-body: #ffffff;
-  --bg-alt: #f8fafc;
+  --bg-body: #F6F6FB;
+  --bg-alt: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #fcfdfe;
-  --bg-pill: #f1f5f9;
+  --bg-card-hover: #f1f5f9;
+  --bg-pill: #F6F6FB;
   
   /* High-Contrast Typography */
-  --text-main: #0f172a;       /* Deep slate-black for maximum contrast */
+  --text-main: #1B1D2A;       /* Deep slate-black for maximum contrast */
   --text-secondary: #334155;  /* Rich readable charcoal */
-  --text-muted: #64748b;      /* Slate grey for metadata */
+  --text-muted: #6B6E85;      /* Slate grey for metadata */
   --text-inverse: #ffffff;
   
   /* Brand Accents */
-  --accent-primary: #0f172a;
-  --accent-blue: #2563eb;
-  --accent-blue-light: #eff6ff;
+  --accent-primary: #1B1D2A;
+  --accent-blue: #0E9C74;
+  --accent-blue-light: #ECFDF5;
   --accent-border: #e2e8f0;
   --accent-border-hover: #94a3b8;
   
@@ -1758,7 +1758,6 @@ ul {
   letter-spacing: 0.5px;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
-  backdrop-filter: blur(4px);
   z-index: 2;
 }
 
@@ -3018,3 +3017,46 @@ a.ci-val:hover {
     padding: 110px 0 60px;
   }
 }
+
+/* === GLOBAL RESPONSIVE INJECTION === */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === ULTRA AGGRESSIVE GLOBAL MOBILE RESPONSIVE INJECTION === */
+@media (max-width: 768px) {
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .container, .wrapper, section, header, footer, main {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  img, video, iframe, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .flex, .row, .grid, [style*="display: flex"], [style*="display: grid"] {
+    flex-wrap: wrap !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+

@@ -1,0 +1,179 @@
+﻿<section id="projects" class="projects-section portfolio-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-badge">Flagship Systems</span>
+          <h2 class="section-title">Production <span>Engineering Systems</span></h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">Top engineering architectures and live production systems.</p>
+        </div>
+
+        <div class="projects-grid" style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- 1. NetPulse -->
+          <article class="project-card reveal-up" data-repo="NetPlus-CRM-">
+            <div class="project-card-header">
+              <span class="project-num">01</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">CRM INTELLIGENCE</span>
+                </div>
+                <h3>NetPlus-CRM (NetPulse)</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                An autonomous relationship intelligence platform engineered to eliminate network decay before high-stakes connections collapse.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">Gemini AI</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/NetPlus-CRM-" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://netpulse.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. LifeStream V3.1 -->
+          <article class="project-card reveal-up" data-repo="blood-match-api">
+            <div class="project-card-header">
+              <span class="project-num">02</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">HEALTHCARE EMERGENCY</span>
+                </div>
+                <h3>LifeStream V3.1</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Mission-critical emergency blood dispatch platform transforming chaotic supply panics into sub-second deterministic matches.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Leaflet.js</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/blood-match-api" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://lifestream-v3.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Smart Attendance -->
+          <article class="project-card reveal-up" data-repo="Smart_Attendance_System">
+            <div class="project-card-header">
+              <span class="project-num">03</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">CRYPTOGRAPHIC SECURITY</span>
+                </div>
+                <h3>Smart Attendance System</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                A zero-hardware, tamper-proof attendance infrastructure designed for dense 300+ student lecture halls using rotating TOTP QR codes.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">IndexedDB</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Smart_Attendance_System" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://smart-attendance-system.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="moreProjects" class="projects-grid" style="display: none; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 2rem;">
+          <!-- 4. Placement Clash Resolver -->
+          <article class="project-card" data-repo="Placement-Clash-Resolver">
+            <div class="project-card-header">
+              <span class="project-num">04</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">GRAPH THEORY</span>
+                </div>
+                <h3>Placement Clash Resolver</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Automated interview scheduling and slot arbitration engine eliminating simultaneous company interview clashes.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Placement-Clash-Resolver" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://placement-clash-resolver.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Phoenix -->
+          <article class="project-card" data-repo="Phoenix-Interview-Prep">
+            <div class="project-card-header">
+              <span class="project-num">05</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">MULTI-PROVIDER AI</span>
+                </div>
+                <h3>Phoenix Interview Prep</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Full-stack career accelerator and hackathon platform with multi-provider AI routing and sandboxed code execution.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Phoenix-Interview-Prep_and_Hackathon_Guide" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://phoenix.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Campus-Search -->
+          <article class="project-card" data-repo="Campus-Search">
+            <div class="project-card-header">
+              <span class="project-num">06</span>
+              <div class="project-title-group" style="flex: 1;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+                  <span class="project-category">HYPER-LOCAL P2P</span>
+                </div>
+                <h3>CampusSearch v2.0</h3>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Hyper-local peer hardware exchange network crowdsourcing lab microcontrollers, sensors, and equipment across campus.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <div class="project-action-btns">
+                <a href="https://github.com/Shashankcodelover/Campus-Search" target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://campussearch.shashankj.tech" target="_blank" class="btn btn-sm btn-demo btn-demo-active"><i class="fas fa-play"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        
+        <div class="text-center reveal-up" style="margin-top: 30px; text-align: center;">
+          <button class="btn btn-dark" style="cursor:pointer;" onclick="var el = document.getElementById('moreProjects'); if(el.style.display==='none'){el.style.display='grid'; this.innerHTML='<i class=\'fas fa-chevron-up\'></i> Show less projects';}else{el.style.display='none'; this.innerHTML='<i class=\'fas fa-layer-group\'></i> Explore more projects';}">
+             <i class="fas fa-layer-group"></i> Explore more projects
+          </button>
+        </div>
+      </div>
+    </section>
