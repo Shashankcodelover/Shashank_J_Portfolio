@@ -530,10 +530,34 @@
             <p class="section-subtitle">A curated selection of technical and event achievements.</p>
           </div>
 
-          <div class="projects-grid" style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 2rem;">
+          <style>
+            .essential-certs-grid {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 1.5rem;
+              margin-top: 2rem;
+            }
+            .essential-certs-grid .cert-horizontal-card {
+              width: calc(25% - 1.5rem);
+              min-width: 250px;
+              max-width: none;
+              cursor: pointer;
+            }
+            @media (max-width: 1200px) {
+              .essential-certs-grid .cert-horizontal-card { width: calc(33.333% - 1.5rem); }
+            }
+            @media (max-width: 800px) {
+              .essential-certs-grid .cert-horizontal-card { width: calc(50% - 1.5rem); }
+            }
+            @media (max-width: 500px) {
+              .essential-certs-grid .cert-horizontal-card { width: 100%; }
+            }
+          </style>
+          <div class="essential-certs-grid">
             
-            <!-- Tech 1 -->
-            <div class="cert-horizontal-card reveal-up">
+            <!-- 0: Google Cloud Agentic AI -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(0)">
               <div>
                 <div class="cert-flagship-badge"><i class="fas fa-brain"></i> Agentic AI</div>
                 <h3 class="cert-flagship-title">Google Cloud Agentic AI Challenge</h3>
@@ -542,8 +566,8 @@
               </div>
             </div>
 
-            <!-- Tech 2 -->
-            <div class="cert-horizontal-card reveal-up">
+            <!-- 1: BCG X -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(1)">
               <div>
                 <div class="cert-flagship-badge"><i class="fas fa-briefcase"></i> AI Simulation</div>
                 <h3 class="cert-flagship-title">BCG X — Generative AI</h3>
@@ -552,33 +576,53 @@
               </div>
             </div>
             
-            <!-- Tech 3 -->
-            <div class="cert-horizontal-card reveal-up">
+            <!-- 2: Deloitte -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(2)">
+              <div>
+                <div class="cert-flagship-badge"><i class="fas fa-chart-line"></i> Data Analytics</div>
+                <h3 class="cert-flagship-title">Deloitte Australia — Analytics</h3>
+                <div class="cert-flagship-meta">Deloitte Australia · June 2026</div>
+                <p class="cert-flagship-desc">Completed real-world corporate forensic analytics tasks and anomaly detection pipelines.</p>
+              </div>
+            </div>
+
+            <!-- 3: LinkedIn Generative AI -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(3)">
               <div>
                 <div class="cert-flagship-badge"><i class="fas fa-award"></i> NASBA Accredited CPE</div>
                 <h3 class="cert-flagship-title">What Is Generative AI?</h3>
-                <div class="cert-flagship-meta">LinkedIn Learning & NASBA · July 2026</div>
+                <div class="cert-flagship-meta">LinkedIn Learning · July 2026</div>
                 <p class="cert-flagship-desc">Formal certification covering core Generative AI architectures and agentic workflows.</p>
               </div>
             </div>
 
-            <!-- Open Source -->
-            <div class="cert-horizontal-card reveal-up">
+            <!-- 4: Commit31 -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(4)">
               <div>
                 <div class="cert-flagship-badge"><i class="fab fa-github"></i> Open Source</div>
-                <h3 class="cert-flagship-title">Commit31 - Open Source Contribution</h3>
+                <h3 class="cert-flagship-title">Commit31 - Open Source</h3>
                 <div class="cert-flagship-meta">Linux Campus Club · 2024</div>
-                <p class="cert-flagship-desc">Successfully completed a rigorous one-month open-source contribution program, demonstrating consistency and collaborative engineering.</p>
+                <p class="cert-flagship-desc">Successfully completed a rigorous one-month open-source contribution program.</p>
               </div>
             </div>
 
-            <!-- Hackathon 2 -->
-            <div class="cert-horizontal-card reveal-up">
+            <!-- 5: Technotsav -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(5)">
               <div>
-                <div class="cert-flagship-badge"><i class="fas fa-code"></i> Hackathon</div>
-                <h3 class="cert-flagship-title">Vibe with India / HackOS</h3>
-                <div class="cert-flagship-meta">2026</div>
-                <p class="cert-flagship-desc">Recognized for rapid prototyping and innovative systems architecture in intense 24-hour sprints.</p>
+                <div class="cert-flagship-badge"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
+                <h3 class="cert-flagship-title">Technotsav 2026</h3>
+                <div class="cert-flagship-meta">IEEE CIS + VVCE · April 2026</div>
+                <p class="cert-flagship-desc">Competed in Cybersecurity track architecting real-time vulnerability telemetry.</p>
+              </div>
+            </div>
+
+            <!-- 6: ViCoDathon -->
+            <div class="cert-horizontal-card reveal-up" onclick="openJourneyModal(6)">
+              <div>
+                <div class="cert-flagship-badge"><i class="fas fa-robot"></i> AI Hackathon</div>
+                <h3 class="cert-flagship-title">ViCoDathon 2026</h3>
+                <div class="cert-flagship-meta">AB Talks · August 2026</div>
+                <p class="cert-flagship-desc">Competed in India's premier AI Vibe Coding challenge via accelerated LLM pipelines.</p>
               </div>
             </div>
 
@@ -1352,15 +1396,24 @@
         <button id="sage-close-btn" style="background: none; border: none; color: white; cursor: pointer; font-size: 20px;">&times;</button>
       </div>
       
-      <div id="sage-messages" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #e2e8f0;">
+      <div id="sage-messages" style="flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #e2e8f0; scroll-behavior: smooth;">
         <div style="background: rgba(255,255,255,0.05); padding: 10px 14px; border-radius: 12px; border-bottom-left-radius: 2px; max-width: 85%;">
           Hello! I'm SAGE. I can guide you through Shashank's distributed systems, full-stack projects, or his professional background. What would you like to explore?
         </div>
       </div>
 
-      <div style="padding: 12px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 8px;">
-        <button class="sage-suggest-btn" id="btn-sage-sys" onclick="sageReply('What are his top distributed systems projects?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.2s;">Top Systems</button>
-        <button class="sage-suggest-btn" id="btn-sage-ai" onclick="sageReply('Does he have experience with AI?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.2s;">AI Experience</button>
+      <div style="padding: 10px 12px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 6px; overflow-x: auto; flex-shrink: 0;" class="no-scrollbar">
+        <button class="sage-suggest-btn" onclick="sageReply('What are his top systems projects?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; transition: all 0.2s;">Top Systems</button>
+        <button class="sage-suggest-btn" onclick="sageReply('Does he have experience with AI?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; transition: all 0.2s;">AI Experience</button>
+        <button class="sage-suggest-btn" onclick="sageReply('What is his tech stack?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; transition: all 0.2s;">Tech Stack</button>
+        <button class="sage-suggest-btn" onclick="sageReply('Can I see his certificates?')" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; padding: 6px 12px; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; transition: all 0.2s;">Certificates</button>
+      </div>
+
+      <div style="padding: 12px; background: rgba(0,0,0,0.2); display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <input type="text" id="sage-input" placeholder="Type your question..." style="flex: 1; padding: 10px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.03); color: white; outline: none; font-size: 13px;" onkeypress="if(event.key === 'Enter') submitSageMsg()" />
+        <button onclick="submitSageMsg()" style="background: #2563eb; color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0;">
+          <i class="fas fa-paper-plane" style="font-size: 12px;"></i>
+        </button>
       </div>
     </div>
 
@@ -1369,6 +1422,12 @@
     </button>
   </div>
 
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .sage-suggest-btn:hover { background: rgba(255,255,255,0.1) !important; color: white !important; }
+  </style>
+
   <script>
     function toggleSage() {
       const panel = document.getElementById('sage-chat-panel');
@@ -1376,9 +1435,75 @@
       if (panel.style.display === 'none' || panel.style.display === '') {
         panel.style.display = 'flex';
         trigger.style.transform = 'scale(0.8)';
+        setTimeout(() => document.getElementById('sage-input').focus(), 100);
       } else {
         panel.style.display = 'none';
         trigger.style.transform = 'scale(1)';
+      }
+    }
+
+    function submitSageMsg() {
+      const input = document.getElementById('sage-input');
+      const text = input.value.trim();
+      if(text) {
+        sageReply(text);
+        input.value = '';
+      }
+    }
+
+    function getSageResponse(msg) {
+      const text = msg.toLowerCase();
+      
+      if (text.includes('system') || text.includes('distribute')) {
+        return `
+          <div style="margin-bottom: 8px;"><strong>Shashank is a specialist in architecting high-availability, fault-tolerant distributed systems.</strong></div>
+          <div style="margin-bottom: 8px;">His flagship system, <strong>NetPulse</strong>, handles concurrent connections with localized failover.</div>
+          <div style="margin-bottom: 8px;">He engineered <strong>FLARE</strong>, a WebRTC-based decentralized peer-to-peer disaster response network.</div>
+          <div>He also built <strong>LifeStream-V3</strong> for critical data ingestion pipelines.</div>
+        `;
+      }
+      else if (text.includes('ai') || text.includes('agent') || text.includes('llm') || text.includes('machine learning')) {
+        return `
+          <div style="margin-bottom: 8px;"><strong>Absolutely. Shashank possesses deep expertise in Agentic AI and Large Language Model orchestration.</strong></div>
+          <div style="margin-bottom: 8px;">He developed <strong>ArchitectAI Studio</strong>, a visual IDE using LangGraph and Gemini for compiling autonomous agents.</div>
+          <div style="margin-bottom: 8px;">Additionally, he built <strong>RegulAIte</strong>, an autonomous compliance analyzer.</div>
+          <div>His solutions utilize robust RAG pipelines and strict type-safe structured outputs.</div>
+        `;
+      }
+      else if (text.includes('tech stack') || text.includes('skill') || text.includes('language') || text.includes('framework')) {
+        return `
+          <div style="margin-bottom: 8px;"><strong>Shashank's tech stack is highly robust and modern:</strong></div>
+          <ul style="padding-left: 20px; margin: 0; line-height: 1.6;">
+            <li><strong>Languages:</strong> TypeScript, Python, JavaScript, Java, C++, SQL, Go.</li>
+            <li><strong>Frontend:</strong> React, Next.js, Vue, TailwindCSS, Framer Motion.</li>
+            <li><strong>Backend:</strong> Node.js, Express, Python (FastAPI/Streamlit), Spring Boot.</li>
+            <li><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, Yjs (CRDTs).</li>
+            <li><strong>DevOps/Cloud:</strong> Docker, AWS, WebRTC, Vercel, Socket.io, GitHub Actions.</li>
+          </ul>
+        `;
+      }
+      else if (text.includes('certificate') || text.includes('cert') || text.includes('achievement')) {
+        return `
+          <div style="margin-bottom: 8px;"><strong>Shashank has earned numerous top-tier certifications validating his expertise.</strong></div>
+          <div>Scroll to the <strong>"Licenses & Certifications"</strong> section on this page to view his 7 essential credentials in a structured grid, including Postman API Expert, Google Cloud basics, and specialized development degrees!</div>
+        `;
+      }
+      else if (text.includes('contact') || text.includes('hire') || text.includes('email') || text.includes('github') || text.includes('linkedin')) {
+        return `
+          <div style="margin-bottom: 8px;"><strong>You can reach out to Shashank through the following channels:</strong></div>
+          <div>• <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shashank-j" target="_blank" style="color: #60a5fa;">linkedin.com/in/shashank-j</a></div>
+          <div>• <strong>GitHub:</strong> <a href="https://github.com/Shashankcodelover" target="_blank" style="color: #60a5fa;">github.com/Shashankcodelover</a></div>
+          <div style="margin-top: 8px;">Feel free to connect or email him regarding distributed systems or agentic AI roles!</div>
+        `;
+      }
+      else if (text.includes('hello') || text.includes('hi ') || text.trim() === 'hi' || text.includes('hey')) {
+        return `Hello! How can I assist you today? I'm equipped with comprehensive knowledge of Shashank's portfolio. Try asking about his "Systems", "AI projects", or "Tech Stack".`;
+      }
+      else {
+        return `
+          <div style="margin-bottom: 8px;">That's an interesting question! While my knowledge is tailored to Shashank's professional portfolio, I can tell you he is always exploring new domains.</div>
+          <div>Try asking specifically about his <strong>Top Systems</strong>, <strong>AI Experience</strong>, <strong>Tech Stack</strong>, or <strong>Certificates</strong>!</div>
+        `;
       }
     }
 
@@ -1387,28 +1512,24 @@
       msgs.innerHTML += `<div style="background: rgba(37, 99, 235, 0.2); border: 1px solid rgba(37, 99, 235, 0.3); padding: 10px 14px; border-radius: 12px; border-bottom-right-radius: 2px; max-width: 85%; align-self: flex-end; color: #bfdbfe;">${msg}</div>`;
       
       const id = 'sage-typing-' + Date.now();
-      msgs.innerHTML += `<div id="${id}" style="background: rgba(255,255,255,0.05); padding: 10px 14px; border-radius: 12px; border-bottom-left-radius: 2px; max-width: 85%; align-self: flex-start;">Typing...</div>`;
+      msgs.innerHTML += `<div id="${id}" style="background: rgba(255,255,255,0.05); padding: 10px 14px; border-radius: 12px; border-bottom-left-radius: 2px; max-width: 85%; align-self: flex-start; display: flex; gap: 4px; align-items: center;"><span class="dot-pulse" style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%; display: inline-block;"></span><span class="dot-pulse" style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%; display: inline-block; animation-delay: 0.2s;"></span><span class="dot-pulse" style="width: 4px; height: 4px; background: #94a3b8; border-radius: 50%; display: inline-block; animation-delay: 0.4s;"></span></div>`;
       msgs.scrollTop = msgs.scrollHeight;
+
+      // Add simple pulse animation for typing indicator if not present
+      if (!document.getElementById('sage-pulse-style')) {
+        const style = document.createElement('style');
+        style.id = 'sage-pulse-style';
+        style.innerHTML = `@keyframes sagePulse { 0%, 100% { opacity: 0.4; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } } .dot-pulse { animation: sagePulse 1s infinite ease-in-out; }`;
+        document.head.appendChild(style);
+      }
 
       setTimeout(() => {
         const typingEl = document.getElementById(id);
-        if (msg.includes('Systems')) {
-          typingEl.innerHTML = `
-            <div style="margin-bottom: 8px;"><strong>Shashank is a specialist in architecting high-availability, fault-tolerant distributed systems.</strong></div>
-            <div style="margin-bottom: 8px;">His flagship system, <strong>NetPlus CRM</strong>, is a multi-tenant edge network capable of handling thousands of concurrent connections with localized failover.</div>
-            <div style="margin-bottom: 8px;">He engineered <strong>FLARE</strong>, a WebRTC-based decentralized peer-to-peer disaster response network that maintains communication even when central internet infrastructure collapses.</div>
-            <div>Furthermore, his work on <strong>Quantum Shield</strong> implements a QKD (Quantum Key Distribution) mesh, showcasing his profound understanding of advanced cryptography and state-less resilient system design.</div>
-          `;
-        } else {
-          typingEl.innerHTML = `
-            <div style="margin-bottom: 8px;"><strong>Absolutely. Shashank possesses deep expertise in Agentic AI and Large Language Model orchestration.</strong></div>
-            <div style="margin-bottom: 8px;">He developed <strong>ArchitectAI Studio</strong>, a groundbreaking visual IDE powered by LangGraph and Gemini 2.0, allowing users to drag-and-drop nodes to compile autonomous AI agents on the fly.</div>
-            <div style="margin-bottom: 8px;">Additionally, he built <strong>Crimson Sentinel</strong>, an AI-driven polygraph and interrogation engine that uses real-time sentiment analysis and behavioral heuristics to detect deception.</div>
-            <div>His AI solutions are characterized by robust retrieval-augmented generation (RAG), strict type-safe structured outputs, and highly optimized token context window management.</div>
-          `;
+        if(typingEl) {
+          typingEl.innerHTML = getSageResponse(msg);
+          msgs.scrollTop = msgs.scrollHeight;
         }
-        msgs.scrollTop = msgs.scrollHeight;
-      }, 1200);
+      }, 1000 + Math.random() * 800);
     }
     
     document.getElementById('sage-close-btn').addEventListener('click', () => {
