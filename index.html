@@ -1393,9 +1393,19 @@
       setTimeout(() => {
         const typingEl = document.getElementById(id);
         if (msg.includes('Systems')) {
-          typingEl.innerHTML = "Shashank specializes in high-availability systems. Notable projects include <strong>NetPlus CRM</strong> (multi-tenant Edge network), <strong>Quantum Shield</strong> (QKD mesh), and <strong>FLARE</strong> (WebRTC P2P disaster response).";
+          typingEl.innerHTML = `
+            <div style="margin-bottom: 8px;"><strong>Shashank is a specialist in architecting high-availability, fault-tolerant distributed systems.</strong></div>
+            <div style="margin-bottom: 8px;">His flagship system, <strong>NetPlus CRM</strong>, is a multi-tenant edge network capable of handling thousands of concurrent connections with localized failover.</div>
+            <div style="margin-bottom: 8px;">He engineered <strong>FLARE</strong>, a WebRTC-based decentralized peer-to-peer disaster response network that maintains communication even when central internet infrastructure collapses.</div>
+            <div>Furthermore, his work on <strong>Quantum Shield</strong> implements a QKD (Quantum Key Distribution) mesh, showcasing his profound understanding of advanced cryptography and state-less resilient system design.</div>
+          `;
         } else {
-          typingEl.innerHTML = "Yes! He built <strong>ArchitectAI Studio</strong> using LangGraph/Gemini for visual agent building, and <strong>Crimson Sentinel</strong> for AI polygraph interviewing.";
+          typingEl.innerHTML = `
+            <div style="margin-bottom: 8px;"><strong>Absolutely. Shashank possesses deep expertise in Agentic AI and Large Language Model orchestration.</strong></div>
+            <div style="margin-bottom: 8px;">He developed <strong>ArchitectAI Studio</strong>, a groundbreaking visual IDE powered by LangGraph and Gemini 2.0, allowing users to drag-and-drop nodes to compile autonomous AI agents on the fly.</div>
+            <div style="margin-bottom: 8px;">Additionally, he built <strong>Crimson Sentinel</strong>, an AI-driven polygraph and interrogation engine that uses real-time sentiment analysis and behavioral heuristics to detect deception.</div>
+            <div>His AI solutions are characterized by robust retrieval-augmented generation (RAG), strict type-safe structured outputs, and highly optimized token context window management.</div>
+          `;
         }
         msgs.scrollTop = msgs.scrollHeight;
       }, 1200);
