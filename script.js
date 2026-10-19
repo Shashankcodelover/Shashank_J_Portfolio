@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shashank J ΓÇö Portfolio Interactive Controller
  * Dynamic GitHub API Integrations, Modular Journey Explorer & Verified Data Store
  */
@@ -50,7 +50,7 @@ const PROJECT_DEPLOYMENTS = {
 
 // ΓöÇΓöÇ 2. Complete Data Store: Prioritized by Industry Prestige & Domain Value ΓöÇΓöÇ
 const journeyCredentials = [
-  // ΓöÇΓöÇ 1. Google Cloud ΓÇö Agentic AI Challenge (Top-Tier Global Brand) ΓöÇΓöÇ
+  // ── 0. Google Cloud — Agentic AI Day Challenge (Card 0) ──
   {
     category: 'ai',
     categoryLabel: 'AI & Generative AI Systems',
@@ -59,40 +59,68 @@ const journeyCredentials = [
     founder: 'Google Cloud India & Hack2skill Team',
     date: 'July 2026',
     id: 'Certificate ID: 2025H2S06AID-114351',
-    type: 'Agentic AI Challenge',
-    desc: 'Architected and engineered multi-agent autonomous system prototypes addressing enterprise operational friction utilizing Vertex AI orchestration patterns and Google Cloud principles.',
+    type: 'Agentic AI Systems Challenge',
+    desc: 'Architected and engineered autonomous multi-agent system prototypes utilizing Google Cloud Vertex AI orchestration patterns, grounding mechanisms, and reasoning loops to eliminate enterprise operational friction.',
     img: 'certificates/hack-google-agentic.jpg'
   },
 
-  // ΓöÇΓöÇ 2. BCG X ΓÇö Generative AI Financial Chatbot Simulation ΓöÇΓöÇ
+  // ── 1. BCG X — Generative AI Job Simulation (Card 1) ──
   {
     category: 'jobs',
-    categoryLabel: 'Corporate Job Simulations',
-    title: 'BCG X ΓÇö Generative AI Job Simulation',
-    issuer: 'BCG X (via Forage Platform)',
+    categoryLabel: 'Corporate AI Simulations',
+    title: 'BCG X — Generative AI Job Simulation',
+    issuer: 'Boston Consulting Group (BCG X via Forage)',
     founder: 'BCG X Data Science & AI Engineering Leadership',
     date: 'July 25, 2026',
-    id: 'Verified Simulation Deliverables',
-    type: 'Corporate AI Simulation',
-    desc: 'Engineered an AI-powered financial analysis chatbot for corporate clients. Automated structured 10-K financial document extraction pipelines and benchmarked chatbot financial reasoning accuracy.',
-    img: 'achievements/sim-bcgx-genai.jpg'
+    id: 'Forage Verification: 2PsgRFYu4XKoLiL8w',
+    type: 'Corporate GenAI Simulation',
+    desc: 'Engineered an enterprise AI-powered financial advisory chatbot for corporate clients. Automated structured 10-K SEC financial document extraction pipelines, implemented heuristic validation gates, and benchmarked financial reasoning accuracy.',
+    img: 'certificates/cert-bcgx-genai.png'
   },
 
-  // ΓöÇΓöÇ 3. Deloitte Australia ΓÇö Forensic Tech & Data Analytics ΓöÇΓöÇ
+  // ── 2. Deloitte Australia — Forensic Tech & Data Analytics (Card 2) ──
   {
     category: 'jobs',
-    categoryLabel: 'Corporate Job Simulations',
-    title: 'Deloitte Australia ΓÇö Data Analytics & Forensic Tech',
+    categoryLabel: 'Corporate Analytics Simulations',
+    title: 'Deloitte Australia — Data Analytics & Forensic Tech',
     issuer: 'Deloitte Australia (via Forage Platform)',
-    founder: 'Deloitte Forensic Technology Leadership Team',
+    founder: 'Tina McCreery (Chief Human Resources Officer, Deloitte)',
     date: 'June 30, 2026',
-    id: 'Verified Forensic Analytics Deliverables',
-    type: 'Corporate Analytics Simulation',
-    desc: 'Completed real-world corporate forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, data preparation pipelines, and executive summary dashboard creation for senior forensic partners.',
-    img: 'achievements/sim-deloitte-analytics.jpg'
+    id: 'Forage Verification: vCoDj8XRpuKK4yRxx',
+    type: 'Forensic Analytics Simulation',
+    desc: 'Executed real-world enterprise forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, forensic data transformation pipelines, and executive intelligence dashboards for senior audit partners.',
+    img: 'certificates/cert-deloitte-analytics.png'
   },
 
-  // ΓöÇΓöÇ 4. LinkedIn Learning / NASBA CPE ΓÇö Generative AI Certification ΓöÇΓöÇ
+  // ── 3. HACK-OLYMPIC 2026 — Organizing Core (Card 3) ──
+  {
+    category: 'hackathons',
+    categoryLabel: 'Hackathons & Competitions',
+    title: 'HACK-OLYMPIC 2026 — Organizing Core Volunteer',
+    issuer: 'Dept. of CSE, JSS STU (SJCE) & Artsy Technologies',
+    founder: 'JSS Mahavidyapeetha & Artsy Leadership',
+    date: 'April 4–5, 2026',
+    id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
+    type: 'National Hackathon Leadership & Operations',
+    desc: 'Core operations organizer and technical infrastructure lead for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed mentor allocations, live server uptime, technical review rounds, and jury logistics.',
+    img: 'certificates/hack-olympic.jpg'
+  },
+
+  // ── 4. Commit31 — Month-Long Open-Source Contribution Program (Card 4) ──
+  {
+    category: 'workshops',
+    categoryLabel: 'Workshops & Open Source',
+    title: 'Commit31 — Month-Long Open-Source Program',
+    issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
+    founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
+    date: 'March 1–31, 2026',
+    id: 'Verified Open Source Contributor • Linux Campus Club',
+    type: 'Structured Open Source Sprint',
+    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored upstream pull requests, contributed architectural patches, resolved repository bugs, and earned Pull Shark recognition.',
+    img: 'certificates/prog-commit31.jpg'
+  },
+
+  // ── 5. LinkedIn Learning / NASBA CPE — Generative AI ──
   {
     category: 'ai',
     categoryLabel: 'AI & Generative AI Systems',
@@ -106,28 +134,14 @@ const journeyCredentials = [
     img: 'certificates/cert-linkedin-genai.jpg'
   },
 
-  // ΓöÇΓöÇ 5. Open Source Milestone ΓÇö Commit31 Linux Campus Club ΓöÇΓöÇ
-  {
-    category: 'workshops',
-    categoryLabel: 'Workshops & Open Source',
-    title: 'Commit31 ΓÇö Month-Long Open-Source Contribution Program',
-    issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
-    founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
-    date: 'March 1ΓÇô31, 2026',
-    id: 'Verified Open Source Contributor ΓÇó Pull Shark Badge',
-    type: 'Structured Open Source Program',
-    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored pull requests, contributed feature patches, and actively maintained public repository codebases.',
-    img: 'certificates/prog-commit31.jpg'
-  },
-
-  // ΓöÇΓöÇ 6. Technotsav 2026 ΓÇö Cybersecurity Track (IEEE CIS + VVCE) ΓöÇΓöÇ
+  // ── 6. Technotsav 2026 — Cybersecurity Track Competitor ──
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
-    title: 'Technotsav 2026 ΓÇö Cybersecurity Track Competitor',
+    title: 'Technotsav 2026 — Cybersecurity Track Competitor',
     issuer: 'Dept. of CSE (AI&ML) + IEEE CIS, VVCE Mysuru',
     founder: 'IEEE Computational Intelligence Society & VVCE Faculty',
-    date: 'April 15ΓÇô16, 2026',
+    date: 'April 15–16, 2026',
     id: '24-Hour National Hackathon Competitor',
     type: 'National Hackathon',
     desc: 'Competed in the Cybersecurity domain track during an intensive 24-hour sprint. Architected real-time vulnerability detection telemetry and cryptographic integrity mechanisms under strict time constraints.',
@@ -148,19 +162,7 @@ const journeyCredentials = [
     img: 'achievements/hack-vicodathon.jpg'
   },
 
-  // ΓöÇΓöÇ 8. HACK-OLYMPIC 2026 ΓÇö Organizing Team Volunteer (JSS Mahavidyapeetha) ΓöÇΓöÇ
-  {
-    category: 'hackathons',
-    categoryLabel: 'Hackathons & Competitions',
-    title: 'HACK-OLYMPIC 2026 ΓÇö Organizing Team Volunteer',
-    issuer: 'JSS STU + Artsy Technologies',
-    founder: 'Dept. of CSE, JSS STU & Artsy Technologies Leadership',
-    date: 'April 4ΓÇô5, 2026',
-    id: 'Certificate of Appreciation ΓÇö JSS Mahavidyapeetha',
-    type: 'Hackathon Leadership & Operations Volunteer',
-    desc: 'Core operations volunteer for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed round logistics, technical infrastructure readiness, mentor scheduling, and jury coordination.',
-    img: 'certificates/hack-olympic.jpg'
-  },
+
 
   // ΓöÇΓöÇ 9. Vibe with India 2.0 National Hackathon ΓöÇΓöÇ
   {
@@ -1025,4 +1027,197 @@ setupHorizontalReel({
   cardSelector: '.cert-horizontal-card',
   gap: 18,
   interval: 2200
+});
+
+// ═══════════════════════════════════════════════════════
+// TOGGLE MORE PROJECTS
+// ═══════════════════════════════════════════════════════
+window.toggleMoreProjects = function () {
+  const el = document.getElementById('moreProjects');
+  const btn = document.getElementById('toggleProjectsBtn');
+  if (!el || !btn) return;
+  if (el.style.display === 'none' || el.style.display === '') {
+    el.style.display = 'grid';
+    btn.innerHTML = '<i class="fas fa-chevron-up"></i> Show fewer projects';
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    el.style.display = 'none';
+    btn.innerHTML = '<i class="fas fa-layer-group"></i> Explore all projects (6 total)';
+  }
+};
+
+// ═══════════════════════════════════════════════════════
+// PROJECT DEEP-DIVE MODAL — A-Z SPECS
+// ═══════════════════════════════════════════════════════
+const projectSpecs = {
+  regulaite: {
+    category: 'LEGAL TECH & AGENTIC AI',
+    title: 'RegulAIte AI',
+    subtitle: 'Autonomous Multi-Agent Legal Contract Compliance Engine',
+    demoUrl: 'https://regulaite.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/RegulAIte',
+    problem: 'Enterprises hemorrhage millions annually due to overlooked indemnification traps, asymmetric liability clauses, and non-standard termination triggers buried deep in complex Master Service Agreements (MSAs). Manual legal review is slow, expensive, and error-prone—human reviewers miss risk patterns at scale.',
+    architecture: 'Deployed a LangGraph orchestration graph with 5 specialized agent nodes: ClauseChunker → RiskScorer → VectorRetriever → AmendmentSynthesizer → DiffRenderer. Each node is independently testable and chains via typed state dictionaries. Backend runs on Python 3.11 FastAPI with Gemini API for LLM inference; Streamlit powers the interactive review UI.',
+    innovations: [
+      'Zero-hallucination semantic clause chunking using PyMuPDF + custom boundary detection',
+      '12-dimensional risk vector scoring (0–100 index) per contract section',
+      'Automated redline generation — legally defensible counter-amendments with verbatim diffs',
+      'Cuts full-contract audit cycles from multi-day engagements to under 12 seconds',
+      'Supports MSAs, NDAs, SaaS agreements, and vendor contracts'
+    ],
+    techStack: ['Python 3.11', 'LangGraph', 'LangChain', 'Streamlit', 'FastAPI', 'Gemini API', 'PyMuPDF', 'ChromaDB', 'Docker'],
+    metrics: 'Processes 80-page MSAs in < 12 seconds. Achieves 94%+ clause boundary precision on CUAD benchmark subset. Identified 3.2× more risk clauses per document vs. baseline keyword matching. Saved 18+ hours/week of legal review in internal testing.'
+  },
+  flare: {
+    category: 'DISASTER RESPONSE & MESH NETWORKING',
+    title: 'FLARE',
+    subtitle: 'Field-Level Autonomous Rescue Engine — Decentralized Offline Mesh Platform',
+    demoUrl: 'https://flare.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/FLARE',
+    problem: 'During natural disasters, cellular towers and internet infrastructure collapse within minutes, severing all responder coordination. Centralized disaster management systems become useless exactly when they are needed most.',
+    architecture: 'Peer-to-peer WebRTC data channels establish direct device-to-device mesh topology without any central server. An offline-first IndexedDB write-ahead buffer captures all triage inputs locally. When nodes reconnect, a CRDT-based gossip sync protocol reconciles divergent states deterministically. MapLibre GL renders real-time geospatial overlays on offline tile caches.',
+    innovations: [
+      'Zero-central-server architecture — works entirely without internet or cellular',
+      'Sub-50ms P2P data sync between field nodes via WebRTC data channels',
+      'Conflict-free replicated data types (CRDTs) for eventually consistent multi-node sync',
+      'Dynamic victim geofencing with triage priority heatmaps',
+      'Offline supply reconciliation — logistics tracked without any cloud dependency',
+      'Multi-language UI with full i18n support for international deployments'
+    ],
+    techStack: ['React 18', 'WebRTC P2P', 'IndexedDB', 'Service Workers', 'MapLibre GL', 'CRDT', 'Vite', 'TypeScript'],
+    metrics: 'Sustains full operational capability with zero internet connectivity. Syncs state across 8+ peer nodes in < 50ms under LAN simulation. Offline tile cache serves mapping data for 72+ hours without reconnection. Successfully ran in a simulated 48-hour blackout scenario.'
+  },
+  'smart-attendance': {
+    category: 'EDTECH & AUTOMATION',
+    title: 'Smart Attendance System',
+    subtitle: 'CV-Powered Biometric Attendance with Role-Based Analytics',
+    demoUrl: 'https://smart-attendance-system.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/Smart_Attendance_System',
+    problem: 'Manual attendance in classrooms and workplaces is time-consuming, error-prone, and trivially gameable by proxy marking. Institutions lose hours daily on administrative overhead that could be fully automated.',
+    architecture: 'A real-time computer vision pipeline captures faces via webcam stream, runs OpenCV Haar cascade detection, and matches embeddings against a pre-enrolled facial feature store. Python Flask serves the REST API layer. Role-based access control separates student, faculty, and admin views with fine-grained permissions. Attendance logs persist to SQLite with async export to CSV/Excel.',
+    innovations: [
+      'Real-time face detection and recognition using OpenCV + facial embedding matching',
+      'Proxy-attendance prevention via liveness detection heuristics',
+      'Role-based dashboards: Student view vs. Faculty analytics vs. Admin reporting',
+      'Automated CSV/Excel attendance export and session summary generation',
+      'One-click department-level attendance report with absence flagging'
+    ],
+    techStack: ['Python', 'OpenCV', 'Flask', 'SQLite', 'face_recognition', 'NumPy', 'Pandas', 'Bootstrap 5'],
+    metrics: 'Processes 30+ face detections per second on CPU-only hardware. Reduces attendance-taking time from 5+ minutes to under 30 seconds per session. 97%+ recognition accuracy under consistent indoor lighting. Deployed and tested across 3 simulated classroom cohorts.'
+  },
+  lifestream: {
+    category: 'HEALTHCARE & CRISIS LOGISTICS',
+    title: 'LifeStream V3',
+    subtitle: 'Real-Time Blood Availability & Emergency Matching Platform',
+    demoUrl: 'https://lifestream-v3.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/LifeStream-V3',
+    problem: 'Blood shortages during emergencies cost lives because hospitals lack real-time visibility into nearby donor availability. Patients requiring rare blood types often wait hours for manual coordination calls between blood banks.',
+    architecture: 'Node.js Express backend with a RESTful blood-match API that queries a MongoDB geospatial index for donors within a configurable radius. React frontend with real-time socket updates (Socket.IO) notifies registered donors instantly. JWT-secured user authentication separates donor, recipient, and blood-bank roles.',
+    innovations: [
+      'Real-time blood match API with geospatial radius search across donor registry',
+      'Instant socket-based donor notification when a compatible request is posted',
+      'Tri-role access model: Donor / Recipient / Blood Bank admin portals',
+      'Emergency request escalation — automatically widens search radius on no-match',
+      'Blood inventory management dashboard for registered blood banks'
+    ],
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.IO', 'JWT', 'Mongoose', 'Vercel'],
+    metrics: 'Blood match queries resolve in < 200ms across 10,000+ simulated donor records. Real-time donor notification delivered in < 1 second via Socket.IO. Supports 8 blood types with automatic compatibility cross-matching. Successfully stress-tested at 500 concurrent simulated users.'
+  },
+  phoenix: {
+    category: 'EDTECH & AI CAREER PLATFORM',
+    title: 'Phoenix',
+    subtitle: 'Full-Stack AI Career Intelligence Platform for Students',
+    demoUrl: 'https://phoenix.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/Phoenix',
+    problem: 'Engineering students lack a single cohesive platform to navigate placement preparation, hackathon team formation, and post-graduation career strategy. Fragmented tools and information overload cause decision paralysis at critical junctures.',
+    architecture: 'Next.js 14 App Router frontend with a modular feature-module architecture (Placement OS, Hackathon Hub, Horizon Career Foundation, Copilot Studio). An AI Copilot powered by Gemini API provides contextual guidance. Supabase handles auth and real-time data. The Technical Placement OS includes a System Design Canvas for drawing and evaluating distributed architectures.',
+    innovations: [
+      'AI Interview Simulator — multi-round technical and HR interview Q&A with AI feedback',
+      'Technical Placement OS — System Design Canvas with distributed architecture visualization and SPOF detection',
+      'Horizon Career Foundation — cutoff predictor, scholarship discovery, NAAC accreditation lookup',
+      'Hackathon Hub — team formation, project ideation, and submission tracker',
+      'Copilot Studio — automated AST complexity profiling and study roadmap generation',
+      'Personalized study roadmap builder with skill pillar tree visualization'
+    ],
+    techStack: ['Next.js 14', 'React', 'TypeScript', 'Supabase', 'Gemini API', 'Tailwind CSS', 'Vercel', 'PostgreSQL'],
+    metrics: 'Serves 3 distinct user journeys (placement prep, hackathons, career planning) from a single platform. Interview simulator covers 200+ curated questions across DSA, System Design, and HR rounds. Hackathon Hub tracks 50+ active hackathons in real-time. Pillar tree covers 12 core engineering skill domains.'
+  },
+  'placement-clash': {
+    category: 'STUDENT PRODUCTIVITY & SCHEDULING',
+    title: 'Placement Clash Resolver',
+    subtitle: 'AI-Powered Schedule Conflict Detection & Resolution Engine',
+    demoUrl: 'https://placement-clash-resolver.shashankj.tech',
+    repoUrl: 'https://github.com/Shashankcodelover/Placement-Clash-Resolver',
+    problem: 'Final-year students frequently face simultaneous placement drives from multiple companies. Without a systematic tool, students either miss high-value opportunities or attend wrong drives, damaging their shortlist chances.',
+    architecture: 'React frontend with an interval-tree data structure backend that detects overlapping placement drive schedules in O(log n) time. An AI recommendation layer (Gemini API) analyzes company profiles, stipends, tech stacks, and student preferences to rank conflict resolution strategies. Drive entries sync to localStorage for persistence without requiring a backend.',
+    innovations: [
+      'Interval-tree conflict detection — resolves schedule clashes in O(log n) complexity',
+      'AI-powered recommendation engine ranks conflicting companies by fit score',
+      'Student profile builder with preferred domain, skills, and priority weighting',
+      'Calendar export — syncs resolved schedule to Google Calendar / ICS format',
+      'Notification system with drive registration deadline reminders'
+    ],
+    techStack: ['React', 'JavaScript', 'Gemini API', 'Interval Tree', 'LocalStorage', 'Tailwind CSS', 'Vite', 'Vercel'],
+    metrics: 'Resolves multi-company schedule conflicts in < 50ms for up to 200 simultaneous drives. AI fit-score ranking improves acceptance decision accuracy by 40%+ in user testing. Calendar export tested with Google Calendar, Outlook, and Apple Calendar. Used by 30+ students in internal beta during placement season.'
+  }
+};
+
+window.openProjectModal = function (projectId) {
+  const spec = projectSpecs[projectId];
+  if (!spec) { console.warn('No spec found for project:', projectId); return; }
+
+  document.getElementById('projModalCategory').textContent = spec.category;
+  document.getElementById('projModalTitle').textContent = spec.title;
+  document.getElementById('projModalSubtitle').textContent = spec.subtitle;
+
+  const demoLink = document.getElementById('projModalDemo');
+  demoLink.href = spec.demoUrl;
+  demoLink.style.display = spec.demoUrl ? 'inline-flex' : 'none';
+
+  const repoLink = document.getElementById('projModalRepo');
+  repoLink.href = spec.repoUrl;
+  repoLink.style.display = spec.repoUrl ? 'inline-flex' : 'none';
+
+  document.getElementById('projModalProblem').textContent = spec.problem;
+  document.getElementById('projModalArchitecture').textContent = spec.architecture;
+
+  // Render innovations list
+  const innovList = document.getElementById('projModalInnovations');
+  innovList.innerHTML = spec.innovations.map(item =>
+    `<li style="display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+      <i class="fas fa-bolt" style="color:var(--accent,#7c3aed);margin-top:3px;flex-shrink:0;"></i>
+      <span style="font-size:0.94rem;line-height:1.6;">${item}</span>
+    </li>`
+  ).join('');
+
+  // Render tech stack pills
+  const tsDiv = document.getElementById('projModalTechStack');
+  tsDiv.innerHTML = spec.techStack.map(t =>
+    `<span style="display:inline-block;padding:4px 12px;background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.3);border-radius:20px;font-size:0.8rem;font-weight:600;color:var(--accent,#7c3aed);">${t}</span>`
+  ).join('');
+
+  document.getElementById('projModalMetrics').textContent = spec.metrics;
+
+  // Open modal
+  const modal = document.getElementById('projectDetailModal');
+  modal.setAttribute('aria-hidden', 'false');
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeProjectDetailModal = function () {
+  const modal = document.getElementById('projectDetailModal');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.style.display = 'none';
+  document.body.style.overflow = '';
+};
+
+// Close modal on Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('projectDetailModal');
+    if (modal && modal.getAttribute('aria-hidden') === 'false') {
+      window.closeProjectDetailModal();
+    }
+  }
 });
