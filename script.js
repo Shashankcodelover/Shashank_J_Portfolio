@@ -50,45 +50,45 @@ const PROJECT_DEPLOYMENTS = {
 
 // ΓöÇΓöÇ 2. Complete Data Store: Prioritized by Industry Prestige & Domain Value ΓöÇΓöÇ
 const journeyCredentials = [
-  // ── 0. Google Cloud — Agentic AI Day Challenge (Card 0) ──
+  // ── 0. Google Cloud — Agentic AI Day (Card 0) ──
   {
     category: 'ai',
     categoryLabel: 'AI & Generative AI Systems',
-    title: 'Google Cloud Agentic AI Day Challenge',
+    title: 'Google Cloud Agentic AI Day',
     issuer: 'Google Cloud (powered by Hack2skill)',
-    founder: 'Google Cloud India & Hack2skill Team',
+    founder: 'Google Cloud & Hack2skill Leadership',
     date: 'July 2026',
     id: 'Certificate ID: 2025H2S06AID-114351',
-    type: 'Agentic AI Systems Challenge',
-    desc: 'Architected and engineered autonomous multi-agent system prototypes utilizing Google Cloud Vertex AI orchestration patterns, grounding mechanisms, and reasoning loops to eliminate enterprise operational friction.',
+    type: 'Certificate of Participation • Agentic AI',
+    desc: 'Awarded to Shashank J in recognition of initiative and contribution to Google Cloud Agentic AI Day, powered by Hack2skill. Submitted an innovative idea to harness Agentic AI for solving real-world challenges. Validated competencies in multi-agent orchestration, Vertex AI workflows, prompt reasoning loops, and autonomous system architecture.',
     img: 'certificates/hack-google-agentic.jpg'
   },
 
-  // ── 1. BCG X — Generative AI Job Simulation (Card 1) ──
+  // ── 1. BCG X — GenAI Job Simulation (Card 1) ──
   {
     category: 'jobs',
     categoryLabel: 'Corporate AI Simulations',
-    title: 'BCG X — Generative AI Job Simulation',
+    title: 'BCG X — GenAI Job Simulation',
     issuer: 'Boston Consulting Group (BCG X via Forage)',
-    founder: 'BCG X Data Science & AI Engineering Leadership',
-    date: 'July 25, 2026',
-    id: 'Forage Verification: 2PsgRFYu4XKoLiL8w',
-    type: 'Corporate GenAI Simulation',
-    desc: 'Engineered an enterprise AI-powered financial advisory chatbot for corporate clients. Automated structured 10-K SEC financial document extraction pipelines, implemented heuristic validation gates, and benchmarked financial reasoning accuracy.',
+    founder: 'Tom Brunskill (Co-Founder, Forage) & BCG X Leadership',
+    date: 'July 25th, 2026',
+    id: 'Enrolment Code: 2PsgRFYu4XKoLiL8w | User Code: 6a42231339b118f72fcad540',
+    type: 'Certificate of Completion • GenAI Simulation',
+    desc: 'Awarded to Shashank J by BCG X & Forage for completing practical enterprise tasks in July 2026: (1) Data extraction and initial analysis from complex financial 10-K filings, and (2) Developing an AI-powered financial advisory chatbot for corporate clients with automated reasoning benchmarks.',
     img: 'certificates/cert-bcgx-genai.png'
   },
 
-  // ── 2. Deloitte Australia — Forensic Tech & Data Analytics (Card 2) ──
+  // ── 2. Deloitte Australia — Data Analytics Job Simulation (Card 2) ──
   {
     category: 'jobs',
     categoryLabel: 'Corporate Analytics Simulations',
-    title: 'Deloitte Australia — Data Analytics & Forensic Tech',
+    title: 'Deloitte Australia — Data Analytics Job Simulation',
     issuer: 'Deloitte Australia (via Forage Platform)',
     founder: 'Tina McCreery (Chief Human Resources Officer, Deloitte)',
-    date: 'June 30, 2026',
-    id: 'Forage Verification: vCoDj8XRpuKK4yRxx',
-    type: 'Forensic Analytics Simulation',
-    desc: 'Executed real-world enterprise forensic analytics tasks: investigative transaction log inspection, anomaly detection in corporate financial streams, forensic data transformation pipelines, and executive intelligence dashboards for senior audit partners.',
+    date: 'June 30th, 2026',
+    id: 'Enrolment Code: vCoDj8XRpuKK4yRxx | User Code: 6a42231339b118f72fcad540',
+    type: 'Certificate of Completion • Forensic Tech',
+    desc: 'Awarded to Shashank J under Deloitte Australia leadership for completing practical corporate tasks in June 2026: (1) Enterprise Data Analysis on complex operational datasets, and (2) Forensic Technology investigations to detect transaction anomalies and synthesize executive audit dashboards.',
     img: 'certificates/cert-deloitte-analytics.png'
   },
 
@@ -96,27 +96,27 @@ const journeyCredentials = [
   {
     category: 'hackathons',
     categoryLabel: 'Hackathons & Competitions',
-    title: 'HACK-OLYMPIC 2026 — Organizing Core Volunteer',
-    issuer: 'Dept. of CSE, JSS STU (SJCE) & Artsy Technologies',
-    founder: 'JSS Mahavidyapeetha & Artsy Leadership',
-    date: 'April 4–5, 2026',
+    title: 'HACK-OLYMPIC 2026 — Organizing Core',
+    issuer: 'Dept. of CS&E, JSS STU (SJCE) & Artsy Technologies',
+    founder: 'Dr. A. M. Chandarshekhar (Coord), Bhuvan S. Biradar (CEO Artsy), Dr. Anil Kumar K. M. (HOD CS&E)',
+    date: 'April 4th–5th, 2026',
     id: 'Certificate of Appreciation — JSS Mahavidyapeetha',
-    type: 'National Hackathon Leadership & Operations',
-    desc: 'Core operations organizer and technical infrastructure lead for a premier 24-hour national hackathon hosting 200+ engineering participants. Managed mentor allocations, live server uptime, technical review rounds, and jury logistics.',
+    type: 'Certificate of Appreciation • National Hackathon',
+    desc: 'Awarded to Shashank J with Certificate of Appreciation by JSS Mahavidyapeetha for valuable contribution to the successful conduction of the 24-Hour National Level Hackathon HACK-OLYMPIC 2026 at JSS Science and Technology University campus, Mysuru, coordinating mentors, jury rounds, live technical infrastructure, and operations for 200+ participants.',
     img: 'certificates/hack-olympic.jpg'
   },
 
-  // ── 4. Commit31 — Month-Long Open-Source Contribution Program (Card 4) ──
+  // ── 4. Commit31 — Month-Long Open-Source Program (Card 4) ──
   {
     category: 'workshops',
     categoryLabel: 'Workshops & Open Source',
     title: 'Commit31 — Month-Long Open-Source Program',
     issuer: 'Linux Campus Club (Dept. of CSE), JSS STU',
     founder: 'Dr. B T Prasanna (Faculty Coord) & Vaibhav M N (Chief Coord)',
-    date: 'March 1–31, 2026',
-    id: 'Verified Open Source Contributor • Linux Campus Club',
-    type: 'Structured Open Source Sprint',
-    desc: 'Completed an intensive 31-day open-source contribution sprint organized by the Linux Campus Club. Authored upstream pull requests, contributed architectural patches, resolved repository bugs, and earned Pull Shark recognition.',
+    date: 'March 1st to 31st, 2026 (01/03/26 – 31/03/26)',
+    id: 'Certificate of Completion • Linux Campus Club JSS STU',
+    type: 'Certificate of Completion • Open Source Sprint',
+    desc: 'Awarded to Shashank J for successfully completing the one-month open-source program titled "Commit31" organized by the Linux Campus Club at JSS STU. Actively took part in open-source sprints, authored upstream pull requests, resolved repository bugs, and demonstrated dedication to open development.',
     img: 'certificates/prog-commit31.jpg'
   },
 
