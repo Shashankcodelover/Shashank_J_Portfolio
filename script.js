@@ -1202,13 +1202,15 @@ window.openProjectModal = function (projectId) {
   const modal = document.getElementById('projectDetailModal');
   modal.setAttribute('aria-hidden', 'false');
   modal.style.display = 'flex';
+  setTimeout(() => { modal.classList.add('active'); }, 10);
   document.body.style.overflow = 'hidden';
 };
 
 window.closeProjectDetailModal = function () {
   const modal = document.getElementById('projectDetailModal');
   modal.setAttribute('aria-hidden', 'true');
-  modal.style.display = 'none';
+  modal.classList.remove('active');
+  setTimeout(() => { modal.style.display = 'none'; }, 250);
   document.body.style.overflow = '';
 };
 
